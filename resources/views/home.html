@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h2>Welcome to the Home Page</h2>
+
+    <script>
+        // Lấy dữ liệu từ localStorage
+        const apiToken = localStorage.getItem('apiToken');
+        const userData = JSON.parse(localStorage.getItem('userData'));
+
+        // Kiểm tra xem người dùng đã đăng nhập hay chưa
+        if (apiToken && userData) {
+            console.log('User is logged in:', userData);
+            // Thực hiện các thao tác khác dựa trên dữ liệu người dùng
+        } else {
+            // Nếu không có token hoặc dữ liệu người dùng, điều hướng đến trang đăng nhập
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

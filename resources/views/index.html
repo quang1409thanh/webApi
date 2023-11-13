@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login Example</title>
+    </head>
+    <body>
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required /><br />
+
+            <label for="password">Password:</label>
+            <input
+                type="password"
+                id="password"
+                name="password"
+                required
+            /><br />
+
+            <button type="button" onclick="login()">Login</button>
+        </form>
+
+        <script>
+            function login() {
+                const email = document.getElementById("email").value;
+                const password = document.getElementById("password").value;
+
+                const loginData = {
+                    email: email,
+                    password: password,
+                };
+
+                fetch("http://127.0.0.1:8000/api/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(loginData),
+                })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        // Lưu trữ token vào localStorage
+                        localStorage.setItem("apiToken", data.token);
+
+                        // Lưu trữ dữ liệu JSON vào localStorage (ví dụ: thông tin người dùng)
+                        localStorage.setItem(
+                            "userData",
+                            JSON.stringify(data.user)
+                        );
+
+                        // Điều hướng hoặc thực hiện các thao tác khác sau khi đăng nhập thành công
+                        window.location.href = "home.html";
+                    })
+
+                    .catch((error) => console.error("Error:", error));
+            }
+        </script>
+    </body>
+</html>

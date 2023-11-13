@@ -12,6 +12,7 @@ class VerifyCsrfToken extends Middleware
      * @var array<int, string>
      */
     protected $except = [
-        //
+        // đây là những trang được truy cập vào api không bị csrf 
+        'http://*',
     ];
 }
