@@ -1,0 +1,1095 @@
+{
+	"info": {
+		"_postman_id": "acba2ab4-a55f-446d-86d4-e173688e8ead",
+		"name": "Testing26",
+		"description": "test api cho dự án phát triển web",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30242496",
+		"_collection_link": "https://martian-moon-583939.postman.co/workspace/New-Team-Workspace~a22f720f-b29f-4473-b10d-132e4ff16b10/collection/30242496-acba2ab4-a55f-446d-86d4-e173688e8ead?action=share&source=collection_link&creator=30242496"
+	},
+	"item": [
+		{
+			"name": "adminSystem",
+			"item": [
+				{
+					"name": "login",
+					"item": [
+						{
+							"name": "validation",
+							"item": [
+								{
+									"name": "loginSyntaxTesting1",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"pm.test(\"Response time is less than 200ms\", function () {",
+													"    pm.expect(pm.response.responseTime).to.be.below(200);",
+													"});",
+													"pm.test(\"Content-Type is present\", function () {",
+													"    pm.response.to.have.header(\"Content-Type\");",
+													"});",
+													"pm.test(\"Status code is 400\", function () {",
+													"    pm.response.to.have.status(400);",
+													"});",
+													"pm.test(\"Check if error message is correct\", function () {",
+													"    var jsonData = pm.response.json();",
+													"    pm.expect(jsonData.error).to.eql(\"email is required\");",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"password\": \"1212w12w345678\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/login",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"login"
+											]
+										},
+										"description": "### Login API\n\nĐăng nhập bỏ trống trường email\n\n#### Request Body\n\n`password` (string, required): The password of the useuseruser\n\n#### Response Mong đợi\n\nđăng nhập không thành công."
+									},
+									"response": []
+								},
+								{
+									"name": "loginSyntaxTesting2",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"pm.test(\"Response time is less than 200ms\", function () {",
+													"    pm.expect(pm.response.responseTime).to.be.below(200);",
+													"});",
+													"pm.test(\"Content-Type is present\", function () {",
+													"    pm.response.to.have.header(\"Content-Type\");",
+													"});",
+													"pm.test(\"Status code is 400\", function () {",
+													"    pm.response.to.have.status(400);",
+													"});",
+													"",
+													"pm.test(\"Check if error message is correct\", function () {",
+													"    var jsonData = pm.response.json();",
+													"    pm.expect(jsonData.error).to.eql(\"Password is required\");",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"admin@gmail.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/login",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"login"
+											]
+										},
+										"description": "### Login API\n\nBỏ trống trường password\n\n#### Request Body\n\n- `email` (string, required): The email of the user."
+									},
+									"response": []
+								},
+								{
+									"name": "loginSyntaxTesting3",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"pm.test(\"Response time is less than 200ms\", function () {",
+													"    pm.expect(pm.response.responseTime).to.be.below(200);",
+													"});",
+													"pm.test(\"Content-Type is present\", function () {",
+													"    pm.response.to.have.header(\"Content-Type\");",
+													"});",
+													"pm.test(\"Status code is 400\", function () {",
+													"    pm.response.to.have.status(400);",
+													"});",
+													"",
+													"pm.test(\"Check if error message is correct\", function () {",
+													"    var jsonData = pm.response.json();",
+													"    pm.expect(jsonData.error).to.eql(\"Email format is incorrect\");",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"admin@%#gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/login",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"login"
+											]
+										},
+										"description": "### Login API\n\nThêm Trường số điện thoại.\n\n#### Request Body\n\n- `email` (string, required): The email of the user.\n- `password` (string, required): The password of the user.\n- **phone : thêm trường số điện thoại**"
+									},
+									"response": []
+								},
+								{
+									"name": "loginSyntaxTesting4",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"pm.test(\"Response time is less than 200ms\", function () {",
+													"    pm.expect(pm.response.responseTime).to.be.below(200);",
+													"});",
+													"pm.test(\"Content-Type is present\", function () {",
+													"    pm.response.to.have.header(\"Content-Type\");",
+													"});",
+													"",
+													"var responseBody = pm.response.json();",
+													"",
+													"// Check if there is any error code returned",
+													"pm.test(\"Check error code (if any)\", function () {",
+													"    pm.expect(responseBody.errorCode).to.be.undefined;",
+													"});",
+													"",
+													"// Check if there is any error message returned",
+													"pm.test(\"Check error message (if any)\", function () {",
+													"    pm.expect(responseBody.errorMessage).to.be.undefined;",
+													"});",
+													"    ",
+													"",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\": \"0332258398\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/login",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"login"
+											]
+										},
+										"description": "### Login API\n\nThêm Trường số điện thoại.\n\n#### Request Body\n\n- `email` (string, required): The email of the user.\n- `password` (string, required): The password of the user.\n- **phone : thêm trường số điện thoại**"
+									},
+									"response": []
+								},
+								{
+									"name": "logout",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/logout",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"logout"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"description": "Test hợp thức dữ liệu đầu vào."
+						},
+						{
+							"name": "fucntional",
+							"item": [
+								{
+									"name": "loginFunctionalTesting1",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"pm.test(\"Response time is less than 200ms\", function () {",
+													"    pm.expect(pm.response.responseTime).to.be.below(200);",
+													"});",
+													"pm.test(\"Content-Type is present\", function () {",
+													"    pm.response.to.have.header(\"Content-Type\");",
+													"});",
+													"",
+													"pm.test(\"Check if error message is correct\", function () {",
+													"    var jsonData = pm.response.json();",
+													"    pm.expect(jsonData.error).to.eql(\"Password is incorrect\");",
+													"});",
+													"",
+													"",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"adminadmin1@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/login",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"login"
+											]
+										},
+										"description": "### Login API\n\nNhập sai email.\n\n#### Request Body\n\n- `email` (string, required): The email of the user.\n- `password` (string, required): The password of the user."
+									},
+									"response": []
+								},
+								{
+									"name": "loginFunctionalTesting2",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"",
+													"pm.test(\"Status test\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"pm.test(\"Response time is less than 200ms\", function () {",
+													"    pm.expect(pm.response.responseTime).to.be.below(200);",
+													"});",
+													"pm.test(\"Content-Type is present\", function () {",
+													"    pm.response.to.have.header(\"Content-Type\");",
+													"});",
+													"",
+													"",
+													"pm.test(\"Check if error message is correct\", function () {",
+													"    var jsonData = pm.response.json();",
+													"    pm.expect(jsonData.error).to.eql(\"Email does not exist in the system\");",
+													"});",
+													"    ",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"123456712345673123456738\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/login",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"login"
+											]
+										},
+										"description": "### Login API\n\nNhập sai password.\n\n#### Request Body\n\n- `email` (string, required): The email of the user.\n- `password` (string, required): The password of the user."
+									},
+									"response": []
+								},
+								{
+									"name": "loginFunctionalTesting3",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"pm.test(\"Response time is less than 200ms\", function () {",
+													"    pm.expect(pm.response.responseTime).to.be.below(200);",
+													"});",
+													"pm.test(\"Content-Type is present\", function () {",
+													"    pm.response.to.have.header(\"Content-Type\");",
+													"});",
+													"",
+													"pm.test(\"Response contains token\", function () {",
+													"    var jsonData = pm.response.json();",
+													"    pm.expect(jsonData).to.have.property('token');",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/login",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"login"
+											]
+										},
+										"description": "### Login API\n\nNhập đúng email và password.\n\n#### Request Body\n\n- `email` (string, required): The email of the user.\n- `password` (string, required): The password of the user."
+									},
+									"response": []
+								},
+								{
+									"name": "logout",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/logout",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"logout"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"description": "Test chức năng của API."
+						}
+					]
+				},
+				{
+					"name": "addcompanyleader",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "testC1",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "testC1@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "0332258398",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "144 xuan thuy cau giay ha noi",
+									"type": "text"
+								},
+								{
+									"key": "details",
+									"value": "dai hoc quoc gia ha noi",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/home/thanhyk14/Pictures/Screenshots/Screenshot from 2023-11-28 08-40-51.png"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/companyLeader",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"companyLeader"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getComapyLeader",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/companyLeader",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"companyLeader"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "showCompanyLeader",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/companyLeader/3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"companyLeader",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editCompanyLeader",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"companyLeaderUpdate\",\r\n    \"email\": \"update@gmail.com\",\r\n    \"password\": \"123456781\",\r\n    \"password_confirmation\": \"123456781\",\r\n    \"phone\": \"0332258398\",\r\n    \"address\": \"144 Xuan Thuy, Cau Giay, Ha Noi\",\r\n    \"details\": \"Dai Hoc Quoc Gia Ha Noi\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/companyLeader/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"companyLeader",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCompanyLeader",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/companyLeader/7",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"companyLeader",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Các chức năng của vị trí Admin"
+		},
+		{
+			"name": "companyLeader",
+			"item": [
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"companyLeader@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "aggregationPointAdd",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// chi co companyleader moi co chuc nang nay.\r\n  {\r\n    \"name\": \"Công ty ABC\",\r\n    \"code\": \"HCM01\",\r\n    \"address\": \"1 Đường ABC, Quận XYZ, Thành phố HCM\",\r\n    \"phone\": \"0123-456-789\",\r\n    \"email\": \"cd@example.com\",\r\n    \"operatingHours\": \"8:00 AM - 5:00 PM\",\r\n    \"status\": \"Hoạt động\",\r\n    \"notes\": \"Ghi chú về công ty cd\"\r\n  }\r\n//   {\r\n//     \"name\": \"Công ty XYZ\",\r\n//     \"code\": \"HCM02\",\r\n//     \"address\": \"2 Đường XYZ, Quận ABC, Thành phố HCM\",\r\n//     \"phone\": \"0987-654-321\",\r\n//     \"email\": \"xyz@example.com\",\r\n//     \"operatingHours\": \"9:00 AM - 6:00 PM\",\r\n//     \"status\": \"Hoạt động\",\r\n//     \"notes\": \"Ghi chú về công ty xyz\"\r\n//   }\r\n//   {\r\n//     \"name\": \"Công ty QWE\",\r\n//     \"code\": \"HCM03\",\r\n//     \"address\": \"3 Đường QWE, Quận UVW, Thành phố HCM\",\r\n//     \"phone\": \"0456-789-123\",\r\n//     \"email\": \"qwe@example.com\",\r\n//     \"operatingHours\": \"7:00 AM - 4:00 PM\",\r\n//     \"status\": \"Hoạt động\",\r\n//     \"notes\": \"Ghi chú về công ty qwe\"\r\n//   }\r\n//   {\r\n//     \"name\": \"Công ty MNO\",\r\n//     \"code\": \"HCM04\",\r\n//     \"address\": \"4 Đường MNO, Quận DEF, Thành phố HCM\",\r\n//     \"phone\": \"0321-987-654\",\r\n//     \"email\": \"mno@example.com\",\r\n//     \"operatingHours\": \"8:30 AM - 5:30 PM\",\r\n//     \"status\": \"Hoạt động\",\r\n//     \"notes\": \"Ghi chú về công ty mno\"\r\n//   }\r\n//   {\r\n//     \"name\": \"Công ty LMN\",\r\n//     \"code\": \"HCM05\",\r\n//     \"address\": \"5 Đường LMN, Quận GHI, Thành phố HCM\",\r\n//     \"phone\": \"0765-432-109\",\r\n//     \"email\": \"lmn@example.com\",\r\n//     \"operatingHours\": \"8:00 AM - 5:00 PM\",\r\n//     \"status\": \"Hoạt động\",\r\n//     \"notes\": \"Ghi chú về công ty lmn\"\r\n//   }\r\n//   {\r\n//     \"name\": \"Công ty PQR\",\r\n//     \"code\": \"HCM06\",\r\n//     \"address\": \"6 Đường PQR, Quận JKL, Thành phố HCM\",\r\n//     \"phone\": \"0234-567-890\",\r\n//     \"email\": \"pqr@example.com\",\r\n//     \"operatingHours\": \"9:00 AM - 6:00 PM\",\r\n//     \"status\": \"Hoạt động\",\r\n//     \"notes\": \"Ghi chú về công ty pqr\"\r\n//   }\r\n//   {\r\n//     \"name\": \"Công ty UVW\",\r\n//     \"code\": \"HCM07\",\r\n//     \"address\": \"7 Đường UVW, Quận NOP, Thành phố HCM\",\r\n//     \"phone\": \"0987-654-321\",\r\n//     \"email\": \"uvw@example.com\",\r\n//     \"operatingHours\": \"7:30 AM - 4:30 PM\",\r\n//     \"status\": \"Hoạt động\",\r\n//     \"notes\": \"Ghi chú về công ty uvw\"\r\n//   }\r\n//   {\r\n//     \"name\": \"Công ty DEF\",\r\n//     \"code\": \"HCM08\",\r\n//     \"address\": \"8 Đường DEF, Quận MNO, Thành phố HCM\",\r\n//     \"phone\": \"0456-789-123\",\r\n//     \"email\": \"def@example.com\",\r\n//     \"operatingHours\": \"8:00 AM - 5:00 PM\",\r\n//     \"status\": \"Hoạt động\",\r\n//     \"notes\": \"Ghi chú về công ty def\"\r\n//   }\r\n//   {\r\n//     \"name\": \"Công ty GHI\",\r\n//     \"code\": \"HCM09\",\r\n//     \"address\": \"9 Đường GHI, Quận PQR, Thành phố HCM\",\r\n//     \"phone\": \"0321-987-654\",\r\n//     \"email\": \"ghi@example.com\",\r\n//     \"operatingHours\": \"9:00 AM - 6:00 PM\",\r\n//     \"status\": \"Hoạt động\",\r\n//     \"notes\": \"Ghi chú về công ty ghi\"\r\n//   }\r\n//   {\r\n//     \"name\": \"Công ty ABC\",\r\n//     \"code\": \"HN01\",testcompanyleader3update\r\n//     \"address\": \"1 Đường ABC, Quận XYZ, Thành phố Hà Nội\",\r\n//     \"phone\": \"0123-456-789\",\r\n//     \"email\": \"cd@example.com\",\r\n//     \"operatingHours\": \"8:00 AM - 5:00 PM\",\r\n//     \"status\": \"Hoạt động\",\r\n//     \"notes\": \"Ghi chú về công ty cd\"\r\n//   }\r\n//   {\r\n//     \"name\": \"Công ty XYZ\",\r\n//     \"code\": \"HN02\",\r\n//     \"address\": \"2 Đường XYZ, Quận ABC, Thành phố Hà Nội\",\r\n//     \"phone\": \"0987-654-321\",\r\n//     \"email\": \"xyz@example.com\",\r\n//     \"operatingHours\": \"9:00 AM - 6:00 PM\",\r\n//     \"status\": \"Hoạt động\",\r\n//     \"notes\": \"Ghi chú về công ty xyz\"\r\n//   }\r\n//   {\r\n//     \"name\": \"Công ty QWE\",\r\n//     \"code\": \"HN03\",\r\n//     \"address\": \"3 Đường QWE, Quận UVW, Thành phố Hà Nội\",\r\n//     \"phone\": \"0456-789-123\",\r\n//     \"email\": \"qwe@example.com\",\r\n//     \"operatingHours\": \"7:00 AM - 4:00 PM\",\r\n//     \"status\": \"Hoạt động\",\r\n//     \"notes\": \"Ghi chú về công ty qwe\"\r\n//   }\r\n//   {\r\n//     \"name\": \"Công ty MNO\",\r\n//     \"code\": \"HN04\",\r\n//     \"address\": \"4 Đường MNO, Quận DEF, Thành phố Hà Nội\",\r\n//     \"phone\": \"0321-987-654\",\r\n//     \"email\": \"mno@example.com\",\r\n//     \"operatingHours\": \"8:30 AM - 5:30 PM\",\r\n//     \"status\": \"Hoạt động\",\r\n//     \"notes\": \"Ghi chú về công ty mno\"\r\n//   }\r\n//   {\r\n//     \"name\": \"Công ty LMN\",\r\n//     \"code\": \"HN05\",\r\n//     \"address\": \"5 Đường LMN, Quận GHI, Thành phố Hà Nội\",\r\n//     \"phone\": \"0765-432-109\",\r\n//     \"email\": \"lmn@example.com\",\r\n//     \"operatingHours\": \"8:00 AM - 5:00 PM\",\r\n//     \"status\": \"Hoạt động\",\r\n//     \"notes\": \"Ghi chú về công ty lmn\"\r\n//   }\r\n//   {\r\n//     \"name\": \"Công ty PQR\",\r\n//     \"code\": \"HN06\",\r\n//     \"address\": \"6 Đường PQR, Quận JKL, Thành phố Hà Nội\",\r\n//     \"phone\": \"0234-567-890\",\r\n//     \"email\": \"pqr@example.com\",\r\n//     \"operatingHours\": \"9:00 AM - 6:00 PM\",\r\n//     \"status\": \"Hoạt động\",\r\n//     \"notes\": \"Ghi chú về công ty pqr\"\r\n//   }\r\n//   {\r\n//     \"name\": \"Công ty UVW\",\r\n//     \"code\": \"HN07\",\r\n//     \"address\": \"7 Đường UVW, Quận NOP, Thành phố Hà Nội\",\r\n//     \"phone\": \"0987-654-321\",\r\n//     \"email\": \"uvw@example.com\",\r\n//     \"operatingHours\": \"7:30 AM - 4:30 PM\",\r\n//     \"status\": \"Hoạt động\",\r\n//     \"notes\": \"Ghi chú về công ty uvw\"\r\n//   }\r\n//   {\r\n//     \"name\": \"Công ty DEF\",\r\n//     \"code\": \"HN08\",\r\n//     \"address\": \"8 Đường DEF, Quận MNO, Thành phố Hà Nội\",\r\n//     \"phone\": \"0456-789-123\",\r\n//     \"email\": \"def@example.com\",\r\n//     \"operatingHours\": \"8:00 AM - 5:00 PM\",\r\n//     \"status\": \"Hoạt động\",\r\n//     \"notes\": \"Ghi chú về công ty def\"\r\n//   }\r\n//   {\r\n//     \"name\": \"Công ty GHI\",\r\n//     \"code\": \"HN09\",\r\n//     \"address\": \"9 Đường GHI, Quận PQR, Thành phố Hà Nội\",\r\n//     \"phone\": \"0321-987-654\",\r\n//     \"email\": \"ghi@example.com\",\r\n//     \"operatingHours\": \"9:00 AM - 6:00 PM\",\r\n//     \"status\": \"Hoạt động\",\r\n//     \"notes\": \"Ghi chú về công ty ghi\"\r\n//   }\r\n// {\r\n//     \"name\": \"Công ty NOP\",\r\n//     \"code\": \"HN10\",\r\n//     \"address\": \"10 Đường NOP, Quận LMN, Thành phố Hà Nội\",\r\n//     \"phone\": \"0765-432-109\",\r\n//     \"email\": \"nop@example.com\",\r\n//     \"operatingHours\": \"8:30 AM - 5:30 PM\",\r\n//     \"status\": \"Hoạt động\",\r\n//     \"notes\": \"Ghi chú về công ty nop\"\r\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/aggregationPoint",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"aggregationPoint"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "aggregationPointGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/aggregationPoint",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"aggregationPoint"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "aggregationPointUpdate",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// chi co companyleader moi co chuc nang nay.\r\n{\r\n    \"name\": \"Công ty ABC -> XYZ -> update\",\r\n    \"code\": \"HN_01201220122 -> update\",\r\n    \"address\": \"1 Đường ABC, Quận XYZ, Thành phố HCM -> update\",\r\n    \"phone\": \"0123-456-789 -> update \",\r\n    \"email\": \"cd@example.com -> update \",\r\n    \"operatingHours\": \"8:00 AM - 5:00 PM -> update\",\r\n    \"status\": \"Hoạt động -> update\",\r\n    \"notes\": \"Ghi chú về công ty cd -> update\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/aggregationPoint/3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"aggregationPoint",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "aggregationPointDelete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/aggregationPoint/5",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"aggregationPoint",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "aggregationHeadAdd",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// onlyadmin chi co tai khoan admin he thong moi co quyen\r\n//01. Tao them companyleader\r\n{\r\n    \"name\": \"testPointHeadAggregation1\",\r\n    \"email\": \"testP3ointHeadAggregation1@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"password_confirmation\": \"12345678\",\r\n    \"aggregation_point_id\": \"1\",\r\n    \"phone\": \"0332258398\",\r\n    \"address\": \"144 xuan thuy cau giay ha noi\",\r\n    \"details\": \"dai hoc quoc gia ha noi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/aggregationHead",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"aggregationHead"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "aggregationHeadGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/aggregationHead",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"aggregationHead"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "aggregationHeadUpdate",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// onlyadmin chi co tai khoan admin he thong moi co quyen\r\n//01. Tao them companyleader\r\n{\r\n    \"name\": \"companyleader -> update\",\r\n    \"email\": \"testaggregationHea2d@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"password_confirmation\": \"12345678\",\r\n    \"aggregation_point_id\": \"1\",\r\n    \"phone\": \"0332258398\",\r\n    \"address\": \"144 xuan thuy cau giay ha noi\",\r\n    \"details\": \"dai hoc quoc gia ha noi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/aggregationHead/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"aggregationHead",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "aggregationHeadDelete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/aggregationHead/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"aggregationHead",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transactionPointAdd",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// chi co companyleader moi co chuc nang nay.\r\n{\r\n  \"name\": \"diem giao dich\",\r\n  \"code\": \"H2N001\",\r\n  \"address\": \"1 Đường ABC, Quận XYZ, Thành phố HCM\",\r\n  \"phone\": \"0123-456-789\",\r\n  \"email\": \"cd@example.com\",\r\n  \"operatingHours\": \"8:00 AM - 5:00 PM\",\r\n  \"aggregation_point_id\": \"1\",\r\n  \"status\": \"Hoạt động\",\r\n  \"notes\": \"Ghi chú về công ty cd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/transactionPoint",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"transactionPoint"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transactionPointGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/transactionPoint",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"transactionPoint"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transactionPointUpdate",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// chi co companyleader moi co chuc nang nay.\r\n{\r\n  \"name\": \"diem giao dich -> update\",\r\n  \"code\": \"H2N001\",\r\n  \"address\": \"1 Đường ABC, Quận XYZ, Thành phố HCM\",\r\n  \"phone\": \"0123-456-789\",\r\n  \"email\": \"cd@example.com\",\r\n  \"operatingHours\": \"8:00 AM - 5:00 PM\",\r\n  \"aggregation_point_id\": \"1\",\r\n  \"status\": \"Hoạt động\",\r\n  \"notes\": \"Ghi chú về công ty cd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/transactionPoint/3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"transactionPoint",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transactionPointDelete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/transactionPoint/3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"transactionPoint",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transactionHeadAdd",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// onlyadmin chi co tai khoan admin he thong moi co quyen\r\n//01. Tao them companyleader\r\n{\r\n    \"name\": \"testPointHeadTransaction2\",\r\n    \"email\": \"testPointHeadTransaction2@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"password_confirmation\": \"12345678\",\r\n    \"transaction_point_id\": \"1\",\r\n    \"phone\": \"0332258398\",\r\n    \"address\": \"144 xuan thuy cau giay ha noi\",\r\n    \"details\": \"dai hoc quoc gia ha noi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/transactionHead",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"transactionHead"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transactionHeadGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/aggregationHead",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"aggregationHead"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transactionHeadUpdate",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"companyleader -> update\",\n    \"email\": \"testaggregationHea2d@gmail.com\",\n    \"password\": \"12345678\",\n    \"password_confirmation\": \"12345678\",\n    \"aggregation_point_id\": \"1\",\n    \"phone\": \"0332258398\",\n    \"address\": \"144 xuan thuy cau giay ha noi\",\n    \"details\": \"dai hoc quoc gia ha noi\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/aggregationHead/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"aggregationHead",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/logout",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

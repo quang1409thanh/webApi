@@ -1,0 +1,27 @@
+{
+	"id": "8bc1b504-81d2-474e-8158-7fb99324037e",
+	"values": [
+		{
+			"key": "baseUrl",
+			"value": "http://127.0.0.1:80",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "api_token",
+			"value": "eyJpdiI6InlVV1lVZGJOR1dIVTZxSXJWZTROckE9PSIsInZhbHVlIjoiOUJWbkJ0d2hZeHR2MEN4WThEY2pWc3JHbng0bmJqT1NOeWc1VGhTOWpZU0h6M0tIMWdjdG5zc1JYRU5FNTZ1U1J0VE1lWjVPTnRWVUFZazUxc2ZYN012Tko2MXVTM1k2M2JRa1djRGZUNC9sNEpoUDZ5MHpmNnFGQ1BzTHk0S0ciLCJtYWMiOiI4MDg1MjQ4ZGJiMzczNDQ0Njk5OWJkYjJkNmJjNGI5MzZiNGI1ODJlMjM0NjA2YmU5MzEzZjhjZmQ0YzZkZjg5IiwidGFnIjoiIn0%3D",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "args",
+			"value": "",
+			"type": "any",
+			"enabled": false
+		}
+	],
+	"name": "Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2023-11-30T21:30:51.545Z",
+	"_postman_exported_using": "Postman/10.18.11"
+}

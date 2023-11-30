@@ -68,13 +68,14 @@ pipeline {
             }
         }
 
-
-        stage('Run Tests') {
+        stage('Run Newman Tests') {
             steps {
-                // Chạy các bài kiểm thử Laravel
-                sh 'php artisan test'
+                script {
+                    sh 'newman run Testing26.postman_collection.json -e workspace.postman_globals.json'
+                }
             }
         }
+
     }
 
     post {
