@@ -71,7 +71,7 @@ pipeline {
         stage('Run Newman Tests') {
             steps {
                 script {
-                    sh 'newman run Testing26.postman_collection.json -e workspace.postman_globals.json'
+                    sh 'newman run Testing26.postman_collection.json -e workspace.postman_globals.json -r htmlextra --reporter-htmlextra-export newman/myHTMLreport.html'
                 }
             }
         }
