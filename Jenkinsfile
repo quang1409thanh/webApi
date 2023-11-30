@@ -1,40 +1,58 @@
 pipeline {
     agent any
+
     environment {
-        DB_HOST = credentials('database-host') // Lấy giá trị từ Jenkins Credentials
-        DB_USERNAME = credentials('database-username')
-        DB_PASSWORD = credentials('database-password')
-        // Các biến khác...
+        DOCKER_COMPOSE_VERSION = '1.29.2'
     }
 
     stages {
         stage('Checkout') {
             steps {
-                // Bước này để Jenkins checkout mã nguồn từ repository
                 checkout scm
             }
         }
-        
-        stage('Install Dependencies') {
-            steps {
-                // Bước này để cài đặt các dependency của Laravel
-                sh 'composer install'
-            }
-        }
 
-        stage('Run Tests') {
+        stage('Install Docker Compose') {
             steps {
-                // Bước này để chạy các bài kiểm thử
-                sh 'php artisan test'
+                script {
+                    // Cài đặt Docker Compose
+                    sh "curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose"
+                    sh 'chmod +x /usr/local/bin/docker-compose'
+                }
             }
         }
 
         stage('Build and Deploy') {
             steps {
-                // Bước này để xây dựng ứng dụng và triển khai nó
-                sh 'php artisan key:generate'
-                sh 'docker-compose build'
-                sh 'docker-compose up -d'
+                script {
+                    // Copy .env.example to .env
+                    sh 'cp .env.example .env'
+                    
+                    // Cài đặt composer dependencies
+                    sh 'composer install'
+                    
+                    // Generate Laravel application key
+                    sh 'php artisan key:generate'
+                    
+                    // Build and run Docker Compose
+                    sh 'docker-compose up -d'
+                }
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                // Chạy các bài kiểm thử Laravel
+                sh 'php artisan test'
+            }
+        }
+    }
+
+    post {
+        always {
+            // Dừng và xóa container sau khi chạy xong
+            script {
+                sh 'docker-compose down'
             }
         }
     }
