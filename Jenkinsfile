@@ -65,6 +65,7 @@ pipeline {
                 script {
                     sh 'sudo docker exec -i dbForPostman mysql -u root -proot -e "USE postmanTest; SHOW TABLES;"'
                     sh 'sudo docker-compose up -d'
+                    sh 'sudo docker ps'
                 }
 
             }
@@ -85,7 +86,6 @@ pipeline {
             // Dừng và xóa container sau khi chạy xong
             script {
                 sh 'sudo docker-compose down'
-                sh 'sudo docker ps'
 
             }
         }
