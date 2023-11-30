@@ -46,7 +46,7 @@ pipeline {
         stage('Check before Database') {
             steps {
                 script {
-                    sh 'sudo docker exec dbForPostman mysql -u root -proot -e "SHOW DATABASES;"'
+                    sh 'docker exec -it dbForPostman mysql -u root -proot -e "DROP DATABASE IF EXISTS postmanTest;"'
                 }
             }
         }
