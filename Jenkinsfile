@@ -75,6 +75,7 @@ pipeline {
             steps {
                 script {
                     sh 'newman run Testing26.postman_collection.json -e workspace.postman_globals.json'
+                    sh 'sudo docker ps'
                 }
             }
         }

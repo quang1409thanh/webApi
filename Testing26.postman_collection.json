@@ -18,6 +18,79 @@
 							"name": "validation",
 							"item": [
 								{
+									"name": "register",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "admin",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "admin@gmail.com",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "12345678",
+													"type": "text"
+												},
+												{
+													"key": "password_confirmation",
+													"value": "12345678",
+													"type": "text"
+												},
+												{
+													"key": "phone",
+													"value": "0332258398",
+													"type": "text"
+												},
+												{
+													"key": "address",
+													"value": "144 xuân thủy cầu giấy hà nội ",
+													"type": "text"
+												},
+												{
+													"key": "details",
+													"value": "đây là tài khoản admin hệ thống",
+													"type": "text"
+												},
+												{
+													"key": "position",
+													"value": "admin",
+													"type": "text"
+												},
+												{
+													"key": "birthday",
+													"value": "20030914",
+													"type": "text"
+												},
+												{
+													"key": "photo",
+													"type": "file",
+													"src": "/home/thanhyk14/Pictures/Screenshots/Screenshot from 2023-11-28 08-40-26.png"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/register",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"register"
+											]
+										}
+									},
+									"response": []
+								},
+								{
 									"name": "loginSyntaxTesting1",
 									"event": [
 										{
@@ -228,6 +301,7 @@
 													"pm.test(\"Response time is less than 200ms\", function () {",
 													"    pm.expect(pm.response.responseTime).to.be.below(200);",
 													"});",
+													"",
 													"pm.test(\"Content-Type is present\", function () {",
 													"    pm.response.to.have.header(\"Content-Type\");",
 													"});",
@@ -243,7 +317,6 @@
 													"pm.test(\"Check error message (if any)\", function () {",
 													"    pm.expect(responseBody.errorMessage).to.be.undefined;",
 													"});",
-													"    ",
 													"",
 													""
 												],
@@ -600,13 +673,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/companyLeader",
+							"raw": "{{baseUrl}}/api/companyLeader/1",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"api",
-								"companyLeader"
+								"companyLeader",
+								"1"
 							]
 						}
 					},
@@ -618,14 +692,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/companyLeader/3",
+							"raw": "{{baseUrl}}/api/companyLeader/1",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"api",
 								"companyLeader",
-								"3"
+								"1"
 							]
 						}
 					},
@@ -702,7 +776,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"companyLeader@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}\r\n",
+							"raw": "{\r\n    \"email\": \"testC1@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -782,14 +856,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/aggregationPoint/3",
+							"raw": "{{baseUrl}}/api/aggregationPoint/1",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"api",
 								"aggregationPoint",
-								"3"
+								"1"
 							]
 						}
 					},
@@ -874,14 +948,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/aggregationHead/2",
+							"raw": "{{baseUrl}}/api/aggregationHead/1",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"api",
 								"aggregationHead",
-								"2"
+								"1"
 							]
 						}
 					},
