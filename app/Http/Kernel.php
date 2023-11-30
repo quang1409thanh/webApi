@@ -40,11 +40,13 @@ class Kernel extends HttpKernel
 
         'api' => [
             \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
-            \Illuminate\Routing\Middleware\ThrottleRequests::class.':api',
+            \Illuminate\Routing\Middleware\ThrottleRequests::class . ':api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \Illuminate\Session\Middleware\StartSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
-            \Illuminate\View\Middleware\ShareErrorsFromSession::class,    
+            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            \App\Http\Middleware\LogApiRequests::class,
+            // \App\Http\Middleware\CheckUserRole::class,
         ],
     ];
 
@@ -67,5 +69,9 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \App\Http\Middleware\EnsureEmailIsVerified::class,
+        // 'role' => \App\Http\Middleware\CheckUserRole::class,
+    ];
+    protected $routeMiddleware = [
+        'role' => \App\Http\Middleware\CheckUserRole::class,
     ];
 }
