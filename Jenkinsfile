@@ -75,11 +75,10 @@ pipeline {
             steps {
                 script {
                     sh 'newman run Testing26.postman_collection.json -e workspace.postman_globals.json'
-                    sh 'sudo docker ps'
                 }
             }
         }
-        tage('Check Server') {
+        tage('Check serve') {
             steps {
                 script {
                     sh 'sudo docker ps'
