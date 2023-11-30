@@ -47,6 +47,7 @@ pipeline {
             steps {
                 script {
                     sh 'sudo docker exec -i dbForPostman mysql -u root -proot -e "DROP DATABASE IF EXISTS postmanTest;"'
+                    sh 'sudo docker exec -i dbForPostman mysql -u root -proot -e "CREATE DATABASE postmanTest;"'
                 }
             }
         }
