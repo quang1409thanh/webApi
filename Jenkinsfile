@@ -43,6 +43,13 @@ pipeline {
                 }
             }
         }
+        stage('Check before Database') {
+            steps {
+                script {
+                    sh 'sudo docker exec dbForPostman mysql -u root -proot -e "SHOW DATABASES;"'
+                }
+            }
+        }
 
         stage('Setup Application') {
             steps {
@@ -52,10 +59,10 @@ pipeline {
             }
         }
 
-        stage('Check Database') {
+        stage('Check after Database') {
             steps {
                 script {
-                    sh 'sudo docker exec dbForPostman mysql -u root -proot -e "SHOW DATABASES;"'
+                    sh 'sudo docker exec -it dbForPostman mysql -u root -proot -e "USE postmanTest; SHOW TABLES;"'
                 }
             }
         }
