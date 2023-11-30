@@ -18,6 +18,7 @@ services:
       - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
       - app-network
+    # command: bash -c "while ! mysqladmin ping -hdb --silent; do sleep 1; done; php artisan key:generate && php artisan config:cache && php artisan migrate"
 
   #Nginx Service
   webserver:
@@ -64,6 +65,7 @@ services:
       - ./mysql/my.cnf:/etc/mysql/my.cnf
     networks:
       - app-network
+    # command: bash -c "while ! mysqladmin ping --silent; do sleep 1; done; mysql -u root -proot -e \"GRANT ALL ON postmanTest.* TO 'root'@'%' IDENTIFIED BY '140903'; FLUSH PRIVILEGES;\""
 
 #Docker Networks
 networks:
