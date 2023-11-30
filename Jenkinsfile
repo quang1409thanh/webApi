@@ -85,6 +85,8 @@ pipeline {
             // Dừng và xóa container sau khi chạy xong
             script {
                 sh 'sudo docker-compose down'
+                sh 'sudo docker ps'
+
             }
         }
     }
