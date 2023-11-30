@@ -52,6 +52,15 @@ pipeline {
             }
         }
 
+        stage('Check Database') {
+            steps {
+                script {
+                    sh 'sudo docker exec dbForPostman mysql -u root -proot -e "SHOW DATABASES;"'
+                }
+            }
+        }
+
+
         stage('Run Tests') {
             steps {
                 // Chạy các bài kiểm thử Laravel
