@@ -64,7 +64,9 @@ pipeline {
             steps {
                 script {
                     sh 'sudo docker exec -i dbForPostman mysql -u root -proot -e "USE postmanTest; SHOW TABLES;"'
+                    sh 'sudo docker-compose up -d'
                 }
+
             }
         }
 
