@@ -78,7 +78,7 @@ pipeline {
                 }
             }
         }
-        tage('Check serve') {
+        stage('Check serve') {
             steps {
                 script {
                     sh 'sudo docker ps'
