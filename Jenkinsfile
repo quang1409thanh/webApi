@@ -1,6 +1,12 @@
 pipeline {
     agent any
-    
+    environment {
+        DB_HOST = credentials('database-host') // Lấy giá trị từ Jenkins Credentials
+        DB_USERNAME = credentials('database-username')
+        DB_PASSWORD = credentials('database-password')
+        // Các biến khác...
+    }
+
     stages {
         stage('Checkout') {
             steps {
