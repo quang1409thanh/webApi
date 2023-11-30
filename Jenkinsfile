@@ -35,7 +35,7 @@ pipeline {
                     sh 'php artisan key:generate'
                     
                     // Build and run Docker Compose
-                    sh 'docker-compose up -d'
+                    sh 'sudo docker-compose up -d'
                 }
             }
         }
@@ -52,7 +52,7 @@ pipeline {
         always {
             // Dừng và xóa container sau khi chạy xong
             script {
-                sh 'docker-compose down'
+                sh 'sudo docker-compose down'
             }
         }
     }
