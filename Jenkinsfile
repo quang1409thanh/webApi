@@ -31,18 +31,15 @@ pipeline {
                     // Cài đặt composer dependencies
                     sh 'composer install'
                     
-                    // Generate Laravel application key
-                    sh 'php artisan key:generate'
-                    
                     // Build and run Docker Compose
                     sh 'sudo docker-compose up -d'
                 }
             }
         }
-stage('Setup Database') {
+        stage('Setup Database') {
             steps {
                 script {
-                    sh 'docker exec dbForPostman mysql -u root -proot -e "GRANT ALL ON postmanTest.* TO \'root\'@\'%\' IDENTIFIED BY \'140903\'; FLUSH PRIVILEGES;"'
+                    sh 'sudo docker exec dbForPostman mysql -u root -proot -e "GRANT ALL ON postmanTest.* TO \'root\'@\'%\' IDENTIFIED BY \'140903\'; FLUSH PRIVILEGES;"'
                 }
             }
         }
@@ -50,7 +47,7 @@ stage('Setup Database') {
         stage('Setup Application') {
             steps {
                 script {
-                    sh 'docker exec appForPostman bash -c "php artisan key:generate && php artisan config:cache && php artisan migrate"'
+                    sh 'sudo docker exec appForPostman bash -c "php artisan key:generate && php artisan config:cache && php artisan migrate"'
                 }
             }
         }
