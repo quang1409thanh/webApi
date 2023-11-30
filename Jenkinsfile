@@ -39,6 +39,21 @@ pipeline {
                 }
             }
         }
+stage('Setup Database') {
+            steps {
+                script {
+                    sh 'docker exec dbForPostman mysql -u root -proot -e "GRANT ALL ON postmanTest.* TO \'root\'@\'%\' IDENTIFIED BY \'140903\'; FLUSH PRIVILEGES;"'
+                }
+            }
+        }
+
+        stage('Setup Application') {
+            steps {
+                script {
+                    sh 'docker exec appForPostman bash -c "php artisan key:generate && php artisan config:cache && php artisan migrate"'
+                }
+            }
+        }
 
         stage('Run Tests') {
             steps {
