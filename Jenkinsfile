@@ -79,6 +79,13 @@ pipeline {
                 }
             }
         }
+        tage('Check Server') {
+            steps {
+                script {
+                    sh 'sudo docker ps'
+                }
+            }
+        }
 
     }
 
@@ -87,7 +94,6 @@ pipeline {
             // Dừng và xóa container sau khi chạy xong
             script {
                 sh 'sudo docker-compose down'
-
             }
         }
     }
