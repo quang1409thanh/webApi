@@ -8,15 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class CompanyLeader extends Model
 {
     use HasFactory;
-    protected $fillable = ['user_id', 'phone', 'address', 'details'];
 
-    // Định nghĩa mối quan hệ với User
-    public function user()
+    protected $fillable = ['user_id', 'phone', 'details'];
+
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function images()
+    public function address(): \Illuminate\Database\Eloquent\Relations\MorphOne
+    {
+        return $this->morphOne(Address::class, 'addressable');
+    }
+
+    public function images(): \Illuminate\Database\Eloquent\Relations\MorphMany
     {
         return $this->morphMany(Image::class, 'imageable');
     }

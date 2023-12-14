@@ -11,7 +11,6 @@ class AdminSystem extends Model
     protected $fillable = [
         'user_id',
         'phone',
-        'address',
         'details',
         'position',
         'birthday',
@@ -26,4 +25,9 @@ class AdminSystem extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function address(): \Illuminate\Database\Eloquent\Relations\MorphOne
+    {
+        return $this->morphOne(Address::class, 'addressable');
+    }
+
 }

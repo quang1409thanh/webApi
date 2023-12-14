@@ -20,13 +20,10 @@ return new class extends Migration
             $table->enum('type', ['shipment', 'delivery'])->default('shipment');
             $table->enum('status', ['unread', 'read'])->default('unread');
             $table->timestamps();
-        
             // Khóa ngoại đến người gửi nguoi gui nhan vien
             $table->foreign('sender_id')->references('id')->on('users')->onDelete('cascade');
-        
             // Khóa ngoại đến người nhận nhan vien.
             $table->foreign('receiver_id')->references('id')->on('users')->onDelete('cascade');
-        
             // Khóa ngoại đến đơn hàng
             $table->foreign('good_id')->references('id')->on('goods')->onDelete('cascade');
         });

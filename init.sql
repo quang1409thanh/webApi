@@ -1,2 +1,0 @@
-GRANT ALL ON postmanTest.* TO 'root'@'%' IDENTIFIED BY '140903';
-FLUSH PRIVILEGES;

@@ -12,22 +12,28 @@ class TransactionPoint extends Model
     protected $fillable = [
         'name',
         'code',
-        'address',
         'phone',
         'email',
         'operatingHours',
         'aggregation_point_id',
         'status',
         'notes',
+        'capacity',
+        'current_load',
     ];
 
+    public function address(): \Illuminate\Database\Eloquent\Relations\MorphOne
+    {
+        return $this->morphOne(Address::class, 'addressable');
+    }
+
     // moi them luc nay 21/11/2023
-    public function transactionPointHead()
+    public function transactionPointHead(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(TransactionPointHead::class);
     }
 
-    public function aggregationPoint()
+    public function aggregationPoint(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(AggregationPoint::class);
     }
@@ -35,16 +41,17 @@ class TransactionPoint extends Model
     // goods
     public function sentGoods()
     {
-        return $this->hasMany(Goods::class, 'sending_transaction_point_id');
+        return $this->hasMany(Good::class, 'sending_transaction_point_id');
     }
 
     public function receivedGoods()
     {
-        return $this->hasMany(Goods::class, 'receiving_transaction_point_id');
+        return $this->hasMany(Good::class, 'receiving_transaction_point_id');
     }
 
     public function currentLocationGoods()
     {
-        return $this->hasMany(Goods::class, 'current_location_id');
+        return $this->hasMany(Good::class, 'current_location_id');
     }
+
 }

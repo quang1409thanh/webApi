@@ -15,16 +15,12 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->unsignedBigInteger('aggregation_point_id'); // Khóa ngoại đến bảng điểm tập kết
+            $table->unsignedBigInteger('aggregation_point_id');
             $table->string('name');
             $table->string('position');
-            // Thêm các trường khác mô tả nhân viên nếu cần
             $table->string('phone');
-            $table->string('address');
             $table->string('details');
             $table->timestamps();
-
-            // Khóa ngoại đến bảng điểm tập kết
             $table->foreign('aggregation_point_id')->references('id')->on('aggregation_points')->onDelete('cascade');
         });
     }

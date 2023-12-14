@@ -14,18 +14,20 @@ class AggregationPointEmployee extends Model
         'name',
         'position',
         'phone',
-        'address',
         'details',
     ];
+    public function address(): \Illuminate\Database\Eloquent\Relations\MorphOne
+    {
+        return $this->morphOne(Address::class, 'addressable');
+    }
 
-    public function user()
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function aggregationPoint()
+    public function aggregationPoint(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(AggregationPoint::class);
     }
-    
 }

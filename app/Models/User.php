@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Auth;
@@ -43,18 +44,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
     /**
      * Check if the user is a company leader.
      *
      * @return bool
      */
-    public function isAdminSystem()
+    public function isAdminSystem(): bool
     {
 
         return $this->adminSystem !== null;
     }
 
-    public function adminSystem()
+    public function adminSystem(): HasOne
     {
         return $this->hasOne(AdminSystem::class);
     }
@@ -64,7 +66,7 @@ class User extends Authenticatable
      *
      * @return bool
      */
-    public function isCompanyLeader()
+    public function isCompanyLeader(): bool
     {
         return $this->companyLeader !== null;
     }
@@ -72,18 +74,19 @@ class User extends Authenticatable
     /**
      * Define a relationship with the CompanyLeader model.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return HasOne
      */
-    public function companyLeader()
+    public function companyLeader(): HasOne
     {
         return $this->hasOne(CompanyLeader::class);
     }
+
     public function isAggregationPointHead()
     {
         return $this->aggregationPointHead !== null;
     }
 
-    public function aggregationPointHead()
+    public function aggregationPointHead(): HasOne
     {
         return $this->hasOne(AggregationPointHead::class);
     }
@@ -93,7 +96,7 @@ class User extends Authenticatable
         return $this->transactionPointHead !== null;
     }
 
-    public function transactionPointHead()
+    public function transactionPointHead(): HasOne
     {
         return $this->hasOne(TransactionPointHead::class);
     }
@@ -103,7 +106,7 @@ class User extends Authenticatable
         return $this->transactionOfficer !== null;
     }
 
-    public function transactionOfficer()
+    public function transactionOfficer(): HasOne
     {
         return $this->hasOne(TransactionOfficer::class);
     }
@@ -113,7 +116,7 @@ class User extends Authenticatable
         return $this->aggregationPointEmployee !== null;
     }
 
-    public function aggregationPointEmployee()
+    public function aggregationPointEmployee(): HasOne
     {
         return $this->hasOne(AggregationPointEmployee::class);
     }
@@ -123,17 +126,17 @@ class User extends Authenticatable
         return $this->customer !== null;
     }
 
-    public function customer()
+    public function customer(): HasOne
     {
         return $this->hasOne(Customer::class);
     }
 
-    public function isShipper()
+    public function isShipper(): bool
     {
         return $this->shipper !== null;
     }
 
-    public function shipper()
+    public function shipper(): HasOne
     {
         return $this->hasOne(Shipper::class);
     }
@@ -146,34 +149,34 @@ class User extends Authenticatable
     }
 
     // goods
-    public function sentGoods()
+    public function sentGoods(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasMany(Goods::class, 'sender_id');
+        return $this->hasMany(Good::class, 'sender_id');
     }
 
-    public function receivedGoods()
+    public function receivedGoods(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasMany(Goods::class, 'receiver_id');
+        return $this->hasMany(Good::class, 'receiver_id');
     }
 
-    public function getUserType()
+    public function getUserType(): string
     {
         if ($this->isAdminSystem()) {
-            return 'Admin System'; 
+            return 'adminSystem';
         } else if ($this->isCompanyLeader()) {
-            return 'Company Leader';
-        } elseif ($this->isAggregationPointHead()) {
-            return 'Aggregation Point Head';
-        } elseif ($this->isTransactionPointHead()) {
-            return 'Transaction Point Head';
-        } elseif ($this->isTransactionOfficer()) {
-            return 'Transaction Officer';
-        } elseif ($this->isAggregationPointEmployee()) {
-            return 'Aggregation Point Employee';
-        } elseif ($this->isCustomer()) {
-            return 'Customer';
-        } elseif ($this->isShipper()) {
-            return 'Shipper';
+            return 'companyLeader';
+        } else if ($this->isAggregationPointHead()) {
+            return 'aggregationPointHead';
+        } else if ($this->isTransactionPointHead()) {
+            return 'transactionPointHead';
+        } else if ($this->isTransactionOfficer()) {
+            return 'transactionOfficer';
+        } else if ($this->isAggregationPointEmployee()) {
+            return 'aggregationPointEmployee';
+        } else if ($this->isCustomer()) {
+            return 'customer';
+        } else if ($this->isShipper()) {
+            return 'shipper';
         } else {
             return 'Regular User';
         }

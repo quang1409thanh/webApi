@@ -12,33 +12,41 @@ class AggregationPoint extends Model
     protected $fillable = [
         'name',
         'code',
-        'address',
         'phone',
         'email',
         'operatingHours',
         'status',
         'notes',
+        'capacity',
+        'current_load',
     ];
 
-    public function transactions()
-    {
-        return $this->hasMany(Transaction::class);
-    }
-
     // moi them luc nay 21/11/2023
-    public function aggregationPointHead()
+    public function aggregationPointHead(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
-        return $this->belongsTo(AggregationPointHead::class);
+        return $this->hasOne(AggregationPointHead::class);
     }
 
-    public function images()
+    public function transactionPoints(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(TransactionPoint::class);
+    }
+
+    public function images(): \Illuminate\Database\Eloquent\Relations\MorphMany
     {
         return $this->morphMany(Image::class, 'imageable');
     }
 
     // goods
-    public function currentLocationGoods()
+    public function currentLocationGoods(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasMany(Goods::class, 'current_location_id');
+        return $this->hasMany(Good::class, 'current_location_id');
     }
+
+    public function address(): \Illuminate\Database\Eloquent\Relations\MorphOne
+    {
+        return $this->morphOne(Address::class, 'addressable');
+    }
+
 }
+

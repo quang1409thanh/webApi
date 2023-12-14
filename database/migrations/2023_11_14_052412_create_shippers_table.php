@@ -16,9 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('name');
-            // Thêm các trường khác mô tả nhân viên nếu cần
             $table->string('phone');
-            $table->string('address');
             $table->string('details');
             $table->timestamps();
 

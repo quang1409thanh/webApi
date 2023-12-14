@@ -14,7 +14,6 @@ class Image extends Model
         'path',
         'caption',
         'alt_text',
-        // Các trường khác nếu có
     ];
 
 }

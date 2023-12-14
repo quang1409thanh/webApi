@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\TransactionPoint;
+use Illuminate\Support\Facades\Auth;
 
 class TransactionPointController extends Controller
 {
@@ -24,26 +25,34 @@ class TransactionPointController extends Controller
     public function store(Request $request)
     {
         /**
-         * validate: 
+         * validate:
          */
         // thieu validate de id khong tang linh tinh.
         //
-        $transactionPoint = TransactionPoint::create([
-            'name' => $request->name,
-            'code' => $request->code, // ten viet tat cua tinh hien tai
-            'address' => $request->address,
-            'phone' => $request->phone,
-            'email' => $request->email,
-            'operatingHours' => $request->operatingHours,
-            'aggregation_point_id' => $request->aggregation_point_id,
-            'status' => $request->status,
-            'notes' => $request->notes,
-        ]);
-
-        return response()->json([
-            'message' => "tạo điểm giao dịch thành công bạn ơi.",
-            'transactionPoint' => $transactionPoint,
-        ]);
+        if (Auth::user()->isCompanyLeader()) {
+            $transactionPoint = TransactionPoint::create([
+                'name' => $request->name,
+                'code' => $request->code, // ten viet tat cua tinh hien tai
+                'phone' => $request->phone,
+                'email' => $request->email,
+                'operatingHours' => $request->operatingHours,
+                'aggregation_point_id' => $request->aggregation_point_id,
+                'status' => $request->status,
+                'notes' => $request->notes,
+                'capacity' => $request->capacity,
+                'current_load' => $request->current_load,
+            ]);
+            $transactionPoint->address()->create([
+                'province' => $request->input('province', 'default $transactionPoint'),
+                'district' => $request->input('district', 'default $transactionPoint'),
+                'ward' => $request->input('ward', 'default $transactionPoint'),
+                'detailed_address' => $request->input('detailed_address', 'default $transactionPoint'),
+            ]);
+            return response()->json([
+                'message' => "tạo điểm giao dịch thành công bạn ơi.",
+                'transactionPoint' => $transactionPoint,
+            ]);
+        }
     }
 
     /**

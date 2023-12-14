@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('shipment_code')->unique();
             $table->unsignedBigInteger('shipper_id')->nullable();
-            $table->foreign('shipper_id')->references('id')->on('shippers')->onDelete('set null');        
+            $table->foreign('shipper_id')->references('id')->on('shippers')->onDelete('set null');
             $table->enum('status', ['pending', 'shipped', 'delivered'])->default('pending');
             $table->unsignedBigInteger('current_location_id')->nullable();
             $table->timestamps();
@@ -28,7 +28,7 @@ return new class extends Migration
             $table->foreign('current_location_id')->references('id')->on('transaction_points')->onDelete('set null')->name('goods_transaction_point_foreign');
             $table->foreign('current_location_id')->references('id')->on('aggregation_points')->onDelete('set null')->name('goods_aggregation_point_foreign');
         });
-        
+
     }
 
     /**

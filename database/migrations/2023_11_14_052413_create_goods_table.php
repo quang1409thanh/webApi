@@ -18,10 +18,10 @@ return new class extends Migration
             $table->unsignedBigInteger('receiver_id');
             $table->unsignedBigInteger('sending_transaction_point_id')->nullable();
             $table->unsignedBigInteger('receiving_transaction_point_id')->nullable();
-            $table->string('sender_address');
-            $table->string('receiver_address');
+            $table->string('sender_address_id');
+            $table->string('receiver_address_id');
             $table->string('shipment_id');
-            $table->text('goods_information')->nullable(); // để lưu những thông tin như khách hàng gọi không được.
+            $table->text('goods_information')->nullable();
             $table->enum('status', ['pending', 'shipped', 'delivered'])->default('pending');
             $table->json('history')->nullable();
             $table->unsignedBigInteger('current_location_id')->nullable();
@@ -33,7 +33,7 @@ return new class extends Migration
             $table->foreign('receiving_transaction_point_id')->references('id')->on('transaction_points')->onDelete('set null');
             // Khóa ngoại đa hình cho current_location_id
             // Khóa ngoại đa hình cho current_location_id
-            $table->foreign('current_location_id')->references('id')->on('transaction_points')->onDelete('set null')->name('goods_transaction_point_foreign');
+            $table->foreign('current_location_id')->references('id')->on('address')->onDelete('set null');
             $table->foreign('current_location_id')->references('id')->on('aggregation_points')->onDelete('set null')->name('goods_aggregation_point_foreign');
         });
     }

@@ -15,10 +15,9 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->unsignedBigInteger('aggregation_point_id')->nullable(); // Thêm trường tham chiếu ngược lại đến điểm tập kết
+            $table->unsignedBigInteger('aggregation_point_id')->unique()->nullable(); // Thêm ràng buộc duy nhất cho trường tham chiếu ngược lại đến điểm tập kết
             $table->foreign('aggregation_point_id')->references('id')->on('aggregation_points')->onDelete('set null');
             $table->string('phone');
-            $table->string('address');
             $table->string('details');
             $table->timestamps();
         });

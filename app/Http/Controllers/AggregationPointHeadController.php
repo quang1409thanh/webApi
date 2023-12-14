@@ -33,11 +33,16 @@ class AggregationPointHeadController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-        $user->aggregationPointHead()->create([
+        $aggregationPointHead = $user->aggregationPointHead()->create([
             'aggregation_point_id' => $request->aggregation_point_id,
             'phone' => $request->phone,
-            'address' => $request->address,
             'details' => $request->details,
+        ]);
+        $aggregationPointHead->address()->create([
+            'province' => $request->input('province', 'default aggregationPointHead'),
+            'district' => $request->input('district', 'default aggregationPointHead'),
+            'ward' => $request->input('ward', 'default aggregationPointHead'),
+            'detailed_address' => $request->input('detailed_address', 'default aggregationPointHead'),
         ]);
         return response()->json([
             'message' => "tao tai khoan thanh cong !",

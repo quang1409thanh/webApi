@@ -15,14 +15,15 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('code')->unique();
-            $table->string('address');
             $table->string('phone');
             $table->string('email');
             $table->string('operatingHours');
-            $table->unsignedBigInteger('aggregation_point_id'); // ID của điểm tập kết
+            $table->unsignedBigInteger('aggregation_point_id');
             $table->foreign('aggregation_point_id')->references('id')->on('aggregation_points')->onDelete('cascade');
             $table->string('status')->nullable();
-            $table->text('notes')->nullable();        
+            $table->text('notes')->nullable();
+            $table->integer('capacity');
+            $table->integer('current_load')->default(0);
             $table->timestamps();
         });
     }

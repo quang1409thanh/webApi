@@ -11,7 +11,7 @@ class AdminSystemController extends Controller
     //
     public function index()
     {
-        if (Auth::user()->email === "admin@gmail.com") {
+        if (Auth::user()->isAdminSystem()) {
             // Nếu là admin, lấy thông tin của tất cả company leaders và eager load thông tin của user
             $adminSystem = AdminSystem::with(['user', 'images'])->get();
 

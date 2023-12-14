@@ -16,13 +16,12 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('phone');
-            $table->string('address');
             $table->string('details');
-            $table->string('position'); // Chức vụ của người quản trị
-            $table->date('birthday'); // Ngày sinh của người quản trị
+            $table->string('position');
+            $table->date('birthday');
             $table->timestamps();
         });
-        
+
     }
 
     /**

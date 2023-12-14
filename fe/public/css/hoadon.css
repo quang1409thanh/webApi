@@ -1,0 +1,171 @@
+body {
+  background-color: darkgray; }
+
+.hoadon_container {
+  background-color: #fff;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 3px solid black; }
+
+.hoadon_container h3 {
+  margin: 5px 0px; }
+
+.hoadon_container span {
+  line-height: 32px; }
+
+.hoadon_container .type_flex {
+  display: flex; }
+
+.hoadon_container .logo_qr_container {
+  display: flex;
+  padding: 30px 10px; }
+
+.hoadon_container .logo_qr_container div {
+  flex: 0 0 50%;
+  max-width: 50%; }
+
+.hoadon_container .logo_qr_container div img {
+  margin-left: 40%; }
+
+.hoadon_container .logo_qr_container .qr_hoadon .code_hoadon {
+  margin-left: 26%; }
+
+.hoadon_container .hoadon_content {
+  display: flex; }
+
+.hoadon_container .hoadon_content > div {
+  flex: 0 0 50%;
+  max-width: 50%;
+  /* height: 1000px; */
+  background-color: aliceblue;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column; }
+
+.hoadon_container .hoadon_content .info_customer {
+  border: 1px solid black; }
+
+.hoadon_container .hoadon_content .info_parcel {
+  border: 1px solid black; }
+
+.hoadon_container .hoadon_content .other_info {
+  padding: 5px;
+  margin-top: 10px; }
+
+.hoadon_container .hoadon_content .hoadon_left .sectors_checkbox {
+  display: flex;
+  margin: 10px 80px;
+  align-items: center;
+  justify-content: center; }
+
+.hoadon_container .hoadon_content .hoadon_left .sectors_checkbox > div {
+  flex: 0 0 50%;
+  max-width: 50%; }
+
+.hoadon_container #parcelTable {
+  width: 100%;
+  border-collapse: collapse; }
+
+.hoadon_container #parcelTable th, td {
+  border: 1px solid #0c0c0c;
+  text-align: center; }
+
+.hoadon_container #parcelTable th {
+  background-color: #9ac2e6; }
+
+.hoadon_container #parcelTable td {
+  font-size: 12px; }
+
+.hoadon_container #parcelTable tbody tr:last-child {
+  background-color: #b8f3f3; }
+
+.hoadon_container .sender_instructions {
+  border: 1px solid black; }
+
+.hoadon_container .sender_instructions .box_checkbox {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px; }
+
+.hoadon_container .sender_instructions .box_checkbox label {
+  font-size: 14px; }
+
+.hoadon_container .commitment {
+  border: 1px solid black; }
+
+.hoadon_container .commitment .user_commit span {
+  line-height: 2px; }
+
+.hoadon_container .commitment .time_signature {
+  display: flex;
+  /* margin: 5px; */ }
+
+.hoadon_container .commitment .time_signature > div {
+  flex: 0 0 50%;
+  max-width: 50%; }
+
+.hoadon_container .info_costs_weight {
+  display: flex; }
+
+.hoadon_container .info_costs_weight .costs {
+  flex: 0 0 57%;
+  max-width: 57%;
+  /* border: 1px solid rgba(0, 0, 0, 1); */ }
+
+.hoadon_container .info_costs_weight .costs > div, .weight_ > div {
+  border: 1px solid black; }
+
+.hoadon_container .info_costs_weight .weight_ {
+  flex: 0 0 43%;
+  max-width: 43%;
+  border: 1px solid black; }
+
+.hoadon_container .hoadon_right .cost_item span {
+  display: inline-block; }
+
+.hoadon_container .hoadon_right .cost_item span:last-child {
+  float: right; }
+
+.hoadon_content .hoadon_right .stamped {
+  display: flex;
+  flex: auto; }
+
+.hoadon_content .hoadon_right .stamped .postal_stamped {
+  flex: 0 0 57%;
+  max-width: 57%;
+  border: 1px solid black;
+  justify-content: center; }
+
+.hoadon_content .hoadon_right .stamped .time_stamped {
+  flex: 0 0 42.5%;
+  max-width: 43%;
+  border: 1px solid black; }
+
+.hoadon_content .hoadon_right .stamped .time_stamped span {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  line-height: 20px; }
+
+.submit_hoadon {
+  margin: 60px; }
+
+.submit_hoadon .btn_submit_hoadon {
+  display: inline-block;
+  text-align: center;
+  width: 100%; }
+
+.btn_submit_hoadon input {
+  padding: 5px 10px;
+  height: 30px;
+  border-radius: 7px;
+  background-color: rgba(10, 6, 223, 0.756);
+  text-align: center;
+  color: #fff; }
+
+.btn_submit_hoadon input:hover {
+  cursor: pointer;
+  background-color: rgba(70, 68, 235, 0.756); }

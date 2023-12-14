@@ -1,0 +1,205 @@
+.container-find-post .breadcrumb-section {
+  background-color: rgba(0, 69, 136, 0.1);
+  padding: 0.75rem 0; }
+
+.breadcrumb-section .container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+  max-width: 1280px; }
+
+.breadcrumb-section .container ol {
+  list-style: none;
+  padding-left: 0; }
+
+.breadcrumb-section .container .breadcrumb {
+  background-color: transparent;
+  color: #212529;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 30px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; }
+
+.breadcrumb-section .container .breadcrumb .breadcrumb-item {
+  align-items: center;
+  display: flex;
+  flex-direction: row; }
+
+.breadcrumb-item:first-child.individual:before {
+  background-image: url("/img/icon-individual.svg");
+  content: "";
+  float: none;
+  height: 24px;
+  margin-right: 12px;
+  padding: 0;
+  width: 24px; }
+
+.breadcrumb-item + .breadcrumb-item::before {
+  background: url("/img/icon-arrow-breadcumb.svg");
+  content: "";
+  float: none;
+  height: 24px;
+  padding: 0;
+  width: 24px; }
+
+.block-search-post-office {
+  padding: 80px 0px;
+  background: #eaf1fe; }
+
+.block-search-post-office .container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%; }
+
+.block-search-post-office .container .row {
+  display: flex;
+  flex-wrap: wrap; }
+
+.block-search-post-office .container .row .box-title {
+  color: #004588;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: 750;
+  text-align: center;
+  flex: 0 0 100%;
+  width: 100%; }
+
+.block-search-post-office .container .row .col-search-box {
+  padding-right: 30px;
+  padding-left: 15px;
+  position: relative;
+  width: 100%; }
+
+.col-search-box .search-box {
+  border-radius: 3px;
+  background: #dfe6f1;
+  padding: 20px 15px;
+  display: flex;
+  flex-wrap: wrap; }
+
+.col-search-box .search-box .col-left {
+  padding-left: 0px; }
+
+.search-box .col-tmp-1 {
+  flex: 0 0 41.66666667%;
+  max-width: 41.66666667%;
+  padding-right: 15px;
+  position: relative;
+  width: 100%; }
+
+.search-box label {
+  margin-bottom: 5px !important;
+  line-height: 2; }
+
+.block-search-post-office .form-control {
+  border: none;
+  color: #495057;
+  border-radius: 2px !important;
+  background-color: #fff;
+  height: 48px;
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 0.375rem 0.75rem;
+  width: 100%;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out; }
+
+.search-box .col-tmp-2 {
+  flex: 0 0 14%;
+  max-width: 14%; }
+
+.col-search-box .btn-search-branch {
+  cursor: pointer;
+  background: #004588;
+  border: none;
+  outline: none;
+  width: 100%;
+  text-align: center;
+  border-radius: 2px !important;
+  font-weight: 500;
+  margin-top: 29px;
+  height: 48px;
+  color: #fff;
+  font-size: 1rem; }
+
+.col-search-box .btn-search-branch:hover {
+  background: #007bff; }
+
+.row-list-infomation {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap; }
+
+.list-col {
+  flex: 0 0 41.66667%;
+  max-width: 41.66667%;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  width: 100%; }
+
+.list-col .list-post {
+  display: flex;
+  flex-direction: column;
+  background: #dfe6f1;
+  padding: 20px 5px;
+  font-size: 14px;
+  border-radius: 3px; }
+
+.list-col .list-post .content-list-post {
+  flex: 0 0 100%;
+  max-width: 94%;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  width: 100%; }
+
+.list-post h2 {
+  font-size: 20px;
+  padding: 3px 0px;
+  line-height: 20px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: #212121;
+  text-transform: uppercase; }
+
+.list-post .list-office {
+  height: 420px;
+  overflow-y: auto;
+  border-radius: 3px;
+  background: #fff; }
+
+.map-col {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  width: 100%; }
+
+.list-office .post-item {
+  display: block;
+  position: relative;
+  padding: 20px; }
+
+.post-item .title-post {
+  display: block;
+  float: left;
+  width: 120px; }
+
+.post-item .img_icon-code {
+  margin-right: 15px;
+  width: 24px;
+  height: auto;
+  vertical-align: middle;
+  border-style: none; }
+
+.post-item .post-code {
+  color: #004588; }

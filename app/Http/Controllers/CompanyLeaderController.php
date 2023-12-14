@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\CompanyLeader;
 use App\Models\User;
 use App\Models\Image;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -18,16 +19,16 @@ class CompanyLeaderController extends Controller
      */
     public function index()
     {
-        if (Auth::user()->email === "admin@gmail.com") {
+        if (Auth::User()->isAdminSystem()) {
             // Nếu là admin, lấy thông tin của tất cả company leaders và eager load thông tin của user
             $companyLeaders = CompanyLeader::with(['user', 'images'])->get();
-
             return response()->json(['companyLeaders' => $companyLeaders]);
         } else {
             // Nếu không phải admin, trả về lỗi quyền hạn
             return response()->json(['error' => 'Không đủ quyền hạn!'], 403);
         }
     }
+
     /**
      * Store a newly created resource in storage.
      */
@@ -36,7 +37,7 @@ class CompanyLeaderController extends Controller
         //
 
         $user = Auth::user();
-        if ($user->email === "admin@gmail.com") {
+        if ($user->isAdminSystem()) {
             $user = User::create([
                 'name' => $request->name,
                 'email' => $request->email,
@@ -44,16 +45,32 @@ class CompanyLeaderController extends Controller
             ]);
             $companyLeader = $user->companyLeader()->create([
                 'phone' => $request->phone,
-                'address' => $request->address,
                 'details' => $request->details,
             ]);
-            $photoPath = $request->file('photo')->storeAs('photos', uniqid() . '.' . $request->file('photo')->extension(), 'public');
 
-            $companyLeader->images()->create([
-                'path' => $photoPath,
-                'caption' => 'User photo',
-                'alt_text' => 'User photo',
+            $companyLeader->address()->create([
+                'province' => $request->input('province', 'default'),
+                'district' => $request->input('district', 'default'),
+                'ward' => $request->input('ward', 'default'),
+                'detailed_address' => $request->input('detailed_address', 'default'),
             ]);
+
+            if ($request->hasFile('photo')) {
+                $photoPath = $request->file('photo')->storeAs('photos', uniqid() . '.' . $request->file('photo')->extension(), 'public');
+
+                $companyLeader->images()->create([
+                    'path' => $photoPath,
+                    'caption' => 'User photo',
+                    'alt_text' => 'User photo',
+                ]);
+            } else {
+                // Nếu không có file, sử dụng ảnh mặc định
+                $companyLeader->images()->create([
+                    'path' => 'https://image.img',
+                    'caption' => 'Default photo',
+                    'alt_text' => 'Default photo',
+                ]);
+            }
             return response()->json([
                 'message' => "tao tai khoan thanh cong !",
             ]);
@@ -65,7 +82,7 @@ class CompanyLeaderController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $id): JsonResponse
     {
         // You can implement the logic to retrieve and return a specific company leader here.
         $companyLeader = CompanyLeader::with('user')->findOrFail($id);
@@ -82,7 +99,7 @@ class CompanyLeaderController extends Controller
         $companyLeader = CompanyLeader::with('user')->findOrFail($id);
         $user = Auth::user();
 
-        if ($user->email === "admin@gmail.com") {
+        if ($user->isAdminSystem()) {
             // Update User information
             $userData = [
                 'name' => $request->name,
@@ -130,9 +147,8 @@ class CompanyLeaderController extends Controller
     {
         // Tìm company leader và eager load thông tin của user
         $companyLeader = CompanyLeader::with('user')->findOrFail($id);
-
         // Kiểm tra quyền hạn của người dùng
-        if (Auth::user()->email === "admin@gmail.com") {
+        if (Auth::user()->isAdminSystem()) {
             // Xóa thông tin trong bảng CompanyLeader
             $companyLeader->delete();
 

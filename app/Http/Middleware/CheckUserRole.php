@@ -13,21 +13,19 @@ class CheckUserRole
     /**
      * Handle an incoming request.
      *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     * @param Closure(Request): (Response) $next
      */
     public function handle(Request $request, Closure $next, string $role): Response
     {
         if (Auth::check()) {
             // Lấy giá trị 'role' từ route parameters
             $user = Auth::user();
-            // Kiểm tra xem người dùng có quyền đúng với giá trị từ route parameters không
             if ($user->getUserType() === $role) {
                 return $next($request);
             } else {
                 return response()->json(['error' => 'Khong du tham quyen !!!'], 403);
             }
         }
-
         return $next($request);
     }
 }

@@ -9,20 +9,23 @@ class Customer extends Model
 {
     use HasFactory;
 
-    public function user()
+
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(User::class);
     }
-
-    
-    public function sentOrders()
+    public function address(): \Illuminate\Database\Eloquent\Relations\MorphOne
     {
-        return $this->hasMany(Goods::class, 'sender_id');
+        return $this->morphOne(Address::class, 'addressable');
+    }
+    public function sentOrders(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Good::class, 'sender_id');
     }
 
-    public function receivedOrders()
+    public function receivedOrders(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasMany(Goods::class, 'receiver_id');
+        return $this->hasMany(Good::class, 'receiver_id');
     }
 
     public function allOrders()

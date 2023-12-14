@@ -3,24 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>API Test</title>
 </head>
 <body>
-    <h2>Welcome to the Home Page</h2>
 
-    <script>
-        // Lấy dữ liệu từ localStorage
-        const apiToken = localStorage.getItem('apiToken');
-        const userData = JSON.parse(localStorage.getItem('userData'));
+<button onclick="fetchApi()">Fetch API</button>
 
-        // Kiểm tra xem người dùng đã đăng nhập hay chưa
-        if (apiToken && userData) {
-            console.log('User is logged in:', userData);
-            // Thực hiện các thao tác khác dựa trên dữ liệu người dùng
-        } else {
-            // Nếu không có token hoặc dữ liệu người dùng, điều hướng đến trang đăng nhập
-            window.location.href = 'index.html';
-        }
-    </script>
+<!-- Hiển thị kết quả từ API -->
+<div id="apiResult"></div>
+
+<script>
+    function fetchApi() {
+        // Lấy thẻ div để hiển thị kết quả
+        const apiResultDiv = document.getElementById('apiResult');
+
+        // Sử dụng hàm fetch để gửi HTTP request đến API
+        fetch('http://127.0.0.1:8000/')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+            })
+            .then(data => {
+                // Hiển thị kết quả trong thẻ div
+                apiResultDiv.innerHTML = '<p>API Response: '  + '</p>';
+            })
+            .catch(error => {
+                // Hiển thị lỗi trong thẻ div
+                apiResultDiv.innerHTML = '<p>Error: ' + error.message + '</p>';
+            });
+    }
+</script>
+
 </body>
 </html>

@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Models\AggregationPoint;
 
 class AggregationPointController extends Controller
 {
-    //
     /**
      * Display a listing of the resource.
      */
@@ -25,21 +23,27 @@ class AggregationPointController extends Controller
     public function store(Request $request)
     {
         /**
-         * validate: 
+         * validate:
          */
         // thieu validate de id khong tang linh tinh.
         //
         $aggregationPoint = AggregationPoint::create([
             'name' => $request->name,
             'code' => $request->code, // ten viet tat cua tinh hien tai
-            'address' => $request->address,
             'phone' => $request->phone,
             'email' => $request->email,
             'operatingHours' => $request->operatingHours,
             'status' => $request->status,
             'notes' => $request->notes,
+            'capacity' => $request->capacity,
+            'current_load' => $request->current_load,
         ]);
-
+        $aggregationPoint->address()->create([
+            'province' => $request->input('province', 'default $aggregationPoint'),
+            'district' => $request->input('district', 'default $aggregationPoint'),
+            'ward' => $request->input('ward', 'default $aggregationPoint'),
+            'detailed_address' => $request->input('detailed_address', 'default $aggregationPoint'),
+        ]);
         return response()->json([
             'message' => "tạo điểm giao dịch thành công bạn ơi.",
             'aggregationPoint' => $aggregationPoint,
