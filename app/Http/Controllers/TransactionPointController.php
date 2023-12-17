@@ -49,8 +49,7 @@ class TransactionPointController extends Controller
                 'detailed_address' => $request->input('detailed_address', 'default $transactionPoint'),
             ]);
             return response()->json([
-                'message' => "tạo điểm giao dịch thành công bạn ơi.",
-                'transactionPoint' => $transactionPoint,
+                'message' => "tạo điểm giao dịch thành công !!!",
             ]);
         }
     }

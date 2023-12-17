@@ -78,6 +78,22 @@ export default function Header() {
                                         Giới thiệu
                                     </NavLink>
                                 </li>
+                                <li className="menu_item">
+                                    <NavLink
+                                        to="/aggregationPoint"
+                                        className={({isActive}) =>
+                                            classNames(
+                                                isActive
+                                                    ? "bg-gray-900 text-white"
+                                                    : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                                                "px-3 py-2 rounded-md text-sm font-medium"
+                                            )
+                                        }
+                                    >
+                                        <img src="./img/icon-introduce.svg" alt=""/>
+                                        Quản lý điểm tập kết
+                                    </NavLink>
+                                </li>
 
                             </ul>
                         </nav>
@@ -87,7 +103,6 @@ export default function Header() {
                     <img src="./img/icon-back-to-top.svg" alt=""/>
                 </div>
             </div>
-            <Toast/>
         </>
     );
 }

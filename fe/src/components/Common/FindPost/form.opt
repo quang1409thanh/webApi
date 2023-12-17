@@ -1,13 +1,26 @@
-// Create a new file, let's say AddressSelect.js
 
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useCallback} from 'react';
 import axios from 'axios';
 
 const host = "https://provinces.open-api.vn/api/";
 
+const fetchProvinces = async () => {
+    const response = await axios.get(host + '?depth=1');
+    return response.data;
+};
+
+const fetchDistricts = async (province) => {
+    const response = await axios.get(host + "p/" + province + "?depth=2");
+    return response.data.districts;
+};
+
+const fetchWards = async (district) => {
+    const response = await axios.get(host + "d/" + district + "?depth=2");
+    return response.data.wards;
+};
+
 const AddressSelect = ({
                            onSelectProvince, onSelectDistrict, onSelectWard, onSelectDetail,
-                           selectedProvince, selectedDistrict, selectedWard, selectedDetail
                        }) => {
     const [provinces, setProvinces] = useState([]);
     const [districts, setDistricts] = useState([]);
@@ -17,92 +30,63 @@ const AddressSelect = ({
     const [district, setDistrict] = useState("");
     const [ward, setWard] = useState("");
 
-    // Sử dụng các props để đặt giá trị mặc định cho các biến trạng thái
-// ... (các biến trạng thái và useEffect giống như trước)
-
-// Sử dụng các props để đặt giá trị mặc định cho các biến trạng thái
-    const [currentProvince, setCurrentProvince] = useState(selectedProvince);
-    const [currentDistrict, setCurrentDistrict] = useState(selectedDistrict);
-    const [currentWard, setCurrentWard] = useState(selectedWard);
-    const [currentDetail, setCurrentDetail] = useState(selectedDetail);
-
-// ... (các hàm giống như trước)
-    //
-
-    // Cập nhật giá trị mặc định khi props thay đổi
     useEffect(() => {
-        setCurrentProvince(selectedProvince);
-    }, [selectedProvince]);
-
-    useEffect(() => {
-        setCurrentDistrict(selectedDistrict);
-    }, [selectedDistrict]);
-
-    useEffect(() => {
-        setCurrentWard(selectedWard);
-    }, [selectedWard]);
-
-    useEffect(() => {
-        setCurrentDetail(selectedDetail);
-    }, [selectedDetail]);
-
-    //
-
-    useEffect(() => {
-        axios.get(host + '?depth=1')
-            .then(response => {
-                setProvinces(response.data);
-            });
+        const fetchData = async () => {
+            const provinces = await fetchProvinces();
+            setProvinces(provinces);
+        };
+        fetchData();
     }, []);
 
     useEffect(() => {
-        if (province) {
-            axios.get(host + "p/" + province + "?depth=2")
-                .then(response => {
-                    setDistricts(response.data.districts);
-                });
-        }
+        const fetchData = async () => {
+            if (province) {
+                const districts = await fetchDistricts(province);
+                setDistricts(districts);
+            }
+        };
+        fetchData();
     }, [province]);
 
     useEffect(() => {
-        if (district) {
-            axios.get(host + "d/" + district + "?depth=2")
-                .then(response => {
-                    setWards(response.data.wards);
-                });
-        }
+        const fetchData = async () => {
+            if (district) {
+                const wards = await fetchWards(district);
+                setWards(wards);
+            }
+        };
+        fetchData();
     }, [district]);
 
-    const renderOptions = (array) => {
+    const renderOptions = useCallback((array) => {
         return array.map(element => (
             <option key={element.code} value={element.code}>{element.name}</option>
         ));
-    };
+    }, []);
 
-    const handleProvinceChange = (e) => {
+    const handleProvinceChange = useCallback((e) => {
         const selectedProvinceCode = e.target.value;
         setProvince(selectedProvinceCode);
         onSelectProvince(selectedProvinceCode, e.target.options[e.target.selectedIndex].text);
-    };
+    }, [onSelectProvince]);
 
-    const handleDistrictChange = (e) => {
+    const handleDistrictChange = useCallback((e) => {
         const selectedDistrictCode = e.target.value;
         setDistrict(selectedDistrictCode);
         onSelectDistrict(selectedDistrictCode, e.target.options[e.target.selectedIndex].text);
-    };
+    }, [onSelectDistrict]);
 
-    const handleWardChange = (e) => {
+    const handleWardChange = useCallback((e) => {
         const selectedWardCode = e.target.value;
         setWard(selectedWardCode);
         onSelectWard(selectedWardCode, e.target.options[e.target.selectedIndex].text);
-    };
+    }, [onSelectWard]);
 
-    function handleDetailChange(e) {
+    const handleDetailChange = useCallback((e) => {
         onSelectDetail(e.target.value);
-    }
+    }, [onSelectDetail]);
 
     return (
-
         <div className="search-box">
             <div className="col-tmp-1 col-left">
                 <label htmlFor="city">Tỉnh/Thành phố</label>
@@ -110,9 +94,8 @@ const AddressSelect = ({
                     name="provinceId"
                     id="city"
                     className="form-control citySelect"
-                    placeholder={"test"}
                     value={province} onChange={handleProvinceChange}>
-                    <option disabled selected value="">{selectedProvince || 'chọn tỉnh'}</option>
+                    <option disabled value="">chọn tỉnh</option>
                     {renderOptions(provinces)}
                 </select>
             </div>
@@ -123,9 +106,8 @@ const AddressSelect = ({
                     id="district"
                     className="form-control districtSelect"
                     value={district}
-                    placeholder={"test"}
                     onChange={handleDistrictChange}>
-                    <option disabled selected value="">{selectedDistrict || 'chọn quận'}</option>
+                    <option disabled value="">chọn quận</option>
                     {renderOptions(districts)}
                 </select>
             </div>
@@ -137,7 +119,7 @@ const AddressSelect = ({
                     className="form-control districtSelect"
                     value={ward}
                     onChange={handleWardChange}>
-                    <option disabled selected value="">{selectedWard || 'chọn xã/phường'}</option>
+                    <option disabled value="">chọn xã/phường</option>
                     {renderOptions(wards)}
                 </select>
             </div>
@@ -145,7 +127,6 @@ const AddressSelect = ({
                 <label htmlFor="district">Chi tiết địa chỉ</label>
                 <textarea
                     className="form-control "
-                    value={currentDetail}
                     onChange={handleDetailChange}
                     style={{width: '94%'}}
                 />

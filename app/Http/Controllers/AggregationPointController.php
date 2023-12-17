@@ -12,7 +12,7 @@ class AggregationPointController extends Controller
      */
     public function index()
     {
-        $aggregationPoints = AggregationPoint::all();
+        $aggregationPoints = AggregationPoint::with('address')->get();
         return response()->json(['aggregationPoints' => $aggregationPoints]);
     }
 
@@ -39,14 +39,13 @@ class AggregationPointController extends Controller
             'current_load' => $request->current_load,
         ]);
         $aggregationPoint->address()->create([
-            'province' => $request->input('province', 'default $aggregationPoint'),
-            'district' => $request->input('district', 'default $aggregationPoint'),
-            'ward' => $request->input('ward', 'default $aggregationPoint'),
-            'detailed_address' => $request->input('detailed_address', 'default $aggregationPoint'),
+            'province' => $request->input('province', 'default $aggregation'),
+            'district' => $request->input('district', 'default $aggregation'),
+            'ward' => $request->input('ward', 'default $aggregation'),
+            'detailed_address' => $request->input('detailed_address', 'default $aggregation'),
         ]);
         return response()->json([
-            'message' => "tạo điểm giao dịch thành công bạn ơi.",
-            'aggregationPoint' => $aggregationPoint,
+            'message' => "tạo điểm tập kết thành công !!!",
         ]);
     }
 
@@ -55,8 +54,9 @@ class AggregationPointController extends Controller
      */
     public function show(string $id)
     {
-        $aggregationPoint = AggregationPoint::findOrFail($id);
-        return response()->json(['aggregationPoint' => $aggregationPoint]);
+        $aggregationPoint = AggregationPoint::with('address')->findOrFail($id);
+//        dd($aggregationPoint);
+        return response()->json(['aggregation' => $aggregationPoint]);
     }
 
     /**
@@ -64,12 +64,12 @@ class AggregationPointController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $aggregationPoint = AggregationPoint::findOrFail($id);
+        $aggregationPoint = AggregationPoint::with('address')->findOrFail($id);
 
+        // Update AggregationPoint data
         $aggregationPoint->update([
             'name' => $request->name,
             'code' => $request->code,
-            'address' => $request->address,
             'phone' => $request->phone,
             'email' => $request->email,
             'operatingHours' => $request->operatingHours,
@@ -77,9 +77,19 @@ class AggregationPointController extends Controller
             'notes' => $request->notes,
         ]);
 
+        // Update Address data if it exists
+        if ($aggregationPoint->address) {
+            $aggregationPoint->address->update([
+                'province' => $request->input('province', $aggregationPoint->address->province),
+                'district' => $request->input('district', $aggregationPoint->address->district),
+                'ward' => $request->input('ward', $aggregationPoint->address->ward),
+                'detailed_address' => $request->input('detailed_address', $aggregationPoint->address->detailed_address),
+            ]);
+        }
+
         return response()->json([
             'message' => "Cập nhật điểm giao dịch thành công.",
-            'aggregationPoint' => $aggregationPoint,
+            'aggregation' => $aggregationPoint,
         ]);
     }
 

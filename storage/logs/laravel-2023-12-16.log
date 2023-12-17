@@ -1,0 +1,241 @@
+[2023-12-16 00:43:19] local.INFO: 2023-12-16 00:43:19 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 2.8231143951416ms  
+[2023-12-16 00:43:19] local.INFO: 2023-12-16 00:43:19 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 5.6591033935547ms  
+[2023-12-16 00:43:19] local.INFO: 2023-12-16 00:43:19 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.18811225891113ms  
+[2023-12-16 00:43:19] local.INFO: 2023-12-16 00:43:19 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.0739307403564ms  
+[2023-12-16 00:43:20] local.INFO: 2023-12-16 00:43:20 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 7.0948600769043ms  
+[2023-12-16 00:43:20] local.INFO: 2023-12-16 00:43:20 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.4059753417969ms  
+[2023-12-16 00:43:26] local.INFO: 2023-12-16 00:43:26 DELETE:"http://127.0.0.1:8000/api/aggregationPoint/73" - Execution Time: 7.0159435272217ms  
+[2023-12-16 00:43:26] local.INFO: 2023-12-16 00:43:26 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.0831565856934ms  
+[2023-12-16 00:43:26] local.INFO: 2023-12-16 00:43:26 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.0080547332764ms  
+[2023-12-16 00:43:28] local.INFO: 2023-12-16 00:43:28 GET:"http://127.0.0.1:8000/api/aggregationPoint/72" - Execution Time: 4.6849250793457ms  
+[2023-12-16 00:43:28] local.INFO: 2023-12-16 00:43:28 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.1990280151367ms  
+[2023-12-16 00:43:28] local.INFO: 2023-12-16 00:43:28 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.3738613128662ms  
+[2023-12-16 00:43:28] local.INFO: 2023-12-16 00:43:28 GET:"http://127.0.0.1:8000/api/aggregationPoint/72" - Execution Time: 4.7330856323242ms  
+[2023-12-16 00:43:28] local.INFO: 2023-12-16 00:43:28 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 3.9389133453369ms  
+[2023-12-16 00:43:28] local.INFO: 2023-12-16 00:43:28 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.5638809204102ms  
+[2023-12-16 00:43:46] local.INFO: 2023-12-16 00:43:46 PUT:"http://127.0.0.1:8000/api/aggregationPoint/72" - Execution Time: 4.4519901275635ms  
+[2023-12-16 00:43:46] local.INFO: 2023-12-16 00:43:46 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 3.6690235137939ms  
+[2023-12-16 00:43:46] local.INFO: 2023-12-16 00:43:46 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.8549175262451ms  
+[2023-12-16 00:43:50] local.INFO: 2023-12-16 00:43:50 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.4119358062744ms  
+[2023-12-16 00:43:50] local.INFO: 2023-12-16 00:43:50 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 3.8778781890869ms  
+[2023-12-16 00:43:52] local.ERROR: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'name' cannot be null (Connection: mysql, SQL: insert into `aggregation_points` (`name`, `code`, `phone`, `email`, `operatingHours`, `status`, `notes`, `capacity`, `current_load`, `updated_at`, `created_at`) values (?, ?, ?, ?, ?, ?, ?, 0, 0, 2023-12-16 00:43:52, 2023-12-16 00:43:52)) {"userId":3,"exception":"[object] (Illuminate\\Database\\QueryException(code: 23000): SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'name' cannot be null (Connection: mysql, SQL: insert into `aggregation_points` (`name`, `code`, `phone`, `email`, `operatingHours`, `status`, `notes`, `capacity`, `current_load`, `updated_at`, `created_at`) values (?, ?, ?, ?, ?, ?, ?, 0, 0, 2023-12-16 00:43:52, 2023-12-16 00:43:52)) at /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Connection.php:822)
+[stacktrace]
+#0 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(776): Illuminate\\Database\\Connection->runQueryCallback()
+#1 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(569): Illuminate\\Database\\Connection->run()
+#2 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(533): Illuminate\\Database\\Connection->statement()
+#3 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/Processor.php(32): Illuminate\\Database\\Connection->insert()
+#4 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3387): Illuminate\\Database\\Query\\Processors\\Processor->processInsertGetId()
+#5 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1968): Illuminate\\Database\\Query\\Builder->insertGetId()
+#6 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1333): Illuminate\\Database\\Eloquent\\Builder->__call()
+#7 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1298): Illuminate\\Database\\Eloquent\\Model->insertAndSetId()
+#8 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1137): Illuminate\\Database\\Eloquent\\Model->performInsert()
+#9 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1023): Illuminate\\Database\\Eloquent\\Model->save()
+#10 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Support/helpers.php(307): Illuminate\\Database\\Eloquent\\Builder->Illuminate\\Database\\Eloquent\\{closure}()
+#11 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1022): tap()
+#12 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php(23): Illuminate\\Database\\Eloquent\\Builder->create()
+#13 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2334): Illuminate\\Database\\Eloquent\\Model->forwardCallTo()
+#14 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2346): Illuminate\\Database\\Eloquent\\Model->__call()
+#15 /home/thanhyk14/Desktop/local/app/Http/Controllers/AggregationPointController.php(30): Illuminate\\Database\\Eloquent\\Model::__callStatic()
+#16 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\AggregationPointController->store()
+#17 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction()
+#18 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Route.php(259): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#19 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate\\Routing\\Route->runController()
+#20 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Router.php(806): Illuminate\\Routing\\Route->run()
+#21 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#22 /home/thanhyk14/Desktop/local/app/Http/Middleware/CheckUserRole.php(25): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#23 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): App\\Http\\Middleware\\CheckUserRole->handle()
+#24 /home/thanhyk14/Desktop/local/app/Http/Middleware/LogApiRequests.php(15): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#25 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): App\\Http\\Middleware\\LogApiRequests->handle()
+#26 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#27 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#28 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#29 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#30 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(159): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#31 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(125): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest()
+#32 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(87): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequestUsingNamedLimiter()
+#33 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle()
+#34 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#35 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Auth\\Middleware\\Authenticate->handle()
+#36 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#37 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
+#38 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#39 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest()
+#40 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle()
+#41 /home/thanhyk14/Desktop/local/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php(25): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#42 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful->Laravel\\Sanctum\\Http\\Middleware\\{closure}()
+#43 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#44 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#45 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#46 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest()
+#47 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle()
+#48 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#49 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
+#50 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#51 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
+#52 /home/thanhyk14/Desktop/local/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php(61): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#53 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(162): Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful->Laravel\\Sanctum\\Http\\Middleware\\{closure}()
+#54 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#55 /home/thanhyk14/Desktop/local/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php(24): Illuminate\\Pipeline\\Pipeline->then()
+#56 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful->handle()
+#57 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#58 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Router.php(805): Illuminate\\Pipeline\\Pipeline->then()
+#59 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack()
+#60 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate\\Routing\\Router->runRoute()
+#61 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute()
+#62 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate\\Routing\\Router->dispatch()
+#63 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#64 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#65 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#66 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#67 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#68 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#69 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#70 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#71 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#72 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(99): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#73 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#74 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#75 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle()
+#76 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#77 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#78 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#79 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#80 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#81 /home/thanhyk14/Desktop/local/public/index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle()
+#82 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('...')
+#83 {main}
+
+[previous exception] [object] (PDOException(code: 23000): SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'name' cannot be null at /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Connection.php:580)
+[stacktrace]
+#0 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(580): PDOStatement->execute()
+#1 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(809): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}()
+#2 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(776): Illuminate\\Database\\Connection->runQueryCallback()
+#3 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(569): Illuminate\\Database\\Connection->run()
+#4 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(533): Illuminate\\Database\\Connection->statement()
+#5 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/Processor.php(32): Illuminate\\Database\\Connection->insert()
+#6 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3387): Illuminate\\Database\\Query\\Processors\\Processor->processInsertGetId()
+#7 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1968): Illuminate\\Database\\Query\\Builder->insertGetId()
+#8 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1333): Illuminate\\Database\\Eloquent\\Builder->__call()
+#9 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1298): Illuminate\\Database\\Eloquent\\Model->insertAndSetId()
+#10 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1137): Illuminate\\Database\\Eloquent\\Model->performInsert()
+#11 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1023): Illuminate\\Database\\Eloquent\\Model->save()
+#12 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Support/helpers.php(307): Illuminate\\Database\\Eloquent\\Builder->Illuminate\\Database\\Eloquent\\{closure}()
+#13 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1022): tap()
+#14 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php(23): Illuminate\\Database\\Eloquent\\Builder->create()
+#15 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2334): Illuminate\\Database\\Eloquent\\Model->forwardCallTo()
+#16 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2346): Illuminate\\Database\\Eloquent\\Model->__call()
+#17 /home/thanhyk14/Desktop/local/app/Http/Controllers/AggregationPointController.php(30): Illuminate\\Database\\Eloquent\\Model::__callStatic()
+#18 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\AggregationPointController->store()
+#19 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction()
+#20 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Route.php(259): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#21 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate\\Routing\\Route->runController()
+#22 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Router.php(806): Illuminate\\Routing\\Route->run()
+#23 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#24 /home/thanhyk14/Desktop/local/app/Http/Middleware/CheckUserRole.php(25): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#25 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): App\\Http\\Middleware\\CheckUserRole->handle()
+#26 /home/thanhyk14/Desktop/local/app/Http/Middleware/LogApiRequests.php(15): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#27 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): App\\Http\\Middleware\\LogApiRequests->handle()
+#28 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#29 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#30 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#31 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#32 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(159): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#33 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(125): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest()
+#34 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(87): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequestUsingNamedLimiter()
+#35 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle()
+#36 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#37 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Auth\\Middleware\\Authenticate->handle()
+#38 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#39 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
+#40 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#41 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest()
+#42 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle()
+#43 /home/thanhyk14/Desktop/local/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php(25): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#44 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful->Laravel\\Sanctum\\Http\\Middleware\\{closure}()
+#45 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#46 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#47 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#48 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest()
+#49 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle()
+#50 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#51 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
+#52 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#53 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
+#54 /home/thanhyk14/Desktop/local/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php(61): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#55 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(162): Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful->Laravel\\Sanctum\\Http\\Middleware\\{closure}()
+#56 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#57 /home/thanhyk14/Desktop/local/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php(24): Illuminate\\Pipeline\\Pipeline->then()
+#58 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful->handle()
+#59 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#60 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Router.php(805): Illuminate\\Pipeline\\Pipeline->then()
+#61 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack()
+#62 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate\\Routing\\Router->runRoute()
+#63 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute()
+#64 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate\\Routing\\Router->dispatch()
+#65 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#66 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#67 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#68 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#69 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#70 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#71 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#72 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#73 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#74 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(99): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#75 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#76 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#77 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle()
+#78 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#79 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#80 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#81 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#82 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#83 /home/thanhyk14/Desktop/local/public/index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle()
+#84 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('...')
+#85 {main}
+"} 
+[2023-12-16 00:43:52] local.INFO: 2023-12-16 00:43:52 POST:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.0570964813232ms  
+[2023-12-16 00:43:55] local.INFO: 2023-12-16 00:43:55 POST:"http://127.0.0.1:8000/api/logout" - Execution Time: 0.80513954162598ms  
+[2023-12-16 03:25:03] local.INFO: 2023-12-16 03:25:03 POST:"http://127.0.0.1:8000/api/login" - Execution Time: 486.12689971924ms  
+[2023-12-16 03:25:03] local.INFO: 2023-12-16 03:25:03 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.15807151794434ms  
+[2023-12-16 03:25:03] local.INFO: 2023-12-16 03:25:03 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 35.04204750061ms  
+[2023-12-16 03:25:03] local.INFO: 2023-12-16 03:25:03 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13589859008789ms  
+[2023-12-16 03:25:03] local.INFO: 2023-12-16 03:25:03 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.4050941467285ms  
+[2023-12-16 03:25:09] local.INFO: 2023-12-16 03:25:09 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 24.985074996948ms  
+[2023-12-16 03:25:09] local.INFO: 2023-12-16 03:25:09 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.1439533233643ms  
+[2023-12-16 03:25:25] local.INFO: 2023-12-16 03:25:25 DELETE:"http://127.0.0.1:8000/api/aggregationPoint/72" - Execution Time: 41.463851928711ms  
+[2023-12-16 03:25:25] local.INFO: 2023-12-16 03:25:25 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.6838264465332ms  
+[2023-12-16 03:25:25] local.INFO: 2023-12-16 03:25:25 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.9501399993896ms  
+[2023-12-16 03:25:30] local.INFO: 2023-12-16 03:25:30 GET:"http://127.0.0.1:8000/api/aggregationPoint/71" - Execution Time: 6.2119960784912ms  
+[2023-12-16 03:25:30] local.INFO: 2023-12-16 03:25:30 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.9041976928711ms  
+[2023-12-16 03:25:30] local.INFO: 2023-12-16 03:25:30 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 5.8059692382812ms  
+[2023-12-16 03:25:30] local.INFO: 2023-12-16 03:25:30 GET:"http://127.0.0.1:8000/api/aggregationPoint/71" - Execution Time: 5.0170421600342ms  
+[2023-12-16 03:25:30] local.INFO: 2023-12-16 03:25:30 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.0291290283203ms  
+[2023-12-16 03:25:30] local.INFO: 2023-12-16 03:25:30 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 6.1788558959961ms  
+[2023-12-16 03:25:35] local.INFO: 2023-12-16 03:25:35 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.8249702453613ms  
+[2023-12-16 03:25:35] local.INFO: 2023-12-16 03:25:35 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.432056427002ms  
+[2023-12-16 03:25:38] local.INFO: 2023-12-16 03:25:38 GET:"http://127.0.0.1:8000/api/aggregationPoint/71" - Execution Time: 10.672807693481ms  
+[2023-12-16 03:25:39] local.INFO: 2023-12-16 03:25:39 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 10.021924972534ms  
+[2023-12-16 03:25:39] local.INFO: 2023-12-16 03:25:39 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 8.7258815765381ms  
+[2023-12-16 03:25:39] local.INFO: 2023-12-16 03:25:39 GET:"http://127.0.0.1:8000/api/aggregationPoint/71" - Execution Time: 6.6940784454346ms  
+[2023-12-16 03:25:39] local.INFO: 2023-12-16 03:25:39 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.702184677124ms  
+[2023-12-16 03:25:39] local.INFO: 2023-12-16 03:25:39 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 4.8599243164062ms  
+[2023-12-16 03:25:45] local.INFO: 2023-12-16 03:25:45 PUT:"http://127.0.0.1:8000/api/aggregationPoint/71" - Execution Time: 10.297060012817ms  
+[2023-12-16 03:25:45] local.INFO: 2023-12-16 03:25:45 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.2599906921387ms  
+[2023-12-16 03:25:45] local.INFO: 2023-12-16 03:25:45 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.0849189758301ms  
+[2023-12-16 03:25:47] local.INFO: 2023-12-16 03:25:47 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 8.2840919494629ms  
+[2023-12-16 03:25:47] local.INFO: 2023-12-16 03:25:47 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 8.5628032684326ms  
+[2023-12-16 03:25:53] local.INFO: 2023-12-16 03:25:53 GET:"http://127.0.0.1:8000/api/aggregationPoint/56" - Execution Time: 4.8818588256836ms  
+[2023-12-16 03:25:53] local.INFO: 2023-12-16 03:25:53 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.7799816131592ms  
+[2023-12-16 03:25:54] local.INFO: 2023-12-16 03:25:54 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 5.5019855499268ms  
+[2023-12-16 03:25:54] local.INFO: 2023-12-16 03:25:54 GET:"http://127.0.0.1:8000/api/aggregationPoint/56" - Execution Time: 4.7190189361572ms  
+[2023-12-16 03:25:54] local.INFO: 2023-12-16 03:25:54 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.3150653839111ms  
+[2023-12-16 03:25:54] local.INFO: 2023-12-16 03:25:54 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 4.7271251678467ms  
+[2023-12-16 03:29:13] local.INFO: 2023-12-16 03:29:13 PUT:"http://127.0.0.1:8000/api/aggregationPoint/56" - Execution Time: 15.160799026489ms  
+[2023-12-16 03:29:13] local.INFO: 2023-12-16 03:29:13 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.5280456542969ms  
+[2023-12-16 03:29:13] local.INFO: 2023-12-16 03:29:13 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 2.7220249176025ms  
+[2023-12-16 03:29:15] local.INFO: 2023-12-16 03:29:15 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 3.0460357666016ms  
+[2023-12-16 03:29:15] local.INFO: 2023-12-16 03:29:15 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 3.371000289917ms  
+[2023-12-16 03:29:26] local.INFO: 2023-12-16 03:29:26 DELETE:"http://127.0.0.1:8000/api/aggregationPoint/71" - Execution Time: 9.3390941619873ms  
+[2023-12-16 03:29:26] local.INFO: 2023-12-16 03:29:26 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 3.349781036377ms  
+[2023-12-16 03:29:26] local.INFO: 2023-12-16 03:29:26 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.148099899292ms  

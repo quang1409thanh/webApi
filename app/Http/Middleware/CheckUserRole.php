@@ -20,6 +20,7 @@ class CheckUserRole
         if (Auth::check()) {
             // Lấy giá trị 'role' từ route parameters
             $user = Auth::user();
+//            dd($user->getUserType(),$role);
             if ($user->getUserType() === $role) {
                 return $next($request);
             } else {

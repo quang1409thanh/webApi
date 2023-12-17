@@ -1,15 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import axiosClient from "../../../axios.js";
 import axios from "axios";
+import AddressSelect from "./AddressForm.jsx";
 
 const host = "https://provinces.open-api.vn/api/";
 
 const SearchBox = ({onSubmit}) => {
 
     // đoạn mã này để dùng gọi api tỉnh thành từ bên ngoài
-    const [provinces, setProvinces] = useState([]);
-    const [districts, setDistricts] = useState([]);
-    const [wards, setWards] = useState([]);
     const [province, setProvince] = useState("");
     const [district, setDistrict] = useState("");
     const [ward, setWard] = useState("");
@@ -17,6 +15,25 @@ const SearchBox = ({onSubmit}) => {
     const [provinceName, setSelectedProvinceText] = useState("");
     const [districtName, setSelectedDistrictText] = useState("");
     const [wardName, setSelectedWardText] = useState("");
+
+    const handleAddressChange = (selectedCode, selectedText, type) => {
+        switch (type) {
+            case 'province':
+                setProvince(selectedCode);
+                setSelectedProvinceText(selectedText);
+                break;
+            case 'district':
+                setDistrict(selectedCode);
+                setSelectedDistrictText(selectedText);
+                break;
+            case 'ward':
+                setWard(selectedCode);
+                setSelectedWardText(selectedText);
+                break;
+            default:
+                break;
+        }
+    };
 
     /// đoạn mã này để xử lý dữ liệu từ be của mình gửi về.
     const [offices, setOffices] = useState([]);
@@ -34,7 +51,6 @@ const SearchBox = ({onSubmit}) => {
                 // Handle the response if needed
                 setOffices(response.data);
                 setSubmitted(true);
-                console.log(response.data);
             })
             .catch((error) => {
                 console.error('Error fetching data:', error);
@@ -139,48 +155,15 @@ const SearchBox = ({onSubmit}) => {
                         method="POST" // Use the GET method
                     >
                         <div className="col-search-box">
-                            <div className="search-box">
-                                <div className="col-tmp-1 col-left">
-                                    <label htmlFor="city">Tỉnh/Thành phố</label>
-                                    <select
-                                        name="provinceId"
-                                        id="city"
-                                        className="form-control citySelect"
-                                        value={province} onChange={handleProvinceChange}>
-
-
-                                        <option disabled value="">chọn tỉnh</option>
-                                        {renderOptions(provinces)}
-                                    </select>
-                                </div>
-                                <div className="col-tmp-1 col-left col-right">
-                                    <label htmlFor="district">Quận/Huyện</label>
-                                    <select
-                                        name="districtId"
-                                        id="district"
-                                        className="form-control districtSelect"
-                                        value={district}
-                                        onChange={handleDistrictChange}>
-                                        <option disabled value="">chọn quận</option>
-                                        {renderOptions(districts)}
-                                    </select>
-                                </div>
-                                <div className="col-tmp-1 col-left col-right">
-                                    <label htmlFor="district">Xã/Phường</label>
-                                    <select
-                                        name="wardId"
-                                        id="ward"
-                                        className="form-control districtSelect"
-                                        value={ward}
-                                        onChange={handleWardChange}>
-                                        <option disabled value="">chọn xã/phường</option>
-                                        {renderOptions(wards)}
-                                    </select>
-                                </div>
-                                <div className="col-tmp-2 col-right col-left">
-                                    <input type="submit" value="Tìm Kiếm" className="btn btn-search-branch"/>
-                                </div>
+                            <AddressSelect
+                                onSelectProvince={(code, text) => handleAddressChange(code, text, 'province')}
+                                onSelectDistrict={(code, text) => handleAddressChange(code, text, 'district')}
+                                onSelectWard={(code, text) => handleAddressChange(code, text, 'ward')}
+                            />
+                            <div className="col-tmp-2 col-right col-left">
+                                <input type="submit" value="Tìm kiếm" className="btn btn-search-branch"/>
                             </div>
+
                         </div>
                     </form>
                 </div>
@@ -209,7 +192,8 @@ const SearchBox = ({onSubmit}) => {
                                             <img src="./img/icon-location.svg" className="img_icon-code"
                                                  alt="icon-location"/>
                                             Địa chỉ:
-                                        </span><b>{item.address.province}, {item.address.district}, {item.address.ward} (ĐT: {item.phone})</b></p></div>
+                                        </span><b>{item.address.province}, {item.address.district}, {item.address.ward} (ĐT: {item.phone})</b>
+                                                </p></div>
                                             ))
                                         ) : (
                                             <p>Không có kết quả nào phù hợp</p>
