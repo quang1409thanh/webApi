@@ -25,3 +25,10 @@
 [2023-12-17 08:36:44] local.INFO: 2023-12-17 08:36:44 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 4.284143447876ms  
 [2023-12-17 08:36:48] local.INFO: 2023-12-17 08:36:48 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.1320323944092ms  
 [2023-12-17 08:36:48] local.INFO: 2023-12-17 08:36:48 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.4349899291992ms  
+[2023-12-17 08:47:27] local.INFO: 2023-12-17 08:47:27 POST:"http://127.0.0.1:8000/api/login" - Execution Time: 234.24100875854ms  
+[2023-12-17 08:47:27] local.INFO: 2023-12-17 08:47:27 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.21600723266602ms  
+[2023-12-17 08:47:27] local.INFO: 2023-12-17 08:47:27 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 6.432056427002ms  
+[2023-12-17 08:47:27] local.INFO: 2023-12-17 08:47:27 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.24294853210449ms  
+[2023-12-17 08:47:27] local.INFO: 2023-12-17 08:47:27 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.5359859466553ms  
+[2023-12-17 08:47:29] local.INFO: 2023-12-17 08:47:29 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.8639049530029ms  
+[2023-12-17 08:47:29] local.INFO: 2023-12-17 08:47:29 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.9719085693359ms  

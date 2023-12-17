@@ -1,6 +1,6 @@
 import React from 'react';
-import "/home/thanhyk14/Desktop/local/fe/public/css/app.css" ;
-import "/home/thanhyk14/Desktop/local/fe/public/css/home.css" ;
+import "../../css/app.css" ;
+import "../../css/home.css" ;
 import HeaderGuess from '../Guess/HeaderGuess.jsx';
 import HomeBody from "./HomeBody.jsx";
 import Footer from './Footer.jsx';
