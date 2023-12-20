@@ -109,7 +109,7 @@ const ManagePost = () => {
         <section className="block-search-post-office">
             <div className="container">
                 <div className="row">
-                    <div className="box-title text-uppercase">Thêm Bưu Cục</div>
+                    <div className="box-title text-uppercase">Thêm Điểm Giao Dịch</div>
                     {/* Use onSubmit directly on the form element */}
                     <form
                         style={{width: '100%'}}

@@ -95,6 +95,40 @@ export default function Header() {
                                     </NavLink>
                                 </li>
 
+                                <li className="menu_item">
+                                    <NavLink
+                                        to="/transactionPoint"
+                                        className={({isActive}) =>
+                                            classNames(
+                                                isActive
+                                                    ? "bg-gray-900 text-white"
+                                                    : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                                                "px-3 py-2 rounded-md text-sm font-medium"
+                                            )
+                                        }
+                                    >
+                                        <img src="./img/icon-introduce.svg" alt=""/>
+                                        Quản lý điểm giao dịch
+                                    </NavLink>
+                                </li>
+
+
+                                <li className="menu_item">
+                                    <NavLink
+                                        to="/addAccountPoint"
+                                        className={({isActive}) =>
+                                            classNames(
+                                                isActive
+                                                    ? "bg-gray-900 text-white"
+                                                    : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                                                "px-3 py-2 rounded-md text-sm font-medium"
+                                            )
+                                        }
+                                    >
+                                        <img src="./img/icon-introduce.svg" alt=""/>
+                                        Thêm tài khoản
+                                    </NavLink>
+                                </li>
                             </ul>
                         </nav>
                     </div>

@@ -10,6 +10,7 @@ import DefaultLayout from "./components/Users/DefaultLayout.jsx";
 import FindView from "./components/Common/FindPost/FindView.jsx";
 import AggregationLayout from "./components/Users/companyLeader/Aggregation/AggregationLayout.jsx";
 import ShowAggregation from "./components/Users/companyLeader/Aggregation/ShowAggregation.jsx";
+import TransactionLayout from "./components/Users/companyLeader/Transaction/TransactionLayout.jsx";
 
 function AppRouter() {
     return (
@@ -22,6 +23,8 @@ function AppRouter() {
                 <Route index element={<Dashboard/>}/>
                 <Route path="/dashboard" element={<Navigate to="/"/>}/>
                 <Route path="/aggregationPoint" element={<AggregationLayout/>}/>
+                <Route path="/transactionPoint" element={<TransactionLayout/>}/>
+
                 <Route path="/aggregationPoint/:dynamicValue" element={<ShowAggregation/>}/>
             </Route>
             <Route path="/home" element={<Home/>}/>

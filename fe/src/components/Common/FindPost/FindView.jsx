@@ -10,7 +10,7 @@ const FindView = ({headerType, body}) => {
     return (
         <div className="min-h-full">
             {headerType !== 'none' && <Header/>}
-            {<ManagePost/>}
+            {<ManageView/>}
             {headerType !== 'none' && <Footer/>}
             <Toast/>
         </div>
