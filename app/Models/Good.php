@@ -14,13 +14,8 @@ class Good extends Model
         return $this->morphMany(Image::class, 'imageable');
     }
 
-    public function sender_address(): \Illuminate\Database\Eloquent\Relations\MorphOne
+    public function currentLocation(): \Illuminate\Database\Eloquent\Relations\MorphTo
     {
-        return $this->morphOne(Address::class, 'addressable');
-    }
-
-    public function receiver_address(): \Illuminate\Database\Eloquent\Relations\MorphOne
-    {
-        return $this->morphOne(Address::class, 'addressable');
+        return $this->morphTo('current_location');
     }
 }
