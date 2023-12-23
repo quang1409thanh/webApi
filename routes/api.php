@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\GoodController;
+use App\Http\Controllers\QRCodeController;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -58,9 +59,9 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
 
     });
 
-    // Nhóm route cho Aggregation Point Head
+    // Nhóm route cho AggregationEmployee Point Head
     Route::group(['middleware' => ['role:aggregationPointHead']], function () {
-        // Các route cho Aggregation Point Head
+        // Các route cho AggregationEmployee Point Head
         Route::apiResource('aggregationPointEmployee', App\Http\Controllers\AggregationPointEmployeeController::class);
         Route::get('/ping', [App\Http\Controllers\AggregationPointEmployeeController::class, 'resolve']);
     });
@@ -87,9 +88,9 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     });
 
 
-    // Nhóm route cho Aggregation Point Employee
+    // Nhóm route cho AggregationEmployee Point Employee
     Route::group(['middleware' => ['role:aggregationPointEmployee']], function () {
-        // Các route cho Aggregation Point Employee
+        // Các route cho AggregationEmployee Point Employee
     });
 
     // Nhóm route cho Customer
@@ -101,4 +102,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::group(['middleware' => ['role:shipper']], function () {
         // Các route cho Shipper
     });
+
+    Route::get('/qrcode/{orderCode}', [QRCodeController::class, 'generateQRCode']);
+
 });
