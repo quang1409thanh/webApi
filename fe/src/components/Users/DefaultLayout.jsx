@@ -1,4 +1,4 @@
-import {Fragment} from "react";
+import {Fragment, useContext} from "react";
 import {Disclosure, Menu, Transition} from "@headlessui/react";
 import {
     Bars3Icon,
@@ -12,15 +12,12 @@ import {useEffect} from "react";
 import {useStateContext} from "../../contexts/ContextProvider.jsx";
 import Toast from "../Common/Toast.jsx";
 import Header from "./Header.jsx";
+import {UserRoleProvider} from "./UserRoleProvider.jsx";
 
 const navigation = [
     {name: "Dashboard", to: "/"},
     {name: "Surveys", to: "/surveys"},
 ];
-
-function classNames(...classes) {
-    return classes.filter(Boolean).join(" ");
-}
 
 export default function DefaultLayout() {
     const {currentUser, userToken, setCurrentUser, setUserToken} =
@@ -37,20 +34,11 @@ export default function DefaultLayout() {
         });
     };
 
-    useEffect(() => {
-        axiosClient.get('/me')
-            .then(({data}) => {
-                setCurrentUser(data.user)
-            })
-    }, [])
-
     return (
         <>
             <div className="min-h-full">
                 <Header/>
-
                 <Outlet/>
-
                 <Toast/>
             </div>
         </>
