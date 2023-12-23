@@ -16,6 +16,9 @@ import ShowProfile from "./components/Users/ShowProfile.jsx";
 import ResetPassword from "./components/Users/ResetPassword.jsx";
 import AddUserLayout from "./components/Users/companyLeader/addAccount/AddUserLayout.jsx";
 import TransactionOfficeLayout from "./components/Users/TransactionOffice/TransactionOfficeLayout.jsx";
+import GoodsQr from "./components/Users/GoodsQr.jsx";
+import React from "react";
+import AggregationEmployee from "./components/Users/AggregationEmployee/AggregationEmployee.jsx";
 
 function AppRouter() {
     let AggregationDetails;
@@ -36,10 +39,8 @@ function AppRouter() {
                 <Route path="/transactionPoint/:dynamicValue" element={<ShowTransaction/>}/>
                 <Route path="/aggregationPoint/:dynamicValue" element={<ShowAggregation/>}/>
                 <Route path="/password-reset/:token" element={<ResetPassword/>}/>
-                <Route path="/aggregation/:id" component={AggregationDetails} />
-                <Route path="/transaction/:id" component={TransactionDetails} />
-
-
+                <Route path="/aggregation/:id" component={AggregationDetails}/>
+                <Route path="/transaction/:id" component={TransactionDetails}/>
             </Route>
 
             <Route path="/home" element={<Home/>}/>
@@ -50,9 +51,8 @@ function AppRouter() {
             <Route path="/transaction_staff/danh_sach_tui_nhan" element={<TransactionOfficeLayout/>}/>
             <Route path="/transaction_staff/danh_sach_giao_thanh_cong" element={<TransactionOfficeLayout/>}/>
             <Route path="/transaction_staff/danh_sach_giao_that_bai" element={<TransactionOfficeLayout/>}/>
-
-
-            <Route path="/gioithieu" element={<Home/>}/>
+            <Route path="/aggregation_employee" element={<AggregationEmployee/>}/>
+             <Route path="/gioithieu" element={<GoodsQr/>}/>
         </Routes>
     );
 }

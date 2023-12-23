@@ -51,7 +51,7 @@ class HomeBody extends React.Component {
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/find_costs">
+                                        <a href="/aggregation_employee">
                                             <div className="icon-service">
                                                 <img src="img/icon-calculator.svg" alt=""/>
                                             </div>

@@ -18,7 +18,7 @@ const AddUserForm = () => {
     });
     const getTitleText = () => {
         if (userType === 'aggregationHead') {
-            return 'Thuộc điểm tập kết\n (Aggregation)';
+            return 'Thuộc điểm tập kết\n (AggregationEmployee)';
         } else if (userType === 'transactionHead') {
             return 'Thuộc điểm giao dịch (Transaction)';
         }

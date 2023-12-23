@@ -14,7 +14,7 @@ const HeadList = () => {
     const {showToast} = useStateContext();
     const getTitleText = () => {
         if (userType === 'aggregationHead') {
-            return 'Danh sách các Trưởng điểm tập kết (Aggregation)';
+            return 'Danh sách các Trưởng điểm tập kết (AggregationEmployee)';
         } else if (userType === 'transactionHead') {
             return 'Danh sách các Trưởng điểm Giao dịch (Transaction)';
         }

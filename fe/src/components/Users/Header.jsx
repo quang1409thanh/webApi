@@ -30,7 +30,7 @@ export default function Header() {
                         <nav>
                             <ol className="menu_item">
                                 {currentUser ? (
-                                    <NavLink  onClick={(ev) => logout(ev)} className="text-gray-400" to={"/"}>
+                                    <NavLink onClick={(ev) => logout(ev)} className="text-gray-400" to={"/"}>
                                         Sign out
                                     </NavLink>
                                 ) : (
@@ -124,7 +124,25 @@ export default function Header() {
                                     >
                                         Thêm tài khoản
                                     </NavLink>
+
+
                                 </li>
+                                <li className="menu_item">
+                                    <NavLink
+                                        to="/gioithieu"
+                                        className={({isActive}) =>
+                                            classNames(
+                                                isActive
+                                                    ? "bg-green-300"  // Thay đổi màu nền ở đây
+                                                    : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                                                "px-3 py-2 rounded-md text-sm font-medium"
+                                            )
+                                        }
+                                    >
+                                        Qrcode
+                                    </NavLink>
+                                </li>
+
                             </ul>
                         </nav>
                     </div>
