@@ -27,15 +27,14 @@ const sampleOrderList = [
 ];
 
 
-const OrderList = ({ data, checkProduct }) => {
-    data = sampleOrderList
+const OrderList = ({ checkProduct, data }) => {
   return (
     <div className="page_container">
       <main className="main_content">
         <div id="mainContent">
           <div className="full_container">
             <div className="content_title">
-              DANH SÁCH ĐƠN TẠI KHO
+              DANH SÁCH ĐƠN TẠI BƯU CỤC
             </div>
             <div className="container_product_list">
               {checkProduct ? (
@@ -51,7 +50,6 @@ const OrderList = ({ data, checkProduct }) => {
                   <i style={{ color: 'red' }}>*Không tìm thấy đơn hàng</i>
                 </div>
               )}
-
               {checkProduct && (
                 <div className="product_list" id="product_list">
                   <table id="product_list_table">
@@ -90,13 +88,20 @@ const OrderList = ({ data, checkProduct }) => {
                             <span>
                               <select name="select_trang_thai" className="select_trang_thai">
                                 <option>--CN Trạng thái--</option>
-                                <option>Đang chờ chuyển đi</option>
+                                <option>Chấp nhận gửi</option>
+                                <option>Đã giao hàng</option>
+                                <option>Giao thất bại</option>
                                 <option>Thất lạc</option>
                               </select>
                             </span>
                             <span>
                               <div className="btn_cn_trang_thai">
-                                <input type="button" className="cn_trang_thai check_btn" code={item._id} value="OK" />
+                                <input
+                                  type="button"
+                                  className="cn_trang_thai check_btn"
+                                  code={item._id}
+                                  value="OK"
+                                />
                               </div>
                             </span>
                           </td>
