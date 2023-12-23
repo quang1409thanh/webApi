@@ -293,7 +293,7 @@
   margin-bottom: 20px; }
 
 /* .container_product_list .product_list #product_list_table tbody {
-    
+
 } */
 .container_product_list .product_list #product_list_table input {
   text-align: center;
@@ -650,7 +650,7 @@
 
 .order-search-info-status-title h3 {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 10px;
   line-height: 24px;
   text-transform: uppercase;
   color: #0072bc; }

@@ -15,6 +15,7 @@ import ShowTransaction from "./components/Users/companyLeader/Transaction/ShowTr
 import ShowProfile from "./components/Users/ShowProfile.jsx";
 import ResetPassword from "./components/Users/ResetPassword.jsx";
 import AddUserLayout from "./components/Users/companyLeader/addAccount/AddUserLayout.jsx";
+import TransactionOfficeLayout from "./components/Users/TransactionOffice/TransactionOfficeLayout.jsx";
 
 function AppRouter() {
     let AggregationDetails;
@@ -40,8 +41,11 @@ function AppRouter() {
 
 
             </Route>
+
             <Route path="/home" element={<Home/>}/>
-            <Route path="/list_office" element={<FindView/>}/>
+            <Route path="/transaction_staff" element={<TransactionOfficeLayout/>}/>
+            <Route path="/transaction_staff/tracuu" element={<TransactionOfficeLayout/>}/>
+
             <Route path="/gioithieu" element={<Home/>}/>
         </Routes>
     );
