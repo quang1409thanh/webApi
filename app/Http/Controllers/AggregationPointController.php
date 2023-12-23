@@ -12,7 +12,7 @@ class AggregationPointController extends Controller
      */
     public function index()
     {
-        $aggregationPoints = AggregationPoint::with('address')->get();
+        $aggregationPoints = AggregationPoint::with('address', 'aggregationPointHead.user')->get();
         return response()->json(['aggregationPoints' => $aggregationPoints]);
     }
 
@@ -54,8 +54,8 @@ class AggregationPointController extends Controller
      */
     public function show(string $id)
     {
-        $aggregationPoint = AggregationPoint::with('address')->findOrFail($id);
-//        dd($aggregationPoint);
+        $aggregationPoint = AggregationPoint::with('address', 'aggregationPointHead.user')->findOrFail($id);
+        //        dd($aggregationPoint);
         return response()->json(['aggregation' => $aggregationPoint]);
     }
 
@@ -99,8 +99,17 @@ class AggregationPointController extends Controller
      */
     public function destroy(string $id)
     {
-        $aggregationPoint = AggregationPoint::findOrFail($id);
+        // Lấy thông tin điểm tập kết và địa chỉ liên kết
+        $aggregationPoint = AggregationPoint::with('address')->findOrFail($id);
+        $address = $aggregationPoint->address;
+
+        // Xóa bản ghi trong bảng AggregationPoint
         $aggregationPoint->delete();
+
+        // Nếu tồn tại địa chỉ liên kết, xóa nó
+        if ($address) {
+            $address->delete();
+        }
 
         return response()->json(['message' => 'Xóa điểm tập kết thành công.']);
     }

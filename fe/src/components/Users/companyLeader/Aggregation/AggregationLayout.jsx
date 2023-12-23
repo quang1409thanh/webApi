@@ -1,30 +1,28 @@
 import React from 'react';
 import "../../../../css/app.css" ;
 import "../../../../css/home.css" ;
-import Header from "../../Header.jsx";
 import Footer from "../../../Common/Footer.jsx";
 import Toast from "../../../Common/Toast.jsx";
 import "../styleAggregation.css"
 import AggregationList from "./AggregationList.jsx";
 import AggregationForm from "./AggregationForm.jsx";
-import {AggregationProvider} from "./AggregationProvider.jsx";
+import {CompanyLeaderProvider} from "../CompanyLeaderProvider.jsx";
 
 
 const AggregationLayout = ({headerType, body}) => {
     return (
         <div className="min-h-full">
             <Toast/>
-            {headerType !== 'none' && <Header/>}
             <section className="block-search-post-office">
                 <div className="container">
-                    <AggregationProvider>
+                    <CompanyLeaderProvider>
                         <AggregationList/>
                         <br/>
                         <br/>
                         <br/>
                         <br/>
                         <AggregationForm/>
-                    </AggregationProvider>
+                    </CompanyLeaderProvider>
                 </div>
             </section>
             {

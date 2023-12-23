@@ -11,8 +11,14 @@ import FindView from "./components/Common/FindPost/FindView.jsx";
 import AggregationLayout from "./components/Users/companyLeader/Aggregation/AggregationLayout.jsx";
 import ShowAggregation from "./components/Users/companyLeader/Aggregation/ShowAggregation.jsx";
 import TransactionLayout from "./components/Users/companyLeader/Transaction/TransactionLayout.jsx";
+import ShowTransaction from "./components/Users/companyLeader/Transaction/ShowTransaction.jsx";
+import ShowProfile from "./components/Users/ShowProfile.jsx";
+import ResetPassword from "./components/Users/ResetPassword.jsx";
+import AddUserLayout from "./components/Users/companyLeader/addAccount/AddUserLayout.jsx";
 
 function AppRouter() {
+    let AggregationDetails;
+    let TransactionDetails;
     return (
         <Routes>
             <Route path="/" element={<GuestLayout/>}>
@@ -24,8 +30,15 @@ function AppRouter() {
                 <Route path="/dashboard" element={<Navigate to="/"/>}/>
                 <Route path="/aggregationPoint" element={<AggregationLayout/>}/>
                 <Route path="/transactionPoint" element={<TransactionLayout/>}/>
-
+                <Route path="/manageuser" element={<AddUserLayout/>}/>
+                <Route path="/profile" element={<ShowProfile/>}/>
+                <Route path="/transactionPoint/:dynamicValue" element={<ShowTransaction/>}/>
                 <Route path="/aggregationPoint/:dynamicValue" element={<ShowAggregation/>}/>
+                <Route path="/password-reset/:token" element={<ResetPassword/>}/>
+                <Route path="/aggregation/:id" component={AggregationDetails} />
+                <Route path="/transaction/:id" component={TransactionDetails} />
+
+
             </Route>
             <Route path="/home" element={<Home/>}/>
             <Route path="/list_office" element={<FindView/>}/>

@@ -1,16 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import axiosClient from "../../../axios.js";
 import axios from "axios";
-import AddressSelect from "./AddressForm.jsx";
+import AddressSelect from "./AddressSelect.jsx";
 
 const host = "https://provinces.open-api.vn/api/";
 
 const SearchBox = ({onSubmit}) => {
 
-    // đoạn mã này để dùng gọi api tỉnh thành từ bên ngoài
-    const [province, setProvince] = useState("");
-    const [district, setDistrict] = useState("");
-    const [ward, setWard] = useState("");
+    const [emptyResult, setEmptyResult] = useState("")
+    const [address, setAddress] = useState({
+        province: '',
+        district: '',
+        ward: '',
+        detailed_address: '',
+    });
 
     const [provinceName, setSelectedProvinceText] = useState("");
     const [districtName, setSelectedDistrictText] = useState("");
@@ -19,16 +22,31 @@ const SearchBox = ({onSubmit}) => {
     const handleAddressChange = (selectedCode, selectedText, type) => {
         switch (type) {
             case 'province':
-                setProvince(selectedCode);
-                setSelectedProvinceText(selectedText);
+                setAddress((prevAddress) => ({
+                    ...prevAddress,
+                    province: selectedText,
+                    district: "",
+                    ward: "",
+                }));
                 break;
             case 'district':
-                setDistrict(selectedCode);
-                setSelectedDistrictText(selectedText);
+                setAddress((prevAddress) => ({
+                    ...prevAddress,
+                    district: selectedText,
+                    ward: "",
+                }));
                 break;
             case 'ward':
-                setWard(selectedCode);
-                setSelectedWardText(selectedText);
+                setAddress((prevAddress) => ({
+                    ...prevAddress,
+                    ward: selectedText,
+                }));
+                break;
+            case 'detailed_address':
+                setAddress((prevAddress) => ({
+                    ...prevAddress,
+                    detailed_address: selectedText,
+                }));
                 break;
             default:
                 break;
@@ -42,103 +60,21 @@ const SearchBox = ({onSubmit}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Call the parent's onSubmit function with the form data
-        axiosClient.post('/list_office', {
-            provinceName: provinceName,
-            districtName: districtName,
-            wardName: wardName,
-        })
+        axiosClient.post('/list_office', {...address})
             .then((response) => {
-                // Handle the response if needed
-                setOffices(response.data);
-                setSubmitted(true);
+                if (response.data) {
+                    if (response.data.length > 0) {
+                        setOffices(response.data);
+                        setSubmitted(true);
+                    } else {
+                        setOffices([]);
+                        setEmptyResult('Không có kết quả phù hợp');
+                    }
+                } else {
+                    console.log('Không có dữ liệu');
+                }
             })
-            .catch((error) => {
-                console.error('Error fetching data:', error);
-            });
     };
-
-
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     // Call the parent's onSubmit function with the form data
-    //     axiosClient.post('/transactionPoint', {
-    //         province: provinceName,
-    //         district: districtName,
-    //         ward : wardName,
-    //         detailed_address : "test",
-    //         name : "name",
-    //         code : Math.random().toString(36).substring(2, 8),
-    //         phone : "=> $request->phone",
-    //         email : "=> $request->email",
-    //         operatingHours: "8:00 AM - 5:00 PM",
-    //         aggregation_point_id: 2,
-    //         status: "Hoạt động",
-    //         notes: " Ghi chú về công ty cd",
-    //         capacity: 11,
-    //         current_load: 124,
-    //
-    // })
-    //         .then((response) => {
-    //             // Handle the response if needed
-    //             response.data;
-    //             console.log(response.data);
-    //         })
-    //         .catch((error) => {
-    //             console.error('Error fetching data:', error);
-    //         });
-    // };
-
-
-    // đoạn mà này để hiện thị tên lấy từ api bên ngoài vào.
-    useEffect(() => {
-        axios.get(host + '?depth=1')
-            .then(response => {
-                setProvinces(response.data);
-            });
-    }, []);
-
-    useEffect(() => {
-        if (province) {
-            axios.get(host + "p/" + province + "?depth=2")
-                .then(response => {
-                    setDistricts(response.data.districts);
-                });
-        }
-    }, [province]);
-
-    useEffect(() => {
-        if (district) {
-            axios.get(host + "d/" + district + "?depth=2")
-                .then(response => {
-                    setWards(response.data.wards);
-                });
-        }
-    }, [district]);
-
-    const renderOptions = (array) => {
-        return array.map(element => (
-            <option key={element.code} value={element.code}>{element.name}</option>
-        ));
-    }
-
-    const handleProvinceChange = (e) => {
-        const selectedProvinceCode = e.target.value;
-        setProvince(selectedProvinceCode);
-        setSelectedProvinceText(e.target.options[e.target.selectedIndex].text); // Lấy giá trị text của option được chọn
-    };
-
-    const handleDistrictChange = (e) => {
-        const selectedDistrictCode = e.target.value;
-        setDistrict(selectedDistrictCode);
-        setSelectedDistrictText(e.target.options[e.target.selectedIndex].text); // Lấy giá trị text của option được chọn
-    };
-
-    const handleWardChange = (e) => {
-        const selectedWardCode = e.target.value;
-        setWard(selectedWardCode);
-        setSelectedWardText(e.target.options[e.target.selectedIndex].text); // Lấy giá trị text của option được chọn
-    };
-
 
     // end address
     return (
@@ -155,11 +91,14 @@ const SearchBox = ({onSubmit}) => {
                         method="POST" // Use the GET method
                     >
                         <div className="col-search-box">
+
                             <AddressSelect
                                 onSelectProvince={(code, text) => handleAddressChange(code, text, 'province')}
                                 onSelectDistrict={(code, text) => handleAddressChange(code, text, 'district')}
                                 onSelectWard={(code, text) => handleAddressChange(code, text, 'ward')}
+                                onSelectDetail={(value) => handleAddressChange(null, value, 'detailed_address')}
                             />
+
                             <div className="col-tmp-2 col-right col-left">
                                 <input type="submit" value="Tìm kiếm" className="btn btn-search-branch"/>
                             </div>
@@ -177,26 +116,34 @@ const SearchBox = ({onSubmit}) => {
                                         offices.length > 0 ? (
                                             offices.map(item => (
                                                 <div className="post-item" key={item._id}>
-                                                    <button className="delete-btn" data-id={item._id}>EDIT</button>
+
+                                                    {/*<button className="delete-btn" data-id={item._id}>EDIT</button>*/}
                                                     <p>
-                                        <span className="title-post">
-                                            <img src="./img/icon-code.png" className="img_icon-code" alt="icon-code"/>
-                                            Mã số:
-                                        </span><b className="post-code">{item.code}</b></p><p>
-                                        <span className="title-post">
-                                            <img src="./img/icon-buu-cuc.svg" className="img_icon-code"
-                                                 alt="icon-buu-cuc"/>
-                                            Bưu cục:
-                                        </span><b>{item.name}</b></p><p>
-                                        <span className="title-post">
-                                            <img src="./img/icon-location.svg" className="img_icon-code"
-                                                 alt="icon-location"/>
-                                            Địa chỉ:
-                                        </span><b>{item.address.province}, {item.address.district}, {item.address.ward} (ĐT: {item.phone})</b>
-                                                </p></div>
+                                                        <span className="title-post">
+                                                            <img src="./img/icon-code.png" className="img_icon-code"
+                                                                 alt="icon-code"/>
+                                                            Mã số:
+                                                        </span><b className="post-code">{item.code}</b>
+                                                    </p>
+                                                    <p>
+                                                        <span className="title-post">
+                                                            <img src="./img/icon-buu-cuc.svg" className="img_icon-code"
+                                                                 alt="icon-buu-cuc"/>
+                                                            Bưu cục:
+                                                        </span><b>{item.name}</b></p>
+                                                    <p>
+                                                        <span className="title-post">
+                                                            <img src="./img/icon-location.svg" className="img_icon-code"
+                                                                 alt="icon-location"/>
+                                                            Địa chỉ:
+                                                        </span><b>{item.address.province}, {item.address.district}, {item.address.ward} (ĐT: {item.phone})</b>
+                                                    </p>
+                                                </div>
                                             ))
                                         ) : (
-                                            <p>Không có kết quả nào phù hợp</p>
+                                            <p>
+                                                {emptyResult}
+                                            </p>
                                         )) : (
                                         <p>Kết quả tìm kiếm sẽ hiện thị ở đây</p>
                                     )}

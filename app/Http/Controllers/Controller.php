@@ -25,10 +25,10 @@ class Controller extends BaseController
         $user = Auth::user();
         $type = $user->getUserType();
         // Kiểm tra xem người dùng có thông tin từ bảng company_leaders không
-        $userWithCompanyLeader = User::with($type)->find($user->id);
+        $userWithMore = User::with($type)->find($user->id);
 
         return response()->json([
-            "user" => $userWithCompanyLeader,
+            "user" => $userWithMore,
         ]);
     }
     public function dashboard() {

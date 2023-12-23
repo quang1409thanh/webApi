@@ -5,10 +5,8 @@ import Header from "../../Header.jsx";
 import Footer from "../../../Common/Footer.jsx";
 import Toast from "../../../Common/Toast.jsx";
 import {useParams} from "react-router-dom";
-import AggregationForm from "./AggregationForm.jsx";
-import {AggregationProvider} from "./AggregationProvider.jsx";
-import AggregationList from "./AggregationList.jsx";
-import EditForm from "./EditForm.jsx";
+import AggregationEditForm from "./AggregationEditForm.jsx";
+import {CompanyLeaderProvider} from "../CompanyLeaderProvider.jsx";
 
 function Aggregation() {
     return null;
@@ -22,13 +20,13 @@ const ShowAggregation = ({headerType, body}) => {
             {headerType !== 'none' && <Header/>}
             <section className="block-search-post-office">
                 <div className="container">
-                    <AggregationProvider>
+                    <CompanyLeaderProvider>
                         <br/>
                         <br/>
                         <br/>
                         <br/>
-                        <EditForm id={dynamicValue} />
-                    </AggregationProvider>
+                        <AggregationEditForm id={dynamicValue} />
+                    </CompanyLeaderProvider>
                 </div>
             </section>
             {headerType !== 'none' && <Footer/>}

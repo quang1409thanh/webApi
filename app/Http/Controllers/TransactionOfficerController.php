@@ -118,26 +118,31 @@ class TransactionOfficerController extends Controller
     #[NoReturn] public function find_office(Request $request): \Illuminate\Http\JsonResponse
     {
         // Lấy giá trị của tỉnh, huyện và xã từ query parameters
-        $provinceName = $request->provinceName;
-        $districtName = $request->districtName;
-        $wardName = $request->wardName;
+        $provinceName = $request->province;
+        $districtName = $request->district;
+        $wardName = $request->ward;
 
-        // Kiểm tra nếu cả ba giá trị tỉnh, huyện và xã đều được cung cấp
-        if ($provinceName !== null && $districtName !== null) {
+        // Kiểm tra nếu có giá trị tỉnh
+        if ($provinceName !== null) {
             // Sử dụng Eloquent để lấy các điểm giao dịch có địa chỉ và sắp xếp theo khoảng cách
-            $offices = TransactionPoint::with(['address' => function ($query) use ($provinceName, $districtName, $wardName) {
-                $query->where('province', $provinceName)
-                    ->where('district', $districtName);
+            $offices = TransactionPoint::with(['address' => function ($query) use ($districtName, $wardName) {
+                if ($districtName !== null) {
+                    $query->where('district', $districtName);
+                }
                 if ($wardName !== null) {
                     $query->where('ward', $wardName);
                 }
             }])
-                ->whereHas('address', function ($query) use ($provinceName, $districtName, $wardName) {
-                    $query->where('province', $provinceName)
-                        ->where('district', $districtName);
+                ->whereHas('address', function ($query) use ($districtName, $wardName) {
+                    if ($districtName !== null) {
+                        $query->where('district', $districtName);
+                    }
                     if ($wardName !== null) {
                         $query->where('ward', $wardName);
                     }
+                })
+                ->whereHas('address', function ($query) use ($provinceName) {
+                    $query->where('province', $provinceName);
                 })
                 ->get();
 
@@ -145,6 +150,6 @@ class TransactionOfficerController extends Controller
             return response()->json($offices, 200);
         }
 
-        return response()->json(['error' => 'Missing provinceName or districtName'], 400);
+        return response()->json(['error' => 'Missing provinceName'], 400);
     }
 }

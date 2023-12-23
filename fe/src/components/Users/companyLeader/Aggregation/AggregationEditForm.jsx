@@ -1,9 +1,9 @@
 import React, {useContext, useEffect, useState} from 'react';
 import axiosClient from '../../../../axios.js';
-import AddressSelect from '../../../Common/FindPost/AddressForm.jsx';
+import AddressSelect from '../../../Common/FindPost/AddressSelect.jsx';
 import '../styleAggregation.css';
 import {useStateContext} from '../../../../contexts/ContextProvider.jsx';
-import {AggregationContext} from './AggregationProvider.jsx';
+import {CompanyLeaderContext} from "../CompanyLeaderProvider.jsx";
 
 const InputField = ({label, id, value, onChange, type = 'text'}) => (
     <div className="col-tmp-1">
@@ -19,7 +19,12 @@ const InputField = ({label, id, value, onChange, type = 'text'}) => (
     </div>
 );
 
-const EditForm = ({id}) => {
+const AggregationEditForm = ({id}) => {
+    const [isExpanded, setExpanded] = useState(false);
+    const handleExpandClick = () => {
+        setExpanded(!isExpanded);
+    };
+
     const [formData, setFormData] = useState({
         name: '',
         code: '',
@@ -39,7 +44,7 @@ const EditForm = ({id}) => {
         detailed_address: '',
     });
 
-    const {setSubmitted} = useContext(AggregationContext);
+    const {setSubmitted} = useContext(CompanyLeaderContext);
     const {showToast} = useStateContext();
 
     const handleAddressChange = (selectedCode, selectedText, type) => {
@@ -102,7 +107,7 @@ const EditForm = ({id}) => {
             .put(`/aggregationPoint/${id}`, {...address, ...formData})
             .then(() => {
                 setSubmitted(true);
-                showToast('Sửa thành công');
+                showToast('Sửa thành công', "success");
             })
             .catch((error) => {
                 console.error('Error fetching data:', error);
@@ -115,7 +120,7 @@ const EditForm = ({id}) => {
             <form style={{width: '100%'}} onSubmit={handleSubmit}>
                 <div className="col-search-box">
                     <h1>Chỉnh sửa các thông tin </h1>
-                    <div className="search-box">
+                    <div className="search-box flex justify-center items-center">
                         <InputField label="Tên công ty" id="name" value={formData.name}
                                     onChange={(value) => setFormData({...formData, name: value})}/>
                         <InputField label="Mã công ty" id="code" value={formData.code}
@@ -157,4 +162,4 @@ const EditForm = ({id}) => {
     );
 };
 
-export default EditForm;
+export default AggregationEditForm;

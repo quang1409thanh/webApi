@@ -8,6 +8,7 @@ const StateContext = createContext({
     toast: {
         message: null,
         show: false,
+        type: "success",
     },
     setCurrentUser: () => {
     },
@@ -30,13 +31,13 @@ export const ContextProvider = ({children}) => {
         _setUserToken(token);
     }
 
-    const showToast = (message) => {
-        setToast({message, show: true})
-        setTimeout(() => {
-            setToast({message: '', show: false})
-        }, 5000)
-    }
+    const showToast = (message, type = 'success') => {
+        setToast({message, show: true, type});
 
+        setTimeout(() => {
+            setToast({message: '', show: false, type: ''});
+        }, 5000);
+    };
     return (
         <StateContext.Provider
             value={{

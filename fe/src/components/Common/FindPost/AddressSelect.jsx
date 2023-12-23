@@ -5,8 +5,7 @@ import axios from 'axios';
 
 const host = "https://provinces.open-api.vn/api/";
 
-const AddressSelect = ({
-                           onSelectProvince, onSelectDistrict, onSelectWard, onSelectDetail,
+const AddressSelect = ({onSelectProvince, onSelectDistrict, onSelectWard, onSelectDetail,
                            selectedProvince, selectedDistrict, selectedWard, selectedDetail
                        }) => {
     const [provinces, setProvinces] = useState([]);
@@ -82,12 +81,15 @@ const AddressSelect = ({
     const handleProvinceChange = (e) => {
         const selectedProvinceCode = e.target.value;
         setProvince(selectedProvinceCode);
+        setDistrict("");
+        setWard("");
         onSelectProvince(selectedProvinceCode, e.target.options[e.target.selectedIndex].text);
     };
 
     const handleDistrictChange = (e) => {
         const selectedDistrictCode = e.target.value;
         setDistrict(selectedDistrictCode);
+        setWard("");
         onSelectDistrict(selectedDistrictCode, e.target.options[e.target.selectedIndex].text);
     };
 
@@ -103,7 +105,7 @@ const AddressSelect = ({
 
     return (
 
-        <div className="search-box">
+        <div className="search-box flex justify-center items-center">
             <div className="col-tmp-1 col-left">
                 <label htmlFor="city">Tỉnh/Thành phố</label>
                 <select
@@ -123,18 +125,17 @@ const AddressSelect = ({
                     id="district"
                     className="form-control districtSelect"
                     value={district}
-                    placeholder={"test"}
                     onChange={handleDistrictChange}>
                     <option disabled selected value="">{selectedDistrict || 'chọn quận'}</option>
                     {renderOptions(districts)}
                 </select>
             </div>
             <div className="col-tmp-1 col-left col-right">
-                <label htmlFor="district">Xã/Phường</label>
+                <label htmlFor="ward">Xã/Phường</label>
                 <select
                     name="wardId"
                     id="ward"
-                    className="form-control districtSelect"
+                    className="form-control wardSelect"
                     value={ward}
                     onChange={handleWardChange}>
                     <option disabled selected value="">{selectedWard || 'chọn xã/phường'}</option>

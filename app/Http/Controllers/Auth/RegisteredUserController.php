@@ -28,9 +28,6 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        // Lưu trữ hình ảnh trong thư mục 'photos' của disk 'public' với tên duy nhất
-        $photoPath = $request->file('photo')->storeAs('photos', uniqid() . '.' . $request->file('photo')->extension(), 'public');
-
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,

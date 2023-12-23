@@ -28,9 +28,9 @@ export default function Header() {
                 <header className="header">
                     <div className="container">
                         <nav>
-                            <li className="menu_item">
+                            <ol className="menu_item">
                                 {currentUser ? (
-                                    <NavLink href="#" onClick={(ev) => logout(ev)} className="text-gray-400">
+                                    <NavLink  onClick={(ev) => logout(ev)} className="text-gray-400" to={"/"}>
                                         Sign out
                                     </NavLink>
                                 ) : (
@@ -38,7 +38,7 @@ export default function Header() {
                                         Đăng nhập
                                     </NavLink>
                                 )}
-                            </li>
+                            </ol>
 
                             <ul className="main_nav">
                                 <li>
@@ -52,7 +52,7 @@ export default function Header() {
                                         className={({isActive}) =>
                                             classNames(
                                                 isActive
-                                                    ? "bg-gray-900 text-white"
+                                                    ? "bg-green-300"  // Thay đổi màu nền ở đây
                                                     : "text-gray-300 hover:bg-gray-700 hover:text-white",
                                                 "px-3 py-2 rounded-md text-sm font-medium"
                                             )
@@ -62,35 +62,33 @@ export default function Header() {
                                         {currentUser && currentUser.name}
                                     </NavLink>
                                 </li>
-                                <li className="menu_item">
-                                    <NavLink
-                                        to="/gioithieu"
-                                        className={({isActive}) =>
-                                            classNames(
-                                                isActive
-                                                    ? "bg-gray-900 text-white"
-                                                    : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                                                "px-3 py-2 rounded-md text-sm font-medium"
-                                            )
-                                        }
-                                    >
-                                        <img src="./img/icon-introduce.svg" alt=""/>
-                                        Giới thiệu
-                                    </NavLink>
-                                </li>
+                                {/*<li className="menu_item">*/}
+                                {/*    <NavLink*/}
+                                {/*        to="/gioithieu"*/}
+                                {/*        className={({isActive}) =>*/}
+                                {/*            classNames(*/}
+                                {/*                isActive*/}
+                                {/*                    ? "bg-green-300"  // Thay đổi màu nền ở đây*/}
+                                {/*                    : "text-gray-300 hover:bg-gray-700 hover:text-white",*/}
+                                {/*                "px-3 py-2 rounded-md text-sm font-medium"*/}
+                                {/*            )*/}
+                                {/*        }*/}
+                                {/*    >*/}
+                                {/*        Giới thiệu*/}
+                                {/*    </NavLink>*/}
+                                {/*</li>*/}
                                 <li className="menu_item">
                                     <NavLink
                                         to="/aggregationPoint"
                                         className={({isActive}) =>
                                             classNames(
                                                 isActive
-                                                    ? "bg-gray-900 text-white"
+                                                    ? "bg-green-300"  // Thay đổi màu nền ở đây
                                                     : "text-gray-300 hover:bg-gray-700 hover:text-white",
                                                 "px-3 py-2 rounded-md text-sm font-medium"
                                             )
                                         }
                                     >
-                                        <img src="./img/icon-introduce.svg" alt=""/>
                                         Quản lý điểm tập kết
                                     </NavLink>
                                 </li>
@@ -101,13 +99,12 @@ export default function Header() {
                                         className={({isActive}) =>
                                             classNames(
                                                 isActive
-                                                    ? "bg-gray-900 text-white"
+                                                    ? "bg-green-300"  // Thay đổi màu nền ở đây
                                                     : "text-gray-300 hover:bg-gray-700 hover:text-white",
                                                 "px-3 py-2 rounded-md text-sm font-medium"
                                             )
                                         }
                                     >
-                                        <img src="./img/icon-introduce.svg" alt=""/>
                                         Quản lý điểm giao dịch
                                     </NavLink>
                                 </li>
@@ -115,17 +112,16 @@ export default function Header() {
 
                                 <li className="menu_item">
                                     <NavLink
-                                        to="/addAccountPoint"
+                                        to="/manageuser"
                                         className={({isActive}) =>
                                             classNames(
                                                 isActive
-                                                    ? "bg-gray-900 text-white"
+                                                    ? "bg-green-300"  // Thay đổi màu nền ở đây
                                                     : "text-gray-300 hover:bg-gray-700 hover:text-white",
                                                 "px-3 py-2 rounded-md text-sm font-medium"
                                             )
                                         }
                                     >
-                                        <img src="./img/icon-introduce.svg" alt=""/>
                                         Thêm tài khoản
                                     </NavLink>
                                 </li>

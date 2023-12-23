@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\GoodController;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
@@ -36,6 +37,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     ->name('logout');
     Route::get('/me', [App\Http\Controllers\Controller::class, 'me']);
     Route::get('/dashboard', [App\Http\Controllers\Controller::class, 'dashboard']);
+    Route::post('/change-password', [ChangePasswordController::class, 'update']);
 
 
     // Nhóm chức năng cho những người dùng khác nhau

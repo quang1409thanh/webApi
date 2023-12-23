@@ -1,14 +1,15 @@
 import React, {useContext, useEffect, useState} from "react";
 import axiosClient from "../../../../axios.js";
-import {AggregationContext} from "./AggregationProvider.jsx";
 import {useStateContext} from "../../../../contexts/ContextProvider.jsx";
+import {CompanyLeaderContext} from "../CompanyLeaderProvider.jsx";
 
 const AggregationList = () => {
-    const {list} = useContext(AggregationContext);
-    const {setSubmitted} = useContext(AggregationContext);
+    // const {list} = useContext(AggregationContext);
+    const {setSubmitted} = useContext(CompanyLeaderContext);
+    const {aggregationList} = useContext(CompanyLeaderContext);
     const {showToast} = useStateContext();
 
-    if (!list || !list.length) return null;
+    if (!aggregationList || !aggregationList.length) return null;
 
     return (
         <div>
@@ -17,26 +18,34 @@ const AggregationList = () => {
                 {/*{aggregation_list.length > 0 }*/}
 
                 <h2 className="font_size">All AggregationPoint</h2>
-                <table className="center">
-                    <tbody>
-                    <tr className="title">
-                        <td>Name</td>
-                        <td>Code</td>
-                        <td>Phone</td>
-                        <td>Address</td>
-                        <td>DELETE</td>
-                        <td>DETAIL</td>
+                <table className="min-w-full bg-white border border-gray-300">
+                    <thead>
+                    <tr className="bg-gray-100">
+                        <th className="py-2 px-4 border-b">Name</th>
+                        <th className="py-2 px-4 border-b">Code</th>
+                        <th className="py-2 px-4 border-b">Phone</th>
+                        <th className="py-2 px-4 border-b">Address</th>
+                        <th className="py-2 px-4 border-b">Thuộc về</th>
+                        <th className="py-2 px-4 border-b">DELETE</th>
+                        <th className="py-2 px-4 border-b">DETAIL</th>
                     </tr>
-                    </tbody>
-
+                    </thead>
+                    <tbody>
                     {/* Sử dụng dữ liệu từ state để render danh sách sản phẩm */}
-                    {list.map(element => (
+                    {aggregationList.map((element) => (
                         <tr key={element.id}>
-                            <td>{element.name}</td>
-                            <td>{element.code}</td>
-                            <td>{element.phone}</td>
-                            <td>{element.address.province}, {element.address.district}, {element.address.ward}, {element.address.detailed_address} </td>
-                            <td>
+                            <td className="py-2 px-4 border-b">{element.name}</td>
+                            <td className="py-2 px-4 border-b">{element.code}</td>
+                            <td className="py-2 px-4 border-b">{element.phone}</td>
+                            <td className="py-2 px-4 border-b">{`${element.address.province}, ${element.address.district}, ${element.address.ward}, ${element.address.detailed_address}`}</td>
+                            <td className="py-2 px-4 border-b">
+                                {element?.aggregation_point_head?.user?.name ? (
+                                    element.aggregation_point_head.user.name
+                                ) : (
+                                    'Chưa có người quản lý'
+                                )}
+                            </td>
+                            <td className="py-2 px-4 border-b">
                                 <form
                                     method="DELETE"
                                     onSubmit={(event) => {
@@ -48,8 +57,7 @@ const AggregationList = () => {
                                                 const response = axiosClient.delete(`aggregationPoint/${element.id}`);
                                                 console.log(response);
                                                 setSubmitted(true);
-                                                showToast("Xóa thanh cong")
-
+                                                showToast("Xóa thành công");
                                             } catch (error) {
                                                 // Xử lý lỗi nếu cần
                                                 console.error(error);
@@ -57,16 +65,21 @@ const AggregationList = () => {
                                         }
                                     }}
                                 >
-                                    <button type="submit" className="btn btn-danger">
+                                    <button type="submit"
+                                            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
                                         DELETE
                                     </button>
                                 </form>
                             </td>
-                            <td>
-                                <a className="btn btn-success" href={`aggregationPoint/${element.id}`}>DETAIL</a>
+                            <td className="py-2 px-4 border-b">
+                                <a className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                                   href={`aggregationPoint/${element.id}`}>
+                                    DETAIL
+                                </a>
                             </td>
                         </tr>
                     ))}
+                    </tbody>
                 </table>
             </div>
         </div>
