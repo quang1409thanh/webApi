@@ -7,19 +7,20 @@ use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use App\Models\Image;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Illuminate\Validation\ValidationException;
 
 class RegisteredUserController extends Controller
 {
     /**
      * Handle an incoming registration request.
      *
-     * @throws \Illuminate\Validation\ValidationException
+     * @throws ValidationException
      */
-    public function store(Request $request):JsonResponse
+    public function store(Request $request): JsonResponse
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
@@ -33,17 +34,18 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        return response()->json(['message' => 'User and admin system created successfully'], 201);
+
         event(new Registered($user));
 
         Auth::login($user);
 
         $token = $request->user()->createToken('api-token');
 
-
         return response()->json([
+            'message' => 'User and admin system created successfully',
             'user' => $user,
             'token' => $token->plainTextToken,
         ]);
-
     }
 }

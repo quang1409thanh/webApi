@@ -1,0 +1,45 @@
+.center{
+    margin: auto;
+    width: 90%;
+    border: solid 2px #000000;
+    text-align: center;
+    margin-top: 40px;
+}
+.font_size{
+    text-align: center;
+    font-size: 40px;
+    padding-top: 20px;
+}
+table {
+    border-collapse: collapse;
+}
+
+table td,
+table  {
+    border: 1px solid #5aff07;
+    padding: 8px;
+}
+
+.title {
+    font-size: 20px;
+    color: #000000;
+}
+.expand-button {
+    cursor: pointer;
+}
+
+.box-title {
+    display: inline-block;
+    padding: 8px;
+    margin: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.expanded {
+    background-color: rgba(0, 255, 217, 0.56);
+    color: #fff;
+}
+
+/* Thêm một số định dạng khác tùy thuộc vào yêu cầu của bạn */

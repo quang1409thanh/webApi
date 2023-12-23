@@ -1,0 +1,137 @@
+
+import React, {useEffect, useState, useCallback} from 'react';
+import axios from 'axios';
+
+const host = "https://provinces.open-api.vn/api/";
+
+const fetchProvinces = async () => {
+    const response = await axios.get(host + '?depth=1');
+    return response.data;
+};
+
+const fetchDistricts = async (province) => {
+    const response = await axios.get(host + "p/" + province + "?depth=2");
+    return response.data.districts;
+};
+
+const fetchWards = async (district) => {
+    const response = await axios.get(host + "d/" + district + "?depth=2");
+    return response.data.wards;
+};
+
+const AddressSelect = ({
+                           onSelectProvince, onSelectDistrict, onSelectWard, onSelectDetail,
+                       }) => {
+    const [provinces, setProvinces] = useState([]);
+    const [districts, setDistricts] = useState([]);
+    const [wards, setWards] = useState([]);
+
+    const [province, setProvince] = useState("");
+    const [district, setDistrict] = useState("");
+    const [ward, setWard] = useState("");
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const provinces = await fetchProvinces();
+            setProvinces(provinces);
+        };
+        fetchData();
+    }, []);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            if (province) {
+                const districts = await fetchDistricts(province);
+                setDistricts(districts);
+            }
+        };
+        fetchData();
+    }, [province]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            if (district) {
+                const wards = await fetchWards(district);
+                setWards(wards);
+            }
+        };
+        fetchData();
+    }, [district]);
+
+    const renderOptions = useCallback((array) => {
+        return array.map(element => (
+            <option key={element.code} value={element.code}>{element.name}</option>
+        ));
+    }, []);
+
+    const handleProvinceChange = useCallback((e) => {
+        const selectedProvinceCode = e.target.value;
+        setProvince(selectedProvinceCode);
+        onSelectProvince(selectedProvinceCode, e.target.options[e.target.selectedIndex].text);
+    }, [onSelectProvince]);
+
+    const handleDistrictChange = useCallback((e) => {
+        const selectedDistrictCode = e.target.value;
+        setDistrict(selectedDistrictCode);
+        onSelectDistrict(selectedDistrictCode, e.target.options[e.target.selectedIndex].text);
+    }, [onSelectDistrict]);
+
+    const handleWardChange = useCallback((e) => {
+        const selectedWardCode = e.target.value;
+        setWard(selectedWardCode);
+        onSelectWard(selectedWardCode, e.target.options[e.target.selectedIndex].text);
+    }, [onSelectWard]);
+
+    const handleDetailChange = useCallback((e) => {
+        onSelectDetail(e.target.value);
+    }, [onSelectDetail]);
+
+    return (
+        <div className="search-box">
+            <div className="col-tmp-1 col-left">
+                <label htmlFor="city">Tỉnh/Thành phố</label>
+                <select
+                    name="provinceId"
+                    id="city"
+                    className="form-control citySelect"
+                    value={province} onChange={handleProvinceChange}>
+                    <option disabled value="">chọn tỉnh</option>
+                    {renderOptions(provinces)}
+                </select>
+            </div>
+            <div className="col-tmp-1 col-left col-right">
+                <label htmlFor="district">Quận/Huyện</label>
+                <select
+                    name="districtId"
+                    id="district"
+                    className="form-control districtSelect"
+                    value={district}
+                    onChange={handleDistrictChange}>
+                    <option disabled value="">chọn quận</option>
+                    {renderOptions(districts)}
+                </select>
+            </div>
+            <div className="col-tmp-1 col-left col-right">
+                <label htmlFor="district">Xã/Phường</label>
+                <select
+                    name="wardId"
+                    id="ward"
+                    className="form-control districtSelect"
+                    value={ward}
+                    onChange={handleWardChange}>
+                    <option disabled value="">chọn xã/phường</option>
+                    {renderOptions(wards)}
+                </select>
+            </div>
+            <div className="col-tmp-1 col-left col-right">
+                <label htmlFor="district">Chi tiết địa chỉ</label>
+                <textarea
+                    className="form-control "
+                    onChange={handleDetailChange}
+                    style={{width: '94%'}}
+                />
+            </div>
+        </div>
+    );
+};
+export default AddressSelect;
