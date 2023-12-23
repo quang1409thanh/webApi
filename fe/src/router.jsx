@@ -47,6 +47,9 @@ function AppRouter() {
             <Route path="/transaction_staff/tracuu" element={<TransactionOfficeLayout/>}/>
             <Route path="/transaction_staff/danh_sach_don" element={<TransactionOfficeLayout/>}/>
             <Route path="/transaction_staff/danh_sach_tui_di" element={<TransactionOfficeLayout/>}/>
+            <Route path="/transaction_staff/danh_sach_tui_nhan" element={<TransactionOfficeLayout/>}/>
+            <Route path="/transaction_staff/danh_sach_giao_thanh_cong" element={<TransactionOfficeLayout/>}/>
+            <Route path="/transaction_staff/danh_sach_giao_that_bai" element={<TransactionOfficeLayout/>}/>
 
 
             <Route path="/gioithieu" element={<Home/>}/>

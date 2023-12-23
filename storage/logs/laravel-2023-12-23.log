@@ -5784,3 +5784,10 @@
 [2023-12-23 10:12:01] local.INFO: 2023-12-23 10:12:01 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 8.5980892181396ms  
 [2023-12-23 10:12:13] local.INFO: 2023-12-23 10:12:13 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 3.0989646911621ms  
 [2023-12-23 10:12:13] local.INFO: 2023-12-23 10:12:13 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 8.6178779602051ms  
+[2023-12-23 15:13:52] local.INFO: 2023-12-23 15:13:52 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 134.6709728241ms  
+[2023-12-23 15:13:53] local.INFO: 2023-12-23 15:13:53 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 3.7300586700439ms  
+[2023-12-23 15:13:53] local.INFO: 2023-12-23 15:13:53 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 83.771944046021ms  
+[2023-12-23 15:58:24] local.INFO: 2023-12-23 15:58:24 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 139.40501213074ms  
+[2023-12-23 15:58:24] local.INFO: 2023-12-23 15:58:24 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 68.148136138916ms  
+[2023-12-23 15:58:26] local.INFO: 2023-12-23 15:58:26 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 3.6921501159668ms  
+[2023-12-23 15:58:26] local.INFO: 2023-12-23 15:58:26 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 8.4190368652344ms  

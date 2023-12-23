@@ -1,13 +1,13 @@
 import React from 'react';
 
-const ShipmentList = () => {
+const FailedDeliveriesList = () => {
   return (
     <div className="page_container">
       <main className="main_content">
         <div id="mainContent">
           <div className="full_container">
             <div className="content_title">
-              DANH SÁCH TÚI HÀNG ĐI
+              DANH SÁCH GIAO THẤT BẠI
             </div>
             <div className="container_product_list">
               <div className="form_input_time">
@@ -37,15 +37,15 @@ const ShipmentList = () => {
               </div>
               <div className="nav_bar_service">
                 {/* Uncomment the lines below if needed */}
-                {/* <input type="button" value="Xóa" name="delete" />
-                <input type="button" value="Cap nhat trang thai" /> */}
+                {/* <input type="button" value="Xóa" name="delete" /> */}
+                {/* <input type="button" value="Cap nhat trang thai" /> */}
                 {/* <input type="button" value="ALL" /> */}
               </div>
               <div className="product_list" id="product_list">
-                {/* Your list content goes here */}
+                {/* Add content for the list here */}
               </div>
               <div id="error_note" style={{ display: '' }}>
-                <i style={{ color: 'red' }}>*Không tìm thấy túi hàng</i>
+                <i style={{ color: 'red' }}>*Không tìm thấy đơn hàng</i>
               </div>
             </div>    
           </div>
@@ -55,4 +55,4 @@ const ShipmentList = () => {
   );
 };
 
-export default ShipmentList;
+export default FailedDeliveriesList;
