@@ -1,0 +1,1153 @@
+[2023-12-22 20:24:43] local.INFO: 2023-12-22 20:24:43 POST:"http://127.0.0.1:8000/api/login" - Execution Time: 231.34589195251ms  
+[2023-12-22 20:24:43] local.INFO: 2023-12-22 20:24:43 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.33807754516602ms  
+[2023-12-22 20:24:43] local.INFO: 2023-12-22 20:24:43 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 5.4721832275391ms  
+[2023-12-22 20:24:43] local.INFO: 2023-12-22 20:24:43 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.1370906829834ms  
+[2023-12-22 20:24:43] local.INFO: 2023-12-22 20:24:43 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.3488998413086ms  
+[2023-12-22 20:25:03] local.INFO: 2023-12-22 20:25:03 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.432035446167ms  
+[2023-12-22 20:25:03] local.INFO: 2023-12-22 20:25:03 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.5650730133057ms  
+[2023-12-22 20:25:18] local.INFO: 2023-12-22 20:25:18 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 176.19395256042ms  
+[2023-12-22 20:29:28] local.INFO: 2023-12-22 20:29:28 POST:"http://127.0.0.1:8000/api/login" - Execution Time: 194.32711601257ms  
+[2023-12-22 20:29:28] local.INFO: 2023-12-22 20:29:28 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.15711784362793ms  
+[2023-12-22 20:29:28] local.INFO: 2023-12-22 20:29:28 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 4.4839382171631ms  
+[2023-12-22 20:29:28] local.INFO: 2023-12-22 20:29:28 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.22315979003906ms  
+[2023-12-22 20:29:29] local.INFO: 2023-12-22 20:29:29 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 5.0370693206787ms  
+[2023-12-22 20:29:30] local.INFO: 2023-12-22 20:29:30 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 4.065990447998ms  
+[2023-12-22 20:29:30] local.INFO: 2023-12-22 20:29:30 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.0159950256348ms  
+[2023-12-22 20:29:38] local.INFO: 2023-12-22 20:29:38 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 171.47397994995ms  
+[2023-12-22 20:31:22] local.INFO: 2023-12-22 20:31:22 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 174.41701889038ms  
+[2023-12-22 20:31:23] local.INFO: 2023-12-22 20:31:23 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 173.78878593445ms  
+[2023-12-22 20:31:24] local.INFO: 2023-12-22 20:31:24 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 172.77598381042ms  
+[2023-12-22 20:31:24] local.INFO: 2023-12-22 20:31:24 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 172.24788665771ms  
+[2023-12-22 20:31:24] local.INFO: 2023-12-22 20:31:24 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 173.53796958923ms  
+[2023-12-22 20:31:24] local.INFO: 2023-12-22 20:31:24 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 171.81706428528ms  
+[2023-12-22 20:31:25] local.INFO: 2023-12-22 20:31:25 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 174.10016059875ms  
+[2023-12-22 20:31:25] local.INFO: 2023-12-22 20:31:25 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 174.74102973938ms  
+[2023-12-22 20:31:25] local.INFO: 2023-12-22 20:31:25 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 173.03609848022ms  
+[2023-12-22 20:31:26] local.INFO: 2023-12-22 20:31:26 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 173.15697669983ms  
+[2023-12-22 20:31:26] local.INFO: 2023-12-22 20:31:26 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 173.87795448303ms  
+[2023-12-22 20:31:26] local.INFO: 2023-12-22 20:31:26 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 176.17106437683ms  
+[2023-12-22 20:31:26] local.INFO: 2023-12-22 20:31:26 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 173.8338470459ms  
+[2023-12-22 20:31:26] local.INFO: 2023-12-22 20:31:26 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 176.46884918213ms  
+[2023-12-22 20:31:27] local.INFO: 2023-12-22 20:31:27 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 173.52509498596ms  
+[2023-12-22 20:31:27] local.INFO: 2023-12-22 20:31:27 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 173.02894592285ms  
+[2023-12-22 20:31:36] local.INFO: 2023-12-22 20:31:36 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 173.66003990173ms  
+[2023-12-22 20:31:36] local.INFO: 2023-12-22 20:31:36 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 173.58183860779ms  
+[2023-12-22 20:31:37] local.INFO: 2023-12-22 20:31:37 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 177.84595489502ms  
+[2023-12-22 20:31:48] local.INFO: 2023-12-22 20:31:48 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 7.8549385070801ms  
+[2023-12-22 20:31:48] local.INFO: 2023-12-22 20:31:48 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.1511058807373ms  
+[2023-12-22 20:31:56] local.INFO: 2023-12-22 20:31:56 GET:"http://127.0.0.1:8000/api/aggregationPoint/2" - Execution Time: 8.0511569976807ms  
+[2023-12-22 20:31:56] local.INFO: 2023-12-22 20:31:56 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.4209957122803ms  
+[2023-12-22 20:31:56] local.INFO: 2023-12-22 20:31:56 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.0360221862793ms  
+[2023-12-22 20:31:56] local.INFO: 2023-12-22 20:31:56 GET:"http://127.0.0.1:8000/api/aggregationPoint/2" - Execution Time: 5.5859088897705ms  
+[2023-12-22 20:31:56] local.INFO: 2023-12-22 20:31:56 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.5039653778076ms  
+[2023-12-22 20:31:56] local.INFO: 2023-12-22 20:31:56 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.3609867095947ms  
+[2023-12-22 20:32:12] local.INFO: 2023-12-22 20:32:12 PUT:"http://127.0.0.1:8000/api/aggregationPoint/2" - Execution Time: 8.1717967987061ms  
+[2023-12-22 20:32:12] local.INFO: 2023-12-22 20:32:12 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.2368640899658ms  
+[2023-12-22 20:32:12] local.INFO: 2023-12-22 20:32:12 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.1629543304443ms  
+[2023-12-22 20:37:43] local.INFO: 2023-12-22 20:37:43 GET:"http://127.0.0.1:8000/api/aggregationPoint/2" - Execution Time: 10.940790176392ms  
+[2023-12-22 20:37:43] local.INFO: 2023-12-22 20:37:43 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.9608688354492ms  
+[2023-12-22 20:37:43] local.INFO: 2023-12-22 20:37:43 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 5.9828758239746ms  
+[2023-12-22 20:37:43] local.INFO: 2023-12-22 20:37:43 GET:"http://127.0.0.1:8000/api/aggregationPoint/2" - Execution Time: 4.2169094085693ms  
+[2023-12-22 20:37:43] local.INFO: 2023-12-22 20:37:43 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.6451091766357ms  
+[2023-12-22 20:37:43] local.INFO: 2023-12-22 20:37:43 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13494491577148ms  
+[2023-12-22 20:37:43] local.INFO: 2023-12-22 20:37:43 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.5898685455322ms  
+[2023-12-22 20:37:43] local.INFO: 2023-12-22 20:37:43 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.12993812561035ms  
+[2023-12-22 20:37:43] local.INFO: 2023-12-22 20:37:43 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.9008388519287ms  
+[2023-12-22 20:37:43] local.INFO: 2023-12-22 20:37:43 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13589859008789ms  
+[2023-12-22 20:37:43] local.INFO: 2023-12-22 20:37:43 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.5550594329834ms  
+[2023-12-22 20:37:43] local.INFO: 2023-12-22 20:37:43 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.1530647277832ms  
+[2023-12-22 20:37:43] local.INFO: 2023-12-22 20:37:43 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.8950443267822ms  
+[2023-12-22 20:37:43] local.INFO: 2023-12-22 20:37:43 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.5160312652588ms  
+[2023-12-22 20:39:18] local.INFO: 2023-12-22 20:39:18 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.2288818359375ms  
+[2023-12-22 20:39:18] local.INFO: 2023-12-22 20:39:18 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.7059783935547ms  
+[2023-12-22 20:39:18] local.INFO: 2023-12-22 20:39:18 GET:"http://127.0.0.1:8000/api/aggregationPoint/2" - Execution Time: 2.885103225708ms  
+[2023-12-22 20:39:18] local.INFO: 2023-12-22 20:39:18 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.1169395446777ms  
+[2023-12-22 20:39:18] local.INFO: 2023-12-22 20:39:18 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.16593933105469ms  
+[2023-12-22 20:39:18] local.INFO: 2023-12-22 20:39:18 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.0269622802734ms  
+[2023-12-22 20:39:18] local.INFO: 2023-12-22 20:39:18 GET:"http://127.0.0.1:8000/api/aggregationPoint/2" - Execution Time: 3.9548873901367ms  
+[2023-12-22 20:39:18] local.INFO: 2023-12-22 20:39:18 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.9191970825195ms  
+[2023-12-22 20:40:10] local.INFO: 2023-12-22 20:40:10 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.20503997802734ms  
+[2023-12-22 20:40:10] local.INFO: 2023-12-22 20:40:10 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.3469200134277ms  
+[2023-12-22 20:40:10] local.INFO: 2023-12-22 20:40:10 GET:"http://127.0.0.1:8000/api/aggregationPoint/2" - Execution Time: 3.1740665435791ms  
+[2023-12-22 20:40:10] local.INFO: 2023-12-22 20:40:10 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.0310363769531ms  
+[2023-12-22 20:40:10] local.INFO: 2023-12-22 20:40:10 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.14591217041016ms  
+[2023-12-22 20:40:10] local.INFO: 2023-12-22 20:40:10 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.3148059844971ms  
+[2023-12-22 20:40:10] local.INFO: 2023-12-22 20:40:10 GET:"http://127.0.0.1:8000/api/aggregationPoint/2" - Execution Time: 4.1441917419434ms  
+[2023-12-22 20:40:10] local.INFO: 2023-12-22 20:40:10 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.9318332672119ms  
+[2023-12-22 20:40:25] local.INFO: 2023-12-22 20:40:25 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.1770210266113ms  
+[2023-12-22 20:40:25] local.INFO: 2023-12-22 20:40:25 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 5.047082901001ms  
+[2023-12-22 20:40:25] local.INFO: 2023-12-22 20:40:25 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.8300495147705ms  
+[2023-12-22 20:40:25] local.INFO: 2023-12-22 20:40:25 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 4.8539638519287ms  
+[2023-12-22 20:40:38] local.INFO: 2023-12-22 20:40:38 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.9788951873779ms  
+[2023-12-22 20:40:38] local.INFO: 2023-12-22 20:40:38 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.7320594787598ms  
+[2023-12-22 20:40:40] local.INFO: 2023-12-22 20:40:40 GET:"http://127.0.0.1:8000/api/aggregationPoint/2" - Execution Time: 3.9360523223877ms  
+[2023-12-22 20:40:40] local.INFO: 2023-12-22 20:40:40 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.1920413970947ms  
+[2023-12-22 20:40:40] local.INFO: 2023-12-22 20:40:40 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.0860900878906ms  
+[2023-12-22 20:40:40] local.INFO: 2023-12-22 20:40:40 GET:"http://127.0.0.1:8000/api/aggregationPoint/2" - Execution Time: 4.6310424804688ms  
+[2023-12-22 20:40:40] local.INFO: 2023-12-22 20:40:40 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.6580772399902ms  
+[2023-12-22 20:40:40] local.INFO: 2023-12-22 20:40:40 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.5420188903809ms  
+[2023-12-22 20:40:42] local.INFO: 2023-12-22 20:40:42 PUT:"http://127.0.0.1:8000/api/aggregationPoint/2" - Execution Time: 3.1039714813232ms  
+[2023-12-22 20:40:42] local.INFO: 2023-12-22 20:40:42 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.3520202636719ms  
+[2023-12-22 20:40:42] local.INFO: 2023-12-22 20:40:42 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.1630268096924ms  
+[2023-12-22 20:40:52] local.INFO: 2023-12-22 20:40:52 GET:"http://127.0.0.1:8000/api/aggregationPoint/2" - Execution Time: 5.1219463348389ms  
+[2023-12-22 20:40:52] local.INFO: 2023-12-22 20:40:52 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.8301219940186ms  
+[2023-12-22 20:40:52] local.INFO: 2023-12-22 20:40:52 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.8480758666992ms  
+[2023-12-22 20:40:52] local.INFO: 2023-12-22 20:40:52 GET:"http://127.0.0.1:8000/api/aggregationPoint/2" - Execution Time: 4.094123840332ms  
+[2023-12-22 20:40:52] local.INFO: 2023-12-22 20:40:52 PUT:"http://127.0.0.1:8000/api/aggregationPoint/2" - Execution Time: 2.7310848236084ms  
+[2023-12-22 20:40:52] local.INFO: 2023-12-22 20:40:52 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.457950592041ms  
+[2023-12-22 20:40:52] local.INFO: 2023-12-22 20:40:52 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.2450428009033ms  
+[2023-12-22 20:40:53] local.INFO: 2023-12-22 20:40:53 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.14305114746094ms  
+[2023-12-22 20:40:53] local.INFO: 2023-12-22 20:40:53 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.3930072784424ms  
+[2023-12-22 20:40:53] local.INFO: 2023-12-22 20:40:53 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.12993812561035ms  
+[2023-12-22 20:40:53] local.INFO: 2023-12-22 20:40:53 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.4821758270264ms  
+[2023-12-22 20:41:06] local.INFO: 2023-12-22 20:41:06 GET:"http://127.0.0.1:8000/api/aggregationPoint/2" - Execution Time: 4.5759677886963ms  
+[2023-12-22 20:41:06] local.INFO: 2023-12-22 20:41:06 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.2531490325928ms  
+[2023-12-22 20:41:06] local.INFO: 2023-12-22 20:41:06 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.0269622802734ms  
+[2023-12-22 20:41:06] local.INFO: 2023-12-22 20:41:06 GET:"http://127.0.0.1:8000/api/aggregationPoint/2" - Execution Time: 3.9188861846924ms  
+[2023-12-22 20:41:06] local.INFO: 2023-12-22 20:41:06 PUT:"http://127.0.0.1:8000/api/aggregationPoint/2" - Execution Time: 2.9010772705078ms  
+[2023-12-22 20:41:06] local.INFO: 2023-12-22 20:41:06 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.1978359222412ms  
+[2023-12-22 20:41:06] local.INFO: 2023-12-22 20:41:06 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.3859481811523ms  
+[2023-12-22 20:41:07] local.INFO: 2023-12-22 20:41:07 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.29587745666504ms  
+[2023-12-22 20:41:07] local.INFO: 2023-12-22 20:41:07 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.6891231536865ms  
+[2023-12-22 20:41:07] local.INFO: 2023-12-22 20:41:07 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.12898445129395ms  
+[2023-12-22 20:41:07] local.INFO: 2023-12-22 20:41:07 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.4590492248535ms  
+[2023-12-22 20:42:07] local.INFO: 2023-12-22 20:42:07 GET:"http://127.0.0.1:8000/api/aggregationPoint/2" - Execution Time: 5.3200721740723ms  
+[2023-12-22 20:42:07] local.INFO: 2023-12-22 20:42:07 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.3141117095947ms  
+[2023-12-22 20:42:07] local.INFO: 2023-12-22 20:42:07 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.3608207702637ms  
+[2023-12-22 20:42:07] local.INFO: 2023-12-22 20:42:07 GET:"http://127.0.0.1:8000/api/aggregationPoint/2" - Execution Time: 3.4959316253662ms  
+[2023-12-22 20:42:08] local.INFO: 2023-12-22 20:42:08 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.310037612915ms  
+[2023-12-22 20:42:08] local.INFO: 2023-12-22 20:42:08 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.5570392608643ms  
+[2023-12-22 20:42:08] local.INFO: 2023-12-22 20:42:08 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.19693374633789ms  
+[2023-12-22 20:42:08] local.INFO: 2023-12-22 20:42:08 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.7389526367188ms  
+[2023-12-22 20:42:08] local.INFO: 2023-12-22 20:42:08 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13184547424316ms  
+[2023-12-22 20:42:08] local.INFO: 2023-12-22 20:42:08 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.7461051940918ms  
+[2023-12-22 20:42:17] local.INFO: 2023-12-22 20:42:17 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 171.77295684814ms  
+[2023-12-22 20:43:17] local.INFO: 2023-12-22 20:43:17 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.1030178070068ms  
+[2023-12-22 20:43:17] local.INFO: 2023-12-22 20:43:17 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 5.7618618011475ms  
+[2023-12-22 20:43:18] local.INFO: 2023-12-22 20:43:18 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.32687187194824ms  
+[2023-12-22 20:43:18] local.INFO: 2023-12-22 20:43:18 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.4478435516357ms  
+[2023-12-22 20:43:18] local.INFO: 2023-12-22 20:43:18 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.12993812561035ms  
+[2023-12-22 20:43:18] local.INFO: 2023-12-22 20:43:18 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.2709369659424ms  
+[2023-12-22 20:43:19] local.INFO: 2023-12-22 20:43:19 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 172.07503318787ms  
+[2023-12-22 20:43:25] local.INFO: 2023-12-22 20:43:25 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 6.6630840301514ms  
+[2023-12-22 20:43:25] local.INFO: 2023-12-22 20:43:25 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.8540363311768ms  
+[2023-12-22 20:43:25] local.INFO: 2023-12-22 20:43:25 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 172.88208007812ms  
+[2023-12-22 20:43:26] local.INFO: 2023-12-22 20:43:26 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13899803161621ms  
+[2023-12-22 20:43:26] local.INFO: 2023-12-22 20:43:26 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.518892288208ms  
+[2023-12-22 20:43:26] local.INFO: 2023-12-22 20:43:26 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.12993812561035ms  
+[2023-12-22 20:43:26] local.INFO: 2023-12-22 20:43:26 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.716064453125ms  
+[2023-12-22 20:43:36] local.INFO: 2023-12-22 20:43:36 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 4.6730041503906ms  
+[2023-12-22 20:43:36] local.INFO: 2023-12-22 20:43:36 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.6160945892334ms  
+[2023-12-22 20:43:36] local.INFO: 2023-12-22 20:43:36 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 174.55291748047ms  
+[2023-12-22 20:43:37] local.INFO: 2023-12-22 20:43:37 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13589859008789ms  
+[2023-12-22 20:43:37] local.INFO: 2023-12-22 20:43:37 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.3641586303711ms  
+[2023-12-22 20:43:37] local.INFO: 2023-12-22 20:43:37 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13923645019531ms  
+[2023-12-22 20:43:37] local.INFO: 2023-12-22 20:43:37 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.2628307342529ms  
+[2023-12-22 20:43:50] local.INFO: 2023-12-22 20:43:50 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 4.9219131469727ms  
+[2023-12-22 20:43:51] local.INFO: 2023-12-22 20:43:51 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.9678344726562ms  
+[2023-12-22 20:43:52] local.INFO: 2023-12-22 20:43:52 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 172.08099365234ms  
+[2023-12-22 20:43:52] local.INFO: 2023-12-22 20:43:52 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13995170593262ms  
+[2023-12-22 20:43:52] local.INFO: 2023-12-22 20:43:52 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.4940967559814ms  
+[2023-12-22 20:43:52] local.INFO: 2023-12-22 20:43:52 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.1368522644043ms  
+[2023-12-22 20:43:52] local.INFO: 2023-12-22 20:43:52 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.769947052002ms  
+[2023-12-22 20:43:53] local.INFO: 2023-12-22 20:43:53 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 172.00493812561ms  
+[2023-12-22 20:43:54] local.INFO: 2023-12-22 20:43:54 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 172.01590538025ms  
+[2023-12-22 20:43:56] local.INFO: 2023-12-22 20:43:56 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 172.37687110901ms  
+[2023-12-22 20:44:07] local.INFO: 2023-12-22 20:44:07 POST:"http://127.0.0.1:8000/api/forgot-password" - Execution Time: 6.9398880004883ms  
+[2023-12-22 20:44:45] local.INFO: 2023-12-22 20:44:45 POST:"http://127.0.0.1:8000/api/forgot-password" - Execution Time: 3.849983215332ms  
+[2023-12-22 20:47:22] local.INFO: 2023-12-22 20:47:22 POST:"http://127.0.0.1:8000/api/forgot-password" - Execution Time: 3.5109519958496ms  
+[2023-12-22 20:47:23] local.INFO: 2023-12-22 20:47:23 POST:"http://127.0.0.1:8000/api/forgot-password" - Execution Time: 2.2208690643311ms  
+[2023-12-22 20:47:23] local.INFO: 2023-12-22 20:47:23 POST:"http://127.0.0.1:8000/api/forgot-password" - Execution Time: 3.8330554962158ms  
+[2023-12-22 20:47:23] local.INFO: 2023-12-22 20:47:23 POST:"http://127.0.0.1:8000/api/forgot-password" - Execution Time: 2.8431415557861ms  
+[2023-12-22 20:47:23] local.INFO: 2023-12-22 20:47:23 POST:"http://127.0.0.1:8000/api/forgot-password" - Execution Time: 2.4580955505371ms  
+[2023-12-22 20:47:26] local.INFO: 2023-12-22 20:47:26 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 171.96488380432ms  
+[2023-12-22 20:47:27] local.INFO: 2023-12-22 20:47:27 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 173.51388931274ms  
+[2023-12-22 20:47:27] local.INFO: 2023-12-22 20:47:27 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 174.19290542603ms  
+[2023-12-22 20:47:27] local.INFO: 2023-12-22 20:47:27 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 172.93500900269ms  
+[2023-12-22 20:47:27] local.INFO: 2023-12-22 20:47:27 POST:"http://127.0.0.1:8000/api/change-password" - Execution Time: 172.99890518188ms  
+[2023-12-22 20:49:07] local.INFO: 2023-12-22 20:49:07 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.0190944671631ms  
+[2023-12-22 20:49:07] local.INFO: 2023-12-22 20:49:07 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.4821758270264ms  
+[2023-12-22 20:49:07] local.INFO: 2023-12-22 20:49:07 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.5538673400879ms  
+[2023-12-22 20:49:07] local.INFO: 2023-12-22 20:49:07 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.6609897613525ms  
+[2023-12-22 20:49:08] local.INFO: 2023-12-22 20:49:08 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.8608055114746ms  
+[2023-12-22 20:49:08] local.INFO: 2023-12-22 20:49:08 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 4.9850940704346ms  
+[2023-12-22 20:49:08] local.INFO: 2023-12-22 20:49:08 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.4980049133301ms  
+[2023-12-22 20:49:08] local.INFO: 2023-12-22 20:49:08 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 3.7539005279541ms  
+[2023-12-22 20:49:09] local.INFO: 2023-12-22 20:49:09 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.0530433654785ms  
+[2023-12-22 20:49:09] local.INFO: 2023-12-22 20:49:09 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.0899982452393ms  
+[2023-12-22 20:49:44] local.INFO: 2023-12-22 20:49:44 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 7.349967956543ms  
+[2023-12-22 20:49:44] local.INFO: 2023-12-22 20:49:44 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.6710033416748ms  
+[2023-12-22 20:49:44] local.INFO: 2023-12-22 20:49:44 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.3009986877441ms  
+[2023-12-22 20:49:44] local.INFO: 2023-12-22 20:49:44 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.640962600708ms  
+[2023-12-22 20:49:45] local.INFO: 2023-12-22 20:49:45 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.21600723266602ms  
+[2023-12-22 20:49:45] local.INFO: 2023-12-22 20:49:45 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 4.5850276947021ms  
+[2023-12-22 20:49:45] local.INFO: 2023-12-22 20:49:45 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.1981258392334ms  
+[2023-12-22 20:49:45] local.INFO: 2023-12-22 20:49:45 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.2351016998291ms  
+[2023-12-22 20:49:45] local.INFO: 2023-12-22 20:49:45 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.14877319335938ms  
+[2023-12-22 20:49:45] local.INFO: 2023-12-22 20:49:45 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.7420520782471ms  
+[2023-12-22 20:49:45] local.INFO: 2023-12-22 20:49:45 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.19383430480957ms  
+[2023-12-22 20:49:45] local.INFO: 2023-12-22 20:49:45 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.4368762969971ms  
+[2023-12-22 20:50:04] local.INFO: 2023-12-22 20:50:04 POST:"http://127.0.0.1:8000/api/login" - Execution Time: 196.28095626831ms  
+[2023-12-22 20:55:17] local.INFO: 2023-12-22 20:55:17 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 8.6920261383057ms  
+[2023-12-22 20:55:17] local.INFO: 2023-12-22 20:55:17 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.7790069580078ms  
+[2023-12-22 20:55:17] local.INFO: 2023-12-22 20:55:17 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.7187805175781ms  
+[2023-12-22 20:55:17] local.INFO: 2023-12-22 20:55:17 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.1321048736572ms  
+[2023-12-22 20:55:17] local.INFO: 2023-12-22 20:55:17 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.18906593322754ms  
+[2023-12-22 20:55:17] local.INFO: 2023-12-22 20:55:17 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 4.9319267272949ms  
+[2023-12-22 20:55:17] local.INFO: 2023-12-22 20:55:17 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.34904479980469ms  
+[2023-12-22 20:55:17] local.INFO: 2023-12-22 20:55:17 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.3540725708008ms  
+[2023-12-22 20:55:17] local.INFO: 2023-12-22 20:55:17 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13899803161621ms  
+[2023-12-22 20:55:17] local.INFO: 2023-12-22 20:55:17 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 4.188060760498ms  
+[2023-12-22 20:55:17] local.INFO: 2023-12-22 20:55:17 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.16999244689941ms  
+[2023-12-22 20:55:17] local.INFO: 2023-12-22 20:55:17 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.1748542785645ms  
+[2023-12-22 20:55:24] local.INFO: 2023-12-22 20:55:24 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.5360794067383ms  
+[2023-12-22 20:55:24] local.INFO: 2023-12-22 20:55:24 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.748966217041ms  
+[2023-12-22 20:55:24] local.INFO: 2023-12-22 20:55:24 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.5938491821289ms  
+[2023-12-22 20:55:24] local.INFO: 2023-12-22 20:55:24 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.4769306182861ms  
+[2023-12-22 20:55:25] local.INFO: 2023-12-22 20:55:25 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.14781951904297ms  
+[2023-12-22 20:55:25] local.INFO: 2023-12-22 20:55:25 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 4.6610832214355ms  
+[2023-12-22 20:55:25] local.INFO: 2023-12-22 20:55:25 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13303756713867ms  
+[2023-12-22 20:55:25] local.INFO: 2023-12-22 20:55:25 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.6180744171143ms  
+[2023-12-22 20:55:47] local.INFO: 2023-12-22 20:55:47 POST:"http://127.0.0.1:8000/api/login" - Execution Time: 214.09487724304ms  
+[2023-12-22 20:55:49] local.INFO: 2023-12-22 20:55:49 POST:"http://127.0.0.1:8000/api/login" - Execution Time: 192.06404685974ms  
+[2023-12-22 20:55:49] local.INFO: 2023-12-22 20:55:49 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.21791458129883ms  
+[2023-12-22 20:55:49] local.INFO: 2023-12-22 20:55:49 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.9408931732178ms  
+[2023-12-22 20:55:49] local.INFO: 2023-12-22 20:55:49 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13518333435059ms  
+[2023-12-22 20:55:49] local.INFO: 2023-12-22 20:55:49 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.7229785919189ms  
+[2023-12-22 20:56:20] local.INFO: 2023-12-22 20:56:20 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.34213066101074ms  
+[2023-12-22 20:56:20] local.INFO: 2023-12-22 20:56:20 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.2260417938232ms  
+[2023-12-22 20:56:20] local.INFO: 2023-12-22 20:56:20 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13995170593262ms  
+[2023-12-22 20:56:20] local.INFO: 2023-12-22 20:56:20 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.3371448516846ms  
+[2023-12-22 20:56:21] local.INFO: 2023-12-22 20:56:21 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 4.1859149932861ms  
+[2023-12-22 20:56:21] local.INFO: 2023-12-22 20:56:21 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.1960010528564ms  
+[2023-12-22 20:58:16] local.INFO: 2023-12-22 20:58:16 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.23007392883301ms  
+[2023-12-22 20:58:16] local.INFO: 2023-12-22 20:58:16 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.5711059570312ms  
+[2023-12-22 20:58:16] local.INFO: 2023-12-22 20:58:16 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.1370906829834ms  
+[2023-12-22 20:58:16] local.INFO: 2023-12-22 20:58:16 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.432107925415ms  
+[2023-12-22 20:58:16] local.INFO: 2023-12-22 20:58:16 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.5498867034912ms  
+[2023-12-22 20:58:23] local.INFO: 2023-12-22 20:58:23 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.1650066375732ms  
+[2023-12-22 20:58:24] local.INFO: 2023-12-22 20:58:24 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.22101402282715ms  
+[2023-12-22 20:58:24] local.INFO: 2023-12-22 20:58:24 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.6779174804688ms  
+[2023-12-22 20:58:24] local.INFO: 2023-12-22 20:58:24 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13399124145508ms  
+[2023-12-22 20:58:24] local.INFO: 2023-12-22 20:58:24 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.8090476989746ms  
+[2023-12-22 20:59:18] local.INFO: 2023-12-22 20:59:18 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.53596496582031ms  
+[2023-12-22 20:59:18] local.INFO: 2023-12-22 20:59:18 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.7759075164795ms  
+[2023-12-22 20:59:18] local.INFO: 2023-12-22 20:59:18 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13399124145508ms  
+[2023-12-22 20:59:18] local.INFO: 2023-12-22 20:59:18 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.7511119842529ms  
+[2023-12-22 20:59:18] local.INFO: 2023-12-22 20:59:18 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.3249855041504ms  
+[2023-12-22 20:59:21] local.INFO: 2023-12-22 20:59:21 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 4.3041706085205ms  
+[2023-12-22 20:59:21] local.INFO: 2023-12-22 20:59:21 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.3028125762939ms  
+[2023-12-22 20:59:29] local.INFO: 2023-12-22 20:59:29 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 4.7049522399902ms  
+[2023-12-22 20:59:30] local.INFO: 2023-12-22 20:59:30 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.1368522644043ms  
+[2023-12-22 20:59:30] local.INFO: 2023-12-22 20:59:30 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.3610591888428ms  
+[2023-12-22 20:59:30] local.INFO: 2023-12-22 20:59:30 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13113021850586ms  
+[2023-12-22 20:59:30] local.INFO: 2023-12-22 20:59:30 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.1598339080811ms  
+[2023-12-22 20:59:35] local.INFO: 2023-12-22 20:59:35 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.9389133453369ms  
+[2023-12-22 20:59:35] local.INFO: 2023-12-22 20:59:35 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.84521484375ms  
+[2023-12-22 20:59:42] local.INFO: 2023-12-22 20:59:42 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.7870407104492ms  
+[2023-12-22 20:59:43] local.INFO: 2023-12-22 20:59:43 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.23198127746582ms  
+[2023-12-22 20:59:43] local.INFO: 2023-12-22 20:59:43 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 5.7787895202637ms  
+[2023-12-22 20:59:43] local.INFO: 2023-12-22 20:59:43 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.23794174194336ms  
+[2023-12-22 20:59:43] local.INFO: 2023-12-22 20:59:43 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.5539398193359ms  
+[2023-12-22 20:59:43] local.INFO: 2023-12-22 20:59:43 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 5.0179958343506ms  
+[2023-12-22 20:59:43] local.INFO: 2023-12-22 20:59:43 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.0951499938965ms  
+[2023-12-22 21:00:00] local.INFO: 2023-12-22 21:00:00 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.1249523162842ms  
+[2023-12-22 21:00:01] local.INFO: 2023-12-22 21:00:01 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.20503997802734ms  
+[2023-12-22 21:00:01] local.INFO: 2023-12-22 21:00:01 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.7740001678467ms  
+[2023-12-22 21:00:01] local.INFO: 2023-12-22 21:00:01 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.12993812561035ms  
+[2023-12-22 21:00:01] local.INFO: 2023-12-22 21:00:01 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.6440620422363ms  
+[2023-12-22 21:00:18] local.INFO: 2023-12-22 21:00:18 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.3750534057617ms  
+[2023-12-22 21:00:19] local.INFO: 2023-12-22 21:00:19 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.21886825561523ms  
+[2023-12-22 21:00:19] local.INFO: 2023-12-22 21:00:19 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.493143081665ms  
+[2023-12-22 21:00:20] local.INFO: 2023-12-22 21:00:20 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.1380443572998ms  
+[2023-12-22 21:00:20] local.INFO: 2023-12-22 21:00:20 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.418041229248ms  
+[2023-12-22 21:00:49] local.INFO: 2023-12-22 21:00:49 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.169059753418ms  
+[2023-12-22 21:00:49] local.INFO: 2023-12-22 21:00:49 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.21004676818848ms  
+[2023-12-22 21:00:49] local.INFO: 2023-12-22 21:00:49 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 4.3728351593018ms  
+[2023-12-22 21:00:49] local.INFO: 2023-12-22 21:00:49 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.14805793762207ms  
+[2023-12-22 21:00:49] local.INFO: 2023-12-22 21:00:49 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 4.9870014190674ms  
+[2023-12-22 21:00:50] local.INFO: 2023-12-22 21:00:50 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 4.6470165252686ms  
+[2023-12-22 21:00:50] local.INFO: 2023-12-22 21:00:50 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.075122833252ms  
+[2023-12-22 21:01:24] local.INFO: 2023-12-22 21:01:24 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.1669139862061ms  
+[2023-12-22 21:01:25] local.INFO: 2023-12-22 21:01:25 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.22506713867188ms  
+[2023-12-22 21:01:25] local.INFO: 2023-12-22 21:01:25 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.2219886779785ms  
+[2023-12-22 21:01:25] local.INFO: 2023-12-22 21:01:25 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13399124145508ms  
+[2023-12-22 21:01:25] local.INFO: 2023-12-22 21:01:25 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.0348300933838ms  
+[2023-12-22 21:02:39] local.INFO: 2023-12-22 21:02:39 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.7749538421631ms  
+[2023-12-22 21:02:39] local.INFO: 2023-12-22 21:02:39 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13494491577148ms  
+[2023-12-22 21:02:39] local.INFO: 2023-12-22 21:02:39 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.817081451416ms  
+[2023-12-22 21:02:39] local.INFO: 2023-12-22 21:02:39 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.1380443572998ms  
+[2023-12-22 21:02:39] local.INFO: 2023-12-22 21:02:39 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.0548572540283ms  
+[2023-12-22 21:04:32] local.INFO: 2023-12-22 21:04:32 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.66804885864258ms  
+[2023-12-22 21:04:32] local.INFO: 2023-12-22 21:04:32 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.2830238342285ms  
+[2023-12-22 21:04:32] local.INFO: 2023-12-22 21:04:32 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13399124145508ms  
+[2023-12-22 21:04:32] local.INFO: 2023-12-22 21:04:32 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.4111270904541ms  
+[2023-12-22 21:04:32] local.INFO: 2023-12-22 21:04:32 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.8018951416016ms  
+[2023-12-22 21:04:46] local.INFO: 2023-12-22 21:04:46 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.26607513427734ms  
+[2023-12-22 21:04:46] local.INFO: 2023-12-22 21:04:46 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.4690628051758ms  
+[2023-12-22 21:04:46] local.INFO: 2023-12-22 21:04:46 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13399124145508ms  
+[2023-12-22 21:04:46] local.INFO: 2023-12-22 21:04:46 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.7050971984863ms  
+[2023-12-22 21:04:46] local.INFO: 2023-12-22 21:04:46 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.5451183319092ms  
+[2023-12-22 21:05:01] local.INFO: 2023-12-22 21:05:01 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 4.417896270752ms  
+[2023-12-22 21:05:02] local.INFO: 2023-12-22 21:05:02 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.12898445129395ms  
+[2023-12-22 21:05:02] local.INFO: 2023-12-22 21:05:02 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.3021697998047ms  
+[2023-12-22 21:05:02] local.INFO: 2023-12-22 21:05:02 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13303756713867ms  
+[2023-12-22 21:05:02] local.INFO: 2023-12-22 21:05:02 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.0289421081543ms  
+[2023-12-22 21:05:23] local.INFO: 2023-12-22 21:05:23 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.9439926147461ms  
+[2023-12-22 21:05:24] local.INFO: 2023-12-22 21:05:24 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.18000602722168ms  
+[2023-12-22 21:05:24] local.INFO: 2023-12-22 21:05:24 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.5520324707031ms  
+[2023-12-22 21:05:24] local.INFO: 2023-12-22 21:05:24 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13399124145508ms  
+[2023-12-22 21:05:24] local.INFO: 2023-12-22 21:05:24 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.5420188903809ms  
+[2023-12-22 21:05:36] local.INFO: 2023-12-22 21:05:36 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.01194190979ms  
+[2023-12-22 21:05:37] local.INFO: 2023-12-22 21:05:37 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.22697448730469ms  
+[2023-12-22 21:05:37] local.INFO: 2023-12-22 21:05:37 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.284049987793ms  
+[2023-12-22 21:05:37] local.INFO: 2023-12-22 21:05:37 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13899803161621ms  
+[2023-12-22 21:05:37] local.INFO: 2023-12-22 21:05:37 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.2759437561035ms  
+[2023-12-22 21:06:36] local.INFO: 2023-12-22 21:06:36 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 5.0852298736572ms  
+[2023-12-22 21:06:37] local.INFO: 2023-12-22 21:06:37 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.14209747314453ms  
+[2023-12-22 21:06:37] local.INFO: 2023-12-22 21:06:37 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.7601718902588ms  
+[2023-12-22 21:06:37] local.INFO: 2023-12-22 21:06:37 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13089179992676ms  
+[2023-12-22 21:06:37] local.INFO: 2023-12-22 21:06:37 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.8729438781738ms  
+[2023-12-22 21:07:09] local.INFO: 2023-12-22 21:07:09 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.0999183654785ms  
+[2023-12-22 21:07:10] local.INFO: 2023-12-22 21:07:10 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.28705596923828ms  
+[2023-12-22 21:07:10] local.INFO: 2023-12-22 21:07:10 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.5720596313477ms  
+[2023-12-22 21:07:10] local.INFO: 2023-12-22 21:07:10 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13995170593262ms  
+[2023-12-22 21:07:10] local.INFO: 2023-12-22 21:07:10 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.7289390563965ms  
+[2023-12-22 21:08:14] local.INFO: 2023-12-22 21:08:14 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.493070602417ms  
+[2023-12-22 21:08:15] local.INFO: 2023-12-22 21:08:15 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.14519691467285ms  
+[2023-12-22 21:08:15] local.INFO: 2023-12-22 21:08:15 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.3899078369141ms  
+[2023-12-22 21:08:15] local.INFO: 2023-12-22 21:08:15 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.12993812561035ms  
+[2023-12-22 21:08:15] local.INFO: 2023-12-22 21:08:15 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.5980472564697ms  
+[2023-12-22 21:08:30] local.INFO: 2023-12-22 21:08:30 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.0369758605957ms  
+[2023-12-22 21:08:31] local.INFO: 2023-12-22 21:08:31 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.14090538024902ms  
+[2023-12-22 21:08:31] local.INFO: 2023-12-22 21:08:31 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.4940967559814ms  
+[2023-12-22 21:08:31] local.INFO: 2023-12-22 21:08:31 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.15497207641602ms  
+[2023-12-22 21:08:31] local.INFO: 2023-12-22 21:08:31 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.6988983154297ms  
+[2023-12-22 21:10:12] local.INFO: 2023-12-22 21:10:12 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.0749053955078ms  
+[2023-12-22 21:10:12] local.INFO: 2023-12-22 21:10:12 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.8600692749023ms  
+[2023-12-22 21:10:12] local.INFO: 2023-12-22 21:10:12 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.6608448028564ms  
+[2023-12-22 21:10:12] local.INFO: 2023-12-22 21:10:12 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13113021850586ms  
+[2023-12-22 21:10:12] local.INFO: 2023-12-22 21:10:12 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.6009082794189ms  
+[2023-12-22 21:10:12] local.INFO: 2023-12-22 21:10:12 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13089179992676ms  
+[2023-12-22 21:10:12] local.INFO: 2023-12-22 21:10:12 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.3698806762695ms  
+[2023-12-22 21:11:13] local.ERROR: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'name' cannot be null (Connection: mysql, SQL: insert into `users` (`name`, `email`, `password`, `updated_at`, `created_at`) values (?, thanh@gmail.com, $2y$12$FncDiJ3KbOqbFdjICpj9peWuf/AREjRx/p6uUXsVjxaTFqUtpq9bu, 2023-12-22 21:11:13, 2023-12-22 21:11:13)) {"userId":3,"exception":"[object] (Illuminate\\Database\\QueryException(code: 23000): SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'name' cannot be null (Connection: mysql, SQL: insert into `users` (`name`, `email`, `password`, `updated_at`, `created_at`) values (?, thanh@gmail.com, $2y$12$FncDiJ3KbOqbFdjICpj9peWuf/AREjRx/p6uUXsVjxaTFqUtpq9bu, 2023-12-22 21:11:13, 2023-12-22 21:11:13)) at /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Connection.php:822)
+[stacktrace]
+#0 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(776): Illuminate\\Database\\Connection->runQueryCallback()
+#1 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(569): Illuminate\\Database\\Connection->run()
+#2 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(533): Illuminate\\Database\\Connection->statement()
+#3 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/Processor.php(32): Illuminate\\Database\\Connection->insert()
+#4 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3387): Illuminate\\Database\\Query\\Processors\\Processor->processInsertGetId()
+#5 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1968): Illuminate\\Database\\Query\\Builder->insertGetId()
+#6 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1333): Illuminate\\Database\\Eloquent\\Builder->__call()
+#7 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1298): Illuminate\\Database\\Eloquent\\Model->insertAndSetId()
+#8 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1137): Illuminate\\Database\\Eloquent\\Model->performInsert()
+#9 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1023): Illuminate\\Database\\Eloquent\\Model->save()
+#10 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Support/helpers.php(307): Illuminate\\Database\\Eloquent\\Builder->Illuminate\\Database\\Eloquent\\{closure}()
+#11 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1022): tap()
+#12 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php(23): Illuminate\\Database\\Eloquent\\Builder->create()
+#13 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2334): Illuminate\\Database\\Eloquent\\Model->forwardCallTo()
+#14 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2346): Illuminate\\Database\\Eloquent\\Model->__call()
+#15 /home/thanhyk14/Desktop/local/app/Http/Controllers/AggregationPointHeadController.php(31): Illuminate\\Database\\Eloquent\\Model::__callStatic()
+#16 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\AggregationPointHeadController->store()
+#17 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction()
+#18 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Route.php(259): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#19 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate\\Routing\\Route->runController()
+#20 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Router.php(806): Illuminate\\Routing\\Route->run()
+#21 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#22 /home/thanhyk14/Desktop/local/app/Http/Middleware/CheckUserRole.php(25): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#23 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): App\\Http\\Middleware\\CheckUserRole->handle()
+#24 /home/thanhyk14/Desktop/local/app/Http/Middleware/LogApiRequests.php(15): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#25 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): App\\Http\\Middleware\\LogApiRequests->handle()
+#26 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#27 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#28 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#29 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#30 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(159): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#31 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(125): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest()
+#32 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(87): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequestUsingNamedLimiter()
+#33 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle()
+#34 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#35 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Auth\\Middleware\\Authenticate->handle()
+#36 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#37 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
+#38 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#39 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest()
+#40 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle()
+#41 /home/thanhyk14/Desktop/local/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php(25): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#42 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful->Laravel\\Sanctum\\Http\\Middleware\\{closure}()
+#43 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#44 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#45 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#46 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest()
+#47 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle()
+#48 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#49 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
+#50 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#51 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
+#52 /home/thanhyk14/Desktop/local/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php(61): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#53 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(162): Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful->Laravel\\Sanctum\\Http\\Middleware\\{closure}()
+#54 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#55 /home/thanhyk14/Desktop/local/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php(24): Illuminate\\Pipeline\\Pipeline->then()
+#56 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful->handle()
+#57 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#58 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Router.php(805): Illuminate\\Pipeline\\Pipeline->then()
+#59 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack()
+#60 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate\\Routing\\Router->runRoute()
+#61 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute()
+#62 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate\\Routing\\Router->dispatch()
+#63 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#64 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#65 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#66 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#67 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#68 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#69 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#70 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#71 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#72 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(99): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#73 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#74 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#75 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle()
+#76 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#77 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#78 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#79 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#80 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#81 /home/thanhyk14/Desktop/local/public/index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle()
+#82 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('...')
+#83 {main}
+
+[previous exception] [object] (PDOException(code: 23000): SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'name' cannot be null at /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Connection.php:580)
+[stacktrace]
+#0 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(580): PDOStatement->execute()
+#1 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(809): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}()
+#2 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(776): Illuminate\\Database\\Connection->runQueryCallback()
+#3 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(569): Illuminate\\Database\\Connection->run()
+#4 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(533): Illuminate\\Database\\Connection->statement()
+#5 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/Processor.php(32): Illuminate\\Database\\Connection->insert()
+#6 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3387): Illuminate\\Database\\Query\\Processors\\Processor->processInsertGetId()
+#7 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1968): Illuminate\\Database\\Query\\Builder->insertGetId()
+#8 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1333): Illuminate\\Database\\Eloquent\\Builder->__call()
+#9 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1298): Illuminate\\Database\\Eloquent\\Model->insertAndSetId()
+#10 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1137): Illuminate\\Database\\Eloquent\\Model->performInsert()
+#11 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1023): Illuminate\\Database\\Eloquent\\Model->save()
+#12 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Support/helpers.php(307): Illuminate\\Database\\Eloquent\\Builder->Illuminate\\Database\\Eloquent\\{closure}()
+#13 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1022): tap()
+#14 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php(23): Illuminate\\Database\\Eloquent\\Builder->create()
+#15 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2334): Illuminate\\Database\\Eloquent\\Model->forwardCallTo()
+#16 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2346): Illuminate\\Database\\Eloquent\\Model->__call()
+#17 /home/thanhyk14/Desktop/local/app/Http/Controllers/AggregationPointHeadController.php(31): Illuminate\\Database\\Eloquent\\Model::__callStatic()
+#18 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\AggregationPointHeadController->store()
+#19 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction()
+#20 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Route.php(259): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#21 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate\\Routing\\Route->runController()
+#22 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Router.php(806): Illuminate\\Routing\\Route->run()
+#23 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#24 /home/thanhyk14/Desktop/local/app/Http/Middleware/CheckUserRole.php(25): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#25 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): App\\Http\\Middleware\\CheckUserRole->handle()
+#26 /home/thanhyk14/Desktop/local/app/Http/Middleware/LogApiRequests.php(15): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#27 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): App\\Http\\Middleware\\LogApiRequests->handle()
+#28 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#29 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#30 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#31 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#32 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(159): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#33 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(125): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest()
+#34 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(87): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequestUsingNamedLimiter()
+#35 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle()
+#36 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#37 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Auth\\Middleware\\Authenticate->handle()
+#38 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#39 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
+#40 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#41 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest()
+#42 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle()
+#43 /home/thanhyk14/Desktop/local/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php(25): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#44 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful->Laravel\\Sanctum\\Http\\Middleware\\{closure}()
+#45 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#46 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#47 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#48 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest()
+#49 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle()
+#50 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#51 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
+#52 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#53 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
+#54 /home/thanhyk14/Desktop/local/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php(61): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#55 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(162): Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful->Laravel\\Sanctum\\Http\\Middleware\\{closure}()
+#56 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#57 /home/thanhyk14/Desktop/local/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php(24): Illuminate\\Pipeline\\Pipeline->then()
+#58 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful->handle()
+#59 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#60 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Router.php(805): Illuminate\\Pipeline\\Pipeline->then()
+#61 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack()
+#62 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate\\Routing\\Router->runRoute()
+#63 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute()
+#64 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate\\Routing\\Router->dispatch()
+#65 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#66 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#67 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#68 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#69 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#70 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#71 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#72 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#73 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#74 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(99): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#75 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#76 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#77 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle()
+#78 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#79 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#80 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#81 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#82 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#83 /home/thanhyk14/Desktop/local/public/index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle()
+#84 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('...')
+#85 {main}
+"} 
+[2023-12-22 21:11:13] local.INFO: 2023-12-22 21:11:13 POST:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 179.18801307678ms  
+[2023-12-22 21:11:52] local.INFO: 2023-12-22 21:11:52 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 9.1152191162109ms  
+[2023-12-22 21:11:52] local.INFO: 2023-12-22 21:11:52 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.6530494689941ms  
+[2023-12-22 21:11:53] local.INFO: 2023-12-22 21:11:53 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.1378059387207ms  
+[2023-12-22 21:11:53] local.INFO: 2023-12-22 21:11:53 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.7468204498291ms  
+[2023-12-22 21:11:53] local.INFO: 2023-12-22 21:11:53 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.17786026000977ms  
+[2023-12-22 21:11:53] local.INFO: 2023-12-22 21:11:53 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 4.3570995330811ms  
+[2023-12-22 21:12:09] local.INFO: 2023-12-22 21:12:09 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.6118965148926ms  
+[2023-12-22 21:12:09] local.INFO: 2023-12-22 21:12:09 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.7920475006104ms  
+[2023-12-22 21:12:10] local.INFO: 2023-12-22 21:12:10 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.19693374633789ms  
+[2023-12-22 21:12:10] local.INFO: 2023-12-22 21:12:10 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.6040077209473ms  
+[2023-12-22 21:12:10] local.INFO: 2023-12-22 21:12:10 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.12993812561035ms  
+[2023-12-22 21:12:10] local.INFO: 2023-12-22 21:12:10 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.7539730072021ms  
+[2023-12-22 21:12:30] local.INFO: 2023-12-22 21:12:30 POST:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 186.18083000183ms  
+[2023-12-22 21:12:50] local.INFO: 2023-12-22 21:12:50 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.9700012207031ms  
+[2023-12-22 21:12:50] local.INFO: 2023-12-22 21:12:50 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 4.5130252838135ms  
+[2023-12-22 21:12:50] local.INFO: 2023-12-22 21:12:50 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.3738822937012ms  
+[2023-12-22 21:12:50] local.INFO: 2023-12-22 21:12:50 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 5.3250789642334ms  
+[2023-12-22 21:12:50] local.INFO: 2023-12-22 21:12:50 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.5778751373291ms  
+[2023-12-22 21:12:50] local.INFO: 2023-12-22 21:12:50 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.2900314331055ms  
+[2023-12-22 21:12:54] local.INFO: 2023-12-22 21:12:54 GET:"http://127.0.0.1:8000/api/aggregationPoint/87" - Execution Time: 5.9940814971924ms  
+[2023-12-22 21:12:54] local.INFO: 2023-12-22 21:12:54 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.7421455383301ms  
+[2023-12-22 21:12:54] local.INFO: 2023-12-22 21:12:54 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.2458305358887ms  
+[2023-12-22 21:12:54] local.INFO: 2023-12-22 21:12:54 GET:"http://127.0.0.1:8000/api/aggregationPoint/87" - Execution Time: 3.774881362915ms  
+[2023-12-22 21:12:54] local.INFO: 2023-12-22 21:12:54 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.0790309906006ms  
+[2023-12-22 21:12:54] local.INFO: 2023-12-22 21:12:54 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.5908946990967ms  
+[2023-12-22 21:13:01] local.INFO: 2023-12-22 21:13:01 PUT:"http://127.0.0.1:8000/api/aggregationPoint/87" - Execution Time: 7.9898834228516ms  
+[2023-12-22 21:13:01] local.INFO: 2023-12-22 21:13:01 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.8210620880127ms  
+[2023-12-22 21:13:01] local.INFO: 2023-12-22 21:13:01 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.073070526123ms  
+[2023-12-22 21:13:16] local.INFO: 2023-12-22 21:13:16 PUT:"http://127.0.0.1:8000/api/aggregationPoint/87" - Execution Time: 7.5671672821045ms  
+[2023-12-22 21:13:16] local.INFO: 2023-12-22 21:13:16 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.8658847808838ms  
+[2023-12-22 21:13:16] local.INFO: 2023-12-22 21:13:16 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.4939517974854ms  
+[2023-12-22 21:13:18] local.INFO: 2023-12-22 21:13:18 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.0370693206787ms  
+[2023-12-22 21:13:18] local.INFO: 2023-12-22 21:13:18 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.2111873626709ms  
+[2023-12-22 21:13:20] local.INFO: 2023-12-22 21:13:20 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.1069259643555ms  
+[2023-12-22 21:13:20] local.INFO: 2023-12-22 21:13:20 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.9338340759277ms  
+[2023-12-22 21:13:47] local.INFO: 2023-12-22 21:13:47 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.525972366333ms  
+[2023-12-22 21:18:39] local.INFO: 2023-12-22 21:18:39 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 5.3861141204834ms  
+[2023-12-22 21:18:39] local.INFO: 2023-12-22 21:18:39 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 4.6970844268799ms  
+[2023-12-22 21:18:39] local.INFO: 2023-12-22 21:18:39 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.6170482635498ms  
+[2023-12-22 21:18:39] local.INFO: 2023-12-22 21:18:39 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.15115737915039ms  
+[2023-12-22 21:18:39] local.INFO: 2023-12-22 21:18:39 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.8998851776123ms  
+[2023-12-22 21:18:39] local.INFO: 2023-12-22 21:18:39 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.1380443572998ms  
+[2023-12-22 21:18:39] local.INFO: 2023-12-22 21:18:39 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.7039051055908ms  
+[2023-12-22 21:18:39] local.INFO: 2023-12-22 21:18:39 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.7759075164795ms  
+[2023-12-22 21:18:47] local.INFO: 2023-12-22 21:18:47 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.5011768341064ms  
+[2023-12-22 21:18:47] local.INFO: 2023-12-22 21:18:47 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.8450489044189ms  
+[2023-12-22 21:18:47] local.INFO: 2023-12-22 21:18:47 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.14400482177734ms  
+[2023-12-22 21:18:47] local.INFO: 2023-12-22 21:18:47 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.7668476104736ms  
+[2023-12-22 21:18:47] local.INFO: 2023-12-22 21:18:47 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.2839775085449ms  
+[2023-12-22 21:18:47] local.INFO: 2023-12-22 21:18:47 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.4739971160889ms  
+[2023-12-22 21:20:02] local.INFO: 2023-12-22 21:20:02 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.0170421600342ms  
+[2023-12-22 21:20:02] local.INFO: 2023-12-22 21:20:02 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 4.3649673461914ms  
+[2023-12-22 21:20:02] local.INFO: 2023-12-22 21:20:02 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.5420188903809ms  
+[2023-12-22 21:20:02] local.INFO: 2023-12-22 21:20:02 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.2709579467773ms  
+[2023-12-22 21:20:04] local.INFO: 2023-12-22 21:20:04 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13303756713867ms  
+[2023-12-22 21:20:04] local.INFO: 2023-12-22 21:20:04 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.4049282073975ms  
+[2023-12-22 21:20:04] local.INFO: 2023-12-22 21:20:04 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.5098533630371ms  
+[2023-12-22 21:20:04] local.INFO: 2023-12-22 21:20:04 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.647876739502ms  
+[2023-12-22 21:20:04] local.INFO: 2023-12-22 21:20:04 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.2308826446533ms  
+[2023-12-22 21:20:04] local.INFO: 2023-12-22 21:20:04 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.6939125061035ms  
+[2023-12-22 21:20:16] local.INFO: 2023-12-22 21:20:16 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 8.6069107055664ms  
+[2023-12-22 21:20:16] local.INFO: 2023-12-22 21:20:16 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.6009082794189ms  
+[2023-12-22 21:20:16] local.INFO: 2023-12-22 21:20:16 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.4991035461426ms  
+[2023-12-22 21:20:16] local.INFO: 2023-12-22 21:20:16 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.7578811645508ms  
+[2023-12-22 21:20:17] local.INFO: 2023-12-22 21:20:17 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.21696090698242ms  
+[2023-12-22 21:20:17] local.INFO: 2023-12-22 21:20:17 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.4310817718506ms  
+[2023-12-22 21:20:17] local.INFO: 2023-12-22 21:20:17 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.4318904876709ms  
+[2023-12-22 21:20:17] local.INFO: 2023-12-22 21:20:17 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.7902126312256ms  
+[2023-12-22 21:20:17] local.INFO: 2023-12-22 21:20:17 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.310037612915ms  
+[2023-12-22 21:20:17] local.INFO: 2023-12-22 21:20:17 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.6408176422119ms  
+[2023-12-22 21:20:23] local.INFO: 2023-12-22 21:20:23 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.7229995727539ms  
+[2023-12-22 21:20:23] local.INFO: 2023-12-22 21:20:23 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.3929347991943ms  
+[2023-12-22 21:20:23] local.INFO: 2023-12-22 21:20:23 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.6898384094238ms  
+[2023-12-22 21:20:23] local.INFO: 2023-12-22 21:20:23 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.1209926605225ms  
+[2023-12-22 21:20:25] local.INFO: 2023-12-22 21:20:25 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.23603439331055ms  
+[2023-12-22 21:20:25] local.INFO: 2023-12-22 21:20:25 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.4268627166748ms  
+[2023-12-22 21:20:25] local.INFO: 2023-12-22 21:20:25 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.2177906036377ms  
+[2023-12-22 21:20:25] local.INFO: 2023-12-22 21:20:25 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.6888847351074ms  
+[2023-12-22 21:20:25] local.INFO: 2023-12-22 21:20:25 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.432107925415ms  
+[2023-12-22 21:20:25] local.INFO: 2023-12-22 21:20:25 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.774974822998ms  
+[2023-12-22 21:20:33] local.INFO: 2023-12-22 21:20:33 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 4.7509670257568ms  
+[2023-12-22 21:20:33] local.INFO: 2023-12-22 21:20:33 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 5.1391124725342ms  
+[2023-12-22 21:20:35] local.INFO: 2023-12-22 21:20:35 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.22196769714355ms  
+[2023-12-22 21:20:35] local.INFO: 2023-12-22 21:20:35 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.3069381713867ms  
+[2023-12-22 21:20:35] local.INFO: 2023-12-22 21:20:35 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.8328895568848ms  
+[2023-12-22 21:20:35] local.INFO: 2023-12-22 21:20:35 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.3491382598877ms  
+[2023-12-22 21:20:44] local.INFO: 2023-12-22 21:20:44 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.5440921783447ms  
+[2023-12-22 21:20:44] local.INFO: 2023-12-22 21:20:44 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.6679039001465ms  
+[2023-12-22 21:20:45] local.INFO: 2023-12-22 21:20:45 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.4110546112061ms  
+[2023-12-22 21:20:45] local.INFO: 2023-12-22 21:20:45 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.8510093688965ms  
+[2023-12-22 21:20:45] local.INFO: 2023-12-22 21:20:45 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13399124145508ms  
+[2023-12-22 21:20:45] local.INFO: 2023-12-22 21:20:45 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.3558139801025ms  
+[2023-12-22 21:20:55] local.INFO: 2023-12-22 21:20:55 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.4739971160889ms  
+[2023-12-22 21:20:55] local.INFO: 2023-12-22 21:20:55 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.547025680542ms  
+[2023-12-22 21:20:56] local.INFO: 2023-12-22 21:20:56 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 5.0420761108398ms  
+[2023-12-22 21:20:56] local.INFO: 2023-12-22 21:20:56 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.4618377685547ms  
+[2023-12-22 21:20:56] local.INFO: 2023-12-22 21:20:56 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13899803161621ms  
+[2023-12-22 21:20:56] local.INFO: 2023-12-22 21:20:56 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.0918121337891ms  
+[2023-12-22 21:21:03] local.INFO: 2023-12-22 21:21:03 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.9370059967041ms  
+[2023-12-22 21:21:03] local.INFO: 2023-12-22 21:21:03 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.4118423461914ms  
+[2023-12-22 21:21:04] local.INFO: 2023-12-22 21:21:04 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.32591819763184ms  
+[2023-12-22 21:21:04] local.INFO: 2023-12-22 21:21:04 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.4659633636475ms  
+[2023-12-22 21:21:04] local.INFO: 2023-12-22 21:21:04 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.1859874725342ms  
+[2023-12-22 21:21:04] local.INFO: 2023-12-22 21:21:04 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.5410652160645ms  
+[2023-12-22 21:21:11] local.INFO: 2023-12-22 21:21:11 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 5.8579444885254ms  
+[2023-12-22 21:21:11] local.INFO: 2023-12-22 21:21:11 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.4621486663818ms  
+[2023-12-22 21:21:12] local.INFO: 2023-12-22 21:21:12 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.16689300537109ms  
+[2023-12-22 21:21:12] local.INFO: 2023-12-22 21:21:12 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.4019947052002ms  
+[2023-12-22 21:21:12] local.INFO: 2023-12-22 21:21:12 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.4452209472656ms  
+[2023-12-22 21:21:12] local.INFO: 2023-12-22 21:21:12 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.4051666259766ms  
+[2023-12-22 21:21:22] local.INFO: 2023-12-22 21:21:22 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 9.437084197998ms  
+[2023-12-22 21:21:22] local.INFO: 2023-12-22 21:21:22 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.5359859466553ms  
+[2023-12-22 21:21:22] local.INFO: 2023-12-22 21:21:22 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 5.526065826416ms  
+[2023-12-22 21:21:22] local.INFO: 2023-12-22 21:21:22 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 10.112047195435ms  
+[2023-12-22 21:21:22] local.INFO: 2023-12-22 21:21:22 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 4.9078464508057ms  
+[2023-12-22 21:21:22] local.INFO: 2023-12-22 21:21:22 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 5.0239562988281ms  
+[2023-12-22 21:21:22] local.INFO: 2023-12-22 21:21:22 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.9679279327393ms  
+[2023-12-22 21:21:22] local.INFO: 2023-12-22 21:21:22 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.932071685791ms  
+[2023-12-22 21:21:23] local.INFO: 2023-12-22 21:21:23 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.9678344726562ms  
+[2023-12-22 21:21:23] local.INFO: 2023-12-22 21:21:23 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.7250728607178ms  
+[2023-12-22 21:21:23] local.INFO: 2023-12-22 21:21:23 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 4.817008972168ms  
+[2023-12-22 21:21:23] local.INFO: 2023-12-22 21:21:23 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.3750534057617ms  
+[2023-12-22 21:21:23] local.INFO: 2023-12-22 21:21:23 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.16307830810547ms  
+[2023-12-22 21:21:23] local.INFO: 2023-12-22 21:21:23 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.8118362426758ms  
+[2023-12-22 21:21:23] local.INFO: 2023-12-22 21:21:23 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.17404556274414ms  
+[2023-12-22 21:21:23] local.INFO: 2023-12-22 21:21:23 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.8660297393799ms  
+[2023-12-22 21:21:32] local.INFO: 2023-12-22 21:21:32 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.7008991241455ms  
+[2023-12-22 21:21:33] local.INFO: 2023-12-22 21:21:33 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 4.4741630554199ms  
+[2023-12-22 21:21:33] local.INFO: 2023-12-22 21:21:33 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.5619010925293ms  
+[2023-12-22 21:21:33] local.INFO: 2023-12-22 21:21:33 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 4.1840076446533ms  
+[2023-12-22 21:21:34] local.INFO: 2023-12-22 21:21:34 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.842924118042ms  
+[2023-12-22 21:21:34] local.INFO: 2023-12-22 21:21:34 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.7999877929688ms  
+[2023-12-22 21:21:34] local.INFO: 2023-12-22 21:21:34 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.4469833374023ms  
+[2023-12-22 21:21:34] local.INFO: 2023-12-22 21:21:34 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.6910305023193ms  
+[2023-12-22 21:22:05] local.INFO: 2023-12-22 21:22:05 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.5949687957764ms  
+[2023-12-22 21:22:05] local.INFO: 2023-12-22 21:22:05 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.13399124145508ms  
+[2023-12-22 21:22:05] local.INFO: 2023-12-22 21:22:05 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.3290386199951ms  
+[2023-12-22 21:22:05] local.INFO: 2023-12-22 21:22:05 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.636194229126ms  
+[2023-12-22 21:22:05] local.INFO: 2023-12-22 21:22:05 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.8930644989014ms  
+[2023-12-22 21:22:05] local.INFO: 2023-12-22 21:22:05 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.1669139862061ms  
+[2023-12-22 21:22:05] local.INFO: 2023-12-22 21:22:05 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.6328563690186ms  
+[2023-12-22 21:22:05] local.INFO: 2023-12-22 21:22:05 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.7987957000732ms  
+[2023-12-22 21:22:17] local.INFO: 2023-12-22 21:22:17 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.5029392242432ms  
+[2023-12-22 21:22:17] local.INFO: 2023-12-22 21:22:17 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.5591125488281ms  
+[2023-12-22 21:22:17] local.INFO: 2023-12-22 21:22:17 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.5650730133057ms  
+[2023-12-22 21:22:18] local.INFO: 2023-12-22 21:22:18 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.14996528625488ms  
+[2023-12-22 21:22:18] local.INFO: 2023-12-22 21:22:18 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.3229122161865ms  
+[2023-12-22 21:22:18] local.INFO: 2023-12-22 21:22:18 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.6219825744629ms  
+[2023-12-22 21:22:18] local.INFO: 2023-12-22 21:22:18 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.7830600738525ms  
+[2023-12-22 21:22:18] local.INFO: 2023-12-22 21:22:18 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.2410621643066ms  
+[2023-12-22 21:22:30] local.INFO: 2023-12-22 21:22:30 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.601001739502ms  
+[2023-12-22 21:22:30] local.INFO: 2023-12-22 21:22:30 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 4.3570995330811ms  
+[2023-12-22 21:22:30] local.INFO: 2023-12-22 21:22:30 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.1989555358887ms  
+[2023-12-22 21:22:30] local.INFO: 2023-12-22 21:22:30 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 4.1489601135254ms  
+[2023-12-22 21:22:33] local.INFO: 2023-12-22 21:22:33 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.3620338439941ms  
+[2023-12-22 21:22:33] local.INFO: 2023-12-22 21:22:33 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.9469470977783ms  
+[2023-12-22 21:22:35] local.INFO: 2023-12-22 21:22:35 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.8548240661621ms  
+[2023-12-22 21:22:35] local.INFO: 2023-12-22 21:22:35 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.8691291809082ms  
+[2023-12-22 21:22:50] local.INFO: 2023-12-22 21:22:50 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.3609867095947ms  
+[2023-12-22 21:22:50] local.INFO: 2023-12-22 21:22:50 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.0858516693115ms  
+[2023-12-22 21:22:50] local.INFO: 2023-12-22 21:22:50 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 4.1689872741699ms  
+[2023-12-22 21:22:57] local.INFO: 2023-12-22 21:22:57 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.4240226745605ms  
+[2023-12-22 21:22:57] local.INFO: 2023-12-22 21:22:57 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.5571327209473ms  
+[2023-12-22 21:22:59] local.INFO: 2023-12-22 21:22:59 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.4047832489014ms  
+[2023-12-22 21:22:59] local.INFO: 2023-12-22 21:22:59 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 3.9029121398926ms  
+[2023-12-22 21:22:59] local.INFO: 2023-12-22 21:22:59 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.7840347290039ms  
+[2023-12-22 21:22:59] local.INFO: 2023-12-22 21:22:59 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 5.2568912506104ms  
+[2023-12-22 21:22:59] local.INFO: 2023-12-22 21:22:59 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.4779777526855ms  
+[2023-12-22 21:22:59] local.INFO: 2023-12-22 21:22:59 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.1290054321289ms  
+[2023-12-22 21:22:59] local.INFO: 2023-12-22 21:22:59 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.5311450958252ms  
+[2023-12-22 21:22:59] local.INFO: 2023-12-22 21:22:59 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.9620399475098ms  
+[2023-12-22 21:24:25] local.INFO: 2023-12-22 21:24:25 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.6228637695312ms  
+[2023-12-22 21:24:25] local.INFO: 2023-12-22 21:24:25 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.8810501098633ms  
+[2023-12-22 21:24:25] local.INFO: 2023-12-22 21:24:25 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.3438205718994ms  
+[2023-12-22 21:24:25] local.INFO: 2023-12-22 21:24:25 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.2621364593506ms  
+[2023-12-22 21:24:25] local.INFO: 2023-12-22 21:24:25 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.7279853820801ms  
+[2023-12-22 21:24:25] local.INFO: 2023-12-22 21:24:25 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.5370121002197ms  
+[2023-12-22 21:24:50] local.INFO: 2023-12-22 21:24:50 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.0560703277588ms  
+[2023-12-22 21:24:50] local.INFO: 2023-12-22 21:24:50 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.6729106903076ms  
+[2023-12-22 21:24:50] local.INFO: 2023-12-22 21:24:50 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.8760433197021ms  
+[2023-12-22 21:24:50] local.INFO: 2023-12-22 21:24:50 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.8580169677734ms  
+[2023-12-22 21:24:50] local.INFO: 2023-12-22 21:24:50 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.8269290924072ms  
+[2023-12-22 21:24:50] local.INFO: 2023-12-22 21:24:50 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.514123916626ms  
+[2023-12-22 21:26:32] local.INFO: 2023-12-22 21:26:32 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.2949657440186ms  
+[2023-12-22 21:26:32] local.INFO: 2023-12-22 21:26:32 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.9411315917969ms  
+[2023-12-22 21:26:32] local.INFO: 2023-12-22 21:26:32 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.3209323883057ms  
+[2023-12-22 21:26:32] local.INFO: 2023-12-22 21:26:32 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.2060356140137ms  
+[2023-12-22 21:26:32] local.INFO: 2023-12-22 21:26:32 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.0810832977295ms  
+[2023-12-22 21:26:32] local.INFO: 2023-12-22 21:26:32 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.741813659668ms  
+[2023-12-22 21:29:27] local.INFO: 2023-12-22 21:29:27 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.3699016571045ms  
+[2023-12-22 21:29:27] local.INFO: 2023-12-22 21:29:27 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 3.6380290985107ms  
+[2023-12-22 21:29:27] local.INFO: 2023-12-22 21:29:27 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.6629905700684ms  
+[2023-12-22 21:29:27] local.INFO: 2023-12-22 21:29:27 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 4.4629573822021ms  
+[2023-12-22 21:29:28] local.INFO: 2023-12-22 21:29:28 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.4209957122803ms  
+[2023-12-22 21:29:28] local.INFO: 2023-12-22 21:29:28 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.0770301818848ms  
+[2023-12-22 21:29:28] local.INFO: 2023-12-22 21:29:28 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.7121047973633ms  
+[2023-12-22 21:29:28] local.INFO: 2023-12-22 21:29:28 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.7840137481689ms  
+[2023-12-22 21:29:29] local.INFO: 2023-12-22 21:29:29 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.4869651794434ms  
+[2023-12-22 21:29:29] local.INFO: 2023-12-22 21:29:29 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.195140838623ms  
+[2023-12-22 21:29:30] local.INFO: 2023-12-22 21:29:30 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.7240257263184ms  
+[2023-12-22 21:29:30] local.INFO: 2023-12-22 21:29:30 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 4.9459934234619ms  
+[2023-12-22 21:29:30] local.INFO: 2023-12-22 21:29:30 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.2580833435059ms  
+[2023-12-22 21:29:30] local.INFO: 2023-12-22 21:29:30 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 4.0609836578369ms  
+[2023-12-22 21:30:46] local.INFO: 2023-12-22 21:30:46 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.6769847869873ms  
+[2023-12-22 21:30:46] local.INFO: 2023-12-22 21:30:46 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 3.9389133453369ms  
+[2023-12-22 21:30:46] local.INFO: 2023-12-22 21:30:46 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.6280879974365ms  
+[2023-12-22 21:30:46] local.INFO: 2023-12-22 21:30:46 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.2170753479004ms  
+[2023-12-22 21:30:49] local.INFO: 2023-12-22 21:30:49 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.4340362548828ms  
+[2023-12-22 21:30:49] local.INFO: 2023-12-22 21:30:49 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.4329166412354ms  
+[2023-12-22 21:31:28] local.INFO: 2023-12-22 21:31:28 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.5460929870605ms  
+[2023-12-22 21:31:28] local.INFO: 2023-12-22 21:31:28 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.6199817657471ms  
+[2023-12-22 21:32:22] local.INFO: 2023-12-22 21:32:22 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.3629875183105ms  
+[2023-12-22 21:32:22] local.INFO: 2023-12-22 21:32:22 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 3.8089752197266ms  
+[2023-12-22 21:32:22] local.INFO: 2023-12-22 21:32:22 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.7170391082764ms  
+[2023-12-22 21:32:22] local.INFO: 2023-12-22 21:32:22 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 3.7798881530762ms  
+[2023-12-22 21:32:26] local.INFO: 2023-12-22 21:32:26 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.2468776702881ms  
+[2023-12-22 21:32:26] local.INFO: 2023-12-22 21:32:26 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.8630237579346ms  
+[2023-12-22 21:32:30] local.INFO: 2023-12-22 21:32:30 GET:"http://127.0.0.1:8000/api/aggregationPoint/2" - Execution Time: 4.8060417175293ms  
+[2023-12-22 21:32:30] local.INFO: 2023-12-22 21:32:30 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.0449371337891ms  
+[2023-12-22 21:32:30] local.INFO: 2023-12-22 21:32:30 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.8560161590576ms  
+[2023-12-22 21:32:30] local.INFO: 2023-12-22 21:32:30 GET:"http://127.0.0.1:8000/api/aggregationPoint/2" - Execution Time: 6.6409111022949ms  
+[2023-12-22 21:32:31] local.INFO: 2023-12-22 21:32:31 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.012035369873ms  
+[2023-12-22 21:32:31] local.INFO: 2023-12-22 21:32:31 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.2377967834473ms  
+[2023-12-22 21:32:33] local.INFO: 2023-12-22 21:32:33 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.9640407562256ms  
+[2023-12-22 21:32:33] local.INFO: 2023-12-22 21:32:33 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 3.8669109344482ms  
+[2023-12-22 21:32:33] local.INFO: 2023-12-22 21:32:33 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.8179626464844ms  
+[2023-12-22 21:32:33] local.INFO: 2023-12-22 21:32:33 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 3.7121772766113ms  
+[2023-12-22 21:32:36] local.INFO: 2023-12-22 21:32:36 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.202054977417ms  
+[2023-12-22 21:32:36] local.INFO: 2023-12-22 21:32:36 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.1510334014893ms  
+[2023-12-22 21:32:37] local.INFO: 2023-12-22 21:32:37 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.828929901123ms  
+[2023-12-22 21:32:37] local.INFO: 2023-12-22 21:32:37 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 3.8621425628662ms  
+[2023-12-22 21:32:38] local.INFO: 2023-12-22 21:32:38 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.6978931427002ms  
+[2023-12-22 21:32:38] local.INFO: 2023-12-22 21:32:38 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 4.302978515625ms  
+[2023-12-22 21:32:39] local.INFO: 2023-12-22 21:32:39 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.4488906860352ms  
+[2023-12-22 21:32:39] local.INFO: 2023-12-22 21:32:39 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.6118030548096ms  
+[2023-12-22 21:32:39] local.INFO: 2023-12-22 21:32:39 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.777193069458ms  
+[2023-12-22 21:32:39] local.INFO: 2023-12-22 21:32:39 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.8479099273682ms  
+[2023-12-22 21:32:40] local.INFO: 2023-12-22 21:32:40 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.2480697631836ms  
+[2023-12-22 21:32:40] local.INFO: 2023-12-22 21:32:40 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.5042037963867ms  
+[2023-12-22 21:32:54] local.INFO: 2023-12-22 21:32:54 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.3309669494629ms  
+[2023-12-22 21:32:54] local.INFO: 2023-12-22 21:32:54 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.7918815612793ms  
+[2023-12-22 21:32:55] local.INFO: 2023-12-22 21:32:55 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 7.1358680725098ms  
+[2023-12-22 21:32:55] local.INFO: 2023-12-22 21:32:55 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.0241012573242ms  
+[2023-12-22 21:32:55] local.INFO: 2023-12-22 21:32:55 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.122184753418ms  
+[2023-12-22 21:32:56] local.INFO: 2023-12-22 21:32:56 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.6547908782959ms  
+[2023-12-22 21:33:03] local.INFO: 2023-12-22 21:33:03 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.2720775604248ms  
+[2023-12-22 21:33:03] local.INFO: 2023-12-22 21:33:03 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.4991035461426ms  
+[2023-12-22 21:33:22] local.INFO: 2023-12-22 21:33:22 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.1150321960449ms  
+[2023-12-22 21:33:22] local.INFO: 2023-12-22 21:33:22 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 3.838062286377ms  
+[2023-12-22 21:33:22] local.INFO: 2023-12-22 21:33:22 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.4259300231934ms  
+[2023-12-22 21:33:22] local.INFO: 2023-12-22 21:33:22 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 5.1171779632568ms  
+[2023-12-22 21:34:01] local.INFO: 2023-12-22 21:34:01 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.4130554199219ms  
+[2023-12-22 21:34:01] local.INFO: 2023-12-22 21:34:01 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 4.4031143188477ms  
+[2023-12-22 21:34:01] local.INFO: 2023-12-22 21:34:01 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.3670196533203ms  
+[2023-12-22 21:34:01] local.INFO: 2023-12-22 21:34:01 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.5349597930908ms  
+[2023-12-22 21:34:31] local.INFO: 2023-12-22 21:34:31 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 8.821964263916ms  
+[2023-12-22 21:34:31] local.INFO: 2023-12-22 21:34:31 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 4.6072006225586ms  
+[2023-12-22 21:34:31] local.INFO: 2023-12-22 21:34:31 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.5060176849365ms  
+[2023-12-22 21:34:31] local.INFO: 2023-12-22 21:34:31 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.4708251953125ms  
+[2023-12-22 21:34:36] local.INFO: 2023-12-22 21:34:36 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.8339366912842ms  
+[2023-12-22 21:34:36] local.INFO: 2023-12-22 21:34:36 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.8848857879639ms  
+[2023-12-22 21:34:38] local.INFO: 2023-12-22 21:34:38 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.9920082092285ms  
+[2023-12-22 21:34:38] local.INFO: 2023-12-22 21:34:38 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 3.8430690765381ms  
+[2023-12-22 21:34:38] local.INFO: 2023-12-22 21:34:38 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.9468746185303ms  
+[2023-12-22 21:34:38] local.INFO: 2023-12-22 21:34:38 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 3.7441253662109ms  
+[2023-12-22 21:34:39] local.INFO: 2023-12-22 21:34:39 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.1999092102051ms  
+[2023-12-22 21:34:39] local.INFO: 2023-12-22 21:34:39 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.8858184814453ms  
+[2023-12-22 21:34:39] local.INFO: 2023-12-22 21:34:39 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.1569938659668ms  
+[2023-12-22 21:34:39] local.INFO: 2023-12-22 21:34:39 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.7220249176025ms  
+[2023-12-22 21:34:40] local.INFO: 2023-12-22 21:34:40 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.1450729370117ms  
+[2023-12-22 21:34:40] local.INFO: 2023-12-22 21:34:40 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 4.0228366851807ms  
+[2023-12-22 21:34:40] local.INFO: 2023-12-22 21:34:40 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.3841342926025ms  
+[2023-12-22 21:34:40] local.INFO: 2023-12-22 21:34:40 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 3.8039684295654ms  
+[2023-12-22 21:34:42] local.INFO: 2023-12-22 21:34:42 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.9800872802734ms  
+[2023-12-22 21:34:42] local.INFO: 2023-12-22 21:34:42 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.2050609588623ms  
+[2023-12-22 21:34:42] local.INFO: 2023-12-22 21:34:42 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.7691802978516ms  
+[2023-12-22 21:34:42] local.INFO: 2023-12-22 21:34:42 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.7310848236084ms  
+[2023-12-22 21:35:24] local.INFO: 2023-12-22 21:35:24 POST:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 186.70916557312ms  
+[2023-12-22 21:35:28] local.INFO: 2023-12-22 21:35:28 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 8.9569091796875ms  
+[2023-12-22 21:35:28] local.INFO: 2023-12-22 21:35:28 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.4282207489014ms  
+[2023-12-22 21:35:28] local.INFO: 2023-12-22 21:35:28 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.7980804443359ms  
+[2023-12-22 21:35:28] local.INFO: 2023-12-22 21:35:28 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.9878826141357ms  
+[2023-12-22 21:35:28] local.INFO: 2023-12-22 21:35:28 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.5841464996338ms  
+[2023-12-22 21:35:28] local.INFO: 2023-12-22 21:35:28 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 4.4019222259521ms  
+[2023-12-22 21:38:16] local.INFO: 2023-12-22 21:38:16 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.9320201873779ms  
+[2023-12-22 21:38:16] local.INFO: 2023-12-22 21:38:16 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.6500225067139ms  
+[2023-12-22 21:38:16] local.INFO: 2023-12-22 21:38:16 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.119779586792ms  
+[2023-12-22 21:38:17] local.INFO: 2023-12-22 21:38:17 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.734992980957ms  
+[2023-12-22 21:38:17] local.INFO: 2023-12-22 21:38:17 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 4.0099620819092ms  
+[2023-12-22 21:38:17] local.INFO: 2023-12-22 21:38:17 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.3679733276367ms  
+[2023-12-22 21:38:30] local.INFO: 2023-12-22 21:38:30 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.7180652618408ms  
+[2023-12-22 21:38:30] local.INFO: 2023-12-22 21:38:30 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 3.7472248077393ms  
+[2023-12-22 21:38:30] local.INFO: 2023-12-22 21:38:30 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.3579807281494ms  
+[2023-12-22 21:38:30] local.INFO: 2023-12-22 21:38:30 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 4.6350955963135ms  
+[2023-12-22 21:38:31] local.INFO: 2023-12-22 21:38:31 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.9901008605957ms  
+[2023-12-22 21:38:31] local.INFO: 2023-12-22 21:38:31 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.2389163970947ms  
+[2023-12-22 21:38:31] local.INFO: 2023-12-22 21:38:31 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.9809684753418ms  
+[2023-12-22 21:38:31] local.INFO: 2023-12-22 21:38:31 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.9361248016357ms  
+[2023-12-22 21:38:32] local.INFO: 2023-12-22 21:38:32 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.6781768798828ms  
+[2023-12-22 21:38:32] local.INFO: 2023-12-22 21:38:32 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 3.8900375366211ms  
+[2023-12-22 21:38:32] local.INFO: 2023-12-22 21:38:32 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.6750049591064ms  
+[2023-12-22 21:38:32] local.INFO: 2023-12-22 21:38:32 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 3.9491653442383ms  
+[2023-12-22 21:38:35] local.INFO: 2023-12-22 21:38:35 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.3050518035889ms  
+[2023-12-22 21:38:35] local.INFO: 2023-12-22 21:38:35 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.0348300933838ms  
+[2023-12-22 21:38:35] local.INFO: 2023-12-22 21:38:35 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.2150955200195ms  
+[2023-12-22 21:38:35] local.INFO: 2023-12-22 21:38:35 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.1750202178955ms  
+[2023-12-22 21:38:36] local.INFO: 2023-12-22 21:38:36 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.925012588501ms  
+[2023-12-22 21:38:36] local.INFO: 2023-12-22 21:38:36 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 3.8490295410156ms  
+[2023-12-22 21:38:36] local.INFO: 2023-12-22 21:38:36 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.5209865570068ms  
+[2023-12-22 21:38:36] local.INFO: 2023-12-22 21:38:36 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 3.7491321563721ms  
+[2023-12-22 21:38:37] local.INFO: 2023-12-22 21:38:37 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.1140060424805ms  
+[2023-12-22 21:38:37] local.INFO: 2023-12-22 21:38:37 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.3199996948242ms  
+[2023-12-22 21:38:39] local.INFO: 2023-12-22 21:38:39 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.5868625640869ms  
+[2023-12-22 21:38:39] local.INFO: 2023-12-22 21:38:39 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.154993057251ms  
+[2023-12-22 21:38:39] local.INFO: 2023-12-22 21:38:39 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.0358772277832ms  
+[2023-12-22 21:38:39] local.INFO: 2023-12-22 21:38:39 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.9008388519287ms  
+[2023-12-22 21:38:40] local.INFO: 2023-12-22 21:38:40 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.8331489562988ms  
+[2023-12-22 21:38:40] local.INFO: 2023-12-22 21:38:40 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 3.7500858306885ms  
+[2023-12-22 21:38:40] local.INFO: 2023-12-22 21:38:40 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.5229663848877ms  
+[2023-12-22 21:38:40] local.INFO: 2023-12-22 21:38:40 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 3.9341449737549ms  
+[2023-12-22 21:38:43] local.INFO: 2023-12-22 21:38:43 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.1190853118896ms  
+[2023-12-22 21:38:43] local.INFO: 2023-12-22 21:38:43 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.9990882873535ms  
+[2023-12-22 21:38:50] local.INFO: 2023-12-22 21:38:50 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.3730010986328ms  
+[2023-12-22 21:38:50] local.INFO: 2023-12-22 21:38:50 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.0500888824463ms  
+[2023-12-22 21:38:50] local.INFO: 2023-12-22 21:38:50 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 7.396936416626ms  
+[2023-12-22 21:38:50] local.INFO: 2023-12-22 21:38:50 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.8018951416016ms  
+[2023-12-22 21:39:05] local.INFO: 2023-12-22 21:39:05 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.96506690979ms  
+[2023-12-22 21:39:05] local.INFO: 2023-12-22 21:39:05 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.918004989624ms  
+[2023-12-22 21:39:05] local.INFO: 2023-12-22 21:39:05 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.255916595459ms  
+[2023-12-22 21:41:25] local.INFO: 2023-12-22 21:41:25 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.7709941864014ms  
+[2023-12-22 21:41:25] local.INFO: 2023-12-22 21:41:25 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.849817276001ms  
+[2023-12-22 21:41:25] local.INFO: 2023-12-22 21:41:25 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.7279853820801ms  
+[2023-12-22 21:41:37] local.INFO: 2023-12-22 21:41:37 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.0021877288818ms  
+[2023-12-22 21:41:37] local.INFO: 2023-12-22 21:41:37 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.9170513153076ms  
+[2023-12-22 21:41:37] local.INFO: 2023-12-22 21:41:37 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.8700828552246ms  
+[2023-12-22 21:42:34] local.INFO: 2023-12-22 21:42:34 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.8150291442871ms  
+[2023-12-22 21:42:34] local.INFO: 2023-12-22 21:42:34 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.816915512085ms  
+[2023-12-22 21:42:34] local.INFO: 2023-12-22 21:42:34 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.3279190063477ms  
+[2023-12-22 21:43:59] local.INFO: 2023-12-22 21:43:59 POST:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 10.958909988403ms  
+[2023-12-22 21:44:03] local.INFO: 2023-12-22 21:44:03 GET:"http://127.0.0.1:8000/api/transactionPoint/46" - Execution Time: 3.5450458526611ms  
+[2023-12-22 21:44:11] local.INFO: 2023-12-22 21:44:11 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 4.3489933013916ms  
+[2023-12-22 21:44:33] local.INFO: 2023-12-22 21:44:33 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 3.8020610809326ms  
+[2023-12-22 21:46:01] local.INFO: 2023-12-22 21:46:01 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.241870880127ms  
+[2023-12-22 21:46:01] local.INFO: 2023-12-22 21:46:01 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.769947052002ms  
+[2023-12-22 21:46:01] local.INFO: 2023-12-22 21:46:01 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.122091293335ms  
+[2023-12-22 21:46:07] local.INFO: 2023-12-22 21:46:07 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.9239864349365ms  
+[2023-12-22 21:46:07] local.INFO: 2023-12-22 21:46:07 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.5040378570557ms  
+[2023-12-22 21:46:07] local.INFO: 2023-12-22 21:46:07 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.6481151580811ms  
+[2023-12-22 21:46:07] local.INFO: 2023-12-22 21:46:07 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.7380924224854ms  
+[2023-12-22 21:46:07] local.INFO: 2023-12-22 21:46:07 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.1259059906006ms  
+[2023-12-22 21:46:19] local.INFO: 2023-12-22 21:46:19 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.9490203857422ms  
+[2023-12-22 21:46:19] local.INFO: 2023-12-22 21:46:19 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.1919479370117ms  
+[2023-12-22 21:46:19] local.INFO: 2023-12-22 21:46:19 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.5851726531982ms  
+[2023-12-22 21:46:19] local.INFO: 2023-12-22 21:46:19 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.6210289001465ms  
+[2023-12-22 21:46:33] local.INFO: 2023-12-22 21:46:33 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 7.0171356201172ms  
+[2023-12-22 21:46:33] local.INFO: 2023-12-22 21:46:33 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 4.8069953918457ms  
+[2023-12-22 21:46:33] local.INFO: 2023-12-22 21:46:33 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.4678707122803ms  
+[2023-12-22 21:46:33] local.INFO: 2023-12-22 21:46:33 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.3459873199463ms  
+[2023-12-22 21:46:33] local.INFO: 2023-12-22 21:46:33 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.3670196533203ms  
+[2023-12-22 21:47:03] local.INFO: 2023-12-22 21:47:03 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.7649612426758ms  
+[2023-12-22 21:47:03] local.INFO: 2023-12-22 21:47:03 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.0179023742676ms  
+[2023-12-22 21:47:03] local.INFO: 2023-12-22 21:47:03 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.2260417938232ms  
+[2023-12-22 21:47:03] local.INFO: 2023-12-22 21:47:03 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.9440860748291ms  
+[2023-12-22 21:48:12] local.INFO: 2023-12-22 21:48:12 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.1729679107666ms  
+[2023-12-22 21:48:12] local.INFO: 2023-12-22 21:48:12 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.8409957885742ms  
+[2023-12-22 21:48:12] local.INFO: 2023-12-22 21:48:12 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.5382041931152ms  
+[2023-12-22 21:48:12] local.INFO: 2023-12-22 21:48:12 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.647970199585ms  
+[2023-12-22 21:48:12] local.INFO: 2023-12-22 21:48:12 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.8359889984131ms  
+[2023-12-22 21:48:53] local.INFO: 2023-12-22 21:48:53 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.3751468658447ms  
+[2023-12-22 21:48:53] local.INFO: 2023-12-22 21:48:53 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.7720928192139ms  
+[2023-12-22 21:49:59] local.INFO: 2023-12-22 21:49:59 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.4059028625488ms  
+[2023-12-22 21:49:59] local.INFO: 2023-12-22 21:49:59 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.4189949035645ms  
+[2023-12-22 21:50:56] local.INFO: 2023-12-22 21:50:56 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.7768821716309ms  
+[2023-12-22 21:50:56] local.INFO: 2023-12-22 21:50:56 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.7778148651123ms  
+[2023-12-22 21:51:01] local.INFO: 2023-12-22 21:51:01 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.6300163269043ms  
+[2023-12-22 21:51:01] local.INFO: 2023-12-22 21:51:01 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.9170513153076ms  
+[2023-12-22 21:51:32] local.INFO: 2023-12-22 21:51:32 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.5711269378662ms  
+[2023-12-22 21:51:32] local.INFO: 2023-12-22 21:51:32 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.1561851501465ms  
+[2023-12-22 21:52:09] local.INFO: 2023-12-22 21:52:09 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.4859390258789ms  
+[2023-12-22 21:52:09] local.INFO: 2023-12-22 21:52:09 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.2498836517334ms  
+[2023-12-22 21:53:02] local.INFO: 2023-12-22 21:53:02 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.4669380187988ms  
+[2023-12-22 21:53:02] local.INFO: 2023-12-22 21:53:02 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.5359859466553ms  
+[2023-12-22 21:54:01] local.INFO: 2023-12-22 21:54:01 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.3272247314453ms  
+[2023-12-22 21:54:01] local.INFO: 2023-12-22 21:54:01 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.7139186859131ms  
+[2023-12-22 21:54:31] local.INFO: 2023-12-22 21:54:31 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.8551559448242ms  
+[2023-12-22 21:54:31] local.INFO: 2023-12-22 21:54:31 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.4410953521729ms  
+[2023-12-22 21:54:44] local.INFO: 2023-12-22 21:54:44 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.8631172180176ms  
+[2023-12-22 21:54:44] local.INFO: 2023-12-22 21:54:44 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.5161972045898ms  
+[2023-12-22 21:54:44] local.INFO: 2023-12-22 21:54:44 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.8500556945801ms  
+[2023-12-22 21:54:46] local.INFO: 2023-12-22 21:54:46 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 3.1089782714844ms  
+[2023-12-22 21:54:47] local.INFO: 2023-12-22 21:54:47 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 4.0900707244873ms  
+[2023-12-22 21:54:47] local.INFO: 2023-12-22 21:54:47 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.4621486663818ms  
+[2023-12-22 21:54:49] local.INFO: 2023-12-22 21:54:49 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.824068069458ms  
+[2023-12-22 21:54:49] local.INFO: 2023-12-22 21:54:49 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.4271011352539ms  
+[2023-12-22 21:54:53] local.INFO: 2023-12-22 21:54:53 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.9849281311035ms  
+[2023-12-22 21:54:53] local.INFO: 2023-12-22 21:54:53 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.9311180114746ms  
+[2023-12-22 21:54:54] local.INFO: 2023-12-22 21:54:54 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.8748512268066ms  
+[2023-12-22 21:54:54] local.INFO: 2023-12-22 21:54:54 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.4590492248535ms  
+[2023-12-22 21:54:54] local.INFO: 2023-12-22 21:54:54 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.6898384094238ms  
+[2023-12-22 21:54:54] local.INFO: 2023-12-22 21:54:54 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.2680759429932ms  
+[2023-12-22 21:54:55] local.INFO: 2023-12-22 21:54:55 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.0810832977295ms  
+[2023-12-22 21:54:55] local.INFO: 2023-12-22 21:54:55 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.7229785919189ms  
+[2023-12-22 21:54:55] local.INFO: 2023-12-22 21:54:55 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.871036529541ms  
+[2023-12-22 21:54:56] local.INFO: 2023-12-22 21:54:56 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.8800964355469ms  
+[2023-12-22 21:54:56] local.INFO: 2023-12-22 21:54:56 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.8541088104248ms  
+[2023-12-22 21:54:57] local.INFO: 2023-12-22 21:54:57 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.810001373291ms  
+[2023-12-22 21:54:57] local.INFO: 2023-12-22 21:54:57 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.9599666595459ms  
+[2023-12-22 21:54:57] local.INFO: 2023-12-22 21:54:57 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.7849674224854ms  
+[2023-12-22 21:54:58] local.INFO: 2023-12-22 21:54:58 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.2551288604736ms  
+[2023-12-22 21:55:00] local.INFO: 2023-12-22 21:55:00 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.2468776702881ms  
+[2023-12-22 21:55:00] local.INFO: 2023-12-22 21:55:00 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 3.9408206939697ms  
+[2023-12-22 21:55:00] local.INFO: 2023-12-22 21:55:00 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.1459541320801ms  
+[2023-12-22 21:55:00] local.INFO: 2023-12-22 21:55:00 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 5.0671100616455ms  
+[2023-12-22 21:55:01] local.INFO: 2023-12-22 21:55:01 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.763053894043ms  
+[2023-12-22 21:55:01] local.INFO: 2023-12-22 21:55:01 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.8681030273438ms  
+[2023-12-22 21:55:01] local.INFO: 2023-12-22 21:55:01 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.9781074523926ms  
+[2023-12-22 21:55:01] local.INFO: 2023-12-22 21:55:01 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.0789375305176ms  
+[2023-12-22 21:55:02] local.INFO: 2023-12-22 21:55:02 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 3.0651092529297ms  
+[2023-12-22 21:55:02] local.INFO: 2023-12-22 21:55:02 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.9168128967285ms  
+[2023-12-22 21:55:02] local.INFO: 2023-12-22 21:55:02 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.9950141906738ms  
+[2023-12-22 21:55:02] local.INFO: 2023-12-22 21:55:02 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.108024597168ms  
+[2023-12-22 21:55:03] local.INFO: 2023-12-22 21:55:03 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 3.6220550537109ms  
+[2023-12-22 21:55:03] local.INFO: 2023-12-22 21:55:03 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.7270317077637ms  
+[2023-12-22 21:55:04] local.INFO: 2023-12-22 21:55:04 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.9401779174805ms  
+[2023-12-22 21:55:04] local.INFO: 2023-12-22 21:55:04 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.0150413513184ms  
+[2023-12-22 21:55:04] local.INFO: 2023-12-22 21:55:04 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.5260448455811ms  
+[2023-12-22 21:55:05] local.INFO: 2023-12-22 21:55:05 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.2169818878174ms  
+[2023-12-22 21:55:05] local.INFO: 2023-12-22 21:55:05 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.8560161590576ms  
+[2023-12-22 21:55:06] local.INFO: 2023-12-22 21:55:06 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.2069683074951ms  
+[2023-12-22 21:55:06] local.INFO: 2023-12-22 21:55:06 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.4890899658203ms  
+[2023-12-22 21:55:24] local.INFO: 2023-12-22 21:55:24 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.4528713226318ms  
+[2023-12-22 21:55:24] local.INFO: 2023-12-22 21:55:24 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 3.2889842987061ms  
+[2023-12-22 21:55:24] local.INFO: 2023-12-22 21:55:24 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.3481845855713ms  
+[2023-12-22 21:57:30] local.INFO: 2023-12-22 21:57:30 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.9628486633301ms  
+[2023-12-22 21:57:30] local.INFO: 2023-12-22 21:57:30 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.0200481414795ms  
+[2023-12-22 21:57:30] local.INFO: 2023-12-22 21:57:30 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.7868747711182ms  
+[2023-12-22 21:57:30] local.INFO: 2023-12-22 21:57:30 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.1510334014893ms  
+[2023-12-22 21:57:30] local.INFO: 2023-12-22 21:57:30 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.2749176025391ms  
+[2023-12-22 21:57:30] local.INFO: 2023-12-22 21:57:30 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.5619735717773ms  
+[2023-12-22 21:57:32] local.INFO: 2023-12-22 21:57:32 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.9120445251465ms  
+[2023-12-22 21:57:38] local.INFO: 2023-12-22 21:57:38 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.4661293029785ms  
+[2023-12-22 21:57:38] local.INFO: 2023-12-22 21:57:38 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.5038719177246ms  
+[2023-12-22 21:57:39] local.INFO: 2023-12-22 21:57:39 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.0779838562012ms  
+[2023-12-22 21:59:04] local.INFO: 2023-12-22 21:59:04 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.6979446411133ms  
+[2023-12-22 21:59:05] local.INFO: 2023-12-22 21:59:05 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 4.1649341583252ms  
+[2023-12-22 21:59:35] local.INFO: 2023-12-22 21:59:35 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 3.6511421203613ms  
+[2023-12-22 21:59:35] local.INFO: 2023-12-22 21:59:35 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.1020641326904ms  
+[2023-12-22 21:59:36] local.INFO: 2023-12-22 21:59:36 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 3.3459663391113ms  
+[2023-12-22 21:59:36] local.INFO: 2023-12-22 21:59:36 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.9218196868896ms  
+[2023-12-22 21:59:58] local.INFO: 2023-12-22 21:59:58 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.7098865509033ms  
+[2023-12-22 21:59:58] local.INFO: 2023-12-22 21:59:58 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.7508735656738ms  
+[2023-12-22 21:59:58] local.INFO: 2023-12-22 21:59:58 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.2518634796143ms  
+[2023-12-22 21:59:59] local.INFO: 2023-12-22 21:59:59 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 3.2601356506348ms  
+[2023-12-22 21:59:59] local.INFO: 2023-12-22 21:59:59 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.7239322662354ms  
+[2023-12-22 21:59:59] local.INFO: 2023-12-22 21:59:59 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.5308132171631ms  
+[2023-12-22 22:00:00] local.INFO: 2023-12-22 22:00:00 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.1259059906006ms  
+[2023-12-22 22:00:00] local.INFO: 2023-12-22 22:00:00 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.6950836181641ms  
+[2023-12-22 22:00:01] local.INFO: 2023-12-22 22:00:01 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.4859180450439ms  
+[2023-12-22 22:00:01] local.INFO: 2023-12-22 22:00:01 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.4909973144531ms  
+[2023-12-22 22:00:01] local.INFO: 2023-12-22 22:00:01 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.3271312713623ms  
+[2023-12-22 22:00:02] local.INFO: 2023-12-22 22:00:02 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.5849342346191ms  
+[2023-12-22 22:00:02] local.INFO: 2023-12-22 22:00:02 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.6158561706543ms  
+[2023-12-22 22:00:03] local.INFO: 2023-12-22 22:00:03 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 3.1418800354004ms  
+[2023-12-22 22:00:03] local.INFO: 2023-12-22 22:00:03 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.9630661010742ms  
+[2023-12-22 22:00:03] local.INFO: 2023-12-22 22:00:03 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.5150775909424ms  
+[2023-12-22 22:00:03] local.INFO: 2023-12-22 22:00:03 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.2589435577393ms  
+[2023-12-22 22:00:04] local.INFO: 2023-12-22 22:00:04 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 3.425121307373ms  
+[2023-12-22 22:00:04] local.INFO: 2023-12-22 22:00:04 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.0341148376465ms  
+[2023-12-22 22:00:05] local.INFO: 2023-12-22 22:00:05 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.7461051940918ms  
+[2023-12-22 22:00:05] local.INFO: 2023-12-22 22:00:05 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.0701160430908ms  
+[2023-12-22 22:00:05] local.INFO: 2023-12-22 22:00:05 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.8131008148193ms  
+[2023-12-22 22:00:06] local.INFO: 2023-12-22 22:00:06 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.3137798309326ms  
+[2023-12-22 22:00:06] local.INFO: 2023-12-22 22:00:06 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.4538040161133ms  
+[2023-12-22 22:00:06] local.INFO: 2023-12-22 22:00:06 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.9189586639404ms  
+[2023-12-22 22:00:06] local.INFO: 2023-12-22 22:00:06 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.5520324707031ms  
+[2023-12-22 22:00:07] local.INFO: 2023-12-22 22:00:07 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.3309459686279ms  
+[2023-12-22 22:00:07] local.INFO: 2023-12-22 22:00:07 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.5129318237305ms  
+[2023-12-22 22:00:07] local.INFO: 2023-12-22 22:00:07 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.248929977417ms  
+[2023-12-22 22:00:07] local.INFO: 2023-12-22 22:00:07 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.4521350860596ms  
+[2023-12-22 22:00:07] local.INFO: 2023-12-22 22:00:07 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.0097961425781ms  
+[2023-12-22 22:00:08] local.INFO: 2023-12-22 22:00:08 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.6249885559082ms  
+[2023-12-22 22:00:08] local.INFO: 2023-12-22 22:00:08 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.8629302978516ms  
+[2023-12-22 22:00:08] local.INFO: 2023-12-22 22:00:08 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.6190280914307ms  
+[2023-12-22 22:00:08] local.INFO: 2023-12-22 22:00:08 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.0851364135742ms  
+[2023-12-22 22:00:09] local.INFO: 2023-12-22 22:00:09 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.8729438781738ms  
+[2023-12-22 22:00:09] local.INFO: 2023-12-22 22:00:09 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.3378601074219ms  
+[2023-12-22 22:00:09] local.INFO: 2023-12-22 22:00:09 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.5091171264648ms  
+[2023-12-22 22:00:09] local.INFO: 2023-12-22 22:00:09 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.9439926147461ms  
+[2023-12-22 22:00:09] local.INFO: 2023-12-22 22:00:09 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.5050640106201ms  
+[2023-12-22 22:00:10] local.INFO: 2023-12-22 22:00:10 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.1449794769287ms  
+[2023-12-22 22:00:10] local.INFO: 2023-12-22 22:00:10 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.4619102478027ms  
+[2023-12-22 22:00:10] local.INFO: 2023-12-22 22:00:10 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.9520988464355ms  
+[2023-12-22 22:00:10] local.INFO: 2023-12-22 22:00:10 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.5269985198975ms  
+[2023-12-22 22:00:10] local.INFO: 2023-12-22 22:00:10 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.9211044311523ms  
+[2023-12-22 22:00:11] local.INFO: 2023-12-22 22:00:11 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.9289722442627ms  
+[2023-12-22 22:00:11] local.INFO: 2023-12-22 22:00:11 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.9420852661133ms  
+[2023-12-22 22:00:11] local.INFO: 2023-12-22 22:00:11 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.2799968719482ms  
+[2023-12-22 22:00:12] local.INFO: 2023-12-22 22:00:12 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.4348964691162ms  
+[2023-12-22 22:00:12] local.INFO: 2023-12-22 22:00:12 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.5599002838135ms  
+[2023-12-22 22:00:12] local.INFO: 2023-12-22 22:00:12 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.8841495513916ms  
+[2023-12-22 22:00:14] local.INFO: 2023-12-22 22:00:14 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.4509429931641ms  
+[2023-12-22 22:00:14] local.INFO: 2023-12-22 22:00:14 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.216028213501ms  
+[2023-12-22 22:00:14] local.INFO: 2023-12-22 22:00:14 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.2871494293213ms  
+[2023-12-22 22:00:22] local.INFO: 2023-12-22 22:00:22 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.8540363311768ms  
+[2023-12-22 22:00:22] local.INFO: 2023-12-22 22:00:22 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.2928714752197ms  
+[2023-12-22 22:00:23] local.INFO: 2023-12-22 22:00:23 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.3109188079834ms  
+[2023-12-22 22:00:23] local.INFO: 2023-12-22 22:00:23 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.2411346435547ms  
+[2023-12-22 22:00:23] local.INFO: 2023-12-22 22:00:23 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.9828548431396ms  
+[2023-12-22 22:00:24] local.INFO: 2023-12-22 22:00:24 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.5298595428467ms  
+[2023-12-22 22:00:24] local.INFO: 2023-12-22 22:00:24 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.938985824585ms  
+[2023-12-22 22:00:24] local.INFO: 2023-12-22 22:00:24 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.3219585418701ms  
+[2023-12-22 22:00:24] local.INFO: 2023-12-22 22:00:24 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.9188861846924ms  
+[2023-12-22 22:00:25] local.INFO: 2023-12-22 22:00:25 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.4847984313965ms  
+[2023-12-22 22:00:25] local.INFO: 2023-12-22 22:00:25 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.4489631652832ms  
+[2023-12-22 22:00:25] local.INFO: 2023-12-22 22:00:25 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.9008388519287ms  
+[2023-12-22 22:00:26] local.INFO: 2023-12-22 22:00:26 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.41796875ms  
+[2023-12-22 22:00:26] local.INFO: 2023-12-22 22:00:26 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.9540061950684ms  
+[2023-12-22 22:00:27] local.INFO: 2023-12-22 22:00:27 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.3359527587891ms  
+[2023-12-22 22:00:27] local.INFO: 2023-12-22 22:00:27 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.7549266815186ms  
+[2023-12-22 22:00:27] local.INFO: 2023-12-22 22:00:27 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.7229785919189ms  
+[2023-12-22 22:01:26] local.INFO: 2023-12-22 22:01:26 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.1860084533691ms  
+[2023-12-22 22:01:26] local.INFO: 2023-12-22 22:01:26 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.7120113372803ms  
+[2023-12-22 22:01:26] local.INFO: 2023-12-22 22:01:26 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.2368431091309ms  
+[2023-12-22 22:02:22] local.INFO: 2023-12-22 22:02:22 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.6999454498291ms  
+[2023-12-22 22:02:22] local.INFO: 2023-12-22 22:02:22 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.9919147491455ms  
+[2023-12-22 22:02:22] local.INFO: 2023-12-22 22:02:22 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.5022029876709ms  
+[2023-12-22 22:02:27] local.INFO: 2023-12-22 22:02:27 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 3.4201145172119ms  
+[2023-12-22 22:03:12] local.INFO: 2023-12-22 22:03:12 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 4.8491954803467ms  
+[2023-12-22 22:03:12] local.INFO: 2023-12-22 22:03:12 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.8150081634521ms  
+[2023-12-22 22:03:12] local.INFO: 2023-12-22 22:03:12 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.5279521942139ms  
+[2023-12-22 22:03:24] local.INFO: 2023-12-22 22:03:24 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.5251121520996ms  
+[2023-12-22 22:03:24] local.INFO: 2023-12-22 22:03:24 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.2720565795898ms  
+[2023-12-22 22:03:24] local.INFO: 2023-12-22 22:03:24 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.985954284668ms  
+[2023-12-22 22:03:24] local.INFO: 2023-12-22 22:03:24 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.8001747131348ms  
+[2023-12-22 22:03:24] local.INFO: 2023-12-22 22:03:24 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 4.2479038238525ms  
+[2023-12-22 22:03:24] local.INFO: 2023-12-22 22:03:24 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.8870105743408ms  
+[2023-12-22 22:03:29] local.INFO: 2023-12-22 22:03:29 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 4.7600269317627ms  
+[2023-12-22 22:03:29] local.INFO: 2023-12-22 22:03:29 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.9888153076172ms  
+[2023-12-22 22:03:52] local.INFO: 2023-12-22 22:03:52 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 7.0769786834717ms  
+[2023-12-22 22:03:52] local.INFO: 2023-12-22 22:03:52 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.8750896453857ms  
+[2023-12-22 22:03:52] local.INFO: 2023-12-22 22:03:52 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.6171207427979ms  
+[2023-12-22 22:03:52] local.INFO: 2023-12-22 22:03:52 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 8.4419250488281ms  
+[2023-12-22 22:03:52] local.INFO: 2023-12-22 22:03:52 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.9609203338623ms  
+[2023-12-22 22:04:03] local.INFO: 2023-12-22 22:04:03 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.1538219451904ms  
+[2023-12-22 22:04:03] local.INFO: 2023-12-22 22:04:03 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.0448436737061ms  
+[2023-12-22 22:04:03] local.INFO: 2023-12-22 22:04:03 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.4509429931641ms  
+[2023-12-22 22:04:03] local.INFO: 2023-12-22 22:04:03 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 5.1510334014893ms  
+[2023-12-22 22:04:03] local.INFO: 2023-12-22 22:04:03 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 3.0460357666016ms  
+[2023-12-22 22:04:04] local.INFO: 2023-12-22 22:04:04 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.5469741821289ms  
+[2023-12-22 22:04:04] local.INFO: 2023-12-22 22:04:04 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.2241344451904ms  
+[2023-12-22 22:04:04] local.INFO: 2023-12-22 22:04:04 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 5.6369304656982ms  
+[2023-12-22 22:04:04] local.INFO: 2023-12-22 22:04:04 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.8510093688965ms  
+[2023-12-22 22:04:04] local.INFO: 2023-12-22 22:04:04 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.5231323242188ms  
+[2023-12-22 22:04:04] local.INFO: 2023-12-22 22:04:04 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.3941268920898ms  
+[2023-12-22 22:04:05] local.INFO: 2023-12-22 22:04:05 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 5.6362152099609ms  
+[2023-12-22 22:04:05] local.INFO: 2023-12-22 22:04:05 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.3229122161865ms  
+[2023-12-22 22:04:07] local.INFO: 2023-12-22 22:04:07 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.324125289917ms  
+[2023-12-22 22:04:07] local.INFO: 2023-12-22 22:04:07 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.7120113372803ms  
+[2023-12-22 22:04:07] local.INFO: 2023-12-22 22:04:07 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 4.0738582611084ms  
+[2023-12-22 22:04:07] local.INFO: 2023-12-22 22:04:07 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.5670528411865ms  
+[2023-12-22 22:04:08] local.INFO: 2023-12-22 22:04:08 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.0981044769287ms  
+[2023-12-22 22:04:08] local.INFO: 2023-12-22 22:04:08 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.7990341186523ms  
+[2023-12-22 22:04:08] local.INFO: 2023-12-22 22:04:08 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 7.1630477905273ms  
+[2023-12-22 22:04:08] local.INFO: 2023-12-22 22:04:08 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 4.0628910064697ms  
+[2023-12-22 22:04:09] local.INFO: 2023-12-22 22:04:09 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.3589344024658ms  
+[2023-12-22 22:04:09] local.INFO: 2023-12-22 22:04:09 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.2219886779785ms  
+[2023-12-22 22:04:09] local.INFO: 2023-12-22 22:04:09 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 4.3230056762695ms  
+[2023-12-22 22:04:09] local.INFO: 2023-12-22 22:04:09 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.5289058685303ms  
+[2023-12-22 22:04:21] local.INFO: 2023-12-22 22:04:21 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 5.1000118255615ms  
+[2023-12-22 22:04:21] local.INFO: 2023-12-22 22:04:21 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 3.4141540527344ms  
+[2023-12-22 22:04:21] local.INFO: 2023-12-22 22:04:21 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.8269290924072ms  
+[2023-12-22 22:04:47] local.INFO: 2023-12-22 22:04:47 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 5.1250457763672ms  
+[2023-12-22 22:04:47] local.INFO: 2023-12-22 22:04:47 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.5708675384521ms  
+[2023-12-22 22:04:47] local.INFO: 2023-12-22 22:04:47 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.418041229248ms  
+[2023-12-22 22:05:08] local.INFO: 2023-12-22 22:05:08 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 5.0010681152344ms  
+[2023-12-22 22:05:08] local.INFO: 2023-12-22 22:05:08 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.4759769439697ms  
+[2023-12-22 22:05:08] local.INFO: 2023-12-22 22:05:08 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.4139881134033ms  
+[2023-12-22 22:05:21] local.INFO: 2023-12-22 22:05:21 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 4.0218830108643ms  
+[2023-12-22 22:05:21] local.INFO: 2023-12-22 22:05:21 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.7151107788086ms  
+[2023-12-22 22:05:21] local.INFO: 2023-12-22 22:05:21 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.8069019317627ms  
+[2023-12-22 22:05:50] local.INFO: 2023-12-22 22:05:50 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 4.4260025024414ms  
+[2023-12-22 22:05:50] local.INFO: 2023-12-22 22:05:50 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.4909973144531ms  
+[2023-12-22 22:05:50] local.INFO: 2023-12-22 22:05:50 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.7179718017578ms  
+[2023-12-22 22:05:52] local.INFO: 2023-12-22 22:05:52 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.6309700012207ms  
+[2023-12-22 22:05:52] local.INFO: 2023-12-22 22:05:52 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.3938884735107ms  
+[2023-12-22 22:05:55] local.INFO: 2023-12-22 22:05:55 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 4.1890144348145ms  
+[2023-12-22 22:05:55] local.INFO: 2023-12-22 22:05:55 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 3.1161308288574ms  
+[2023-12-22 22:06:08] local.INFO: 2023-12-22 22:06:08 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 4.4019222259521ms  
+[2023-12-22 22:06:08] local.INFO: 2023-12-22 22:06:08 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.9439926147461ms  
+[2023-12-22 22:06:08] local.INFO: 2023-12-22 22:06:08 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.4070739746094ms  
+[2023-12-22 22:06:10] local.INFO: 2023-12-22 22:06:10 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.8789253234863ms  
+[2023-12-22 22:06:10] local.INFO: 2023-12-22 22:06:10 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.0241012573242ms  
+[2023-12-22 22:06:10] local.INFO: 2023-12-22 22:06:10 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 3.7300586700439ms  
+[2023-12-22 22:06:10] local.INFO: 2023-12-22 22:06:10 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.4499893188477ms  
+[2023-12-22 22:06:34] local.INFO: 2023-12-22 22:06:34 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.403995513916ms  
+[2023-12-22 22:06:34] local.INFO: 2023-12-22 22:06:34 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.4220218658447ms  
+[2023-12-22 22:06:38] local.INFO: 2023-12-22 22:06:38 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 4.1928291320801ms  
+[2023-12-22 22:06:38] local.INFO: 2023-12-22 22:06:38 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 3.4210681915283ms  
+[2023-12-22 22:07:02] local.INFO: 2023-12-22 22:07:02 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 4.417896270752ms  
+[2023-12-22 22:07:02] local.INFO: 2023-12-22 22:07:02 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.8271675109863ms  
+[2023-12-22 22:07:02] local.INFO: 2023-12-22 22:07:02 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.6209354400635ms  
+[2023-12-22 22:07:04] local.INFO: 2023-12-22 22:07:04 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.96506690979ms  
+[2023-12-22 22:07:05] local.INFO: 2023-12-22 22:07:05 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.8691291809082ms  
+[2023-12-22 22:08:57] local.INFO: 2023-12-22 22:08:57 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.2590370178223ms  
+[2023-12-22 22:08:57] local.INFO: 2023-12-22 22:08:57 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.2958984375ms  
+[2023-12-22 22:08:57] local.INFO: 2023-12-22 22:08:57 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.5641918182373ms  
+[2023-12-22 22:09:03] local.INFO: 2023-12-22 22:09:03 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 6.4949989318848ms  
+[2023-12-22 22:09:03] local.INFO: 2023-12-22 22:09:03 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.9458999633789ms  
+[2023-12-22 22:09:03] local.INFO: 2023-12-22 22:09:03 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.2801628112793ms  
+[2023-12-22 22:09:03] local.INFO: 2023-12-22 22:09:03 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.84299659729ms  
+[2023-12-22 22:09:03] local.INFO: 2023-12-22 22:09:03 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 4.0431022644043ms  
+[2023-12-22 22:09:03] local.INFO: 2023-12-22 22:09:03 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.2081604003906ms  
+[2023-12-22 22:10:23] local.INFO: 2023-12-22 22:10:23 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.53297996521ms  
+[2023-12-22 22:10:23] local.INFO: 2023-12-22 22:10:23 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 4.3420791625977ms  
+[2023-12-22 22:10:23] local.INFO: 2023-12-22 22:10:23 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.0300617218018ms  
+[2023-12-22 22:11:21] local.INFO: 2023-12-22 22:11:21 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.5358409881592ms  
+[2023-12-22 22:11:21] local.INFO: 2023-12-22 22:11:21 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.4019947052002ms  
+[2023-12-22 22:11:21] local.INFO: 2023-12-22 22:11:21 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.9311180114746ms  
+[2023-12-22 22:11:30] local.INFO: 2023-12-22 22:11:30 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 9.0639591217041ms  
+[2023-12-22 22:11:30] local.INFO: 2023-12-22 22:11:30 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 3.3810138702393ms  
+[2023-12-22 22:11:59] local.INFO: 2023-12-22 22:11:59 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.4121017456055ms  
+[2023-12-22 22:11:59] local.INFO: 2023-12-22 22:11:59 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.701997756958ms  
+[2023-12-22 22:14:20] local.INFO: 2023-12-22 22:14:20 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.0909519195557ms  
+[2023-12-22 22:14:20] local.INFO: 2023-12-22 22:14:20 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.8271675109863ms  
+[2023-12-22 22:14:20] local.INFO: 2023-12-22 22:14:20 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.4158954620361ms  
+[2023-12-22 22:14:29] local.INFO: 2023-12-22 22:14:29 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 8.3000659942627ms  
+[2023-12-22 22:14:29] local.INFO: 2023-12-22 22:14:29 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 6.3788890838623ms  
+[2023-12-22 22:14:29] local.INFO: 2023-12-22 22:14:29 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.6941299438477ms  
+[2023-12-22 22:14:29] local.INFO: 2023-12-22 22:14:29 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 5.5999755859375ms  
+[2023-12-22 22:14:29] local.INFO: 2023-12-22 22:14:29 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.7379264831543ms  
+[2023-12-22 22:14:29] local.INFO: 2023-12-22 22:14:29 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 3.1380653381348ms  
+[2023-12-22 22:14:42] local.INFO: 2023-12-22 22:14:42 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 4.6830177307129ms  
+[2023-12-22 22:14:42] local.INFO: 2023-12-22 22:14:42 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.432107925415ms  
+[2023-12-22 22:14:42] local.INFO: 2023-12-22 22:14:42 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.6851634979248ms  
+[2023-12-22 22:14:42] local.INFO: 2023-12-22 22:14:42 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.838134765625ms  
+[2023-12-22 22:14:43] local.INFO: 2023-12-22 22:14:43 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 4.1458606719971ms  
+[2023-12-22 22:14:43] local.INFO: 2023-12-22 22:14:43 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 2.4440288543701ms  
+[2023-12-22 22:14:43] local.INFO: 2023-12-22 22:14:43 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 4.6391487121582ms  
+[2023-12-22 22:14:43] local.INFO: 2023-12-22 22:14:43 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 2.8440952301025ms  
+[2023-12-22 22:16:27] local.INFO: 2023-12-22 22:16:27 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 8.2728862762451ms  
+[2023-12-22 22:16:27] local.INFO: 2023-12-22 22:16:27 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 3.5150051116943ms  
+[2023-12-22 22:16:27] local.INFO: 2023-12-22 22:16:27 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.2468566894531ms  
+[2023-12-22 22:17:07] local.INFO: 2023-12-22 22:17:07 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 4.4839382171631ms  
+[2023-12-22 22:17:07] local.INFO: 2023-12-22 22:17:07 GET:"http://127.0.0.1:8000/api/transactionHead" - Execution Time: 3.0040740966797ms  

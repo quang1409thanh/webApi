@@ -142,7 +142,7 @@ const SearchBox = ({onSubmit}) => {
                                             ))
                                         ) : (
                                             <p>
-                                                {emptyResult}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    {emptyResult}
                                             </p>
                                         )) : (
                                         <p>Kết quả tìm kiếm sẽ hiện thị ở đây</p>
