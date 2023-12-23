@@ -52,6 +52,11 @@ function AppRouter() {
             <Route path="/transaction_staff/danh_sach_giao_thanh_cong" element={<TransactionOfficeLayout/>}/>
             <Route path="/transaction_staff/danh_sach_giao_that_bai" element={<TransactionOfficeLayout/>}/>
             <Route path="/aggregation_employee" element={<AggregationEmployee/>}/>
+            <Route path="/aggregation_employee/Tracuu_agg" element={<AggregationEmployee/>}/>
+            <Route path="/aggregation_employee/Danhsachdon_agg" element={<AggregationEmployee/>}/>
+            <Route path="/aggregation_employee/Tui_di_agg" element={<AggregationEmployee/>}/>
+            <Route path="/aggregation_employee/Tui_nhan_agg" element={<AggregationEmployee/>}/>
+
              <Route path="/gioithieu" element={<GoodsQr/>}/>
         </Routes>
     );

@@ -5872,23 +5872,3 @@
 [2023-12-23 16:29:39] local.INFO: 2023-12-23 16:29:39 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.7880668640137ms  
 [2023-12-23 16:29:39] local.INFO: 2023-12-23 16:29:39 GET:"http://127.0.0.1:8000/api/dashboard" - Execution Time: 0.1838207244873ms  
 [2023-12-23 16:29:39] local.INFO: 2023-12-23 16:29:39 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 2.7029514312744ms  
-[2023-12-23 16:34:20] local.ERROR: filemtime(): stat failed for /home/thanhyk14/Desktop/local/.env {"exception":"[object] (ErrorException(code: 0): filemtime(): stat failed for /home/thanhyk14/Desktop/local/.env at /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php:99)
-[stacktrace]
-#0 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(254): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
-#1 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}()
-#2 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php(99): filemtime()
-#3 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Foundation\\Console\\ServeCommand->handle()
-#4 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
-#5 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
-#6 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
-#7 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
-#8 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate\\Container\\Container->call()
-#9 /home/thanhyk14/Desktop/local/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute()
-#10 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Console/Command.php(180): Symfony\\Component\\Console\\Command\\Command->run()
-#11 /home/thanhyk14/Desktop/local/vendor/symfony/console/Application.php(1096): Illuminate\\Console\\Command->run()
-#12 /home/thanhyk14/Desktop/local/vendor/symfony/console/Application.php(324): Symfony\\Component\\Console\\Application->doRunCommand()
-#13 /home/thanhyk14/Desktop/local/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun()
-#14 /home/thanhyk14/Desktop/local/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(201): Symfony\\Component\\Console\\Application->run()
-#15 /home/thanhyk14/Desktop/local/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle()
-#16 {main}
-"} 
