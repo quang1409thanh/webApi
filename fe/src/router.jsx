@@ -45,6 +45,9 @@ function AppRouter() {
             <Route path="/home" element={<Home/>}/>
             <Route path="/transaction_staff" element={<TransactionOfficeLayout/>}/>
             <Route path="/transaction_staff/tracuu" element={<TransactionOfficeLayout/>}/>
+            <Route path="/transaction_staff/danh_sach_don" element={<TransactionOfficeLayout/>}/>
+            <Route path="/transaction_staff/danh_sach_tui_di" element={<TransactionOfficeLayout/>}/>
+
 
             <Route path="/gioithieu" element={<Home/>}/>
         </Routes>
