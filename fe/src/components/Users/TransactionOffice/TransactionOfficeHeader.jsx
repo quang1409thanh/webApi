@@ -87,7 +87,7 @@ export default function TransactionOfficeHeader() {
 
                                 <li className="menu_item">
                                     <NavLink
-                                        to="/manageuser"
+                                        to="/"
                                         className={({ isActive }) =>
                                             classNames(
                                                 isActive

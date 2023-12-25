@@ -1,6 +1,6 @@
 import React from 'react';
 
-const OrderSearchComponent_AGG = ({ trackingCode, data, noiGui, noiNhan, trangThai, listTrangThai, foundParcel }) => {
+const OrderSearchTransaction = ({ trackingCode, data, noiGui, noiNhan, trangThai, listTrangThai, foundParcel }) => {
     return (
         <div className="page_container">
             <main className="main_content">
@@ -17,7 +17,7 @@ const OrderSearchComponent_AGG = ({ trackingCode, data, noiGui, noiNhan, trangTh
                                         <div>Mã bưu gửi (VD: 655ba7422bef17c718d6489f)</div>
                                     </div>
                                     <div className="search-items-input">
-                                        <form id="form_code_tracking" method="get" action="/aggregation_employee/Tracuu_agg">
+                                        <form id="form_code_tracking" method="get" action="/transaction_staff/tra_cuu_don">
                                             <div className="row">
                                                 <div className="col-sm-9">
                                                     <input type="text" name="code_tracking" id="input_code_tracking" placeholder="Nhập mã bưu gửi" value={trackingCode} />
@@ -103,4 +103,4 @@ const OrderSearchComponent_AGG = ({ trackingCode, data, noiGui, noiNhan, trangTh
     );
 };
 
-export default OrderSearchComponent_AGG;
+export default OrderSearchTransaction;

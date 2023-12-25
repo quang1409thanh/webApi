@@ -1,6 +1,6 @@
 import React from 'react';
 
-const IncomingBagList = () => {
+const IncomingBagListAggregation = () => {
   return (
     <div className="page_container">
       <main className="main_content">
@@ -103,4 +103,4 @@ const IncomingBagList = () => {
   );
 };
 
-export default IncomingBagList;
+export default IncomingBagListAggregation;

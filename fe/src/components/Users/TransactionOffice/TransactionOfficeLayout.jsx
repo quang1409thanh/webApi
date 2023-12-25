@@ -1,16 +1,14 @@
 import React from 'react';
 import "../../../css/transation_staff.css"
-
-import Sidebar from "./Slidebar.jsx";
-import Toast from "../../Common/Toast.jsx";
-import OrderSearchComponent from "./tracuu.jsx";
-import OrderList from "./Danhsachdon.jsx";
 import TransactionStaff from "./TransactionStaff.jsx";
-import ShipmentList from "./Danhsachtuidi.jsx";
-import BagListArrival from "./Danhsachtuinhan.jsx";
-import SuccessfulDeliveriesList from "./Giaothanhcong.jsx";
-import FailedDeliveriesList from "./Giaothatbai.jsx";
+import SuccessfulDeliveriesList from "./SuccessfulDeliveriesList.jsx";
+import IncomingBagListTransaction from "./IncomingBagListTransaction.jsx";
 import {useLocation} from "react-router-dom";
+import SidebarTransaction from "./SidebarTransaction.jsx";
+import OrderSearchTransaction from "./OrderSearchTransaction.jsx";
+import OutgoingBagListTransaction from "./OutgoingBagListTransaction.jsx";
+import OrderListTransaction from "./OrderListTransaction.jsx";
+import FailedDeliveriesList from "./FailedDeliveriesList.jsx";
 
 
 const TransactionOfficeLayout = () => {
@@ -19,14 +17,14 @@ const TransactionOfficeLayout = () => {
 
     return (
         <>
-            <Sidebar/>
+            <SidebarTransaction/>
             {pathname === '/transaction_staff' ? <TransactionStaff/> : null}
-            {pathname === '/transaction_staff/tracuu' ? <OrderSearchComponent/> : null}
-            {pathname === '/transaction_staff/danh_sach_don' ? <OrderList/> : null}
-            {pathname === '/transaction_staff/danh_sach_tui_di' ? <ShipmentList/> : null}
-            {pathname === '/transaction_staff/danh_sach_tui_nhan' ? <BagListArrival/> : null}
-            {pathname === '/transaction_staff/danh_sach_giao_thanh_cong' ? <SuccessfulDeliveriesList/> : null}
-            {pathname === '/transaction_staff/danh_sach_giao_that_bai' ? <FailedDeliveriesList/> : null}
+            {pathname === '/transaction_staff/order_search' ? <OrderSearchTransaction/> : null}
+            {pathname === '/transaction_staff/order_list' ? <OrderListTransaction/> : null}
+            {pathname === '/transaction_staff/outgoing_bag_list' ? <IncomingBagListTransaction/> : null}
+            {pathname === '/transaction_staff/incoming_bag_list' ? <IncomingBagListTransaction/> : null}
+            {pathname === '/transaction_staff/success_order_list' ? <SuccessfulDeliveriesList/> : null}
+            {pathname === '/transaction_staff/failed_order_list' ? <FailedDeliveriesList/> : null}
         </>
     );
 };

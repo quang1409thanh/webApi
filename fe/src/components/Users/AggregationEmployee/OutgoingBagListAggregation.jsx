@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ShipmentList = () => {
+const OutgoingBagListAggregation = () => {
   return (
     <div className="page_container">
       <main className="main_content">
@@ -26,7 +26,7 @@ const ShipmentList = () => {
                     <div className="picker_container">
                       <input type="text" name="to_input" className="date-picker-input" id="datepicker2" />
                       <div className="calendar-icon" onClick={() => showCalendar2()}>&#128197;</div>
-                    </div>               
+                    </div>
                   </div>
                 </div>
                 <div className="btn_find_for_date">
@@ -42,12 +42,12 @@ const ShipmentList = () => {
                 {/* <input type="button" value="ALL" /> */}
               </div>
               <div className="product_list" id="product_list">
-                {/* Your list content goes here */}
+                {/* Your content goes here */}
               </div>
               <div id="error_note" style={{ display: '' }}>
                 <i style={{ color: 'red' }}>*Không tìm thấy túi hàng</i>
               </div>
-            </div>    
+            </div>
           </div>
         </div>
       </main>
@@ -55,4 +55,4 @@ const ShipmentList = () => {
   );
 };
 
-export default ShipmentList;
+export default OutgoingBagListAggregation;
