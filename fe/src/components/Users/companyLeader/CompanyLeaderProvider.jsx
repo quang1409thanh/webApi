@@ -8,7 +8,7 @@ export function CompanyLeaderProvider({children}) {
     const [submitted, setSubmitted] = useState(false);
     const [aggregationList, setAggregationList] = useState([]);
     const [transactionList, setTransactionList] = useState([]);
-    const [userType, setUsearType] = useState('aggregationHead');
+    const [userType, setUserType] = useState('aggregationHead');
 
     useEffect(() => {
         axiosClient.get('/aggregationPoint')

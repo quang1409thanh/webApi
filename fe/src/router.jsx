@@ -42,7 +42,6 @@ function AppRouter() {
                         <Route path="/manageuser" element={<AddUserLayout/>}/>
                         <Route path="/transactionPoint/:dynamicValue" element={<ShowTransaction/>}/>
                         <Route path="/aggregationPoint/:dynamicValue" element={<ShowAggregation/>}/>
-                        {/*<Route path="/transactionHead/:id" element={<EditTransactionLayout/>}/>*/}
                         <Route path="/aggregationHead/:dynamicValue" element={<EditAggregationLayout/>}/>
                         <Route path="/transactionHead/:dynamicValue" element={<EditTransactionLayout/>}/>
                     </Route>
@@ -79,6 +78,7 @@ function AppRouter() {
                 }
                 <Route index element={<Dashboard/>}/>
                 <Route path="/profile" element={<ShowProfile/>}/>
+                <Route path="/dashboard" element={<Navigate to="/"/>}/>
                 <Route path="/password-reset/:token" element={<ResetPassword/>}/>
             </Route>
             <Route path="/" element={<GuestLayout/>}>
