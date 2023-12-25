@@ -27,7 +27,7 @@ const sampleOrderList = [
 ];
 
 
-const OrderList = ({ checkProduct, data }) => {
+const OrderListTransaction = ({ checkProduct, data }) => {
   return (
     <div className="page_container">
       <main className="main_content">
@@ -120,4 +120,4 @@ const OrderList = ({ checkProduct, data }) => {
   );
 };
 
-export default OrderList;
+export default OrderListTransaction;

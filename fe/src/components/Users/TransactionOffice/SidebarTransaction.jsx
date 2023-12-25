@@ -1,7 +1,7 @@
 import React from 'react';
 import "../../../css/transation_staff.css"
 
-const Sidebar = () => {
+const SidebarTransaction = () => {
     return (
         <div className="sidebar">
             <div className="sidebar_inner">
@@ -15,7 +15,7 @@ const Sidebar = () => {
                         </a>
                     </li>
                     <li className="nav_item">
-                        <a href="/transaction_staff/tracuu" className="sidebar_link">
+                        <a href="/transaction_staff/order_search" className="sidebar_link">
                             <span className="icon_holder">
                                 <img src="/img/icon-login.svg" alt=""/>
                             </span>
@@ -23,7 +23,7 @@ const Sidebar = () => {
                         </a>
                     </li>
                     <li className="nav_item">
-                        <a href="/transaction_staff/danh_sach_don" className="sidebar_link">
+                        <a href="/transaction_staff/order_list" className="sidebar_link">
                             <span className="icon_holder">
                                 <img src="/img/icon-login.svg" alt=""/>
                             </span>
@@ -40,7 +40,7 @@ const Sidebar = () => {
                         </a>
                     </li> */}
                     <li className="nav_item">
-                        <a href="/transaction_staff/danh_sach_tui_di" className="sidebar_link">
+                        <a href="/transaction_staff/outgoing_bag_list" className="sidebar_link">
                             <span className="icon_holder">
                                 <img src="/img/icon-login.svg" alt=""/>
                             </span>
@@ -48,7 +48,7 @@ const Sidebar = () => {
                         </a>
                     </li>
                     <li className="nav_item">
-                        <a href="/transaction_staff/danh_sach_tui_nhan" className="sidebar_link">
+                        <a href="/transaction_staff/incoming_bag_list" className="sidebar_link">
                             <span className="icon_holder">
                                 <img src="/img/icon-login.svg" alt=""/>
                             </span>
@@ -56,7 +56,7 @@ const Sidebar = () => {
                         </a>
                     </li>
                     <li className="nav_item">
-                        <a href="/transaction_staff/danh_sach_giao_thanh_cong" className="sidebar_link">
+                        <a href="/transaction_staff/success_order_list" className="sidebar_link">
                             <span className="icon_holder">
                                 <img src="/img/icon-login.svg" alt=""/>
                             </span>
@@ -64,7 +64,7 @@ const Sidebar = () => {
                         </a>
                     </li>
                     <li className="nav_item">
-                        <a href="/transaction_staff/danh_sach_giao_that_bai" className="sidebar_link">
+                        <a href="/transaction_staff/failed_order_list" className="sidebar_link">
                             <span className="icon_holder">
                                 <img src="/img/icon-login.svg" alt=""/>
                             </span>
@@ -77,4 +77,4 @@ const Sidebar = () => {
     );
 };
 
-export default Sidebar;
+export default SidebarTransaction;

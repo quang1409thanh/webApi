@@ -59,10 +59,10 @@ function AppRouter() {
                 {(userRole === "aggregation_point_employee" &&
                     <Route path="/" element={<AggregationEmployee/>}>
                         <Route path="/aggregation_employee" element={<AggregationEmployeeLayout/>}/>
-                        <Route path="/aggregation_employee/Tracuu_agg" element={<AggregationEmployeeLayout/>}/>
-                        <Route path="/aggregation_employee/Danhsachdon_agg" element={<AggregationEmployeeLayout/>}/>
-                        <Route path="/aggregation_employee/Tui_di_agg" element={<AggregationEmployeeLayout/>}/>
-                        <Route path="/aggregation_employee/Tui_nhan_agg" element={<AggregationEmployeeLayout/>}/>
+                        <Route path="/aggregation_employee/order_search" element={<AggregationEmployeeLayout/>}/>
+                        <Route path="/aggregation_employee/order_list" element={<AggregationEmployeeLayout/>}/>
+                        <Route path="/aggregation_employee/outgoing_list" element={<AggregationEmployeeLayout/>}/>
+                        <Route path="/aggregation_employee/incoming_list" element={<AggregationEmployeeLayout/>}/>
                     </Route>
                 )}
                 {(userRole === "transaction_point_head" &&
@@ -75,13 +75,12 @@ function AppRouter() {
                 {userRole === 'transaction_officer' && (
                     <Route path="/" element={<TransactionOffice/>}>
                         <Route path="/transaction_staff" element={<TransactionOfficeLayout/>}/>
-                        <Route path="/transaction_staff/tracuu" element={<TransactionOfficeLayout/>}/>
-                        <Route path="/transaction_staff/danh_sach_don" element={<TransactionOfficeLayout/>}/>
-                        <Route path="/transaction_staff/danh_sach_tui_di" element={<TransactionOfficeLayout/>}/>
-                        <Route path="/transaction_staff/danh_sach_tui_nhan" element={<TransactionOfficeLayout/>}/>
-                        <Route path="/transaction_staff/danh_sach_giao_thanh_cong"
-                               element={<TransactionOfficeLayout/>}/>
-                        <Route path="/transaction_staff/danh_sach_giao_that_bai" element={<TransactionOfficeLayout/>}/>
+                        <Route path="/transaction_staff/order_search" element={<TransactionOfficeLayout/>}/>
+                        <Route path="/transaction_staff/order_list" element={<TransactionOfficeLayout/>}/>
+                        <Route path="transaction_staff/outgoing_bag_list" element={<TransactionOfficeLayout/>}/>
+                        <Route path="/transaction_staff/incoming_bag_list" element={<TransactionOfficeLayout/>}/>
+                        <Route path="/transaction_staff/success_order_list" element={<TransactionOfficeLayout/>}/>
+                        <Route path="/transaction_staff/failed_order_list" element={<TransactionOfficeLayout/>}/>
                         <Route path="/aggregation_employee" element={<AggregationEmployee/>}/>
                     </Route>
                 )}
