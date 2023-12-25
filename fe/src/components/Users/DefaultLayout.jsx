@@ -1,32 +1,38 @@
-import {Fragment} from "react";
-import {Disclosure, Menu, Transition} from "@headlessui/react";
-import {
-    Bars3Icon,
-    BellIcon,
-    UserIcon,
-    XMarkIcon,
-} from "@heroicons/react/24/outline";
+import {Fragment, useContext} from "react";
 import {Navigate, NavLink, Outlet} from "react-router-dom";
 import axiosClient from "../../axios.js";
 import {useEffect} from "react";
 import {useStateContext} from "../../contexts/ContextProvider.jsx";
 import Toast from "../Common/Toast.jsx";
 import Header from "./Header.jsx";
+import CompanyHeader from "./companyLeader/CompanyHeader.jsx";
+import TransactionOfficeHeader from "./TransactionOffice/TransactionOfficeHeader.jsx";
+import Footer from "../Common/Footer.jsx";
+import AggregationHeadHeader from "./AggregationHead/AggregationHeadHeader.jsx";
+import {TransactionHeadProvider} from "./TransactionHead/TransactionHeadProvider.jsx";
+import TransactionHeadHeader from "./TransactionHead/TransactionHeadHeader.jsx";
+import AggregationEmployeeHeader from "./AggregationEmployee/AggregationEmployeeHeader.jsx";
 
-const navigation = [
-    {name: "Dashboard", to: "/"},
-    {name: "Surveys", to: "/surveys"},
-];
-
-function classNames(...classes) {
-    return classes.filter(Boolean).join(" ");
-}
+const roleHeaderMapping = {
+    admin_system: <Header/>, // Thay thế <Header /> bằng component tương ứng
+    company_leader: <CompanyHeader/>,
+    aggregation_point_employee: <AggregationEmployeeHeader/>, // Thay thế <Header /> bằng component tương ứng
+    aggregation_point_head: <AggregationHeadHeader/>, // Thay thế <Header /> bằng component tương ứng
+    customer: <Header/>, // Thay thế <Header /> bằng component tương ứng
+    transaction_officer: <TransactionOfficeHeader/>, // Thay thế <Header /> bằng component tương ứng
+    transaction_point_head: <TransactionHeadHeader/>, // Thay thế <Header /> bằng component tương ứng
+    shipper: <Header/>, // Thay thế <Header /> bằng component tương ứng
+    guess: <Header/>, // Thay thế <Header /> bằng component tương ứng
+};
 
 export default function DefaultLayout() {
     const {currentUser, userToken, setCurrentUser, setUserToken} =
         useStateContext();
+
+    const {userRole} = useStateContext();
+
     if (!userToken) {
-        return <Navigate to="/index"/>;
+        return <Navigate to="/home"/>;
     }
 
     const logout = (ev) => {
@@ -37,21 +43,13 @@ export default function DefaultLayout() {
         });
     };
 
-    useEffect(() => {
-        axiosClient.get('/me')
-            .then(({data}) => {
-                setCurrentUser(data.user)
-            })
-    }, [])
-
     return (
-        <>
+        <>x
             <div className="min-h-full">
-                <Header/>
-
+                {roleHeaderMapping[userRole]}
                 <Outlet/>
-
                 <Toast/>
+                <Footer/>
             </div>
         </>
     );

@@ -11,8 +11,7 @@ import {CompanyLeaderProvider} from "../CompanyLeaderProvider.jsx";
 
 const AggregationLayout = ({headerType, body}) => {
     return (
-        <div className="min-h-full">
-            <Toast/>
+        <>
             <section className="block-search-post-office">
                 <div className="container">
                     <CompanyLeaderProvider>
@@ -25,10 +24,7 @@ const AggregationLayout = ({headerType, body}) => {
                     </CompanyLeaderProvider>
                 </div>
             </section>
-            {
-                headerType !== 'none' && <Footer/>
-            }
-        </div>
+        </>
     );
 };
 

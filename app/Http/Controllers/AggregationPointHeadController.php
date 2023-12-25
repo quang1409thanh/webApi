@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TransactionPoint;
 use App\Models\User;
 use App\Models\AggregationPointHead;
+use http\Env\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -31,7 +33,7 @@ class AggregationPointHeadController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'password' => ['required', 'confirmed'],
         ]);
 
         $user = User::create([
@@ -70,7 +72,19 @@ class AggregationPointHeadController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+
+        // xử lý sau
+        // Validate if the aggregation_point_id is available
+//        $exists = AggregationPointHead::where('aggregation_point_id', $request->aggregation_point_id)
+//            ->exists();
+//        if ($exists) {
+//            // Trả về thông báo lỗi hoặc thực hiện xử lý phù hợp
+//            return response()->json([
+//                'error' => 'Aggregation Point already has a head.',
+//            ], 422); // 422 là mã lỗi không hợp lệ (Unprocessable Entity)
+//        }
+
+        // If the aggregation_point_id is available, proceed with the update
         $aggregationPointHead = AggregationPointHead::with('user')->findOrFail($id);
         $aggregationPointHead->user->update([
             'name' => $request->name,
@@ -106,5 +120,12 @@ class AggregationPointHeadController extends Controller
         return response()->json([
             'message' => 'Xóa tài khoản thành công!',
         ]);
+    }
+
+    public function listTransaction() {
+        $user = Auth::user();
+        $id = $user->aggregationPointHead()->value('id');
+        $transactionList = TransactionPoint::where('aggregation_point_id', $id)->get();
+        return $transactionList;
     }
 }

@@ -10,10 +10,12 @@ import {CompanyLeaderContext} from "../CompanyLeaderProvider.jsx";
 
 const SwitchButton = () => {
     const {userType, setUserType} = useContext(CompanyLeaderContext);
+    console.log("userGlobal" + userType)
+
     return (
         <>
-            <h1>Jd</h1>
-            <h1>djdj</h1>
+            <h1>===</h1>
+            <h1></h1>
             <div className="text-center">
                 <p className="text-gray-600 mb-2">{userType === 'aggregationHead' ? 'AggregationEmployee Head' : 'Transaction Head'}</p>
                 <button

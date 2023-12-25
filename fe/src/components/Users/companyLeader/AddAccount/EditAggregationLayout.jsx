@@ -4,30 +4,23 @@ import "../../../../css/home.css" ;
 import Footer from "../../../Common/Footer.jsx";
 import Toast from "../../../Common/Toast.jsx";
 import "../styleAggregation.css"
-import HeadList from "./HeadList.jsx";
-import SwitchButton from "./SwitchButton.jsx";
-import AddUserForm from "./AddUserForm.jsx";
+import {useParams} from "react-router-dom";
 import {CompanyLeaderProvider} from "../CompanyLeaderProvider.jsx";
+import AggregationEditForm from "./AggregationEditForm.jsx";
 
 
-const AddUserLayout = () => {
+const EditAggregationLayout = () => {
+    const {dynamicValue} = useParams();
     return (
-        <div className="min-h-full">
-            <Toast/>
-
+        <>
             <div className="container">
-
                 <CompanyLeaderProvider>
-                    <SwitchButton/>
-                    {<HeadList/>}
-                    <AddUserForm/>
+                    <AggregationEditForm id={dynamicValue}/>
                 </CompanyLeaderProvider>
             </div>
-
-            <Footer/>
-        </div>
+        </>
 
     );
 };
 
-export default AddUserLayout;
+export default EditAggregationLayout;

@@ -10,11 +10,9 @@ import UserProfile from "./UserProfile.jsx";
 
 const ShowProfile = ({headerType, body}) => {
     return (
-        <div className="min-h-full">
-            <Toast/>
+        <>
             {<UserProfile/>}
-            {headerType !== 'none' && <Footer/>}
-        </div>
+        </>
     );
 };
 
