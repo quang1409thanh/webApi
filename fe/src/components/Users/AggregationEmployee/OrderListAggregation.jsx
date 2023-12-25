@@ -1,6 +1,6 @@
 import React from 'react';
 
-const OrderList = ({ checkProduct, data }) => {
+const OrderListAggregation = ({ checkProduct, data }) => {
   return (
     <div className="page_container">
       <main className="main_content">
@@ -86,4 +86,4 @@ const OrderList = ({ checkProduct, data }) => {
   );
 };
 
-export default OrderList;
+export default OrderListAggregation;
