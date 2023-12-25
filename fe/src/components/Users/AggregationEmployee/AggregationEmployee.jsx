@@ -4,7 +4,7 @@ import "../../../css/transation_staff.css"
 import {useLocation} from "react-router-dom";
 import Toast from "../../Common/Toast.jsx";
 import Sidebar from "../AggregationEmployee/Sidebar.jsx";
-import OrderSearchComponent_AGG from './tracuu_agg.jsx';
+import OrderSearchComponent_AGG from './Tracuu_agg.jsx';
 import OrderList from './Danhsachdon_agg.jsx';
 import OutgoingBagList from './Tui_di_agg.jsx';
 import IncomingBagList from './Tui_nhan_agg.jsx';

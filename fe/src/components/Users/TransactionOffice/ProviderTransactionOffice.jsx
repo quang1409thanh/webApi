@@ -1,14 +1,13 @@
 import React, {useState, useEffect, useContext} from 'react';
 import axiosClient from "../../../axios.js";
 
-export const CompanyLeaderContext = React.createContext();
+export const TransactionOfficeContext = React.createContext();
 
-export function CompanyLeaderProvider({children}) {
+export function TransactionOfficeProvider({children}) {
     // cho diem
     const [submitted, setSubmitted] = useState(false);
     const [aggregationList, setAggregationList] = useState([]);
     const [transactionList, setTransactionList] = useState([]);
-    const [userType, setUsearType] = useState('aggregationHead');
 
     useEffect(() => {
         axiosClient.get('/aggregationPoint')
@@ -34,6 +33,7 @@ export function CompanyLeaderProvider({children}) {
     // end cho diem.
 
     // cho truong diem
+    const [userType, setUserType] = useState('aggregationHead');
     const [headData, setHeadData] = useState([]);
 
 
@@ -50,15 +50,14 @@ export function CompanyLeaderProvider({children}) {
                 console.error('Error fetching data:', error);
             });
     }, [userType]);
-// }, [userType, submitted]);
 
     // end cho truong diem
 
 
     return (
-        <CompanyLeaderContext.Provider
+        <TransactionOfficeProvider.Provider
             value={{setSubmitted, headData, aggregationList, transactionList, userType, setUserType}}>
             {children}
-        </CompanyLeaderContext.Provider>
+        </TransactionOfficeProvider.Provider>
     );
 }

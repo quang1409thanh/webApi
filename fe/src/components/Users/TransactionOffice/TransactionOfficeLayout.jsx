@@ -18,9 +18,7 @@ const TransactionOfficeLayout = () => {
     const {pathname} = location;
 
     return (
-        <div className="min-h-full">
-            {/*<Header/>*/}
-            <Toast/>
+        <>
             <Sidebar/>
             {pathname === '/transaction_staff' ? <TransactionStaff/> : null}
             {pathname === '/transaction_staff/tracuu' ? <OrderSearchComponent/> : null}
@@ -29,7 +27,7 @@ const TransactionOfficeLayout = () => {
             {pathname === '/transaction_staff/danh_sach_tui_nhan' ? <BagListArrival/> : null}
             {pathname === '/transaction_staff/danh_sach_giao_thanh_cong' ? <SuccessfulDeliveriesList/> : null}
             {pathname === '/transaction_staff/danh_sach_giao_that_bai' ? <FailedDeliveriesList/> : null}
-        </div>
+        </>
     );
 };
 

@@ -12,8 +12,7 @@ import {CompanyLeaderContext, CompanyLeaderProvider} from "../CompanyLeaderProvi
 
 const TransactionLayout = ({}) => {
     return (
-        <div className="min-h-full">
-            <Toast/>
+        <>
             <section className="block-search-post-office">
                 <div className="container">
                     <CompanyLeaderProvider>
@@ -26,9 +25,7 @@ const TransactionLayout = ({}) => {
                     </CompanyLeaderProvider>
                 </div>
             </section>
-            {<Footer/>
-            }
-        </div>
+        </>
     );
 };
 

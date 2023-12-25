@@ -34,6 +34,12 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+            $companyLeader = $user->companyLeader()->create([
+            'phone' => $request->phone,
+            'details' => $request->details,
+        ]);
+
+
         return response()->json(['message' => 'User and admin system created successfully'], 201);
 
         event(new Registered($user));

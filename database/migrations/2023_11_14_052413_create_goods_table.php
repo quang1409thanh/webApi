@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Str;
 
 return new class extends Migration {
     /**
@@ -12,20 +13,15 @@ return new class extends Migration {
     {
         Schema::create('goods', function (Blueprint $table) {
             $table->id();
-            $table->string('code')->unique();
-            //
-//            $table->unsignedBigInteger('sender_id');
-//            $table->unsignedBigInteger('receiver_id');
-            //
+
+            $randomCode = preg_replace('/[^A-Za-z0-9]/', '', Str::random(10));
+            $table->string('code')->default($randomCode)->unique();
+
             $table->unsignedBigInteger('sending_transaction_point_id')->nullable();
             $table->unsignedBigInteger('receiving_transaction_point_id')->nullable();
             //
-//            $table->string('sender_address_id');
-//            $table->string('receiver_address_id');
-            //
             $table->string('shipment_id');
             //
-
             $table->text('goods_information')->nullable();
             //
             // Thêm các trường mới
@@ -48,14 +44,11 @@ return new class extends Migration {
             ])->default('Chấp nhận gửi');
 
             $table->json('history')->nullable();
-            //
 
             $table->unsignedBigInteger('current_location_id')->nullable();
             $table->string('current_location_type')->nullable();
             $table->timestamps();
 
-//            $table->foreign('sender_id')->references('id')->on('users')->onDelete('cascade');
-//            $table->foreign('receiver_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('sending_transaction_point_id')->references('id')->on('transaction_points')->onDelete('set null');
             $table->foreign('receiving_transaction_point_id')->references('id')->on('transaction_points')->onDelete('set null');
         });

@@ -63,6 +63,97 @@ const UserProfile = () => {
                 }
             });
     }
+    const renderUserProfileInfo = () => {
+        switch (profile) {
+            case 'admin_system':
+                return (
+                    <div className="col-span-1">
+                        <h3 className="text-xl font-bold mb-4">Admin System Information</h3>
+                        <p className="text-lg"><span className="font-bold">ID:</span> {profile.admin_system.id}</p>
+                        <p className="text-lg"><span className="font-bold">Phone:</span> {profile.admin_system.phone}
+                        </p>
+                        <p className="text-lg"><span
+                            className="font-bold">Details:</span> {profile.admin_system.details}</p>
+                        {/* Add other Admin System fields as needed */}
+                    </div>
+                );
+
+            case 'company_leader':
+                return (
+                    <div className="col-span-1">
+                        <h3 className="text-xl font-bold mb-4">Company Leader Information</h3>
+                        <p className="text-lg"><span className="font-bold">ID:</span> {profile.company_leader.id}</p>
+                        <p className="text-lg"><span className="font-bold">Phone:</span> {profile.company_leader.phone}
+                        </p>
+                        <p className="text-lg"><span
+                            className="font-bold">Details:</span> {profile.company_leader.details}</p>
+                        {/* Add other Company Leader fields as needed */}
+                    </div>
+                );
+
+            case 'aggregation_point_employee':
+                return (
+                    <div className="col-span-1">
+                        <h3 className="text-xl font-bold mb-4">Aggregation Point Employee Information</h3>
+                        <p className="text-lg"><span
+                            className="font-bold">ID:</span> {profile.aggregation_point_employee.id}</p>
+                        {/* Add other Aggregation Point Employee fields as needed */}
+                    </div>
+                );
+
+            case 'aggregation_point_head':
+                return (
+                    <div className="col-span-1">
+                        <h3 className="text-xl font-bold mb-4">Aggregation Point Head Information</h3>
+                        <p className="text-lg"><span
+                            className="font-bold">ID:</span> {profile.aggregation_point_head.id}</p>
+                        {/* Add other Aggregation Point Head fields as needed */}
+                    </div>
+                );
+
+            case 'customer':
+                return (
+                    <div className="col-span-1">
+                        <h3 className="text-xl font-bold mb-4">Customer Information</h3>
+                        <p className="text-lg"><span className="font-bold">ID:</span> {profile.customer.id}</p>
+                        {/* Add other Customer fields as needed */}
+                    </div>
+                );
+
+            case 'transaction_officer':
+                return (
+                    <div className="col-span-1">
+                        <h3 className="text-xl font-bold mb-4">Transaction Officer Information</h3>
+                        <p className="text-lg"><span className="font-bold">ID:</span> {profile.transaction_officer.id}
+                        </p>
+                        {/* Add other Transaction Officer fields as needed */}
+                    </div>
+                );
+
+            case 'transaction_point_head':
+                return (
+                    <div className="col-span-1">
+                        <h3 className="text-xl font-bold mb-4">Transaction Point Head Information</h3>
+                        <p className="text-lg"><span
+                            className="font-bold">ID:</span> {profile.transaction_point_head.id}</p>
+                        {/* Add other Transaction Point Head fields as needed */}
+                    </div>
+                );
+
+            case 'shipper':
+                return (
+                    <div className="col-span-1">
+                        <h3 className="text-xl font-bold mb-4">Shipper Information</h3>
+                        <p className="text-lg"><span className="font-bold">ID:</span> {profile.shipper.id}</p>
+                        {/* Add other Shipper fields as needed */}
+                    </div>
+                );
+
+            default:
+                return null;
+        }
+    };
+
     return (
         <div className="max-w-xl mx-auto mt-8 p-6 bg-white rounded-lg shadow-md">
 
@@ -94,6 +185,58 @@ const UserProfile = () => {
                         </p>
                         <p className="text-lg"><span
                             className="font-bold">Details:</span> {profile.admin_system.details}</p>
+                        {/* Add other Admin System fields as needed */}
+                    </div>
+                )}
+                {profile.aggregation_point_head && (
+                    <div className="col-span-1">
+                        <h3 className="text-xl font-bold mb-4">Aggregation Point Head Information</h3>
+                        <p className="text-lg"><span
+                            className="font-bold">ID:</span> {profile.aggregation_point_head.id}</p>
+                        <p className="text-lg"><span
+                            className="font-bold">Phone:</span> {profile.aggregation_point_head.phone}
+                        </p>
+                        <p className="text-lg"><span
+                            className="font-bold">Details:</span> {profile.aggregation_point_head.details}</p>
+                        {/* Add other Admin System fields as needed */}
+                    </div>
+                )}
+                {profile.transaction_point_head && (
+                    <div className="col-span-1">
+                        <h3 className="text-xl font-bold mb-4">Transaction Point Head Information</h3>
+                        <p className="text-lg"><span
+                            className="font-bold">ID:</span> {profile.transaction_point_head.id}</p>
+                        <p className="text-lg"><span
+                            className="font-bold">Phone:</span> {profile.transaction_point_head.phone}
+                        </p>
+                        <p className="text-lg"><span
+                            className="font-bold">Details:</span> {profile.transaction_point_head.details}</p>
+                        {/* Add other Admin System fields as needed */}
+                    </div>
+                )}
+                {profile.aggregation_point_employee && (
+                    <div className="col-span-1">
+                        <h3 className="text-xl font-bold mb-4">Aggregation Employee Information</h3>
+                        <p className="text-lg"><span
+                            className="font-bold">ID:</span> {profile.aggregation_point_employee.id}</p>
+                        <p className="text-lg"><span
+                            className="font-bold">Phone:</span> {profile.aggregation_point_employee.phone}
+                        </p>
+                        <p className="text-lg"><span
+                            className="font-bold">Details:</span> {profile.aggregation_point_employee.details}</p>
+                        {/* Add other Admin System fields as needed */}
+                    </div>
+                )}
+                {profile.transaction_officer && (
+                    <div className="col-span-1">
+                        <h3 className="text-xl font-bold mb-4">Transaction Officer Information</h3>
+                        <p className="text-lg"><span
+                            className="font-bold">ID:</span> {profile.transaction_officer.id}</p>
+                        <p className="text-lg"><span
+                            className="font-bold">Phone:</span> {profile.transaction_officer.phone}
+                        </p>
+                        <p className="text-lg"><span
+                            className="font-bold">Details:</span> {profile.transaction_officer.details}</p>
                         {/* Add other Admin System fields as needed */}
                     </div>
                 )}

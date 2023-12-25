@@ -36,9 +36,7 @@ const ResetPassword = () => {
     };
 
     return (
-        <div className="min-h-full">
-            <Toast/>
-            {<Header/>}
+        <>
             <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
                 <h1 className="text-2xl font-bold mb-4">Trang đặt lại mật khẩu của bạn</h1>
 
@@ -68,8 +66,7 @@ const ResetPassword = () => {
                     </button>
                 </form>
             </div>
-            {<Footer/>}
-        </div>
+        </>
     );
 };
 

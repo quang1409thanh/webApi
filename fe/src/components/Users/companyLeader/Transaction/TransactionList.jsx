@@ -42,8 +42,8 @@ const TransactionList = () => {
                             <td className="py-2 px-4 border-b">{element.phone}</td>
                             <td className="py-2 px-4 border-b">{`${element.address.province}, ${element.address.district}, ${element.address.ward}, ${element.address.detailed_address}`}</td>
                             <td className="py-2 px-4 border-b">
-                                {element?.aggregation_point_head?.user?.name ? (
-                                    element.aggregation_point_head.user.name
+                                {element?.transaction_point_head?.user?.name ? (
+                                    element.transaction_point_head.user.name
                                 ) : (
                                     'Chưa có người quản lý'
                                 )}
