@@ -11,11 +11,12 @@ import Footer from "../Common/Footer.jsx";
 import AggregationHeadHeader from "./AggregationHead/AggregationHeadHeader.jsx";
 import {TransactionHeadProvider} from "./TransactionHead/TransactionHeadProvider.jsx";
 import TransactionHeadHeader from "./TransactionHead/TransactionHeadHeader.jsx";
+import AggregationEmployeeHeader from "./AggregationEmployee/AggregationEmployeeHeader.jsx";
 
 const roleHeaderMapping = {
     admin_system: <Header/>, // Thay thế <Header /> bằng component tương ứng
     company_leader: <CompanyHeader/>,
-    aggregation_point_employee: <Header/>, // Thay thế <Header /> bằng component tương ứng
+    aggregation_point_employee: <AggregationEmployeeHeader/>, // Thay thế <Header /> bằng component tương ứng
     aggregation_point_head: <AggregationHeadHeader/>, // Thay thế <Header /> bằng component tương ứng
     customer: <Header/>, // Thay thế <Header /> bằng component tương ứng
     transaction_officer: <TransactionOfficeHeader/>, // Thay thế <Header /> bằng component tương ứng

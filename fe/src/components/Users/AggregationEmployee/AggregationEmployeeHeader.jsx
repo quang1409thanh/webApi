@@ -2,12 +2,13 @@ import React, {Fragment} from "react";
 import {Navigate, NavLink, Outlet} from "react-router-dom";
 import {useStateContext} from "../../../contexts/ContextProvider.jsx";
 import axiosClient from "../../../axios.js";
+import AggregationEmployee from "./AggregationEmployee.jsx";
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
 }
 
-export default function AggregationHeadHeader() {
+export default function AggregationEmployeeHeader() {
     const {currentUser, userToken, setCurrentUser, setUserToken} =
         useStateContext();
 
@@ -18,7 +19,6 @@ export default function AggregationHeadHeader() {
             setUserToken(null);
         });
     };
-
 
     return (
         <>
@@ -60,21 +60,23 @@ export default function AggregationHeadHeader() {
                                         {currentUser && currentUser.name}
                                     </NavLink>
                                 </li>
-                                {/*<li className="menu_item">*/}
-                                {/*    <NavLink*/}
-                                {/*        to="/gioithieu"*/}
-                                {/*        className={({isActive}) =>*/}
-                                {/*            classNames(*/}
-                                {/*                isActive*/}
-                                {/*                    ? "bg-green-300"  // Thay đổi màu nền ở đây*/}
-                                {/*                    : "text-gray-300 hover:bg-gray-700 hover:text-white",*/}
-                                {/*                "px-3 py-2 rounded-md text-sm font-medium"*/}
-                                {/*            )*/}
-                                {/*        }*/}
-                                {/*    >*/}
-                                {/*        Giới thiệu*/}
-                                {/*    </NavLink>*/}
-                                {/*</li>*/}
+                                <li className="menu_item">
+                                    <NavLink
+                                        to="/aggregation_employee"
+                                        className={({isActive}) =>
+                                            classNames(
+                                                isActive
+                                                    ? "bg-green-300"  // Thay đổi màu nền ở đây
+                                                    : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                                                "px-3 py-2 rounded-md text-sm font-medium"
+                                            )
+                                        }
+                                    >
+                                        Trang quản lý
+                                    </NavLink>
+                                </li>
+
+
                                 <li className="menu_item">
                                     <NavLink
                                         to="/"
@@ -87,29 +89,12 @@ export default function AggregationHeadHeader() {
                                             )
                                         }
                                     >
-                                        Quản lý các điểm giao dịch.
+                                        Trang Tổng Hợp
                                     </NavLink>
+
                                 </li>
-
                                 <li className="menu_item">
-                                    <NavLink
-                                        to="/aggregationEmployee"
-                                        className={({isActive}) =>
-                                            classNames(
-                                                isActive
-                                                    ? "bg-green-300"  // Thay đổi màu nền ở đây
-                                                    : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                                                "px-3 py-2 rounded-md text-sm font-medium"
-                                            )
-                                        }
-                                    >
-                                        Quản lý nhân viên điểm tập kết
-                                    </NavLink>
-                                </li>
-
-
-                                <li className="menu_item">
-                                    <b>Trang Trưởng Điểm tập kết</b>
+                                    <b>Trang Nhân viên Điểm tập kết</b>
                                 </li>
 
                             </ul>

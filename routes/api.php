@@ -62,7 +62,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     // Nhóm route cho AggregationEmployee Point Head
     Route::group(['middleware' => ['role:aggregationPointHead']], function () {
         // Các route cho AggregationEmployee Point Head
-        Route::apiResource('aggregationEmployee', App\Http\Controllers\AggregationPointEmployeeController::class);
+        Route::apiResource('aggregationPointEmployee', App\Http\Controllers\AggregationPointEmployeeController::class);
         Route::get('/listTransactionOff', [App\Http\Controllers\AggregationPointHeadController::class, 'listTransaction']);
     });
 

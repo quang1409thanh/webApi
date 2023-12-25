@@ -24,10 +24,13 @@ import {useStateContext} from "./contexts/ContextProvider.jsx";
 import AggregationHead from "./components/Users/AggregationHead/AggregationHead.jsx";
 import TransactionHead from "./components/Users/TransactionHead/TransactionHead.jsx";
 import TransactionOfficerLayout from "./components/Users/TransactionHead/TransactionOfficerLayout.jsx";
+import AggregationEmployeeList from "./components/Users/AggregationHead/AggregationEmployeeList.jsx";
+import AggregationHeadLayout from "./components/Users/AggregationHead/AggregationHeadLayout.jsx";
+import AggregationEmployeeEdit from "./components/Users/AggregationHead/AggregationEmployeeEdit.jsx";
+import TransactionOfficerEdit from "./components/Users/TransactionHead/TransactionOfficerEdit.jsx";
+import Aggregation_employee from "./components/Users/AggregationEmployee/AggregationEmployee.jsx";
+import AggregationEmployeeLayout from "./components/Users/AggregationEmployee/AggregationEmployeeLayout.jsx";
 
-function AddEmployeeLayout() {
-    return null;
-}
 
 function AppRouter() {
     const {userRole} = useStateContext();
@@ -48,17 +51,25 @@ function AppRouter() {
                 )}
                 {(userRole === "aggregation_point_head" &&
                     <Route path="/" element={<AggregationHead/>}>
-                        <Route path="/addemployee" element={<AddEmployeeLayout/>}/>
+                        <Route path="/aggregationEmployee" element={<AggregationHeadLayout/>}/>
+                        <Route path="/aggregationEmployee/:dynamicValue" element={<AggregationEmployeeEdit/>}/>
+                        <Route path="/manage_transaction_point" element={<AggregationHeadLayout/>}/>
                     </Route>
                 )}
                 {(userRole === "aggregation_point_employee" &&
-                    <Route path="/" element={<AggregationHead/>}>
-                        <Route path="/addemployee" element={<AddEmployeeLayout/>}/>
+                    <Route path="/" element={<AggregationEmployee/>}>
+                        <Route path="/aggregation_employee" element={<AggregationEmployeeLayout/>}/>
+                        <Route path="/aggregation_employee/Tracuu_agg" element={<AggregationEmployeeLayout/>}/>
+                        <Route path="/aggregation_employee/Danhsachdon_agg" element={<AggregationEmployeeLayout/>}/>
+                        <Route path="/aggregation_employee/Tui_di_agg" element={<AggregationEmployeeLayout/>}/>
+                        <Route path="/aggregation_employee/Tui_nhan_agg" element={<AggregationEmployeeLayout/>}/>
                     </Route>
                 )}
                 {(userRole === "transaction_point_head" &&
                     <Route path="/" element={<TransactionHead/>}>
                         <Route path="/transactionOfficer" element={<TransactionOfficerLayout/>}/>
+                        <Route path="/transactionOfficer/:dynamicValue" element={<TransactionOfficerEdit/>}/>
+
                     </Route>
                 )}
                 {userRole === 'transaction_officer' && (
@@ -68,7 +79,8 @@ function AppRouter() {
                         <Route path="/transaction_staff/danh_sach_don" element={<TransactionOfficeLayout/>}/>
                         <Route path="/transaction_staff/danh_sach_tui_di" element={<TransactionOfficeLayout/>}/>
                         <Route path="/transaction_staff/danh_sach_tui_nhan" element={<TransactionOfficeLayout/>}/>
-                        <Route path="/transaction_staff/danh_sach_giao_thanh_cong" element={<TransactionOfficeLayout/>}/>
+                        <Route path="/transaction_staff/danh_sach_giao_thanh_cong"
+                               element={<TransactionOfficeLayout/>}/>
                         <Route path="/transaction_staff/danh_sach_giao_that_bai" element={<TransactionOfficeLayout/>}/>
                         <Route path="/aggregation_employee" element={<AggregationEmployee/>}/>
                     </Route>

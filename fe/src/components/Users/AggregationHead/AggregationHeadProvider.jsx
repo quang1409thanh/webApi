@@ -5,6 +5,7 @@ export const AggregationHeadContext = React.createContext();
 
 export function AggregationHeadProvider({children}) {
     // cho diem
+
     const [submitted, setSubmitted] = useState(false);
     const [transactionList, setTransactionList] = useState([]);
 
@@ -23,7 +24,22 @@ export function AggregationHeadProvider({children}) {
     useEffect(() => {
         axiosClient.get('/aggregationPointEmployee')
             .then(({data}) => {
-                setListEmployee(data);
+                setListEmployee(data.aggregationPointEmployee);
+                console.log(listEmployee);
+                setSubmitted(false);
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
+
+    const [data, setData] = useState('');
+
+    useEffect(() => {
+        axiosClient
+            .get('/me')
+            .then(({data}) => {
+                setData(data.user);
                 setSubmitted(false);
             })
             .catch((error) => {
@@ -33,9 +49,9 @@ export function AggregationHeadProvider({children}) {
 
 
     return (
-        <AggregationHeadProvider.Provider
-            value={{setSubmitted, transactionList, userType, setUserType}}>
+        <AggregationHeadContext.Provider
+            value={{setSubmitted, transactionList, listEmployee, data}}>
             {children}
-        </AggregationHeadProvider.Provider>
+        </AggregationHeadContext.Provider>
     );
 }

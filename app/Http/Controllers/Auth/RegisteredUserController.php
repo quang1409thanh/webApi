@@ -34,7 +34,7 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-            $companyLeader = $user->companyLeader()->create([
+        $companyLeader = $user->companyLeader()->create([
             'phone' => $request->phone,
             'details' => $request->details,
         ]);

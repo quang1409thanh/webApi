@@ -3,13 +3,12 @@ import axiosClient from '../../../axios.js';
 import {AggregationHeadContext} from "./AggregationHeadProvider.jsx";
 import {TransactionHeadContext} from "../TransactionHead/TransactionHeadProvider.jsx";
 
-const AggregationEmployeeAdd = () => {
-    const {data} = useContext(AggregationHeadContext);
-    const id = data?.aggregation_point_head?.id || '';
-
+const AggregationEmployeeFormEdit = ({id}) => {
     const {setSubmitted} = useContext(AggregationHeadContext);
-    const {userType} = useContext(AggregationHeadContext);
+    const {data} = useContext(AggregationHeadContext);
+    const aggregation_point_id = data?.aggregation_point_head?.id || '';
 
+    console.log()
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -28,10 +27,10 @@ const AggregationEmployeeAdd = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Gửi dữ liệu đến API backend
-        axiosClient.post('/aggregationPointEmployee',
+        axiosClient.put(`/aggregationPointEmployee/${id}`,
             {
                 ...formData,
-                aggregation_point_id: id,
+                aggregation_point_id: aggregation_point_id,
             })
             .then(response => {
                 // Xử lý response nếu cần
@@ -44,17 +43,34 @@ const AggregationEmployeeAdd = () => {
             });
     };
 
-
-    const renderOptions = (array) => {
-        return array.map(element => (
-            <option key={element.id} value={element.id}>{element.name}</option>
-        ));
-    };
-
+    useEffect(() => {
+        axiosClient
+            .get(`aggregationPointEmployee/${id}`)
+            .then(({data}) => {
+                if (!data.aggregationPointEmployee || !data.aggregationPointEmployee.user) {
+                    console.error('Invalid API response:', data);
+                    return;
+                }
+                const apiData = data.aggregationPointEmployee;
+                setFormData((prevFormData) => ({
+                    ...prevFormData,
+                    name: apiData.user.name || '',
+                    email: apiData.user.email || '',
+                    phone: apiData.phone || '',
+                    address: apiData.address || '',
+                    details: apiData.details || '',
+                    aggregation_point_id: apiData.aggregation_point_id || '',
+                }));
+                console.log(formData)
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, [id]);
 
     return (
         <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
-            <h1>Thêm tài khoản</h1>
+            <h1>Chỉnh sửa tài khoản</h1>
             <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-16 p-4 bg-white rounded shadow-md w-full">
                 {/* Các trường nhập dữ liệu */}
                 {/*<div className="mb-4">*/}
@@ -98,6 +114,7 @@ const AggregationEmployeeAdd = () => {
                         onChange={handleChange}
                         className="w-full py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-900"
                         required
+                        readOnly
                     />
                 </div>
 
@@ -173,7 +190,7 @@ const AggregationEmployeeAdd = () => {
                         type="submit"
                         className="w-full py-2 text-white bg-green-500 rounded-md focus:bg-green-600 focus:outline-none"
                     >
-                        Add User
+                        Sửa
                     </button>
                 </div>
             </form>
@@ -181,4 +198,4 @@ const AggregationEmployeeAdd = () => {
     );
 };
 
-export default AggregationEmployeeAdd;
+export default AggregationEmployeeFormEdit;

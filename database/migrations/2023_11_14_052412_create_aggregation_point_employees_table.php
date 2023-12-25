@@ -16,7 +16,6 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('aggregation_point_id');
-            $table->string('name');
             $table->string('position');
             $table->string('phone');
             $table->string('details');

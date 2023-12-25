@@ -4,7 +4,8 @@ import {useStateContext} from "../../../contexts/ContextProvider.jsx";
 import {AggregationHeadContext} from "./AggregationHeadProvider.jsx";
 
 const AggregationEmployeeList = () => {
-    const {headData} = useContext(AggregationHeadContext);
+    const {listEmployee} = useContext(AggregationHeadContext);
+    console.log("listEmployee" + listEmployee);
     const {userType} = useContext(AggregationHeadContext);
     const {setSubmitted} = useContext(AggregationHeadContext);
     const {showToast} = useStateContext();
@@ -14,15 +15,7 @@ const AggregationEmployeeList = () => {
         const isConfirmed = window.confirm('Bạn có chắc là muốn xóa ?');
         if (isConfirmed) {
             try {
-                let endPoint = '';
-                if (userType === 'aggregationHead') {
-                    endPoint = 'aggregationHead'
-                } else if (userType === 'transactionHead') {
-                    endPoint = 'transactionHead'
-                } else {
-                    console.log("usertype no approve")
-                }
-                const response = axiosClient.delete(`${endPoint}/${id}`);
+                const response = axiosClient.delete(`aggregationPointEmployee/${id}`);
                 setSubmitted(true);
                 showToast("Xóa thành công", 'success');
             } catch (error) {
@@ -50,7 +43,7 @@ const AggregationEmployeeList = () => {
                 </tr>
                 </thead>
                 <tbody>
-                {headData.map((item) => (
+                {listEmployee.length > 0 && listEmployee.map((item) => (
                     <tr key={item.id}>
                         <td className="py-2 px-4 border-b">{item.id}</td>
                         <td className="py-2 px-4 border-b">{item.user.name}</td>
@@ -69,7 +62,7 @@ const AggregationEmployeeList = () => {
                         </td>
                         <td className="py-2 px-4 border-b">
                             <a className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-                               href={`transactionHead/${item.id}`}>
+                               href={`aggregationEmployee/${item.id}`}>
                                 DETAIL
                             </a>
                         </td>
