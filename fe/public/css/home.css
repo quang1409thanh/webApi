@@ -120,7 +120,7 @@ img {
   margin-top: -30px; }
 
 .container-form-tracking {
-  background: #ffc600;
+  background: #66CCFF;
   border-radius: 12px;
   padding: 25px 60px;
   max-width: 1110px;
@@ -299,7 +299,7 @@ img {
 
 .weather-col2 {
   padding-left: 30px;
-  background-color: #ffc600;
+  background-color: #66CCFF;
   align-items: center;
   display: flex;
   position: relative;

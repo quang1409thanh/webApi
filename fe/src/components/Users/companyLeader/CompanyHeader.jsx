@@ -1,6 +1,6 @@
-import React, {Fragment} from "react";
-import {Navigate, NavLink, Outlet} from "react-router-dom";
-import {useStateContext} from "../../../contexts/ContextProvider.jsx";
+import React, { Fragment } from "react";
+import { Navigate, NavLink, Outlet } from "react-router-dom";
+import { useStateContext } from "../../../contexts/ContextProvider.jsx";
 import axiosClient from "../../../axios.js";
 
 function classNames(...classes) {
@@ -8,7 +8,7 @@ function classNames(...classes) {
 }
 
 export default function CompanyHeader() {
-    const {currentUser, userToken, setCurrentUser, setUserToken} =
+    const { currentUser, userToken, setCurrentUser, setUserToken } =
         useStateContext();
 
     const logout = (ev) => {
@@ -19,7 +19,6 @@ export default function CompanyHeader() {
         });
     };
 
-
     return (
         <>
             <div className="container">
@@ -28,11 +27,18 @@ export default function CompanyHeader() {
                         <nav>
                             <ol className="menu_item">
                                 {currentUser ? (
-                                    <NavLink onClick={(ev) => logout(ev)} className="text-gray-400" to={"/"}>
+                                    <NavLink
+                                        onClick={(ev) => logout(ev)}
+                                        className="text-gray-400"
+                                        to={"/"}
+                                    >
                                         Sign out
                                     </NavLink>
                                 ) : (
-                                    <NavLink to="/login" className="text-gray-400">
+                                    <NavLink
+                                        to="/login"
+                                        className="text-gray-400"
+                                    >
                                         Đăng nhập
                                     </NavLink>
                                 )}
@@ -41,22 +47,25 @@ export default function CompanyHeader() {
                             <ul className="main_nav">
                                 <li>
                                     <a href="/" className="logo_nav">
-                                        <img src="/img/logo.png" alt=""/>
+                                        <img src="/img/logo.png" alt="" />
                                     </a>
                                 </li>
                                 <li className="menu_item">
                                     <NavLink
                                         to="/profile"
-                                        className={({isActive}) =>
+                                        className={({ isActive }) =>
                                             classNames(
                                                 isActive
-                                                    ? "bg-green-300"  // Thay đổi màu nền ở đây
+                                                    ? "bg-blue-300 text-gray-800" // Thay đổi màu nền ở đây
                                                     : "text-gray-300 hover:bg-gray-700 hover:text-white",
                                                 "px-3 py-2 rounded-md text-sm font-medium"
                                             )
                                         }
                                     >
-                                        <img src="./img/icon-profile.svg" alt=""/>
+                                        <img
+                                            src="./img/icon-profile.svg"
+                                            alt=""
+                                        />
                                         {currentUser && currentUser.name}
                                     </NavLink>
                                 </li>
@@ -66,7 +75,7 @@ export default function CompanyHeader() {
                                 {/*        className={({isActive}) =>*/}
                                 {/*            classNames(*/}
                                 {/*                isActive*/}
-                                {/*                    ? "bg-green-300"  // Thay đổi màu nền ở đây*/}
+                                {/*                    ? "bg-blue-300 text-gray-800" // Thay đổi màu nền ở đây*/}
                                 {/*                    : "text-gray-300 hover:bg-gray-700 hover:text-white",*/}
                                 {/*                "px-3 py-2 rounded-md text-sm font-medium"*/}
                                 {/*            )*/}
@@ -78,10 +87,10 @@ export default function CompanyHeader() {
                                 <li className="menu_item">
                                     <NavLink
                                         to="/aggregationPoint"
-                                        className={({isActive}) =>
+                                        className={({ isActive }) =>
                                             classNames(
                                                 isActive
-                                                    ? "bg-green-300"  // Thay đổi màu nền ở đây
+                                                    ? "bg-blue-300 text-gray-800" // Thay đổi màu nền ở đây
                                                     : "text-gray-300 hover:bg-gray-700 hover:text-white",
                                                 "px-3 py-2 rounded-md text-sm font-medium"
                                             )
@@ -94,10 +103,10 @@ export default function CompanyHeader() {
                                 <li className="menu_item">
                                     <NavLink
                                         to="/transactionPoint"
-                                        className={({isActive}) =>
+                                        className={({ isActive }) =>
                                             classNames(
                                                 isActive
-                                                    ? "bg-green-300"  // Thay đổi màu nền ở đây
+                                                    ? "bg-blue-300 text-gray-800" // Thay đổi màu nền ở đây
                                                     : "text-gray-300 hover:bg-gray-700 hover:text-white",
                                                 "px-3 py-2 rounded-md text-sm font-medium"
                                             )
@@ -107,14 +116,13 @@ export default function CompanyHeader() {
                                     </NavLink>
                                 </li>
 
-
                                 <li className="menu_item">
                                     <NavLink
                                         to="/manageuser"
-                                        className={({isActive}) =>
+                                        className={({ isActive }) =>
                                             classNames(
                                                 isActive
-                                                    ? "bg-green-300"  // Thay đổi màu nền ở đây
+                                                    ? "bg-blue-300 text-gray-800" // Màu nền và màu chữ khi được chọn
                                                     : "text-gray-300 hover:bg-gray-700 hover:text-white",
                                                 "px-3 py-2 rounded-md text-sm font-medium"
                                             )
@@ -122,19 +130,16 @@ export default function CompanyHeader() {
                                     >
                                         Thêm tài khoản
                                     </NavLink>
-
-
                                 </li>
-                                <li className="menu_item">
+                                <li className="menu_item leader_page">
                                     <b>Trang Lãnh Đạo Công Ty</b>
                                 </li>
-
                             </ul>
                         </nav>
                     </div>
                 </header>
                 <div className="back_to_top">
-                    <img src="./img/icon-back-to-top.svg" alt=""/>
+                    <img src="./img/icon-back-to-top.svg" alt="" />
                 </div>
             </div>
         </>

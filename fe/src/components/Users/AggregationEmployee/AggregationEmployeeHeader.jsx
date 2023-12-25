@@ -1,6 +1,6 @@
-import React, {Fragment} from "react";
-import {Navigate, NavLink, Outlet} from "react-router-dom";
-import {useStateContext} from "../../../contexts/ContextProvider.jsx";
+import React, { Fragment } from "react";
+import { Navigate, NavLink, Outlet } from "react-router-dom";
+import { useStateContext } from "../../../contexts/ContextProvider.jsx";
 import axiosClient from "../../../axios.js";
 import AggregationEmployee from "./AggregationEmployee.jsx";
 
@@ -9,7 +9,7 @@ function classNames(...classes) {
 }
 
 export default function AggregationEmployeeHeader() {
-    const {currentUser, userToken, setCurrentUser, setUserToken} =
+    const { currentUser, userToken, setCurrentUser, setUserToken } =
         useStateContext();
 
     const logout = (ev) => {
@@ -28,11 +28,18 @@ export default function AggregationEmployeeHeader() {
                         <nav>
                             <ol className="menu_item">
                                 {currentUser ? (
-                                    <NavLink onClick={(ev) => logout(ev)} className="text-gray-400" to={"/"}>
+                                    <NavLink
+                                        onClick={(ev) => logout(ev)}
+                                        className="text-gray-400"
+                                        to={"/"}
+                                    >
                                         Sign out
                                     </NavLink>
                                 ) : (
-                                    <NavLink to="/login" className="text-gray-400">
+                                    <NavLink
+                                        to="/login"
+                                        className="text-gray-400"
+                                    >
                                         Đăng nhập
                                     </NavLink>
                                 )}
@@ -41,32 +48,35 @@ export default function AggregationEmployeeHeader() {
                             <ul className="main_nav">
                                 <li>
                                     <a href="/" className="logo_nav">
-                                        <img src="/img/logo.png" alt=""/>
+                                        <img src="/img/logo.png" alt="" />
                                     </a>
                                 </li>
                                 <li className="menu_item">
                                     <NavLink
                                         to="/profile"
-                                        className={({isActive}) =>
+                                        className={({ isActive }) =>
                                             classNames(
                                                 isActive
-                                                    ? "bg-green-300"  // Thay đổi màu nền ở đây
+                                                    ? "bg-blue-300 text-gray-800" // Thay đổi màu nền ở đây
                                                     : "text-gray-300 hover:bg-gray-700 hover:text-white",
                                                 "px-3 py-2 rounded-md text-sm font-medium"
                                             )
                                         }
                                     >
-                                        <img src="./img/icon-profile.svg" alt=""/>
+                                        <img
+                                            src="./img/icon-profile.svg"
+                                            alt=""
+                                        />
                                         {currentUser && currentUser.name}
                                     </NavLink>
                                 </li>
                                 <li className="menu_item">
                                     <NavLink
                                         to="/aggregation_employee"
-                                        className={({isActive}) =>
+                                        className={({ isActive }) =>
                                             classNames(
                                                 isActive
-                                                    ? "bg-green-300"  // Thay đổi màu nền ở đây
+                                                    ? "bg-blue-300 text-gray-800" // Thay đổi màu nền ở đây
                                                     : "text-gray-300 hover:bg-gray-700 hover:text-white",
                                                 "px-3 py-2 rounded-md text-sm font-medium"
                                             )
@@ -76,14 +86,13 @@ export default function AggregationEmployeeHeader() {
                                     </NavLink>
                                 </li>
 
-
                                 <li className="menu_item">
                                     <NavLink
                                         to="/"
-                                        className={({isActive}) =>
+                                        className={({ isActive }) =>
                                             classNames(
                                                 isActive
-                                                    ? "bg-green-300"  // Thay đổi màu nền ở đây
+                                                    ? "bg-blue-300 text-gray-800" // Thay đổi màu nền ở đây
                                                     : "text-gray-300 hover:bg-gray-700 hover:text-white",
                                                 "px-3 py-2 rounded-md text-sm font-medium"
                                             )
@@ -91,18 +100,16 @@ export default function AggregationEmployeeHeader() {
                                     >
                                         Trang Tổng Hợp
                                     </NavLink>
-
                                 </li>
                                 <li className="menu_item">
                                     <b>Trang Nhân viên Điểm tập kết</b>
                                 </li>
-
                             </ul>
                         </nav>
                     </div>
                 </header>
                 <div className="back_to_top">
-                    <img src="./img/icon-back-to-top.svg" alt=""/>
+                    <img src="./img/icon-back-to-top.svg" alt="" />
                 </div>
             </div>
         </>
