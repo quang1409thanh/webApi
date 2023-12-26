@@ -15,7 +15,7 @@ const AddUserLayout = () => {
         <div className="container">
             <CompanyLeaderProvider>
                 <SwitchButton/>
-                {<HeadList/>}
+                <HeadList/>
                 <AddUserForm/>
             </CompanyLeaderProvider>
         </div>

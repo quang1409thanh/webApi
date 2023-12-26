@@ -1,7 +1,6 @@
 import {Fragment, useContext} from "react";
 import {Navigate, NavLink, Outlet} from "react-router-dom";
 import axiosClient from "../../axios.js";
-import {useEffect} from "react";
 import {useStateContext} from "../../contexts/ContextProvider.jsx";
 import Toast from "../Common/Toast.jsx";
 import Header from "./Header.jsx";
@@ -49,7 +48,6 @@ export default function DefaultLayout() {
                 {roleHeaderMapping[userRole]}
                 <Outlet/>
                 <Toast/>
-                <Footer/>
             </div>
         </>
     );

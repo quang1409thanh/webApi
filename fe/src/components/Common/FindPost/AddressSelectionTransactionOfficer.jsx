@@ -5,9 +5,10 @@ import axios from 'axios';
 
 const host = "https://provinces.open-api.vn/api/";
 
-const AddressSelect = ({onSelectProvince, onSelectDistrict, onSelectWard, onSelectDetail,
-                           selectedProvince, selectedDistrict, selectedWard, selectedDetail
-                       }) => {
+const AddressSelectionTransactionOfficer = ({
+                                                onSelectProvince, onSelectDistrict, onSelectWard, onSelectDetail,
+                                                selectedProvince, selectedDistrict, selectedWard, selectedDetail
+                                            }) => {
     const [provinces, setProvinces] = useState([]);
     const [districts, setDistricts] = useState([]);
     const [wards, setWards] = useState([]);
@@ -104,53 +105,64 @@ const AddressSelect = ({onSelectProvince, onSelectDistrict, onSelectWard, onSele
 
     return (
 
-        <div className="search-box flex justify-center items-center">
-            <div className="col-tmp-1 col-left">
-                <label htmlFor="city">Tỉnh/Thành phố</label>
-                <select
-                    name="provinceId"
-                    id="city"
-                    className="form-control citySelect"
-                    placeholder={"test"}
-                    value={province} onChange={handleProvinceChange}>
-                    <option disabled selected value="">{selectedProvince || 'chọn tỉnh'}</option>
-                    {renderOptions(provinces)}
-                </select>
+        <>
+            <div className="form-group">
+                <div>
+                    <label htmlFor="city">Tỉnh/Thành phố</label>
+                    <select
+                        name="provinceId"
+                        id="city"
+                        className=" citySelect"
+                        placeholder={"test"}
+                        value={province} onChange={handleProvinceChange}>
+                        <option disabled selected value="">{selectedProvince || 'chọn tỉnh'}</option>
+                        {renderOptions(provinces)}
+                    </select>
+                </div>
+                <div>
+                    <label htmlFor="district">Quận/Huyện</label>
+                    <select
+                        name="districtId"
+                        id="district"
+                        className=" districtSelect"
+                        value={district}
+                        onChange={handleDistrictChange}>
+                        <option disabled selected value="">{selectedDistrict || 'chọn quận'}</option>
+                        {renderOptions(districts)}
+                    </select>
+                </div>
+
             </div>
-            <div className="col-tmp-1 col-left col-right">
-                <label htmlFor="district">Quận/Huyện</label>
-                <select
-                    name="districtId"
-                    id="district"
-                    className="form-control districtSelect"
-                    value={district}
-                    onChange={handleDistrictChange}>
-                    <option disabled selected value="">{selectedDistrict || 'chọn quận'}</option>
-                    {renderOptions(districts)}
-                </select>
+            <div className="form-group">
+                <div>
+                    <label htmlFor="ward">Xã/Phường</label>
+                    <select
+                        name="wardId"
+                        id="ward"
+                        className=" wardSelect"
+                        value={ward}
+                        onChange={handleWardChange}>
+                        <option disabled selected value="">{selectedWard || 'chọn xã/phường'}</option>
+                        {renderOptions(wards)}
+                    </select>
+
+                </div>
+                <div>
+                    <label htmlFor="ward">Mã Bưu Chính</label>
+                    <select
+                        name="wardId"
+                        id="ward"
+                        className=" wardSelect"
+                        // value={code}
+                        // onChange={handleWardChange}
+                        >
+                        <option disabled selected value="">{selectedWard || 'chọn xã/phường'}</option>
+                        {/*{renderOptions(wards)}*/}
+                    </select>
+                </div>
+
             </div>
-            <div className="col-tmp-1 col-left col-right">
-                <label htmlFor="ward">Xã/Phường</label>
-                <select
-                    name="wardId"
-                    id="ward"
-                    className="form-control wardSelect"
-                    value={ward}
-                    onChange={handleWardChange}>
-                    <option disabled selected value="">{selectedWard || 'chọn xã/phường'}</option>
-                    {renderOptions(wards)}
-                </select>
-            </div>
-            <div className="col-tmp-1 col-left col-right">
-                <label htmlFor="district">Chi tiết địa chỉ</label>
-                <textarea
-                    className="form-control "
-                    value={currentDetail}
-                    onChange={handleDetailChange}
-                    style={{width: '94%'}}
-                />
-            </div>
-        </div>
+        </>
     );
 };
-export default AddressSelect;
+export default AddressSelectionTransactionOfficer;
