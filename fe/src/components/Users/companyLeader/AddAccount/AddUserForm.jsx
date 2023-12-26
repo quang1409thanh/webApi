@@ -84,11 +84,11 @@ const AddUserForm = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen bg-white-100 mt-10">
+        <div className="flex flex-col items-center justify-center h-screen bg-gray-100 mt-20">
             <h1>Thêm tài khoản</h1>
             <form
                 onSubmit={handleSubmit}
-                className="max-w-md mx-auto mt-16 p-4 bg-white rounded shadow-md w-full"
+                className="max-w-xl mx-auto p-4 bg-blue-200 rounded shadow-md w-full"
             >
                 <div className="mb-4">
                     <label
@@ -253,7 +253,7 @@ const AddUserForm = () => {
                 <div className="mt-4">
                     <button
                         type="submit"
-                        className="w-full py-2 text-white bg-green-500 rounded-md focus:bg-green-600 focus:outline-none"
+                        className="w-full py-2 text-white bg-blue-500 rounded-md focus:bg-blue-700 focus:outline-none"
                     >
                         Add User
                     </button>
