@@ -27,18 +27,18 @@ const SidebarTransaction = () => {
                             <span className="icon_holder">
                                 <img src="/img/icon-login.svg" alt=""/>
                             </span>
-                            <span className="titlesiderbar">Danh sách đơn</span>
+                            <span className="titlesiderbar">Danh sách đơn đi</span>
                         </a>
                     </li>
                     {/* Uncomment the code below if needed */}
-                    {/* <li className="nav_item">
-                        <a href="/transaction_staff/tao_tui" className="sidebar_link">
+                    <li className="nav_item">
+                        <a href="/transaction_staff/order_list_receive" className="sidebar_link">
                             <span className="icon_holder">
                                 <img src="/img/icon-login.svg" alt="" />
                             </span>
-                            <span className="titlesiderbar">Tạo túi hàng</span>
+                            <span className="titlesiderbar">Danh sách đơn nhận</span>
                         </a>
-                    </li> */}
+                    </li>
                     <li className="nav_item">
                         <a href="/transaction_staff/outgoing_bag_list" className="sidebar_link">
                             <span className="icon_holder">

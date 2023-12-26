@@ -77,6 +77,7 @@ function AppRouter() {
                         <Route path="/transaction_staff" element={<TransactionOfficeLayout/>}/>
                         <Route path="/transaction_staff/order_search" element={<TransactionOfficeLayout/>}/>
                         <Route path="/transaction_staff/order_list" element={<TransactionOfficeLayout/>}/>
+                        <Route path="/transaction_staff/order_list_receive" element={<TransactionOfficeLayout/>}/>
                         <Route path="transaction_staff/outgoing_bag_list" element={<TransactionOfficeLayout/>}/>
                         <Route path="/transaction_staff/incoming_bag_list" element={<TransactionOfficeLayout/>}/>
                         <Route path="/transaction_staff/success_order_list" element={<TransactionOfficeLayout/>}/>
