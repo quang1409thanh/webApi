@@ -18,7 +18,7 @@ const TransactionList = () => {
             <div className="content-wrapper">
                 {/* Hiển thị thông báo nếu có */}
 
-                <h2 className="font_size">All TransactionPoint</h2>
+                <h3 className="font_size">All Transaction Point</h3>
                 <table className="min-w-full bg-white border border-gray-300">
                     <thead>
                         <tr className="bg-gray-100">
