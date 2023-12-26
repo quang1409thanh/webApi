@@ -17,7 +17,7 @@ const TransactionOfficeLayout = () => {
 
     return (
         <>
-            {/*<TransactionOfficeProvider>*/}
+            <TransactionOfficeProvider>
                 <SidebarTransaction/>
                 {pathname === '/transaction_staff' ? <TransactionStaff/> : null}
                 {pathname === '/transaction_staff/order_search' ? <OrderSearchTransaction/> : null}
@@ -27,7 +27,7 @@ const TransactionOfficeLayout = () => {
                 {pathname === '/transaction_staff/incoming_bag_list' ? <IncomingBagListTransaction/> : null}
                 {pathname === '/transaction_staff/success_order_list' ? <SuccessfulDeliveriesList/> : null}
                 {pathname === '/transaction_staff/failed_order_list' ? <FailedDeliveriesList/> : null}
-            {/*</TransactionOfficeProvider>*/}
+            </TransactionOfficeProvider>
         </>
     );
 };

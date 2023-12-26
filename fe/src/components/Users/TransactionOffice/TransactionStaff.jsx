@@ -27,7 +27,7 @@ const TransactionStaff = () => {
     const addRow = () => {
         // Implement the logic to add a new row
         // For example, you can update the parcelData state
-        // to include a new row, and then render it in the table.
+        // to include a new r   ow, and then render it in the table.
     };
 
     const updateTotal = () => {
@@ -285,3 +285,6 @@ const TransactionStaff = () => {
 };
 
 export default TransactionStaff;
+
+///
+

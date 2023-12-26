@@ -8,6 +8,19 @@ export function TransactionOfficeProvider({children}) {
     const [submitted, setSubmitted] = useState(false);
     const [listGood, setListGood] = useState([]);
 
+    // const [data, setData] = useState([]);
+    useEffect(() => {
+        axiosClient.get('/list_good_send_transaction')
+            .then(({data}) => {
+                console.log(data);
+                setListGood(data.goods);
+                console.log("data: " + data);
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
+
     useEffect(() => {
         axiosClient
             .get('/good')
@@ -35,7 +48,7 @@ export function TransactionOfficeProvider({children}) {
 
     return (
         <TransactionOfficeContext.Provider
-            value={{setSubmitted, data}}
+            value={{setSubmitted, data, listGood}}
         >
             {children}
         </TransactionOfficeContext.Provider>
