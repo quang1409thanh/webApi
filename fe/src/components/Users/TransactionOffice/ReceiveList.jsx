@@ -27,23 +27,23 @@ const sampleOrderList = [
 ];
 
 
-const OrderListTransaction = ({ checkProduct, data }) => {
+const Order_list_receive = ({ checkProduct, data }) => {
   return (
     <div className="page_container">
       <main className="main_content">
         <div id="mainContent">
           <div className="full_container">
             <div className="content_title">
-              DANH SÁCH ĐƠN TẠO
+              DANH SÁCH ĐƠN NHẬN VỀ
             </div>
             <div className="container_product_list">
               {checkProduct ? (
                 <div className="nav_bar_service">
                   {/* Uncomment the line below if needed */}
-                  <input type="button" value="Xóa" name="delete" />
-                  <input type="button" value="Tạo túi hàng" id="btn_tao_tui" className="check_btn" disabled />
+                  {/* <input type="button" value="Xóa" name="delete" /> */}
+                  {/* <input type="button" value="Tạo túi hàng" id="btn_tao_tui" className="check_btn" disabled /> */}
                   {/* Uncomment the line below if needed */}
-                  <input type="button" value="ALL" />
+                  {/* <input type="button" value="ALL" /> */}
                 </div>
               ) : (
                 <div id="error_note" style={{ display: '' }}>
@@ -120,4 +120,4 @@ const OrderListTransaction = ({ checkProduct, data }) => {
   );
 };
 
-export default OrderListTransaction;
+export default Order_list_receive;

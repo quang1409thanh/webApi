@@ -9,7 +9,7 @@ import OrderSearchTransaction from "./OrderSearchTransaction.jsx";
 import OutgoingBagListTransaction from "./OutgoingBagListTransaction.jsx";
 import OrderListTransaction from "./OrderListTransaction.jsx";
 import FailedDeliveriesList from "./FailedDeliveriesList.jsx";
-
+import ReceiveList from "./ReceiveList.jsx";
 
 const TransactionOfficeLayout = () => {
     const location = useLocation();
@@ -21,6 +21,7 @@ const TransactionOfficeLayout = () => {
             {pathname === '/transaction_staff' ? <TransactionStaff/> : null}
             {pathname === '/transaction_staff/order_search' ? <OrderSearchTransaction/> : null}
             {pathname === '/transaction_staff/order_list' ? <OrderListTransaction/> : null}
+            {pathname === '/transaction_staff/order_list_receive' ? <ReceiveList/> : null}
             {pathname === '/transaction_staff/outgoing_bag_list' ? <IncomingBagListTransaction/> : null}
             {pathname === '/transaction_staff/incoming_bag_list' ? <IncomingBagListTransaction/> : null}
             {pathname === '/transaction_staff/success_order_list' ? <SuccessfulDeliveriesList/> : null}
