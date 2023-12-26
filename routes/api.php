@@ -3,6 +3,7 @@
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\GoodController;
 use App\Http\Controllers\QRCodeController;
+use App\Http\Controllers\ShipmentGdTkController;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -88,6 +89,8 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
         Route::apiResource("/good", GoodController::class);
         Route::get("/list_good_send_transaction", [GoodController::class, 'send_transaction']);
         Route::get("/list_good_receive_transaction", [GoodController::class, 'receive_transaction']);
+        Route::post('/create-shipment-gd-tk', [ShipmentGdTkController::class, 'createShipment']);
+        Route::get('/list_outgoing_transaction', [ShipmentGdTkController::class, 'list_outgoing_transaction']);
     });
 
 

@@ -14,6 +14,7 @@ const AddUserLayout = () => {
     return (
         <>
             <CompanyLeaderProvider>
+                <SwitchButton/>
                 <HeadList/>
                 <AddUserForm/>
             </CompanyLeaderProvider>

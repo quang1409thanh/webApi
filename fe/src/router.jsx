@@ -31,6 +31,7 @@ import TransactionOfficerEdit from "./components/Users/TransactionHead/Transacti
 import Aggregation_employee from "./components/Users/AggregationEmployee/AggregationEmployee.jsx";
 import AggregationEmployeeLayout from "./components/Users/AggregationEmployee/AggregationEmployeeLayout.jsx";
 import FindView from "./components/Common/FindPost/FindView.jsx";
+import CreatePackageComponent from "./components/Users/TransactionOffice/CreatePackageComponent.jsx";
 
 
 function AppRouter() {
@@ -83,7 +84,7 @@ function AppRouter() {
                         <Route path="/transaction_staff/incoming_bag_list" element={<TransactionOfficeLayout/>}/>
                         <Route path="/transaction_staff/success_order_list" element={<TransactionOfficeLayout/>}/>
                         <Route path="/transaction_staff/failed_order_list" element={<TransactionOfficeLayout/>}/>
-                        <Route path="/aggregation_employee" element={<AggregationEmployee/>}/>
+                        <Route path="/transaction_staff/create-package" element={<TransactionOfficeLayout/>}/>
                     </Route>
                 )}
                 {(userRole === "guess") &&

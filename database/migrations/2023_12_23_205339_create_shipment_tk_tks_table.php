@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('shipment_tk_tks', function (Blueprint $table) {
             $table->id();
 
-            $table->enum('status', ['đang chờ chuyển ', 'đang chuyển', 'chuyển thành công', 'thất bại'])->default('đang chờ chuyển');
+            $table->enum('status', ['đang chờ chuyển ', 'chuyển thành công', 'thất bại'])->default('đang chờ chuyển');
 
             $table->timestamps();
             // Khóa ngoại đến điểm gửi hàng (nếu có)

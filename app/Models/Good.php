@@ -13,20 +13,22 @@ class Good extends Model
         'code',
         'sending_transaction_point_id',
         'receiving_transaction_point_id',
+        'sender_name',
+        'receiver_name',
         'shipment_id',
         'goods_information',
-        'loai_hang',
+        'package_type',
         'weight',
-        'chi_dan_gui',
-        'chu_dan_nv',
-        'dich_vu',
-        'cuoc_chinh',
-        'phu_thu',
-        'thu_ho',
+        'instructions_send',
+        'instructions_staff',
+        'service',
+        'main_fee',
+        'surcharge',
+        'collection_fee',
         'status',
         'history',
         'current_location_id',
-        'current_location_type'
+        'current_location_type',
     ];
 
     public function images(): \Illuminate\Database\Eloquent\Relations\MorphMany
@@ -38,4 +40,15 @@ class Good extends Model
     {
         return $this->morphTo('current_location');
     }
+
+    public function sendingTransactionPoint()
+    {
+        return $this->belongsTo(TransactionPoint::class, 'sending_transaction_point_id');
+    }
+
+    public function receivingTransactionPoint()
+    {
+        return $this->belongsTo(TransactionPoint::class, 'receiving_transaction_point_id');
+    }
+
 }
