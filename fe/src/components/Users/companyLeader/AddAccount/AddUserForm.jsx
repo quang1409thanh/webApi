@@ -82,7 +82,6 @@ const AddUserForm = () => {
         <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
             <h1>Thêm tài khoản</h1>
             <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-16 p-4 bg-white rounded shadow-md w-full">
-                {/* Các trường nhập dữ liệu */}
                 <div className="mb-4">
                     <label htmlFor="aggregation_point_id"
                            className="block text-sm font-medium text-gray-700">{getTitleText()}</label>

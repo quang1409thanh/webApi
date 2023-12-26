@@ -43,7 +43,7 @@ class HomeBody extends React.Component {
                             <div className="other-services">
                                 <ul className="item-service">
                                     <li>
-                                        <a href="/transaction_staff">
+                                        <a href="/list_office">
                                             <div className="icon-service">
                                                 <img src="img/icon-fill.svg" alt=""/>
                                             </div>
