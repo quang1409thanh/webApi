@@ -1,61 +1,64 @@
-import React, {useContext, useEffect, useState} from 'react';
-import axiosClient from '../../../axios.js';
-import {AggregationHeadContext} from "./AggregationHeadProvider.jsx";
-import {TransactionHeadContext} from "../TransactionHead/TransactionHeadProvider.jsx";
+import React, { useContext, useEffect, useState } from "react";
+import axiosClient from "../../../axios.js";
+import { AggregationHeadContext } from "./AggregationHeadProvider.jsx";
+import { TransactionHeadContext } from "../TransactionHead/TransactionHeadProvider.jsx";
 
 const AggregationEmployeeAdd = () => {
-    const {data} = useContext(AggregationHeadContext);
-    const id = data?.aggregation_point_head?.id || '';
+    const { data } = useContext(AggregationHeadContext);
+    const id = data?.aggregation_point_head?.id || "";
 
-    const {setSubmitted} = useContext(AggregationHeadContext);
-    const {userType} = useContext(AggregationHeadContext);
+    const { setSubmitted } = useContext(AggregationHeadContext);
+    const { userType } = useContext(AggregationHeadContext);
 
     const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        password: '',
-        password_confirmation: '',
+        name: "",
+        email: "",
+        password: "",
+        password_confirmation: "",
         position: "employee",
-        phone: '',
-        address: '',
-        details: '',
+        phone: "",
+        address: "",
+        details: "",
     });
     const handleChange = (e) => {
-        const {name, value} = e.target;
-        setFormData((prevData) => ({...prevData, [name]: value}));
+        const { name, value } = e.target;
+        setFormData((prevData) => ({ ...prevData, [name]: value }));
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         // Gửi dữ liệu đến API backend
-        axiosClient.post('/aggregationPointEmployee',
-            {
+        axiosClient
+            .post("/aggregationPointEmployee", {
                 ...formData,
                 aggregation_point_id: id,
             })
-            .then(response => {
+            .then((response) => {
                 // Xử lý response nếu cần
                 setSubmitted(true);
                 console.log(response.data);
             })
-            .catch(error => {
+            .catch((error) => {
                 // Xử lý lỗi nếu cần
-                console.error('Error adding user:', error);
+                console.error("Error adding user:", error);
             });
     };
 
-
     const renderOptions = (array) => {
-        return array.map(element => (
-            <option key={element.id} value={element.id}>{element.name}</option>
+        return array.map((element) => (
+            <option key={element.id} value={element.id}>
+                {element.name}
+            </option>
         ));
     };
-
 
     return (
         <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
             <h1>Thêm tài khoản</h1>
-            <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-16 p-4 bg-white rounded shadow-md w-full">
+            <form
+                onSubmit={handleSubmit}
+                className="max-w-md mx-auto mt-16 p-4 bg-blue-200 rounded shadow-md w-full"
+            >
                 {/* Các trường nhập dữ liệu */}
                 {/*<div className="mb-4">*/}
                 {/*    <label htmlFor="aggregation_point_id"*/}
@@ -76,7 +79,12 @@ const AggregationEmployeeAdd = () => {
                 {/*    </select>*/}
                 {/*</div>*/}
                 <div className="mb-4">
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+                    <label
+                        htmlFor="name"
+                        className="block text-sm font-medium text-gray-700"
+                    >
+                        Name
+                    </label>
                     <input
                         type="text"
                         id="name"
@@ -89,7 +97,12 @@ const AggregationEmployeeAdd = () => {
                 </div>
 
                 <div className="mb-4">
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+                    <label
+                        htmlFor="email"
+                        className="block text-sm font-medium text-gray-700"
+                    >
+                        Email
+                    </label>
                     <input
                         type="email"
                         id="email"
@@ -102,7 +115,12 @@ const AggregationEmployeeAdd = () => {
                 </div>
 
                 <div className="mb-4">
-                    <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
+                    <label
+                        htmlFor="password"
+                        className="block text-sm font-medium text-gray-700"
+                    >
+                        Password
+                    </label>
                     <input
                         type="password"
                         id="password"
@@ -115,8 +133,12 @@ const AggregationEmployeeAdd = () => {
                 </div>
 
                 <div className="mb-4">
-                    <label htmlFor="password_confirmation" className="block text-sm font-medium text-gray-700">Confirm
-                        Password</label>
+                    <label
+                        htmlFor="password_confirmation"
+                        className="block text-sm font-medium text-gray-700"
+                    >
+                        Confirm Password
+                    </label>
                     <input
                         type="password"
                         id="password_confirmation"
@@ -128,9 +150,13 @@ const AggregationEmployeeAdd = () => {
                     />
                 </div>
 
-
                 <div className="mb-4">
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone</label>
+                    <label
+                        htmlFor="phone"
+                        className="block text-sm font-medium text-gray-700"
+                    >
+                        Phone
+                    </label>
                     <input
                         type="text"
                         id="phone"
@@ -143,7 +169,12 @@ const AggregationEmployeeAdd = () => {
                 </div>
 
                 <div className="mb-4">
-                    <label htmlFor="address" className="block text-sm font-medium text-gray-700">Address</label>
+                    <label
+                        htmlFor="address"
+                        className="block text-sm font-medium text-gray-700"
+                    >
+                        Address
+                    </label>
                     <input
                         type="text"
                         id="address"
@@ -156,7 +187,12 @@ const AggregationEmployeeAdd = () => {
                 </div>
 
                 <div className="mb-4">
-                    <label htmlFor="details" className="block text-sm font-medium text-gray-700">Details</label>
+                    <label
+                        htmlFor="details"
+                        className="block text-sm font-medium text-gray-700"
+                    >
+                        Details
+                    </label>
                     <textarea
                         id="details"
                         name="details"
@@ -171,7 +207,7 @@ const AggregationEmployeeAdd = () => {
                 <div className="mt-4">
                     <button
                         type="submit"
-                        className="w-full py-2 text-white bg-green-500 rounded-md focus:bg-green-600 focus:outline-none"
+                        className="w-full py-2 text-white bg-blue-500 rounded-md focus:bg-blue-700 focus:outline-none"
                     >
                         Add User
                     </button>

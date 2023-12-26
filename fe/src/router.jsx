@@ -30,6 +30,7 @@ import AggregationEmployeeEdit from "./components/Users/AggregationHead/Aggregat
 import TransactionOfficerEdit from "./components/Users/TransactionHead/TransactionOfficerEdit.jsx";
 import Aggregation_employee from "./components/Users/AggregationEmployee/AggregationEmployee.jsx";
 import AggregationEmployeeLayout from "./components/Users/AggregationEmployee/AggregationEmployeeLayout.jsx";
+import FindView from "./components/Common/FindPost/FindView.jsx";
 
 
 function AppRouter() {
@@ -97,7 +98,7 @@ function AppRouter() {
                 <Route path="/index" element={<HomeGuess/>}/>
                 <Route path="/login" element={<Login/>}/>
             </Route>
-
+            <Route path="/list_office" element={<FindView/>}/>
             <Route path="/home" element={<HomeGuess/>}/>
             <Route path="/gioithieu" element={<GoodsQr/>}/>
         </Routes>

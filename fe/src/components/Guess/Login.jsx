@@ -1,66 +1,74 @@
-import {LockClosedIcon} from "@heroicons/react/20/solid";
-import {useState} from "react";
-import {Link} from "react-router-dom";
+import { LockClosedIcon } from "@heroicons/react/20/solid";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import axiosClient from "../../axios.js";
-import {useStateContext} from "../../contexts/ContextProvider.jsx";
+import { useStateContext } from "../../contexts/ContextProvider.jsx";
 import "./Login.css";
 import "../../index.css";
 
 export default function Login() {
-    const {setCurrentUser, setUserToken} = useStateContext();
+    const { setCurrentUser, setUserToken } = useStateContext();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [error, setError] = useState({__html: ""});
+    const [error, setError] = useState({ __html: "" });
 
     const onSubmit = (ev) => {
         ev.preventDefault();
-        setError({__html: ""});
+        setError({ __html: "" });
 
         axiosClient
             .post("/login", {
                 email,
                 password,
             })
-            .then(({data}) => {
-                setCurrentUser( data.user);
+            .then(({ data }) => {
+                setCurrentUser(data.user);
                 setUserToken(data.token);
             })
             .catch((error) => {
                 if (error.response) {
-                    const finalErrors = Object.values(error.response.data.errors).reduce(
-                        (accum, next) => [...accum, ...next],
-                        []
-                    );
-                    setError({__html: finalErrors.join("<br>")});
+                    const finalErrors = Object.values(
+                        error.response.data.errors
+                    ).reduce((accum, next) => [...accum, ...next], []);
+                    setError({ __html: finalErrors.join("<br>") });
                 }
                 console.error(error);
             });
     };
 
     return (
-        <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-            <div className="w-full max-w-md space-y-8">
-                <div>
-                    <img src="/img/logo.png"
-                         alt="Your Company"
-                         className="center"
+        <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-gray-100">
+            <div className="w-full max-w-md p-8 bg-blue-200 rounded shadow-md">
+                <div className="text-center">
+                    <img
+                        src="/img/logo.png"
+                        alt="Your Company"
+                        className="mx-auto mb-4 w-32 h-20"
                     />
+                    <h2 className="text-3xl font-bold text-gray-900">
+                        Sign in to your account
+                    </h2>
                 </div>
-                <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
-                    Sign in to your account
-                </h2>
                 {error.__html && (
                     <div
-                        className="bg-red-500 rounded py-2 px-3 text-white"
+                        className="bg-red-500 rounded py-2 px-3 text-white mt-4"
                         dangerouslySetInnerHTML={error}
                     ></div>
                 )}
 
-                <form onSubmit={onSubmit} className="mt-8 space-y-6" action="#" method="POST">
-                    <input type="hidden" name="remember" defaultValue="true"/>
-                    <div className="-space-y-px rounded-md shadow-sm" style={{width: '94%'}}>
+                <form
+                    onSubmit={onSubmit}
+                    className="mt-6 space-y-6"
+                    action="#"
+                    method="POST"
+                >
+                    <input type="hidden" name="remember" defaultValue="true" />
+                    <div className="space-y-4">
                         <div>
-                            <label htmlFor="email-address" className="sr-only">
+                            <label
+                                htmlFor="email-address"
+                                className="block text-sm font-medium text-gray-700"
+                            >
                                 Email address
                             </label>
                             <input
@@ -71,12 +79,15 @@ export default function Login() {
                                 required
                                 value={email}
                                 onChange={(ev) => setEmail(ev.target.value)}
-                                className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                                placeholder="Email address"
+                                className="mt-1 p-3 w-full rounded-md border border-gray-300 focus:outline-none focus:ring focus:border-indigo-500"
+                                placeholder="Your email address"
                             />
                         </div>
                         <div>
-                            <label htmlFor="password" className="sr-only">
+                            <label
+                                htmlFor="password"
+                                className="block text-sm font-medium text-gray-700"
+                            >
                                 Password
                             </label>
                             <input
@@ -87,41 +98,49 @@ export default function Login() {
                                 required
                                 value={password}
                                 onChange={(ev) => setPassword(ev.target.value)}
-                                className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                                placeholder="Password"
+                                className="mt-1 p-3 w-full rounded-md border border-gray-300 focus:outline-none focus:ring focus:border-indigo-500"
+                                placeholder="Your password"
                             />
                         </div>
                     </div>
 
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between mt-1">
                         <div className="flex items-center">
                             <input
                                 id="remember-me"
                                 name="remember-me"
                                 type="checkbox"
-                                className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                                className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300"
                             />
                             <label
                                 htmlFor="remember-me"
-                                className="ml-2 block text-sm text-gray-900"
+                                className="ml-1 text-sm text-gray-700 mb-1"
                             >
                                 Remember me
                             </label>
+                        </div>
+                        <div className="text-sm">
+                            <Link
+                                to="#"
+                                className="text-indigo-600 hover:underline"
+                            >
+                                Forgot password?
+                            </Link>
                         </div>
                     </div>
 
                     <div>
                         <button
                             type="submit"
-                            className="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                            className="flex items-center justify-center w-full py-2 px-4 border border-blue-500 rounded-md bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300 transition-all duration-300 ease-in-out transform hover:scale-105"
                         >
-            <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-              <LockClosedIcon
-                  className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400"
-                  aria-hidden="true"
-              />
-            </span>
-                            Sign in
+                            <LockClosedIcon
+                                className="h-5 w-5 mr-2 self-center"
+                                aria-hidden="true"
+                            />
+                            <span className="flex-grow text-xl text-center mr-7">
+                                Sign in
+                            </span>
                         </button>
                     </div>
                 </form>

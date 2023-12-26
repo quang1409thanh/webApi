@@ -3,6 +3,7 @@ import axiosClient from "../../axios.js";
 import ManageView from "../Common/FindPost/ManageView.jsx";
 import HomeBody from "../Common/HomeBody.jsx";
 import {useStateContext} from "../../contexts/ContextProvider.jsx";
+import Footer from "../Common/Footer.jsx";
 
 export default function Dashboard() {
 
@@ -24,6 +25,9 @@ export default function Dashboard() {
     }, []);
 
     return (
-        <HomeBody/>
+        <>
+            <HomeBody/>
+            <Footer/>
+        </>
     );
 }

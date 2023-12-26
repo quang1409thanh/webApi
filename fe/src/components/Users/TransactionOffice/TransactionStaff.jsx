@@ -2,6 +2,8 @@ import "../../../css/transation_staff.css"
 
 import React, {useState} from 'react';
 import axiosClient from "../../../axios.js";
+import AddressSelect from "../../Common/FindPost/AddressSelect.jsx";
+import AddressSelectionTransactionOfficer from "../../Common/FindPost/AddressSelectionTransactionOfficer.jsx";
 
 const TransactionStaff = () => {
     const [sendName, setSendName] = useState('');
@@ -75,7 +77,7 @@ const TransactionStaff = () => {
                 <div id="mainContent">
                     <div className="full_container">
                         <div className="content_title">
-                            CHẤP NHẬN BƯU GỬI LẺ
+                            Tạo đơn hàng
                         </div>
                         <form action="/" method="post" id="parcel_form">
                             <div className="customer_info">
@@ -88,6 +90,7 @@ const TransactionStaff = () => {
                                         <input type="text" id="send_name" name="senderName" value={sendName}
                                                onChange={(e) => setSendName(e.target.value)} required/>
                                     </div>
+
                                     <div className="form-group">
                                         <div>
                                             <label htmlFor="send_city">Tỉnh/Thành Phố:</label>
@@ -147,42 +150,13 @@ const TransactionStaff = () => {
                                         <input type="text" id="recipient_name" name="senderName" value={recipientName}
                                                onChange={(e) => setRecipientName(e.target.value)} required/>
                                     </div>
-                                    <div className="form-group">
-                                        <div>
-                                            <label htmlFor="recipient_city">Tỉnh/Thành Phố:</label>
-                                            <select id="recipient_city" name="city" className="citySelect"
-                                                    value={recipientCity}
-                                                    onChange={(e) => setRecipientCity(e.target.value)} required>
-                                                <option>--Chọn Tỉnh/Thành phố--</option>
-                                            </select>
-                                        </div>
-                                        <div>
-                                            <label htmlFor="recipient_district">Quận/Huyện:</label>
-                                            <select id="recipient_district" name="district" className="districtSelect"
-                                                    value={recipientDistrict}
-                                                    onChange={(e) => setRecipientDistrict(e.target.value)} required>
-                                                <option>--Chọn Quận/Huyện--</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div className="form-group">
-                                        <div>
-                                            <label htmlFor="recipient_commune">Phường/Xã:</label>
-                                            <select id="recipient_commune" name="ward" className="communeSelect"
-                                                    value={recipientCommune}
-                                                    onChange={(e) => setRecipientCommune(e.target.value)} required>
-                                                <option>--Chọn Phường/Xã--</option>
-                                            </select>
-                                        </div>
-                                        <div>
-                                            <label htmlFor="recipient_postal_code">Mã Bưu Chính:</label>
-                                            <select id="recipient_postal_code" name="postalCode"
-                                                    className="postal_codeSelect" value={recipientPostalCode}
-                                                    onChange={(e) => setRecipientPostalCode(e.target.value)} required>
-                                                <option>--Chọn Mã Bưu Chính--</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                                    <AddressSelectionTransactionOfficer
+                                        onSelectProvince={(code, text) => handleAddressChange(code, text, 'province')}
+                                        onSelectDistrict={(code, text) => handleAddressChange(code, text, 'district')}
+                                        onSelectWard={(code, text) => handleAddressChange(code, text, 'ward')}
+                                        onSelectDetail={(value) => handleAddressChange(null, value, 'detailed_address')}
+                                    />
+
                                     <div className="form-group">
                                         <div>
                                             <label htmlFor="recipient_phone_number">Số Điện Thoại:</label>
