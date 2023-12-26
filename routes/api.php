@@ -34,8 +34,8 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     });
 
     Route::post('/logout', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'destroy'])
-    ->middleware('auth')
-    ->name('logout');
+        ->middleware('auth')
+        ->name('logout');
     Route::get('/me', [App\Http\Controllers\Controller::class, 'me']);
     Route::get('/dashboard', [App\Http\Controllers\Controller::class, 'dashboard']);
     Route::post('/change-password', [ChangePasswordController::class, 'update']);
@@ -85,8 +85,9 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
          * Thống kê các hàng đã chuyển thành công, các hàng chuyển không thành công và trả lại điểm giao dịch.
          */
 
-        Route::apiResource("/good",GoodController::class);
-        Route::apiResource('good', GoodController::class);
+        Route::apiResource("/good", GoodController::class);
+        Route::get("/list_good_send_transaction", [GoodController::class, 'send_transaction']);
+        Route::get("/list_good_receive_transaction", [GoodController::class, 'receive_transaction']);
     });
 
 

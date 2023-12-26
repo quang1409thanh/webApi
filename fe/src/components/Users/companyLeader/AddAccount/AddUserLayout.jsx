@@ -12,13 +12,12 @@ import {CompanyLeaderProvider} from "../CompanyLeaderProvider.jsx";
 
 const AddUserLayout = () => {
     return (
-        <div className="container">
+        <>
             <CompanyLeaderProvider>
-                <SwitchButton/>
                 <HeadList/>
                 <AddUserForm/>
             </CompanyLeaderProvider>
-        </div>
+        </>
 
     );
 };

@@ -1,6 +1,6 @@
 import "../../../css/transation_staff.css"
 
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import axiosClient from "../../../axios.js";
 import AddressSelect from "../../Common/FindPost/AddressSelect.jsx";
 import AddressSelectionTransactionOfficer from "../../Common/FindPost/AddressSelectionTransactionOfficer.jsx";
@@ -15,10 +15,6 @@ const TransactionStaff = () => {
     const [sendEmail, setSendEmail] = useState('');
 
     const [recipientName, setRecipientName] = useState('');
-    const [recipientCity, setRecipientCity] = useState('');
-    const [recipientDistrict, setRecipientDistrict] = useState('');
-    const [recipientCommune, setRecipientCommune] = useState('');
-    const [recipientPostalCode, setRecipientPostalCode] = useState('');
     const [recipientPhoneNumber, setRecipientPhoneNumber] = useState('');
     const [recipientEmail, setRecipientEmail] = useState('');
 
@@ -27,8 +23,6 @@ const TransactionStaff = () => {
     const [chiDanGui, setChiDanGui] = useState('--Chọn chỉ dẫn--');
     const [chuDanNV, setChuDanNV] = useState('');
     const [dichVu, setDichVu] = useState('');
-
-    const [parcelData, setParcelData] = useState([]);
 
     const addRow = () => {
         // Implement the logic to add a new row

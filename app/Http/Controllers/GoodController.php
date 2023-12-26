@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Good;
 use App\Models\TransactionPoint;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class GoodController extends Controller
@@ -50,7 +51,7 @@ class GoodController extends Controller
         $transactionPoint = TransactionPoint::find(2);
         // Tìm điểm giao dịch mới
         // Tạo mã ngẫu nhiên cho đơn hàng
-        $randomCode = preg_replace('/[^A-Za-z0-9]/', '', Str::random(10));
+        $randomCode = preg_replace('/[^A-Za-z0-9]/', '', Str::random(30));
 
         $good = new Good;
         $good->fill($data);
@@ -111,4 +112,21 @@ class GoodController extends Controller
         return response()->json(['message' => 'Đơn hàng đã được xóa'], 200);
     }
 
+    public function send_transaction()
+    {
+        $user = Auth::user();
+
+        if ($user->relationLoaded('transactionOfficer')) {
+            // Lấy giá trị của transactionOfficer có user_id tương ứng
+            $transactionOfficer = $user->transactionOfficer;
+
+            // Lấy ra những Goods có sending_transaction_point_id giống với transactionOfficer
+            $goods = Good::where('sending_transaction_point_id', $transactionOfficer->id)
+                ->get();
+
+            return response()->json(['goods' => $goods]);
+        } else {
+            return response()->json(['message' => 'Không có giá trị nào!']);
+        }
+    }
 }

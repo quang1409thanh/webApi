@@ -43,7 +43,6 @@ const HeadList = () => {
 
     return (
         <div className="max-w-screen-lg mx-auto px-4">
-            <br/>
             <h1>{getTitleText()}</h1>
             <table className="min-w-full bg-white border border-gray-300">
                 <thead>
