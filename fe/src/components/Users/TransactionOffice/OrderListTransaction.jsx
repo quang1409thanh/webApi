@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const sampleOrderList = [
   {
     _id: '1',
-    check_: true,
+    check_: false,
     ma_buu_cuc_giao_dich: 'BC001',
     ten_buu_cuc: 'Bưu cục A',
     ten_nguoi_gui: 'Người Gửi A',
@@ -26,8 +26,34 @@ const sampleOrderList = [
   // Add more order items as needed
 ];
 
+const OrderListTransaction = ({ checkProduct }) => {
+  const [data, setData] = useState(sampleOrderList);
+  const [selectAll, setSelectAll] = useState(false);
 
-const OrderListTransaction = ({ checkProduct, data }) => {
+  const handleSelectAll = () => {
+    const updatedData = data.map(item => ({ ...item, check_: !selectAll }));
+    setData(updatedData);
+    setSelectAll(!selectAll);
+  };
+
+  const handleSelectOrder = (orderId) => {
+    const updatedData = data.map(item =>
+      item._id === orderId ? { ...item, check_: !item.check_ } : item
+    );
+    setData(updatedData);
+    const allSelected = updatedData.every(item => item.check_);
+    setSelectAll(allSelected);
+  };
+
+  const handleCreatePackage = () => {
+    const selectedOrders = data.filter(item => item.check_);
+    if (selectedOrders.length > 0) {
+      console.log('Tạo túi hàng với các đơn hàng đã chọn:', selectedOrders);
+    } else {
+      console.log('Vui lòng chọn ít nhất một đơn hàng để tạo túi hàng.');
+    }
+  };
+
   return (
     <div className="page_container">
       <main className="main_content">
@@ -39,23 +65,40 @@ const OrderListTransaction = ({ checkProduct, data }) => {
             <div className="container_product_list">
               {checkProduct ? (
                 <div className="nav_bar_service">
-                  {/* Uncomment the line below if needed */}
                   <input type="button" value="Xóa" name="delete" />
-                  <input type="button" value="Tạo túi hàng" id="btn_tao_tui" className="check_btn" disabled />
-                  {/* Uncomment the line below if needed */}
-                  <input type="button" value="ALL" />
+                  <input
+                    type="button"
+                    value="Tạo túi hàng"
+                    id="btn_tao_tui"
+                    className="check_btn"
+                    onClick={handleCreatePackage}
+                    disabled={!selectAll}
+                  />
+                  <input
+                    type="button"
+                    value="ALL"
+                    onClick={handleSelectAll}
+                  />
                 </div>
               ) : (
                 <div id="error_note" style={{ display: '' }}>
                   <i style={{ color: 'red' }}>*Không tìm thấy đơn hàng</i>
                 </div>
               )}
-              {checkProduct && (
+              { (
                 <div className="product_list" id="product_list">
                   <table id="product_list_table">
                     <thead>
                       <tr>
-                        <th><input type="checkbox" name="all" id="check_all" /></th>
+                        <th>
+                          <input
+                            type="checkbox"
+                            name="all"
+                            id="check_all"
+                            onChange={handleSelectAll}
+                            checked={selectAll}
+                          />
+                        </th>
                         <th>Bưu cục giao dịch</th>
                         <th>Mã đơn hàng</th>
                         <th>Tên khách hàng</th>
@@ -69,9 +112,14 @@ const OrderListTransaction = ({ checkProduct, data }) => {
                       {data.map(item => (
                         <tr key={item._id}>
                           <td>
-                            {item.check_ && (
-                              <input type="checkbox" name="check_list" id={item._id} className="check_list" />
-                            )}
+                            <input
+                              type="checkbox"
+                              name="check_list"
+                              id={item._id}
+                              className="check_list"
+                              checked={item.check_}
+                              onChange={() => handleSelectOrder(item._id)}
+                            />
                           </td>
                           <td>
                             <span>{item.ma_buu_cuc_giao_dich}</span>
