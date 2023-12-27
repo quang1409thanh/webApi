@@ -22,7 +22,9 @@ return new class extends Migration {
             // Thêm các trường mới
             $table->string('sender_name')->nullable();
             $table->string('receiver_name')->nullable();
-            $table->string('shipment_id')->nullable();
+            $table->string('shipment_id_gd_tk')->nullable();
+            $table->string('shipment_id_tk_tk')->nullable();
+            $table->string('shipment_id_tk_gd')->nullable();
 
             $table->text('goods_information')->nullable();
             $table->string('package_type')->default('Document');
@@ -33,17 +35,7 @@ return new class extends Migration {
             $table->float('main_fee')->default(0);
             $table->float('surcharge')->default(0);
             $table->float('collection_fee')->default(0);
-            $table->enum('status', [
-                'Chấp nhận gửi',
-                'Đang gửi lên điểm tập kết',
-                'Đã gửi đến điểm tập kết',
-                'Đang gửi đến điểm tập kết nhận',
-                'Đang gửi về điểm giao dịch nhận',
-                'Đang giao hàng',
-                'Giao hàng thành công',
-                'Giao hàng thất bại',
-                'Thất lạc',
-            ])->default('Chấp nhận gửi');
+            $table->string('status')->default('Chấp nhận gửi');
             $table->json('history')->nullable();
             $table->unsignedBigInteger('current_location_id')->nullable();
             $table->string('current_location_type')->nullable();

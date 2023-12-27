@@ -4,7 +4,7 @@ import {TransactionHeadContext} from "./TransactionHeadProvider.jsx";
 
 const AggregationEmployeeAdd = () => {
     const {data} = useContext(TransactionHeadContext);
-    const id = data?.transaction_point_head?.id || '';
+    const id = data?.transaction_point_head?.transaction_point_id || '';
     console.log("id ne:" + id); // In giá trị để kiểm tra
     const {setSubmitted} = useContext(TransactionHeadContext);
     const [formData, setFormData] = useState({

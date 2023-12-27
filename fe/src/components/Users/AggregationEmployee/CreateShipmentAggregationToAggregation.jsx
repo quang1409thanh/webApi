@@ -1,40 +1,16 @@
 import React, {useContext, useState, useEffect} from 'react';
-import {TransactionOfficeContext} from "./TransactionOfficeProvider.jsx";
 import axiosClient from "../../../axios.js";
 import {useLocation, useParams} from "react-router-dom";
+import {TransactionOfficeContext} from "../TransactionOffice/TransactionOfficeProvider.jsx";
+import {AggregationEmployeeContext} from "./AggregationEmployeeProvider.jsx";
 
-const CreateShipmentForm = () => {
-
-
-    const {data, transactionList, aggregationList} = useContext(TransactionOfficeContext);
-
-
-    const $id = data?.transaction_officer?.transaction_point_id;
-
-    // Kiểm tra xem transactionList có tồn tại không
-    const transactionListExists = transactionList ?? [];
-    // Lấy ra transaction từ transactionList có id là $id
-    const transaction = transactionListExists.find(item => item.id === $id);
+const CreateShipmentAggregationToAggregation = () => {
 
 
-    const $agg_id = transaction?.aggregation_point_id;
-    const aggregation = aggregationList.find(item => item.id === $agg_id);
+    const {data, aggregationList} = useContext(AggregationEmployeeContext);
+    const id = data?.aggregation_point_employee?.aggregation_point_id || '';
 
-    let transactionName;
-    if (transaction) {
-        transactionName = transaction.name;
-        console.log("transaction name: ", transactionName);
-    } else {
-        console.log("transaction not found");
-    }
 
-    let aggregationName;
-    if (aggregation) {
-        aggregationName = aggregation.name;
-        console.log("aggregationName name: ", aggregationName);
-    } else {
-        console.log("aggregationName not found");
-    }
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const orderIds = searchParams.get("orderIds").split(",");
@@ -42,22 +18,15 @@ const CreateShipmentForm = () => {
 
 
     const [status, setStatus] = useState('đang chờ chuyển '); // Giá trị mặc định
-    const [sendingTransactionPointId, setSendingTransactionPointId] = useState(''); // Set default sendingTransactionPointId as an empty string
     const [receivingAggregationPointId, setReceivingAggregationPointId] = useState(''); // Set default receivingAggregationPointId as an empty string
 
     const handleSubmit = () => {
-        // Check if required fields are filled
-        if (!status) {
-            console.error('Please fill in all required fields.');
-            return;
-        }
-
-        // Make the API call to create the shipment
-        axiosClient.post('/create-shipment-gd-tk', {
+        // Check if required fields are filled// Make the API call to create the shipment
+        axiosClient.post('/create-shipment-tk-tk', {
             good_ids: orderIds,
             status: status,
-            sending_transaction_point_id: $id,
-            receiving_aggregation_point_id: $agg_id,
+            sending_aggregation_point_id: id,
+            receiving_aggregation_point_id: receivingAggregationPointId,
         }).then(response => {
             // Handle success, you might want to do something with the response
             console.log('Shipment created successfully:', response.data);
@@ -66,10 +35,11 @@ const CreateShipmentForm = () => {
             console.error('Error creating shipment:', error);
         });
     };
-
-
-    //
-
+    const renderOptions = (array) => {
+        return array.map(element => (
+            <option key={element.id} value={element.id}>{element.name}</option>
+        ));
+    };
     const handleStatusChange = (e) => {
         setStatus(e.target.value);
     };
@@ -88,24 +58,6 @@ const CreateShipmentForm = () => {
                             <option value="thất bại">Thất bại</option>
                         </select>
                     </div>
-                    <div className="mb-4">
-                        <label htmlFor="aggregation_point_id"
-                               className="block text-sm font-medium text-gray-700">CHọn điểm giao
-                            dịch</label>
-                        <select
-                            id={'transaction_point_id'}
-                            name={'transaction_point_id'}
-                            value={sendingTransactionPointId}
-                            onChange={(e) => setSendingTransactionPointId(e.target.value)} style={{width: '100%'}}
-                            required
-                            disabled
-
-                        >
-                            <option disabled value="">
-                                {transactionName}
-                            </option>
-                        </select>
-                    </div>
 
                     <div className="mb-4">
                         <label htmlFor="aggregation_point_id"
@@ -117,12 +69,11 @@ const CreateShipmentForm = () => {
                             value={receivingAggregationPointId}
                             onChange={(e) => setReceivingAggregationPointId(e.target.value)}
                             required
-                            disabled
                         >
                             <option disabled value="">
-                                {aggregationName}
+                                Điểm tập kết nhận
                             </option>
-                            {/*{renderOptions(aggregationList)}*/}
+                            {renderOptions(aggregationList)}
                         </select>
                     </div>
                     <div>
@@ -136,4 +87,4 @@ const CreateShipmentForm = () => {
     );
 };
 
-export default CreateShipmentForm;
+export default CreateShipmentAggregationToAggregation;

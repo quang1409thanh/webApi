@@ -16,8 +16,23 @@ class TransactionOfficerController extends Controller
     //
     public function index()
     {
-        $transactionOfficer = TransactionOfficer::with('user')->get();
-        return response()->json(['transactionOfficer' => $transactionOfficer]);
+        $user = Auth::user();
+
+        if ($user->relationLoaded('transactionPointHead')) {
+            // Lấy giá trị của aggregation_point_head có user_id tương ứng
+            $transactionPointHead = $user->transactionPointHead;
+
+            $transactionOfficer = TransactionOfficer::with('user')
+                ->where('transaction_point_id', $transactionPointHead->transaction_point_id)
+                ->get();
+
+            return response()->json(['transactionOfficer' => $transactionOfficer]);
+
+        } else {
+            return response()->json(['message' => 'Khong có giá trị nào !'],);
+
+        }
+
     }
 
     /**

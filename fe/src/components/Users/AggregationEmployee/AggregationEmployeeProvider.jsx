@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import axiosClient from '../../../axios.js';
 
-export const TransactionOfficeContext = React.createContext();
+export const AggregationEmployeeContext = React.createContext();
 
-export function TransactionOfficeProvider({children}) {
+export function AggregationEmployeeProvider({children}) {
     // cho diem
     const [submitted, setSubmitted] = useState(false);
 
@@ -22,30 +22,30 @@ export function TransactionOfficeProvider({children}) {
     }, []);
 
 
-    const [listGood, setListGood] = useState([]);
+    const [listGoodToAggregation, setListGoodToAggregation] = useState([]);
 
     useEffect(() => {
-        axiosClient.get('/list_good_send_transaction')
+        axiosClient.get('/list_good_from_transaction')
             .then(({data}) => {
                 // Kiểm tra xem dữ liệu có tồn tại không trước khi thêm vào state
                 console.log("data", data.goods);
                 if (data && data.goods) {
-                    setListGood(data.goods);
+                    setListGoodToAggregation(data.goods);
                 }
             })
             .catch((error) => {
                 console.error('Error fetching data:', error);
             });
     }, []);
-    const [listGoodReceive, setListGoodReceive] = useState([]);
+    const [listGoodToTransaction, setListGoodToTransaction] = useState([]);
 
     useEffect(() => {
-        axiosClient.get('/list_good_receive_transaction')
+        axiosClient.get('/list_good_from_aggregation')
             .then(({data}) => {
                 // Kiểm tra xem dữ liệu có tồn tại không trước khi thêm vào state
                 console.log("data", data.goods);
                 if (data && data.goods) {
-                    setListGoodReceive(data.goods);
+                    setListGoodToTransaction(data.goods);
                 }
             })
             .catch((error) => {
@@ -53,28 +53,13 @@ export function TransactionOfficeProvider({children}) {
             });
     }, []);
 
-    const [listOutgoingTransaction, setListOutgoingTransaction] = useState([])
+    const [listIncomingFromTransaction, setListIncomingFromTransaction] = useState([]);
     useEffect(() => {
-        axiosClient.get('/list_outgoing_transaction')
+        axiosClient.get('/list_incoming_from_transaction')
             .then(({data}) => {
-                // Kiểm tra xem dữ liệu có tồn tại không trước khi thêm vào state
                 console.log("data", data.shipmentGdTk);
                 if (data && data.shipmentGdTk) {
-                    setListOutgoingTransaction(data.shipmentGdTk);
-                }
-            })
-            .catch((error) => {
-                console.error('Error fetching data:', error);
-            });
-    }, []);
-    const [listIncomingTransaction, setListIncomingTransaction] = useState([])
-    useEffect(() => {
-        axiosClient.get('/list_incoming_transaction')
-            .then(({data}) => {
-                // Kiểm tra xem dữ liệu có tồn tại không trước khi thêm vào state
-                console.log("data", data.shipmentTkGd);
-                if (data && data.shipmentTkGd) {
-                    setListIncomingTransaction(data.shipmentTkGd);
+                    setListIncomingFromTransaction(data.shipmentGdTk);
                 }
             })
             .catch((error) => {
@@ -82,19 +67,35 @@ export function TransactionOfficeProvider({children}) {
             });
     }, []);
 
-    const [transactionList, setTransactionList] = useState([]);
-
+    const [listIncomingFromAggregation, setListIncomingFromAggregation] = useState([]);
     useEffect(() => {
-        axiosClient.get('/transactionPoint')
+        axiosClient.get('/list_incoming_from_aggregation')
             .then(({data}) => {
-                setTransactionList(data.transactionPoints);
-                setSubmitted(false);
+                console.log("data", data.shipmentTkTk);
+                if (data && data.shipmentTkTk) {
+                    setListIncomingFromAggregation(data.shipmentTkTk);
+                }
             })
             .catch((error) => {
                 console.error('Error fetching data:', error);
             });
     }, []);
-    // end cho diem.
+
+
+    const [listOutgoingToAggregation, setListOutgoingToAggregation] = useState([]);
+    useEffect(() => {
+        axiosClient.get('/list_outgoing_to_aggregation')
+            .then(({data}) => {
+                console.log("data", data.shipmentTkTk);
+                if (data && data.shipmentTkTk) {
+                    setListOutgoingToAggregation(data.shipmentTkTk);
+                }
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
+
 
     const [aggregationList, setAggregationList] = useState([]);
 
@@ -109,17 +110,36 @@ export function TransactionOfficeProvider({children}) {
             });
     }, []);
 
+
+    const [transactionList, setTransactionList] = useState([]);
+
+
+    useEffect(() => {
+        axiosClient.get('/transactionPoint')
+            .then(({data}) => {
+                setTransactionList(data.transactionPoints);
+                setSubmitted(false);
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
+
     return (
-        <TransactionOfficeContext.Provider
+        <AggregationEmployeeContext.Provider
             value={{
-                setSubmitted, data, listGood, listOutgoingTransaction,
-                listIncomingTransaction,
-                transactionList,
+                setSubmitted,
+                data,
+                listGoodToAggregation,
+                listIncomingFromTransaction,
+                listIncomingFromAggregation,
+                listGoodToTransaction,
                 aggregationList,
-                listGoodReceive,
+                transactionList,
+                listOutgoingToAggregation
             }}
         >
             {children}
-        </TransactionOfficeContext.Provider>
+        </AggregationEmployeeContext.Provider>
     );
 }

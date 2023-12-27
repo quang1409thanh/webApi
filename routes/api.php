@@ -4,6 +4,8 @@ use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\GoodController;
 use App\Http\Controllers\QRCodeController;
 use App\Http\Controllers\ShipmentGdTkController;
+use App\Http\Controllers\ShipmentTkGdController;
+use App\Http\Controllers\ShipmentTkTkController;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -53,8 +55,6 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
 
     // quyen cua lanh dao cong ty
     Route::group(['middleware' => ['role:companyLeader']], function () {
-        Route::apiResource('aggregationPoint', App\Http\Controllers\AggregationPointController::class);
-        Route::apiResource('transactionPoint', App\Http\Controllers\TransactionPointController::class);
         Route::apiResource('aggregationHead', App\Http\Controllers\AggregationPointHeadController::class);
         Route::apiResource('transactionHead', App\Http\Controllers\TransactionPointHeadController::class);
 
@@ -85,18 +85,37 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
          * Xác nhận hàng không chuyển được đến người nhận và trả lại điểm giao dịch.
          * Thống kê các hàng đã chuyển thành công, các hàng chuyển không thành công và trả lại điểm giao dịch.
          */
-
         Route::apiResource("/good", GoodController::class);
         Route::get("/list_good_send_transaction", [GoodController::class, 'send_transaction']);
         Route::get("/list_good_receive_transaction", [GoodController::class, 'receive_transaction']);
         Route::post('/create-shipment-gd-tk', [ShipmentGdTkController::class, 'createShipment']);
         Route::get('/list_outgoing_transaction', [ShipmentGdTkController::class, 'list_outgoing_transaction']);
+
+        Route::get('/list_outgoing_transaction/{id}', [ShipmentGdTkController::class, 'list_outgoing_transaction_detail']);
+        Route::get('/list_incoming_transaction', [ShipmentTkGdController::class, 'list_incoming_transaction']);
+
+        Route::post('/accept-tk-gd/{id}', [ShipmentTkGdController::class, 'accept']);
+
     });
 
 
     // Nhóm route cho AggregationEmployee Point Employee
     Route::group(['middleware' => ['role:aggregationPointEmployee']], function () {
         // Các route cho AggregationEmployee Point Employee
+
+
+        Route::get('/list_incoming_from_transaction', [ShipmentGdTkController::class, 'list_incoming_from_transaction']);
+        Route::get('/list_incoming_from_aggregation', [ShipmentTKTkController::class, 'list_incoming_from_aggregation']);
+        Route::get('/list_outgoing_to_aggregation', [ShipmentTKTkController::class, 'list_outgoing_to_aggregation']);
+        Route::get('/list_good_from_transaction', [ShipmentGdTkController::class, 'list_good_from_transaction']);
+        Route::get('/list_good_from_aggregation', [ShipmentTkTkController::class, 'list_good_from_aggregation']);
+        Route::post('/accept-gd-tk/{id}', [ShipmentGdTkController::class, 'accept']);
+        Route::post('/accept-tk-tk/{id}', [ShipmentTkTkController::class, 'accept']);
+
+
+        Route::post('/create-shipment-tk-tk', [ShipmentTKTkController::class, 'createShipment']);
+        Route::post('/create-shipment-tk-gd', [ShipmentTKGdController::class, 'createShipment']);
+
     });
 
     // Nhóm route cho Customer
@@ -110,5 +129,9 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     });
 
     Route::get('/qrcode/{orderCode}', [QRCodeController::class, 'generateQRCode']);
+
+    Route::get("/search_good/{id}", [\App\Http\Controllers\GoodController::class, 'search_good_by_code']);
+    Route::apiResource('aggregationPoint', App\Http\Controllers\AggregationPointController::class);
+    Route::apiResource('transactionPoint', App\Http\Controllers\TransactionPointController::class);
 
 });

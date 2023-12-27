@@ -2,8 +2,9 @@ import React, {useContext, useEffect, useState} from 'react';
 import {TransactionOfficeContext} from "./TransactionOfficeProvider.jsx";
 import {useNavigate} from "react-router-dom";
 
-const OrderListTransaction = () => {
-    const {listGood} = useContext(TransactionOfficeContext);
+const OrderListTransactionReceiving = () => {
+    const {listGoodReceive} = useContext(TransactionOfficeContext);
+    console.log("listGoodReceive", listGoodReceive);
     const navigate = useNavigate();
 
     const [data, setData] = useState([]);
@@ -11,8 +12,8 @@ const OrderListTransaction = () => {
     const [selectAll, setSelectAll] = useState(false);
 
     useEffect(() => {
-        setData(listGood);
-    }, [listGood]);
+        setData(listGoodReceive);
+    }, [listGoodReceive]);
 
     const handleSelectAll = () => {
         const updatedData = data.map(item => ({...item, check_: !selectAll}));
@@ -58,7 +59,7 @@ const OrderListTransaction = () => {
                             DANH SÁCH ĐƠN TẠO
                         </div>
                         <div className="container_product_list">
-                            {listGood.length > 0 ? (
+                            {listGoodReceive.length > 0 ? (
                                 <div className="nav_bar_service">
                                     <input type="button" value="Xóa" name="delete"/>
                                     <input
@@ -80,7 +81,7 @@ const OrderListTransaction = () => {
                                     <i style={{color: 'red'}}>*Không tìm thấy đơn hàng</i>
                                 </div>
                             )}
-                            {listGood.length > 0 && (
+                            {listGoodReceive.length > 0 && (
                                 <div className="product_list" id="product_list">
                                     <table id="product_list_table">
                                         <thead>
@@ -101,9 +102,7 @@ const OrderListTransaction = () => {
                                             <th>Tên Người Nhận</th>
                                             <th>Ngày tạo đơn</th>
                                             <th>Trạng thái</th>
-                                            <th className="py-2 px-4 border-b">Delete</th>
-                                            <th className="py-2 px-4 border-b">View/ Edit</th>
-                                            <th className="py-2 px-4 border-b">Chấp nhận</th>
+                                            <th>Action</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -134,22 +133,6 @@ const OrderListTransaction = () => {
                                                 <td>{item.status}</td>
                                                 <td className="py-2 px-4 border-b">
                                                     <form
-                                                        method="DELETE"
-                                                        onSubmit={(event) => handleDelete(event, item.id)}>
-                                                        <button type="submit"
-                                                                className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-                                                            DELETE
-                                                        </button>
-                                                    </form>
-                                                </td>
-                                                <td className="py-2 px-4 border-b">
-                                                    <a className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-                                                       href={`/transaction_staff/outgoing_bag_list/${item.id}`}>
-                                                        DETAIL
-                                                    </a>
-                                                </td>
-                                                <td className="py-2 px-4 border-b">
-                                                    <form
                                                         method="POST"
                                                         onSubmit={(event) => handleAccept(event, item.id)}>
                                                         <button type="submit"
@@ -158,7 +141,6 @@ const OrderListTransaction = () => {
                                                         </button>
                                                     </form>
                                                 </td>
-
                                             </tr>
                                         ))}
                                         </tbody>
@@ -173,4 +155,4 @@ const OrderListTransaction = () => {
     );
 };
 
-export default OrderListTransaction;
+export default OrderListTransactionReceiving;

@@ -1,11 +1,16 @@
 import "../../../css/transation_staff.css"
 
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import axiosClient from "../../../axios.js";
 import AddressSelect from "../../Common/FindPost/AddressSelect.jsx";
 import AddressSelectionTransactionOfficer from "../../Common/FindPost/AddressSelectionTransactionOfficer.jsx";
+import {TransactionOfficeContext} from "./TransactionOfficeProvider.jsx";
 
 const TransactionStaff = () => {
+
+    const {data, transactionList} = useContext(TransactionOfficeContext);
+
+    const id = data?.transaction_officer?.transaction_point_id;
     const [sendName, setSendName] = useState('');
     const [sendCity, setSendCity] = useState('');
     const [sendDistrict, setSendDistrict] = useState('');
@@ -29,6 +34,12 @@ const TransactionStaff = () => {
         // For example, you can update the parcelData state
         // to include a new r   ow, and then render it in the table.
     };
+    const renderOptions = (array) => {
+        return array.map(element => (
+            <option key={element.id} value={element.id}>{element.name}</option>
+        ));
+    };
+
 
     const updateTotal = () => {
         // Implement the logic to update the total
@@ -42,9 +53,9 @@ const TransactionStaff = () => {
                 code: '1',
                 sender_name: sendName,
                 receiver_name: recipientName,
-                sending_transaction_point_id: 1,
-                receiving_transaction_point_id: 2,
-                shipment_id: '0',
+                sending_transaction_point_id: id,
+                receiving_transaction_point_id: sendPostalCode,
+                shipment_id_gd_tk: '0',
                 goods_information: null,
                 package_type: packageType,
                 weight: weight,
@@ -146,12 +157,30 @@ const TransactionStaff = () => {
                                         <input type="text" id="recipient_name" name="senderName" value={recipientName}
                                                onChange={(e) => setRecipientName(e.target.value)} required/>
                                     </div>
-                                    <AddressSelectionTransactionOfficer
-                                        onSelectProvince={(code, text) => handleAddressChange(code, text, 'province')}
-                                        onSelectDistrict={(code, text) => handleAddressChange(code, text, 'district')}
-                                        onSelectWard={(code, text) => handleAddressChange(code, text, 'ward')}
-                                        onSelectDetail={(value) => handleAddressChange(null, value, 'detailed_address')}
-                                    />
+                                    {/*<AddressSelectionTransactionOfficer*/}
+                                    {/*    onSelectProvince={(code, text) => handleAddressChange(code, text, 'province')}*/}
+                                    {/*    onSelectDistrict={(code, text) => handleAddressChange(code, text, 'district')}*/}
+                                    {/*    onSelectWard={(code, text) => handleAddressChange(code, text, 'ward')}*/}
+                                    {/*    onSelectDetail={(value) => handleAddressChange(null, value, 'detailed_address')}*/}
+                                    {/*/>*/}
+                                    <div className="mb-4">
+                                        <label htmlFor="aggregation_point_id"
+                                               className="block text-sm font-medium text-gray-700">CHọn điểm giao
+                                            dịch</label>
+                                        <select
+                                            id={'transaction_point_id'}
+                                            name={'transaction_point_id'}
+                                            value={sendPostalCode}
+                                            onChange={(e) => setSendPostalCode(e.target.value)}
+                                            style={{width: '100%'}}
+                                            required
+                                        >
+                                            <option disabled value="">
+                                                Chon điểm giao dịch
+                                            </option>
+                                            {renderOptions(transactionList)}
+                                        </select>
+                                    </div>
 
                                     <div className="form-group">
                                         <div>
@@ -283,7 +312,8 @@ const TransactionStaff = () => {
                 </div>
             </main>
         </div>
-    );
+    )
+        ;
 };
 
 export default TransactionStaff;
