@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -14,9 +13,7 @@ return new class extends Migration
         Schema::create('shipment_gd_tks', function (Blueprint $table) {
             $table->id();
 
-//            $table->unsignedBigInteger('shipper_id')->nullable();
-//            $table->foreign('shipper_id')->references('id')->on('shippers')->onDelete('set null');
-            $table->enum('status', ['đang chờ chuyển ', 'đang chuyển', 'chuyển thành công', 'thất bại'])->default('đang chờ chuyển');
+            $table->enum('status', ['đang chờ chuyển ', 'chuyển thành công', 'thất bại'])->default('đang chờ chuyển');
 
             $table->timestamps();
             // Khóa ngoại đến điểm gửi hàng (nếu có)

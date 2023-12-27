@@ -1,14 +1,29 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {TransactionOfficeContext} from "./TransactionOfficeProvider.jsx";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
+import axiosClient from "../../../axios.js";
 
-const OrderListTransaction = () => {
-    const {listGood} = useContext(TransactionOfficeContext);
-    const navigate = useNavigate();
+const OutgoingBagListTransactionDetails = () => {
+    const {dynamicValue} = useParams();
 
     const [data, setData] = useState([]);
     const [selectedOrderIds, setSelectedOrderIds] = useState([]);
     const [selectAll, setSelectAll] = useState(false);
+    const [listGood, setListGood] = useState([]);
+
+    useEffect(() => {
+        axiosClient.get(`/list_outgoing_transaction/${dynamicValue}`)
+            .then(({data}) => {
+                // Kiểm tra xem dữ liệu có tồn tại không trước khi thêm vào state
+                console.log("data", data.goods);
+                if (data && data.goods) {
+                    setListGood(data.goods);
+                }
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
 
     useEffect(() => {
         setData(listGood);
@@ -55,7 +70,7 @@ const OrderListTransaction = () => {
                 <div id="mainContent">
                     <div className="full_container">
                         <div className="content_title">
-                            DANH SÁCH ĐƠN TẠO
+                            DANH SÁCH ĐƠN CỦA TÚI HÀNG
                         </div>
                         <div className="container_product_list">
                             {listGood.length > 0 ? (
@@ -94,16 +109,15 @@ const OrderListTransaction = () => {
                                                     checked={selectAll}
                                                 />
                                             </th>
-                                            <th>Điểm giao dịch gửi</th>
-                                            <th>Điểm giao dịch nhận</th>
+                                            <th>Bưu cục giao dịch</th>
                                             <th>Mã đơn hàng</th>
                                             <th>Tên Người Gửi</th>
                                             <th>Tên Người Nhận</th>
                                             <th>Ngày tạo đơn</th>
                                             <th>Trạng thái</th>
+                                            <th>Cập nhật trạng thái</th>
                                             <th className="py-2 px-4 border-b">Delete</th>
                                             <th className="py-2 px-4 border-b">View/ Edit</th>
-                                            <th className="py-2 px-4 border-b">Chấp nhận</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -120,10 +134,8 @@ const OrderListTransaction = () => {
                                                     />
                                                 </td>
                                                 <td>
-                                                    <span>{item.sending_transaction_point.name}</span>
-                                                </td>
-                                                <td>
-                                                    <span>{item.receiving_transaction_point.name}</span>
+                                                    <span>{item.sending_transaction_point_id}</span>
+                                                    <span>{item.receiving_transaction_point_id}</span>
                                                 </td>
                                                 <td>{item.code}</td>
                                                 <td>{item.sender_name}</td>
@@ -132,6 +144,27 @@ const OrderListTransaction = () => {
                                                     <span>{item.created_at}</span>
                                                 </td>
                                                 <td>{item.status}</td>
+                                                <td>
+                                                    <span>
+                                                      <select name="select_trang_thai" className="select_trang_thai">
+                                                        <option>--CN Trạng thái--</option>
+                                                        <option>Chấp nhận gửi</option>
+                                                        <option>Đã giao hàng</option>
+                                                        <option>Giao thất bại</option>
+                                                        <option>Thất lạc</option>
+                                                      </select>
+                                                    </span>
+                                                    <span>
+                                                      <div className="btn_cn_trang_thai">
+                                                        <input
+                                                            type="button"
+                                                            className="cn_trang_thai check_btn"
+                                                            code={item.id}
+                                                            value="OK"
+                                                        />
+                                                      </div>
+                                                    </span>
+                                                </td>
                                                 <td className="py-2 px-4 border-b">
                                                     <form
                                                         method="DELETE"
@@ -144,7 +177,7 @@ const OrderListTransaction = () => {
                                                 </td>
                                                 <td className="py-2 px-4 border-b">
                                                     <a className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-                                                       href={`/transaction_staff/outgoing_bag_list/${item.id}`}>
+                                                       href={`transaction_staff/order_details/${item.id}`}>
                                                         DETAIL
                                                     </a>
                                                 </td>
@@ -173,4 +206,4 @@ const OrderListTransaction = () => {
     );
 };
 
-export default OrderListTransaction;
+export default OutgoingBagListTransactionDetails;

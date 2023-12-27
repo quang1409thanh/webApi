@@ -1,11 +1,16 @@
 import "../../../css/transation_staff.css"
 
-import React, {useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import axiosClient from "../../../axios.js";
 import AddressSelect from "../../Common/FindPost/AddressSelect.jsx";
 import AddressSelectionTransactionOfficer from "../../Common/FindPost/AddressSelectionTransactionOfficer.jsx";
+import {TransactionOfficeContext} from "./TransactionOfficeProvider.jsx";
 
 const TransactionStaff = () => {
+
+    const {data, transactionList} = useContext(TransactionOfficeContext);
+
+    const id = data?.transaction_officer?.transaction_point_id;
     const [sendName, setSendName] = useState('');
     const [sendCity, setSendCity] = useState('');
     const [sendDistrict, setSendDistrict] = useState('');
@@ -15,10 +20,6 @@ const TransactionStaff = () => {
     const [sendEmail, setSendEmail] = useState('');
 
     const [recipientName, setRecipientName] = useState('');
-    const [recipientCity, setRecipientCity] = useState('');
-    const [recipientDistrict, setRecipientDistrict] = useState('');
-    const [recipientCommune, setRecipientCommune] = useState('');
-    const [recipientPostalCode, setRecipientPostalCode] = useState('');
     const [recipientPhoneNumber, setRecipientPhoneNumber] = useState('');
     const [recipientEmail, setRecipientEmail] = useState('');
 
@@ -28,13 +29,17 @@ const TransactionStaff = () => {
     const [chuDanNV, setChuDanNV] = useState('');
     const [dichVu, setDichVu] = useState('');
 
-    const [parcelData, setParcelData] = useState([]);
-
     const addRow = () => {
         // Implement the logic to add a new row
         // For example, you can update the parcelData state
-        // to include a new row, and then render it in the table.
+        // to include a new r   ow, and then render it in the table.
     };
+    const renderOptions = (array) => {
+        return array.map(element => (
+            <option key={element.id} value={element.id}>{element.name}</option>
+        ));
+    };
+
 
     const updateTotal = () => {
         // Implement the logic to update the total
@@ -46,18 +51,20 @@ const TransactionStaff = () => {
         axiosClient
             .post('/good', {
                 code: '1',
-                sending_transaction_point_id: 2,
-                receiving_transaction_point_id: 3,
-                shipment_id: '0',
+                sender_name: sendName,
+                receiver_name: recipientName,
+                sending_transaction_point_id: id,
+                receiving_transaction_point_id: sendPostalCode,
+                shipment_id_gd_tk: '0',
                 goods_information: null,
-                loai_hang: packageType,
+                package_type: packageType,
                 weight: weight,
-                chi_dan_gui: chiDanGui,
-                chu_dan_nv: chuDanNV,
-                dich_vu: dichVu,
-                cuoc_chinh: 34,
-                phu_thu: 0,
-                thu_ho: 0,
+                instructions_send: chiDanGui,
+                instructions_staff: chuDanNV,
+                service: dichVu,
+                main_fee: 34,
+                surcharge: 0,
+                collection_fee: 0,
                 status: 'Chấp nhận gửi',
                 history: null,
             })
@@ -150,12 +157,30 @@ const TransactionStaff = () => {
                                         <input type="text" id="recipient_name" name="senderName" value={recipientName}
                                                onChange={(e) => setRecipientName(e.target.value)} required/>
                                     </div>
-                                    <AddressSelectionTransactionOfficer
-                                        onSelectProvince={(code, text) => handleAddressChange(code, text, 'province')}
-                                        onSelectDistrict={(code, text) => handleAddressChange(code, text, 'district')}
-                                        onSelectWard={(code, text) => handleAddressChange(code, text, 'ward')}
-                                        onSelectDetail={(value) => handleAddressChange(null, value, 'detailed_address')}
-                                    />
+                                    {/*<AddressSelectionTransactionOfficer*/}
+                                    {/*    onSelectProvince={(code, text) => handleAddressChange(code, text, 'province')}*/}
+                                    {/*    onSelectDistrict={(code, text) => handleAddressChange(code, text, 'district')}*/}
+                                    {/*    onSelectWard={(code, text) => handleAddressChange(code, text, 'ward')}*/}
+                                    {/*    onSelectDetail={(value) => handleAddressChange(null, value, 'detailed_address')}*/}
+                                    {/*/>*/}
+                                    <div className="mb-4">
+                                        <label htmlFor="aggregation_point_id"
+                                               className="block text-sm font-medium text-gray-700">CHọn điểm giao
+                                            dịch</label>
+                                        <select
+                                            id={'transaction_point_id'}
+                                            name={'transaction_point_id'}
+                                            value={sendPostalCode}
+                                            onChange={(e) => setSendPostalCode(e.target.value)}
+                                            style={{width: '100%'}}
+                                            required
+                                        >
+                                            <option disabled value="">
+                                                Chon điểm giao dịch
+                                            </option>
+                                            {renderOptions(transactionList)}
+                                        </select>
+                                    </div>
 
                                     <div className="form-group">
                                         <div>
@@ -287,7 +312,11 @@ const TransactionStaff = () => {
                 </div>
             </main>
         </div>
-    );
+    )
+        ;
 };
 
 export default TransactionStaff;
+
+///
+

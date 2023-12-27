@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Good;
+use App\Models\ShipmentTkGd;
 use App\Models\TransactionPoint;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class GoodController extends Controller
@@ -31,26 +33,41 @@ class GoodController extends Controller
             'code' => 'required|unique:goods',
             'sending_transaction_point_id' => 'nullable|exists:transaction_points,id',
             'receiving_transaction_point_id' => 'nullable|exists:transaction_points,id',
+            'sender_name' => 'nullable',
+            'receiver_name' => 'nullable',
             'shipment_id' => 'nullable',
             'goods_information' => 'nullable',
-            'loai_hang' => 'nullable',
+            'package_type' => 'nullable',
             'weight' => 'nullable',
-            'chi_dan_gui' => 'nullable',
-            'chu_dan_nv' => 'nullable',
-            'dich_vu' => 'nullable',
-            'cuoc_chinh' => 'nullable',
-            'phu_thu' => 'nullable',
-            'thu_ho' => 'nullable',
+            'instructions_send' => 'nullable',
+            'instructions_staff' => 'nullable',
+            'service' => 'nullable',
+            'main_fee' => 'nullable',
+            'surcharge' => 'nullable',
+            'collection_fee' => 'nullable',
             'status' => 'required|in:Chấp nhận gửi,Đang gửi,Đã gửi,Đang giao hàng,Hoàn thành giao hàng,Giao hàng thất bại',
             'history' => 'nullable',
             'current_location_id' => 'nullable',
             'current_location_type' => 'nullable'
         ]);
 
-        $transactionPoint = TransactionPoint::find(2);
+        $user = Auth::user();
+
+        if ($user->relationLoaded('transactionOfficer')) {
+            $transactionOfficer = $user->transactionOfficer;
+            $id = $transactionOfficer->transaction_point_id;
+        } else $id = 1;
+        $transactionPoint = TransactionPoint::find($id);
+        // Tạo giá trị status mới với tên điểm giao dịch
+        $status = 'Chấp nhận gửi tại địa điểm giao dịch ' . $transactionPoint->name;
+
+        // Gán giá trị status vào dữ liệu
+        $data['status'] = $status;
+
+
         // Tìm điểm giao dịch mới
         // Tạo mã ngẫu nhiên cho đơn hàng
-        $randomCode = preg_replace('/[^A-Za-z0-9]/', '', Str::random(10));
+        $randomCode = preg_replace('/[^A-Za-z0-9]/', '', Str::random(30));
 
         $good = new Good;
         $good->fill($data);
@@ -110,5 +127,66 @@ class GoodController extends Controller
 
         return response()->json(['message' => 'Đơn hàng đã được xóa'], 200);
     }
+
+    public function send_transaction()
+    {
+        $user = Auth::user();
+
+        if ($user->relationLoaded('transactionOfficer')) {
+            // Lấy giá trị của transactionOfficer có user_id tương ứng
+            $transactionOfficer = $user->transactionOfficer;
+
+            // Lấy ra những Goods có sending_transaction_point_id giống với transactionOfficer
+            $goods = Good::with(['sendingTransactionPoint', 'receivingTransactionPoint'])->where('sending_transaction_point_id', $transactionOfficer->transaction_point_id)
+                ->get();
+            return response()->json(['goods' => $goods]);
+        } else {
+            return response()->json(['message' => 'Không có giá trị nào!']);
+        }
+    }
+
+    public function receive_transaction()
+    {
+        $user = Auth::user();
+
+        if ($user->relationLoaded('transactionOfficer')) {
+            $transactionOfficer = $user->transactionOfficer;
+
+            // Lấy tất cả các ShipmentGdTk có status là "chuyển thành công đến điểm tập kết"
+            $shipments = ShipmentTKGd::where('receiving_transaction_point_id', $transactionOfficer->transaction_point_id)
+                ->where('status', 'chuyển thành công')
+                ->get();
+
+            // Kiểm tra nếu có shipments
+            if ($shipments->count() > 0) {
+                // Tạo mảng để lưu trữ tất cả các good tương ứng
+                $allGoods = [];
+
+                foreach ($shipments as $shipment) {
+                    // Lấy tất cả các good có trường shipment_id_gd_tk là ID của shipmentGdTk
+                    $goods = Good::with(['sendingTransactionPoint', 'receivingTransactionPoint'])->where('shipment_id_tk_gd', $shipment->id)->get();
+
+                    // Thêm các good vào mảng tổng hợp
+                    $allGoods = array_merge($allGoods, $goods->toArray());
+                }
+
+                return response()->json(['goods' => $allGoods], 200);
+            } else {
+                return response()->json(['message' => 'Không có shipment nào có status là "chuyển thành công đến điểm tập kết"'], 404);
+            }
+        } else {
+            return response()->json(['message' => 'Không có giá trị nào!'], 404);
+        }
+    }
+
+
+    public function search_good_by_code($code)
+    {
+        // Truy vấn CSDL để lấy đơn hàng có mã trường code
+        $good = Good::where('code', $code)->first();
+
+        return $good;
+    }
+
 
 }

@@ -31,6 +31,7 @@ import TransactionOfficerEdit from "./components/Users/TransactionHead/Transacti
 import Aggregation_employee from "./components/Users/AggregationEmployee/AggregationEmployee.jsx";
 import AggregationEmployeeLayout from "./components/Users/AggregationEmployee/AggregationEmployeeLayout.jsx";
 import FindView from "./components/Common/FindPost/FindView.jsx";
+import CreatePackageComponent from "./components/Users/TransactionOffice/CreatePackageComponent.jsx";
 
 
 function AppRouter() {
@@ -61,9 +62,18 @@ function AppRouter() {
                     <Route path="/" element={<AggregationEmployee/>}>
                         <Route path="/aggregation_employee" element={<AggregationEmployeeLayout/>}/>
                         <Route path="/aggregation_employee/order_search" element={<AggregationEmployeeLayout/>}/>
-                        <Route path="/aggregation_employee/order_list" element={<AggregationEmployeeLayout/>}/>
-                        <Route path="/aggregation_employee/outgoing_list" element={<AggregationEmployeeLayout/>}/>
-                        <Route path="/aggregation_employee/incoming_list" element={<AggregationEmployeeLayout/>}/>
+                        <Route path="/aggregation_employee/order_list_to_aggregation"
+                               element={<AggregationEmployeeLayout/>}/>
+                        <Route path="/aggregation_employee/order_list_to_transaction"
+                               element={<AggregationEmployeeLayout/>}/>
+                        <Route path="/aggregation_employee/outgoing_list_to_aggregation" element={<AggregationEmployeeLayout/>}/>
+                        <Route path="/aggregation_employee/incoming_list_transaction"
+                               element={<AggregationEmployeeLayout/>}/>
+                        <Route path="/aggregation_employee/incoming_list_from_aggregation"
+                               element={<AggregationEmployeeLayout/>}/>
+                        <Route path="/aggregation_employee/create-package-tk-tk" element={<AggregationEmployeeLayout/>}/>
+                        <Route path="/aggregation_employee/create-package-tk-gd" element={<AggregationEmployeeLayout/>}/>
+
                     </Route>
                 )}
                 {(userRole === "transaction_point_head" &&
@@ -79,11 +89,13 @@ function AppRouter() {
                         <Route path="/transaction_staff/order_search" element={<TransactionOfficeLayout/>}/>
                         <Route path="/transaction_staff/order_list" element={<TransactionOfficeLayout/>}/>
                         <Route path="/transaction_staff/order_list_receive" element={<TransactionOfficeLayout/>}/>
-                        <Route path="transaction_staff/outgoing_bag_list" element={<TransactionOfficeLayout/>}/>
+                        <Route path="/transaction_staff/outgoing_bag_list" element={<TransactionOfficeLayout/>}/>
+                        <Route path="/transaction_staff/outgoing_bag_list/:dynamicValue"
+                               element={<TransactionOfficeLayout/>}/>
                         <Route path="/transaction_staff/incoming_bag_list" element={<TransactionOfficeLayout/>}/>
                         <Route path="/transaction_staff/success_order_list" element={<TransactionOfficeLayout/>}/>
                         <Route path="/transaction_staff/failed_order_list" element={<TransactionOfficeLayout/>}/>
-                        <Route path="/aggregation_employee" element={<AggregationEmployee/>}/>
+                        <Route path="/transaction_staff/create-package" element={<TransactionOfficeLayout/>}/>
                     </Route>
                 )}
                 {(userRole === "guess") &&
