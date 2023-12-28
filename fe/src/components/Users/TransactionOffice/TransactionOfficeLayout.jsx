@@ -14,6 +14,7 @@ import CreatePackageComponent from "./CreatePackageComponent.jsx";
 import OutgoingBagListTransaction from "./OutgoingBagListTransaction.jsx";
 import OutgoingBagListTransactionDetails from "./OutgoingBagListTransactionDetails.jsx";
 import OrderListTransactionReceiving from "./OrderListTransactionReceiving.jsx";
+import Invoice from "./Invoice.jsx";
 
 const TransactionOfficeLayout = () => {
     let location = useLocation();

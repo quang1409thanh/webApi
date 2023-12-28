@@ -32,7 +32,11 @@ import Aggregation_employee from "./components/Users/AggregationEmployee/Aggrega
 import AggregationEmployeeLayout from "./components/Users/AggregationEmployee/AggregationEmployeeLayout.jsx";
 import FindView from "./components/Common/FindPost/FindView.jsx";
 import CreatePackageComponent from "./components/Users/TransactionOffice/CreatePackageComponent.jsx";
+<<<<<<< HEAD
 import Find_postal_items from "./components/Common/FindPost/Find_postal_items.jsx";
+=======
+import Invoice from "./components/Users/TransactionOffice/Invoice.jsx";
+>>>>>>> 9c8469a8717916e8a222503debccc3ea099a6fff
 
 
 function AppRouter() {
@@ -87,6 +91,7 @@ function AppRouter() {
                 {userRole === 'transaction_officer' && (
                     <Route path="/" element={<TransactionOffice/>}>
                         <Route path="/transaction_staff" element={<TransactionOfficeLayout/>}/>
+                        <Route path="/new-page" element={<Invoice/>}/>
                         <Route path="/transaction_staff/order_search" element={<TransactionOfficeLayout/>}/>
                         <Route path="/transaction_staff/order_list" element={<TransactionOfficeLayout/>}/>
                         <Route path="/transaction_staff/order_list_receive" element={<TransactionOfficeLayout/>}/>
