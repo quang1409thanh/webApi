@@ -32,6 +32,7 @@ import Aggregation_employee from "./components/Users/AggregationEmployee/Aggrega
 import AggregationEmployeeLayout from "./components/Users/AggregationEmployee/AggregationEmployeeLayout.jsx";
 import FindView from "./components/Common/FindPost/FindView.jsx";
 import CreatePackageComponent from "./components/Users/TransactionOffice/CreatePackageComponent.jsx";
+import Find_postal_items from "./components/Common/FindPost/Find_postal_items.jsx";
 
 
 function AppRouter() {
@@ -111,6 +112,7 @@ function AppRouter() {
                 <Route path="/login" element={<Login/>}/>
             </Route>
             <Route path="/list_office" element={<FindView/>}/>
+            <Route path="/find_postal_items" element={<Find_postal_items/>}/>
             <Route path="/home" element={<HomeGuess/>}/>
             <Route path="/gioithieu" element={<GoodsQr/>}/>
         </Routes>
