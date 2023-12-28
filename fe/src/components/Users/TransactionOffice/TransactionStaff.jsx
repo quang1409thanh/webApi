@@ -80,7 +80,7 @@ const TransactionStaff = () => {
                 history: null,
             })
             .then(() => {
-                // setSubmitted(true);
+                history.push('/transaction_staff/invoice-page'); // Replace '/new-page' with the desired URL
                 // showToast('Thêm thành công');
             })
             .catch((error) => {
@@ -168,6 +168,7 @@ const TransactionStaff = () => {
                                         <input type="text" id="recipient_name" name="senderName" value={recipientName}
                                                onChange={(e) => setRecipientName(e.target.value)} required/>
                                     </div>
+
                                   {/* <div style={{ paddingTop: '13px' }}>
                                     <br>
                                     </br>
@@ -205,6 +206,12 @@ const TransactionStaff = () => {
                                     </select>
                                 </div>
                             </div>
+
+//                                     <div style={{paddingTop: '13px'}}>
+//                                         <br>
+//                                         </br>
+//                                     </div>
+
                                     {/*<AddressSelectionTransactionOfficer*/}
                                     {/*    onSelectProvince={(code, text) => handleAddressChange(code, text, 'province')}*/}
                                     {/*    onSelectDistrict={(code, text) => handleAddressChange(code, text, 'district')}*/}
@@ -229,8 +236,10 @@ const TransactionStaff = () => {
                                             </option>
                                             {renderOptions(transactionList)}
                                         </select>
-                                    </div> */}
-                                    {/* <div style={{ marginTop: '12px' }}>
+
+                                    </div>
+                                    <div style={{marginTop: '12px'}}>
+
                                         <br>
                                         </br>
                                     </div> */}
@@ -358,6 +367,7 @@ const TransactionStaff = () => {
                             <div className="submit_info">
                                 <div className="btn_submit_info">
                                     <input type="button" value="TẠO ĐƠN" onClick={handleSubmit}/>
+                                    <a href="/new-page">Tạo hóa đơn</a>
                                 </div>
                             </div>
                         </form>
