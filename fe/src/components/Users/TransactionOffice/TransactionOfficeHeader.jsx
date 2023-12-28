@@ -100,8 +100,8 @@ export default function TransactionOfficeHeader() {
                                         Trang Tổng Hợp
                                     </NavLink>
                                 </li>
-                                <li className="menu_item">
-                                    <b>Trang Nhân viên Giao dịch</b>
+                                <li className="menu_item mr-10">
+                                    <b>Trang Nhân viên giao dịch</b>
                                 </li>
                             </ul>
                         </nav>
