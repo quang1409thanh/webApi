@@ -65,7 +65,7 @@ const AggregationEditForm = ({ id }) => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen bg-gray-100 mt-36 mb-36">
+        <div className="flex flex-col items-center justify-center h-screen bg-gray-100 mt-2022 mt-36 mb-36">
             <hr />
             <br />
             <h1>Trang chỉnh sửa thông tin trưởng điểm tập kết</h1>

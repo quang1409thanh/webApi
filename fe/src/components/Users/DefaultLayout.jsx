@@ -44,7 +44,7 @@ export default function DefaultLayout() {
 
     return (
         <>
-            <div className="min-h-full">
+            <div className="min-h-full bgg-xam">
                 {roleHeaderMapping[userRole]}
                 <Outlet />
                 <Toast />
