@@ -24,11 +24,11 @@ const ShowTransaction = ({headerType, body}) => {
                         <br/>
                         <br/>
                         <br/>
-                        <TransactionEditForm id={dynamicValue} />
+                        <TransactionEditForm id={dynamicValue}/>
                     </CompanyLeaderProvider>
                 </div>
             </section>
-            {headerType !== 'none' && <Footer/>}
+            <Footer/>
         </div>
     );
 };
