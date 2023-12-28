@@ -206,7 +206,7 @@ const UserProfile = () => {
     };
 
     return (
-        <div className="max-w-xl mx-auto mt-8 p-6 bg-white rounded-lg shadow-md">
+        <div className="max-w-xl mx-auto mt-20 p-6 bg-white rounded-lg shadow-md">
             <h2 className="text-3xl font-bold mb-6">User Information</h2>
 
             <div className="grid grid-cols-2 gap-4 mb-4">

@@ -96,7 +96,7 @@ export default function AggregationHeadHeader() {
                                             )
                                         }
                                     >
-                                        Quản lý các điểm giao dịch.
+                                        Quản lý các điểm giao dịch
                                     </NavLink>
                                 </li>
 
@@ -116,8 +116,8 @@ export default function AggregationHeadHeader() {
                                     </NavLink>
                                 </li>
 
-                                <li className="menu_item">
-                                    <b>Trang Trưởng Điểm tập kết</b>
+                                <li className="menu_item mr-10">
+                                    <b>Trang Trưởng điểm tập kết</b>
                                 </li>
                             </ul>
                         </nav>

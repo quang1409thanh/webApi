@@ -13,7 +13,7 @@ import ShowProfile from "./components/Users/ShowProfile.jsx";
 import ResetPassword from "./components/Users/ResetPassword.jsx";
 import AddUserLayout from "./components/Users/companyLeader/AddAccount/AddUserLayout.jsx";
 import TransactionOfficeLayout from "./components/Users/TransactionOffice/TransactionOfficeLayout.jsx";
-import GoodsQr from "./components/Users/GoodsQr.jsx";
+import GoodsQr from "./components/Users/Info.jsx";
 import React, {useContext} from "react";
 import AggregationEmployee from "./components/Users/AggregationEmployee/AggregationEmployee.jsx";
 import CompanyLeader from "./components/Users/companyLeader/CompanyLeader.jsx";

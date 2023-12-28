@@ -53,11 +53,11 @@ const AggregationEmployeeAdd = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
+        <div className="flex flex-col items-center justify-center h-screen mt-20">
             <h1>Thêm tài khoản</h1>
             <form
                 onSubmit={handleSubmit}
-                className="max-w-md mx-auto mt-16 p-4 bg-blue-200 rounded shadow-md w-full"
+                className="max-w-md mx-auto p-4 bg-blue-200 rounded shadow-md w-full"
             >
                 {/* Các trường nhập dữ liệu */}
                 {/*<div className="mb-4">*/}

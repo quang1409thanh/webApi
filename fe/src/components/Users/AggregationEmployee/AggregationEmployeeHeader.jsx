@@ -101,8 +101,8 @@ export default function AggregationEmployeeHeader() {
                                         Trang Tổng Hợp
                                     </NavLink>
                                 </li>
-                                <li className="menu_item">
-                                    <b>Trang Nhân viên Điểm tập kết</b>
+                                <li className="menu_item mr-10">
+                                    <b>Trang Nhân viên điểm tập kết</b>
                                 </li>
                             </ul>
                         </nav>

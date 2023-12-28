@@ -29,7 +29,7 @@ const AggregationEmployeeList = () => {
     return (
         <div className="max-w-screen-lg mx-auto px-4">
             <br />
-            <h1>Danh sách các nhân viên điểm tạp kết</h1>
+            <h1>Danh sách các nhân viên điểm tập kết</h1>
             <table className="min-w-full bg-white border border-gray-300">
                 <thead>
                     <tr>
