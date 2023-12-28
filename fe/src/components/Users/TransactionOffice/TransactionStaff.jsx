@@ -168,10 +168,49 @@ const TransactionStaff = () => {
                                         <input type="text" id="recipient_name" name="senderName" value={recipientName}
                                                onChange={(e) => setRecipientName(e.target.value)} required/>
                                     </div>
-                                    <div style={{paddingTop: '13px'}}>
-                                        <br>
-                                        </br>
-                                    </div>
+
+                                  {/* <div style={{ paddingTop: '13px' }}>
+                                    <br>
+                                    </br>
+                                </div> */}
+                                <div class="form-group">
+                                <div>
+                                    <label for="city">Tỉnh/Thành Phố:</label>
+                                    <select id="recipient_city" name="city" class="citySelect" required>
+                                        <option >--Chọn Tỉnh/Thành phố--</option>
+                                    </select>
+                                </div>
+                    
+                                <div>
+                                    <label for="district">Quận/Huyện:</label>
+                                    <select id="recipient_district" name="district" class="districtSelect" required>
+                                        <option >--Chọn Quận/Huyện--</option>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <label for="ward">Phường/Xã:</label>
+                                    <select id="recipient_commune" name="ward" class="communeSelect" required>
+                                        <option >--Chọn Phường/Xã--</option>
+                                        
+                                    </select>
+                                </div>
+                    
+                                <div>
+                                    <label for="postalCode">Mã Bưu Chính:</label>
+                                    <select id="recipient_postal_code" name="postalCode" class="postal_codeSelect" required>
+                                        <option >--Chọn Mã Bưu Chính--</option>
+                                       
+                                    </select>
+                                </div>
+                            </div>
+
+//                                     <div style={{paddingTop: '13px'}}>
+//                                         <br>
+//                                         </br>
+//                                     </div>
 
                                     {/*<AddressSelectionTransactionOfficer*/}
                                     {/*    onSelectProvince={(code, text) => handleAddressChange(code, text, 'province')}*/}
@@ -179,9 +218,10 @@ const TransactionStaff = () => {
                                     {/*    onSelectWard={(code, text) => handleAddressChange(code, text, 'ward')}*/}
                                     {/*    onSelectDetail={(value) => handleAddressChange(null, value, 'detailed_address')}*/}
                                     {/*/>*/}
-                                    <div className="mb-4">
+                                    
+                                    {/* <div className="mb-4">
                                         <label htmlFor="aggregation_point_id"
-                                               className="block text-sm font-medium text-gray-700">CHọn điểm giao
+                                               className="block text-sm font-medium text-gray-700">Chọn điểm giao
                                             dịch</label>
                                         <select
                                             id={'transaction_point_id'}
@@ -196,11 +236,13 @@ const TransactionStaff = () => {
                                             </option>
                                             {renderOptions(transactionList)}
                                         </select>
+
                                     </div>
                                     <div style={{marginTop: '12px'}}>
+
                                         <br>
                                         </br>
-                                    </div>
+                                    </div> */}
                                     <div className="form-group">
                                         <div>
                                             <label htmlFor="recipient_phone_number">Số Điện Thoại:</label>
@@ -264,25 +306,19 @@ const TransactionStaff = () => {
                                 </div>
 
                                 <div className="table-section">
-                                    <div>
-                                        <span style={{fontSize: '18px', fontWeight: 400}}>
-                                          Nội dung trị giá bưu gửi:
-                                        </span>
+                                    
+                                    
+                                    <div >
+                                        <br>
+                                        </br>
+                                        <br>
+                                        </br>
+                                        <br>
+                                        </br>
+                                        <br>
+                                        </br>
+                                        
                                     </div>
-                                    <table id="parcelTable">
-                                        <thead>
-                                        <tr>
-                                            <th>Nội Dung</th>
-                                            <th>Số Lượng</th>
-                                            <th>Trị Giá</th>
-                                            <th>Giấy Tờ Đi Kèm</th>
-                                        </tr>
-                                        </thead>
-                                        {/* Render rows here based on parcelData state */}
-                                    </table>
-                                    <span className="add-row-btn" onClick={addRow}>
-                                        +Thêm Hàng
-                                      </span>
                                     <div className="total-section">
                                         <div>
                                             <label htmlFor="estimatedFee">Cước chính:</label>
