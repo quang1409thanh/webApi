@@ -101,7 +101,7 @@ export default function TransactionHeadHeader() {
                                 </li>
 
                                 <li className="menu_item">
-                                    <b>Trang Trưởng Điểm Giao dich</b>
+                                    <b>Trang trưởng điểm giao dịch</b>
                                 </li>
                             </ul>
                         </nav>

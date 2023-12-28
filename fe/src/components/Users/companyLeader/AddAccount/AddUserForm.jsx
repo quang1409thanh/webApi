@@ -84,7 +84,7 @@ const AddUserForm = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen bg-gray-100 mt-20">
+        <div className="flex flex-col items-center justify-center h-screen mt-20">
             <h1>Thêm tài khoản</h1>
             <form
                 onSubmit={handleSubmit}

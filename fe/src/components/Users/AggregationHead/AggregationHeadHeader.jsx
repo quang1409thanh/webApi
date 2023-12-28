@@ -96,7 +96,7 @@ export default function AggregationHeadHeader() {
                                             )
                                         }
                                     >
-                                        Quản lý các điểm giao dịch.
+                                        Quản lý các điểm giao dịch
                                     </NavLink>
                                 </li>
 

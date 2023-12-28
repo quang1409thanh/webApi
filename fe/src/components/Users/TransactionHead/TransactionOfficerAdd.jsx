@@ -3,8 +3,8 @@ import axiosClient from "../../../axios.js";
 import { TransactionHeadContext } from "./TransactionHeadProvider.jsx";
 
 const AggregationEmployeeAdd = () => {
-    const {data} = useContext(TransactionHeadContext);
-    const id = data?.transaction_point_head?.transaction_point_id || '';
+    const { data } = useContext(TransactionHeadContext);
+    const id = data?.transaction_point_head?.transaction_point_id || "";
     console.log("id ne:" + id); // In giá trị để kiểm tra
     const { setSubmitted } = useContext(TransactionHeadContext);
     const [formData, setFormData] = useState({
@@ -42,11 +42,11 @@ const AggregationEmployeeAdd = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
+        <div className="flex flex-col items-center justify-center h-screen bg-gray-100 mt-10">
             <h1>Thêm tài khoản</h1>
             <form
                 onSubmit={handleSubmit}
-                className="max-w-md mx-auto mt-16 p-4 bg-blue-200 rounded shadow-md w-full"
+                className="max-w-md mx-auto p-4 bg-blue-200 rounded shadow-md w-full"
             >
                 {/* Các trường nhập dữ liệu */}
                 {/*<div className="mb-4">*/}
