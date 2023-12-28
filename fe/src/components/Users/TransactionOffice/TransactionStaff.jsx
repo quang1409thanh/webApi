@@ -28,6 +28,7 @@ const TransactionStaff = () => {
     const [chiDanGui, setChiDanGui] = useState('--Chọn chỉ dẫn--');
     const [chuDanNV, setChuDanNV] = useState('');
     const [dichVu, setDichVu] = useState('');
+    const [totalRevenue, setTotalRevenue] = useState(0);
 
     const addRow = () => {
         // Implement the logic to add a new row
@@ -44,6 +45,16 @@ const TransactionStaff = () => {
     const updateTotal = () => {
         // Implement the logic to update the total
         // based on the values in the input fields.
+
+        const mainFee = parseFloat(document.getElementById('cuoc_chinh').value) || 0;
+        const surcharge = parseFloat(document.getElementById('phu_thu').value) || 0;
+        const collectionFee = parseFloat(document.getElementById('thu_ho').value) || 0;
+
+        // Tính toán tổng thu
+        const total = mainFee + surcharge + collectionFee;
+
+        // Cập nhật state totalRevenue
+        setTotalRevenue(total);
     };
 
     const handleSubmit = (e) => {
@@ -157,6 +168,11 @@ const TransactionStaff = () => {
                                         <input type="text" id="recipient_name" name="senderName" value={recipientName}
                                                onChange={(e) => setRecipientName(e.target.value)} required/>
                                     </div>
+                                  <div style={{ paddingTop: '13px' }}>
+                                    <br>
+                                    </br>
+                                </div>
+
                                     {/*<AddressSelectionTransactionOfficer*/}
                                     {/*    onSelectProvince={(code, text) => handleAddressChange(code, text, 'province')}*/}
                                     {/*    onSelectDistrict={(code, text) => handleAddressChange(code, text, 'district')}*/}
@@ -181,7 +197,10 @@ const TransactionStaff = () => {
                                             {renderOptions(transactionList)}
                                         </select>
                                     </div>
-
+                                    <div style={{ marginTop: '12px' }}>
+                                        <br>
+                                        </br>
+                                    </div>
                                     <div className="form-group">
                                         <div>
                                             <label htmlFor="recipient_phone_number">Số Điện Thoại:</label>
@@ -286,7 +305,13 @@ const TransactionStaff = () => {
 
                                         <div>
                                             <label htmlFor="cashOnDelivery">Thu hộ:</label>
-                                            <input type="number" id="thu_ho" name="cashOnDelivery"/>
+                                            {/*<input type="number" id="thu_ho" name="cashOnDelivery"/>*/}
+                                            <input
+                                                type="number"
+                                                id="thu_ho"
+                                                name="cashOnDelivery"
+                                                onInput={updateTotal}
+                                            />
                                         </div>
                                     </div>
 
@@ -297,6 +322,7 @@ const TransactionStaff = () => {
                                             id="total"
                                             name="total"
                                             readOnly
+                                            value={totalRevenue}
                                             style={{width: '50%'}}
                                         />
                                     </div>

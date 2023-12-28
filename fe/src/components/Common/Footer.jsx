@@ -29,7 +29,7 @@ const Footer = () => {
                         <div className="introduce-ft about-ft-item">
                             <p className="title-ft">Giới thiệu</p>
                             <ul>
-                                <li><a href="/introduce" target="_blank">Về Magic Post</a></li>
+                                <li><a href="/gioithieu" target="_blank">Về Magic Post</a></li>
                                 <li><a
                                     href="https://uet.vnu.edu.vn/truong-dai-hoc-cong-nghe-15-nam-xay-dung-va-truong-thanh/"
                                     target="_blank">Về UET</a></li>
