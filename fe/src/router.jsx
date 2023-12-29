@@ -122,7 +122,6 @@ function AppRouter() {
                         />
                     </Route>
                 )}
-
                 {userRole === 'transaction_officer' && (
                     <Route path="/" element={<TransactionOffice/>}>
                         <Route path="/transaction_staff" element={<TransactionOfficeLayout/>}/>
@@ -159,6 +158,7 @@ function AppRouter() {
             <Route path="/home" element={<HomeGuess />} />
             <Route path="/gioithieu" element={<GoodsQr />} />
             <Route path="/find_postal_items" element={<OrderSearch />} />
+            <Route path="/new-page" element={<Invoice />} />
         </Routes>
     );
 }

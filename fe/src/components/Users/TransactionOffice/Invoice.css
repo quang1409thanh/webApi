@@ -1,0 +1,202 @@
+body {
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.hoadon_container {
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.logo_qr_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo_hoadon img,
+.qr_hoadon img {
+    max-width: 100px;
+    height: auto;
+}
+
+.qr_hoadon {
+    display: flex;
+    align-items: center;
+}
+
+.code_hoadon {
+    background-color: #f5f5f5;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+h3 {
+    color: #333;
+}
+
+.hoadon_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.hoadon_left {
+    display: grid;
+    grid-template-rows: auto auto auto auto auto;
+    border: 1px solid #000;
+}
+
+.hoadon_right {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #000;
+}
+
+.info_customer,
+.info_parcel,
+.other_service,
+.sender_instructions,
+.commitment,
+.info_customer,
+.info_costs_weight,
+.stamped {
+    grid-row: span 1; /* Mỗi thành phần chiếm 1 hàng */
+    border-bottom: 1px solid #000;
+}
+
+.commitment,
+.stamped {
+    border-bottom: none;
+}
+
+.stamped,
+.info_costs_weight {
+    display: grid;
+    grid-template-columns: 5fr 3fr; /* Chia thành 2 cột bằng nhau */
+}
+
+.costs,
+.postal_stamped {
+    grid-row: span 2;
+    border-right: 1px solid #000;
+}
+
+.costs,
+.weight_ {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-column: span 1; /* Mỗi thành phần chiếm 1 cột */
+}
+
+.cost,
+.COD,
+.weight,
+.note_weight {
+    grid-row: span 1; /* Các thành phần con chiếm 1 cột */
+}
+
+.costs {
+    border-right: 1px solid #000;
+}
+
+.cost,
+.weight {
+    border-bottom: 1px solid #000;
+}
+
+.info_customer > div,
+.info_parcel > div,
+.other_service > div,
+.sender_instructions > div,
+.commitment > div {
+    margin: 10px;
+    grid-row: span 1;
+}
+
+.sectors_checkbox {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.box_tailieu,
+.box_hanghoa {
+    margin-right: 10px; /* Khoảng cách giữa các phần tử */
+}
+
+/* CSS cho tiêu đề "Thu của người nhận" */
+.cost_header {
+    margin-left: 10px;
+}
+
+/* CSS cho các mục chi phí */
+.cost_item {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* CSS cho các mục trong mỗi "cost_item" */
+.cost_item span {
+    margin-right: 10px;
+}
+
+/* Styles cho container chính giữa trang */
+.centered-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn_submit_hoadon {
+    margin: 10px;
+    width: 120px;
+    height: 50px;
+}
+
+/* Styles cho container của nút */
+.submit_hoadon {
+    display: flex;
+}
+
+/* Styles cho nút Xác nhận */
+.confirm-btn {
+    flex: 1;
+    background-color: #007bff; /* Màu xanh nước biển */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.confirm-btn:hover {
+    background-color: #0056b3; /* Màu xanh nước biển tối hơn khi di chuột qua */
+}
+
+/* Styles cho nút In */
+.print-btn {
+    flex: 1;
+    background-color: #28a745; /* Màu xanh lá cây */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.print-btn:hover {
+    background-color: #218838; /* Màu xanh lá cây tối hơn khi di chuột qua */
+}
