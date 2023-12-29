@@ -74,7 +74,7 @@ const OutgoingBagListTransactionDetails = () => {
                         </div>
                         <div className="container_product_list">
                             {listGood.length > 0 ? (
-                                <div className="nav_bar_service">
+                                <div className="nav_bar_service centered-container">
                                     <input type="button" value="Xóa" name="delete"/>
                                     <input
                                         type="button"
@@ -84,6 +84,15 @@ const OutgoingBagListTransactionDetails = () => {
                                         onClick={handleCreatePackage}
                                         // disabled={!selectAll}
                                     />
+                                    <input
+                                        type="button"
+                                        value="Sắp xếp tăng dần"
+                                    />
+                                    <input
+                                        type="button"
+                                        value="Sắp xếp giảm dần"
+                                    />
+
                                     <input
                                         type="button"
                                         value="ALL"
@@ -114,7 +123,6 @@ const OutgoingBagListTransactionDetails = () => {
                                             <th>Tên Người Gửi</th>
                                             <th>Tên Người Nhận</th>
                                             <th>Ngày tạo đơn</th>
-                                            <th>Trạng thái</th>
                                             <th>Cập nhật trạng thái</th>
                                             <th className="py-2 px-4 border-b">Delete</th>
                                             <th className="py-2 px-4 border-b">View/ Edit</th>
@@ -144,27 +152,6 @@ const OutgoingBagListTransactionDetails = () => {
                                                     <span>{item.created_at}</span>
                                                 </td>
                                                 <td>{item.status}</td>
-                                                <td>
-                                                    <span>
-                                                      <select name="select_trang_thai" className="select_trang_thai">
-                                                        <option>--CN Trạng thái--</option>
-                                                        <option>Chấp nhận gửi</option>
-                                                        <option>Đã giao hàng</option>
-                                                        <option>Giao thất bại</option>
-                                                        <option>Thất lạc</option>
-                                                      </select>
-                                                    </span>
-                                                    <span>
-                                                      <div className="btn_cn_trang_thai">
-                                                        <input
-                                                            type="button"
-                                                            className="cn_trang_thai check_btn"
-                                                            code={item.id}
-                                                            value="OK"
-                                                        />
-                                                      </div>
-                                                    </span>
-                                                </td>
                                                 <td className="py-2 px-4 border-b">
                                                     <form
                                                         method="DELETE"
@@ -180,16 +167,6 @@ const OutgoingBagListTransactionDetails = () => {
                                                        href={`transaction_staff/order_details/${item.id}`}>
                                                         DETAIL
                                                     </a>
-                                                </td>
-                                                <td className="py-2 px-4 border-b">
-                                                    <form
-                                                        method="POST"
-                                                        onSubmit={(event) => handleAccept(event, item.id)}>
-                                                        <button type="submit"
-                                                                className="bg-blue-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-                                                            {item.status === "chuyển thành công" ? 'ACCEPTED' : 'ACCEPT'}
-                                                        </button>
-                                                    </form>
                                                 </td>
 
                                             </tr>

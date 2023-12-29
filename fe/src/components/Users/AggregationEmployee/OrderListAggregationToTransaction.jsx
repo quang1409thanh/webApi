@@ -87,6 +87,15 @@ const OrderListAggregationToTransaction = () => {
                                     />
                                     <input
                                         type="button"
+                                        value="Sắp xếp tăng dần"
+                                    />
+                                    <input
+                                        type="button"
+                                        value="Sắp xếp giảm dần"
+                                    />
+
+                                    <input
+                                        type="button"
                                         value="ALL"
                                         onClick={handleSelectAll}
                                     />

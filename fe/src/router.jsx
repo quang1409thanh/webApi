@@ -95,7 +95,6 @@ function AppRouter() {
                             element={<ShowTransaction/>}
                         />
 
-
                     </Route>
                 )}
 

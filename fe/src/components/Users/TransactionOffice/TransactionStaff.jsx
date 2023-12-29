@@ -161,12 +161,12 @@ const TransactionStaff = () => {
                 status: 'Chấp nhận gửi',
                 history: null,
             })
-            .then(() => {
+            .then((response) => {
+                const dataToPass = response.good;
                 const userConfirmed = window.confirm('Đơn hàng đã được tạo. Bạn có muốn xem hóa đơn không?');
 
                 if (userConfirmed) {
-                    // If the user clicks "Xem hóa đơn," navigate to "/new-page"
-                    navigate(`/new-page`);
+                    navigate(`/new-page/data=${encodeURIComponent(dataToPass)}`);
                 } else {
                     // If the user clicks "Đóng," you can handle it here (optional)
                 }
@@ -367,7 +367,6 @@ const TransactionStaff = () => {
                             <div className="submit_info">
                                 <div className="btn_submit_info">
                                     <input type="button" value="TẠO ĐƠN" onClick={handleSubmit}/>
-                                    <a href="/new-page">Tạo hóa đơn</a>
                                 </div>
                             </div>
                         </form>
