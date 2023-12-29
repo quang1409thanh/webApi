@@ -86,7 +86,7 @@ export default function AggregationHeadHeader() {
                                 {/*</li>*/}
                                 <li className="menu_item">
                                     <NavLink
-                                        to="/"
+                                        to="/manage_transaction_point"
                                         className={({ isActive }) =>
                                             classNames(
                                                 isActive

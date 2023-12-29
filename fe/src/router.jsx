@@ -38,6 +38,8 @@ import StatsTransactionLayout from "./components/Users/TransactionHead/StatsTran
 import OrderSearchAggregation from "./components/Users/AggregationEmployee/OrderSearchAggregation.jsx";
 import TransactionHeadSuccessfulOrder from "./components/Users/TransactionHead/TransactionHeadSuccessfulOrder.jsx";
 import TransactionHeadFailOrder from "./components/Users/TransactionHead/TransactionHeadFailOrder.jsx";
+import ManageTransactionPoint from "./components/Users/AggregationHead/ManageTransactionPoint.jsx";
+
 
 function AppRouter() {
     const { userRole } = useStateContext();
@@ -88,6 +90,12 @@ function AppRouter() {
                             path="/manage_transaction_point"
                             element={<AggregationHeadLayout />}
                         />
+                        <Route
+                            path="/transactionPoint/:dynamicValue"
+                            element={<ShowTransaction/>}
+                        />
+
+
                     </Route>
                 )}
 
@@ -153,6 +161,7 @@ function AppRouter() {
                             path="/statsTransactionHead/failed_order_list"
                             element={<StatsTransactionLayout />}
                         />
+
                     </Route>
                 )}
                 {userRole === "transaction_officer" && (
