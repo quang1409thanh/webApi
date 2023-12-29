@@ -22,9 +22,22 @@ const InputField = ({ label, id, value, onChange, type = "text" }) => (
 const TransactionForm = () => {
     // const {setSubmitted} = useContext(TransactionContext);
     const { setSubmitted } = useContext(CompanyLeaderContext);
-    const { aggregationList } = useContext(CompanyLeaderContext);
     const { showToast } = useStateContext();
     const [isExpanded, setExpanded] = useState(false);
+
+    const [aggregationList, setAggregationList] = useState([]);
+
+    useEffect(() => {
+        axiosClient.get('/aggregationPoint')
+            .then(({data}) => {
+                setAggregationList(data.aggregationPoints);
+                setSubmitted(false);
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
+
     const handleExpandClick = () => {
         setExpanded(!isExpanded);
     };
@@ -41,7 +54,6 @@ const TransactionForm = () => {
         capacity: 0,
         current_load: 0,
     });
-    const [aggregation_list, setAggregationList] = useState([]);
     const handleAggregationChange = (e) => {
         const selectedAggregation = e.target.value;
         setFormData({

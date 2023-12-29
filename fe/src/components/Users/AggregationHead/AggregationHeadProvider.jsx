@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useContext} from 'react';
 import axiosClient from "../../../axios.js";
+import {useStateContext} from "../../../contexts/ContextProvider.jsx";
 
 export const AggregationHeadContext = React.createContext();
 
@@ -33,20 +34,9 @@ export function AggregationHeadProvider({children}) {
             });
     }, []);
 
-    const [data, setData] = useState('');
+    const {currentUser} = useStateContext();
 
-    useEffect(() => {
-        axiosClient
-            .get('/me')
-            .then(({data}) => {
-                setData(data.user);
-                setSubmitted(false);
-            })
-            .catch((error) => {
-                console.error('Error fetching data:', error);
-            });
-    }, []);
-
+    const data = currentUser;
 
     return (
         <AggregationHeadContext.Provider

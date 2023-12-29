@@ -117,7 +117,7 @@ class ShipmentTkTkController extends Controller
 
             // Cập nhật thông tin của đơn hàng
             $good->update([
-                'status' => 'Đã gửi đến điểm tập kết ' . $aggregationPoint->name,
+                'status' => 'Đã gửi đến điểm tập kết nhận ' . $aggregationPoint->name,
                 'history' => json_encode($history), // Encode lại thành JSON để lưu vào cơ sở dữ liệu
             ]);
             $good->currentLocation()->associate($aggregationPoint);

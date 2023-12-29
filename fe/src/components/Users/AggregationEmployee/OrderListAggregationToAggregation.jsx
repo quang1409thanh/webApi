@@ -1,11 +1,26 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import {AggregationEmployeeContext} from "./AggregationEmployeeProvider.jsx";
+import axiosClient from "../../../axios.js";
 
 const OrderListAggregationToAggregation = () => {
 
-    const {listGoodToAggregation} = useContext(AggregationEmployeeContext);
-    console.log("listGoodToAggregation", listGoodToAggregation);
+    const [listGoodToAggregation, setListGoodToAggregation] = useState([]);
+
+    useEffect(() => {
+        axiosClient.get('/list_good_from_transaction')
+            .then(({data}) => {
+                // Kiểm tra xem dữ liệu có tồn tại không trước khi thêm vào state
+                console.log("data", data.goods);
+                if (data && data.goods) {
+                    setListGoodToAggregation(data.goods);
+                }
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
+
     const navigate = useNavigate();
 
     const [data, setData] = useState([]);

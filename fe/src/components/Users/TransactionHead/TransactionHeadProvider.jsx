@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axiosClient from '../../../axios.js';
+import {useStateContext} from "../../../contexts/ContextProvider.jsx";
 
 export const TransactionHeadContext = React.createContext();
 
@@ -19,23 +20,14 @@ export function TransactionHeadProvider({children}) {
                 console.error('Error fetching data:', error);
             });
     }, []);
-    const [data, setData] = useState('');
-    useEffect(() => {
-        axiosClient
-            .get('/me')
-            .then(({data}) => {
-                setData(data.user);
-                setSubmitted(false);
-            })
-            .catch((error) => {
-                console.error('Error fetching data:', error);
-            });
-    }, []);
 
+    const {currentUser} = useStateContext();
+
+    const data = currentUser;
 
     return (
         <TransactionHeadContext.Provider
-            value={{setSubmitted, transactionOfficer,data}}
+            value={{setSubmitted, transactionOfficer, data}}
         >
             {children}
         </TransactionHeadContext.Provider>

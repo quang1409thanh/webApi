@@ -15,9 +15,6 @@ const SearchBox = ({onSubmit}) => {
         detailed_address: '',
     });
 
-    const [provinceName, setSelectedProvinceText] = useState("");
-    const [districtName, setSelectedDistrictText] = useState("");
-    const [wardName, setSelectedWardText] = useState("");
 
     const handleAddressChange = (selectedCode, selectedText, type) => {
         switch (type) {

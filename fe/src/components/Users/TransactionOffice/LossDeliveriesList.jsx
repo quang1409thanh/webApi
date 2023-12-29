@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axiosClient from "../../../axios.js";
 
-const FailedDeliveriesList = () => {
+const LossDeliveriesList = () => {
     const [listGoodSuccess, setlistGoodSuccess] = useState([]);
     const [data, setData] = useState([]);
 
@@ -10,7 +10,7 @@ const FailedDeliveriesList = () => {
     }, [listGoodSuccess]);
 
     useEffect(() => {
-        axiosClient.get('/list_good_send_failure')
+        axiosClient.get('/list_good_send_loss')
             .then(({data}) => {
                 console.log("data", data.goods);
                 if (data && data.goods) {
@@ -103,4 +103,4 @@ const FailedDeliveriesList = () => {
     );
 };
 
-export default FailedDeliveriesList;
+export default LossDeliveriesList;

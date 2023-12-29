@@ -61,7 +61,7 @@ class TransactionPointController extends Controller
      */
     public function show(string $id)
     {
-        $transactionPoint = TransactionPoint::with('address')->findOrFail($id);;
+        $transactionPoint = TransactionPoint::with(['address', 'aggregationPoint.address'])->findOrFail($id);;
         return response()->json(['transactionPoint' => $transactionPoint]);
     }
 

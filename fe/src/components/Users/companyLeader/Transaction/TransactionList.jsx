@@ -4,9 +4,18 @@ import { useStateContext } from "../../../../contexts/ContextProvider.jsx";
 import { CompanyLeaderContext } from "../CompanyLeaderProvider.jsx";
 
 const TransactionList = () => {
-    const { transactionList } = useContext(CompanyLeaderContext);
-    // const {list} = useContext(TransactionContext);
-    // const {setSubmitted} = useContext(TransactionContext);
+    const [transactionList, setTransactionList] = useState([]);
+
+    useEffect(() => {
+        axiosClient.get('/transactionPoint')
+            .then(({data}) => {
+                setTransactionList(data.transactionPoints);
+                setSubmitted(false);
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
     const { setSubmitted } = useContext(CompanyLeaderContext);
 
     const { showToast } = useStateContext();

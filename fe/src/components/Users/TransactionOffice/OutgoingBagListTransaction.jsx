@@ -1,9 +1,22 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {TransactionOfficeContext} from "./TransactionOfficeProvider.jsx";
+import axiosClient from "../../../axios.js";
 
 const OutgoingBagListTransaction = () => {
-    const {listOutgoingTransaction} = useContext(TransactionOfficeContext);
-    console.log("listOutgoing", listOutgoingTransaction);
+    const [listOutgoingTransaction, setListOutgoingTransaction] = useState([])
+    useEffect(() => {
+        axiosClient.get('/list_outgoing_transaction')
+            .then(({data}) => {
+                // Kiểm tra xem dữ liệu có tồn tại không trước khi thêm vào state
+                console.log("data", data.shipmentGdTk);
+                if (data && data.shipmentGdTk) {
+                    setListOutgoingTransaction(data.shipmentGdTk);
+                }
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
 
     return (
         <div className="page_container">
@@ -11,7 +24,7 @@ const OutgoingBagListTransaction = () => {
                 <div id="mainContent">
                     <div className="full_container">
                         <div className="content_title">
-                            DANH SÁCH TÚI HÀNG ĐI
+                            DANH SÁCH TÚI HÀNG ĐI LÊN ĐIỂM TẬP KẾT
                         </div>
                         <div className="container_product_list">
                             <table id="product_list_table">
@@ -24,7 +37,6 @@ const OutgoingBagListTransaction = () => {
                                     <th>Gửi Đến</th>
                                     <th className="py-2 px-4 border-b">Delete</th>
                                     <th className="py-2 px-4 border-b">View/ Edit</th>
-                                    <th className="py-2 px-4 border-b">Accept</th>
 
                                     {/* Thêm các cột khác tùy ý */}
                                 </tr>

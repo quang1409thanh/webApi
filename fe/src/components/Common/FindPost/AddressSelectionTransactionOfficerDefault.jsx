@@ -4,16 +4,16 @@ import axiosClient from '../../../axios.js';
 
 const host = 'https://provinces.open-api.vn/api/';
 
-const AddressSelectionTransactionOfficer = ({
-                                                onSelectProvince,
-                                                onSelectDistrict,
-                                                onSelectWard,
-                                                onSelectTransactionPoint,
-                                                selectedProvince,
-                                                selectedDistrict,
-                                                selectedWard,
-                                                selectTransactionPoint
-                                            }) => {
+const AddressSelectionTransactionOfficerDefault = ({
+                                                       onSelectProvince,
+                                                       onSelectDistrict,
+                                                       onSelectWard,
+                                                       onSelectTransactionPoint,
+                                                       selectedProvince,
+                                                       selectedDistrict,
+                                                       selectedWard,
+                                                       selectTransactionPoint
+                                                   }) => {
     const [provinces, setProvinces] = useState([]);
     const [districts, setDistricts] = useState([]);
     const [wards, setWards] = useState([]);
@@ -35,29 +35,13 @@ const AddressSelectionTransactionOfficer = ({
     }, []);
 
     useEffect(() => {
-        if (province) {
-            axios.get(`${host}p/${province}?depth=2`).then((response) => {
-                setDistricts(response.data.districts);
-            });
-        }
-    }, [province]);
-
-    useEffect(() => {
-        if (district) {
-            axios.get(`${host}d/${district}?depth=2`).then((response) => {
-                setWards(response.data.wards);
-            });
-        }
-    }, [district]);
-
-    useEffect(() => {
-        // Khi component được mount, gọi API để lấy danh sách điểm giao dịch tương ứng với tỉnh đã chọn
-        if (province) {
+        // Khi component được mount, gọi API chỉ khi có sự thay đổi trong selectedProvince
+        if (selectedProvince) {
             axiosClient
                 .post('/list_office', {
-                    province: provinceText,
-                    district: districtText,
-                    ward: wardText,
+                    province: selectedProvince,
+                    district: '',
+                    ward: '',
                 })
                 .then((response) => {
                     const data = response.data || [];
@@ -67,8 +51,25 @@ const AddressSelectionTransactionOfficer = ({
                     console.error('Error fetching transaction points:', error);
                 });
         }
-    }, [province, district, ward]);
+    }, [selectedProvince]);
 
+    useEffect(() => {
+        // Khi selectedProvince thay đổi, gọi API để lấy danh sách quận/huyện
+        if (province) {
+            axios.get(`${host}p/${province}?depth=2`).then((response) => {
+                setDistricts(response.data.districts);
+            });
+        }
+    }, [province]);
+
+    useEffect(() => {
+        // Khi selectedDistrict thay đổi, gọi API để lấy danh sách xã/phường
+        if (district) {
+            axios.get(`${host}d/${district}?depth=2`).then((response) => {
+                setWards(response.data.wards);
+            });
+        }
+    }, [district]);
     const handleProvinceChange = (e) => {
         const selectedProvinceCode = e.target.value;
         setProvince(selectedProvinceCode);
@@ -76,22 +77,7 @@ const AddressSelectionTransactionOfficer = ({
         setWard('');
         setDistrictText('');
         setWardText('');
-        setProvinceText(e.target.options[e.target.selectedIndex].text);
-
-        // Gọi API để lấy danh sách điểm giao dịch tương ứng với tỉnh đã chọn
-        axiosClient
-            .post('/list_office', {
-                province: e.target.options[e.target.selectedIndex].text,
-                district: '',
-                ward: '',
-            })
-            .then((response) => {
-                const data = response.data || [];
-                setTransactionList(data);
-            })
-            .catch((error) => {
-                console.error('Error fetching transaction points:', error);
-            });
+        setProvinceText(selectedProvince);
 
         onSelectProvince(selectedProvinceCode, e.target.options[e.target.selectedIndex].text);
     };
@@ -191,4 +177,5 @@ const AddressSelectionTransactionOfficer = ({
     );
 };
 
-export default AddressSelectionTransactionOfficer;
+export default AddressSelectionTransactionOfficerDefault;
+
