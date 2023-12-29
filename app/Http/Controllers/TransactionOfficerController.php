@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AggregationPoint;
 use App\Models\TransactionOfficer;
 use App\Models\TransactionPointHead;
 use App\Models\TransactionPoint;
@@ -139,27 +140,65 @@ class TransactionOfficerController extends Controller
 
         // Kiểm tra nếu có giá trị tỉnh
         if ($provinceName !== null) {
-            // Sử dụng Eloquent để lấy các điểm giao dịch có địa chỉ và sắp xếp theo khoảng cách
-            $offices = TransactionPoint::with(['address' => function ($query) use ($districtName, $wardName) {
-                if ($districtName !== null) {
-                    $query->where('district', $districtName);
-                }
-                if ($wardName !== null) {
-                    $query->where('ward', $wardName);
-                }
-            }])
-                ->whereHas('address', function ($query) use ($districtName, $wardName) {
-                    if ($districtName !== null) {
-                        $query->where('district', $districtName);
-                    }
-                    if ($wardName !== null) {
-                        $query->where('ward', $wardName);
-                    }
-                })
+            $query = TransactionPoint::with(['address'])
                 ->whereHas('address', function ($query) use ($provinceName) {
                     $query->where('province', $provinceName);
-                })
-                ->get();
+                });
+
+            // Kiểm tra xem có giá trị huyện không
+            if ($districtName !== null) {
+                $query->whereHas('address', function ($query) use ($districtName) {
+                    $query->where('district', $districtName);
+                });
+            }
+
+            // Kiểm tra xem có giá trị xã không
+            if ($wardName !== null) {
+                $query->whereHas('address', function ($query) use ($wardName) {
+                    $query->where('ward', $wardName);
+                });
+            }
+
+            // Lấy các điểm giao dịch
+            $offices = $query->get();
+
+            // Trả về kết quả
+            return response()->json($offices, 200);
+        }
+
+        return response()->json(['error' => 'Missing provinceName'], 400);
+    }
+
+    #[NoReturn] public function list_aggregation(Request $request): \Illuminate\Http\JsonResponse
+    {
+        // Lấy giá trị của tỉnh, huyện và xã từ query parameters
+        $provinceName = $request->province;
+        $districtName = $request->district;
+        $wardName = $request->ward;
+
+        // Kiểm tra nếu có giá trị tỉnh
+        if ($provinceName !== null) {
+            $query = AggregationPoint::with(['address'])
+                ->whereHas('address', function ($query) use ($provinceName) {
+                    $query->where('province', $provinceName);
+                });
+
+            // Kiểm tra xem có giá trị huyện không
+            if ($districtName !== null) {
+                $query->whereHas('address', function ($query) use ($districtName) {
+                    $query->where('district', $districtName);
+                });
+            }
+
+            // Kiểm tra xem có giá trị xã không
+            if ($wardName !== null) {
+                $query->whereHas('address', function ($query) use ($wardName) {
+                    $query->where('ward', $wardName);
+                });
+            }
+
+            // Lấy các điểm giao dịch
+            $offices = $query->get();
 
             // Trả về kết quả
             return response()->json($offices, 200);

@@ -1,11 +1,22 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {AggregationEmployeeContext} from "./AggregationEmployeeProvider.jsx";
 import axiosClient from "../../../axios.js";
 
 const IncomingBagListAggregationFromTransaction = () => {
 
-    const {listIncomingFromTransaction} = useContext(AggregationEmployeeContext);
-    console.log("listIncomingFromTransaction", listIncomingFromTransaction);
+    const [listIncomingFromTransaction, setListIncomingFromTransaction] = useState([]);
+    useEffect(() => {
+        axiosClient.get('/list_incoming_from_transaction')
+            .then(({data}) => {
+                console.log("data", data.shipmentGdTk);
+                if (data && data.shipmentGdTk) {
+                    setListIncomingFromTransaction(data.shipmentGdTk);
+                }
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
     const handleAccept = (e, id) => {
         e.preventDefault();
         // Gửi dữ liệu đến API backend

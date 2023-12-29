@@ -31,7 +31,7 @@ const SidebarAggregation = () => {
                         </a>
                     </li>
                     <li className="nav_item">
-                        <a href="/aggregation_employee/outgoing_list" className="sidebar_link">
+                        <a href="/aggregation_employee/outgoing_list_to_transaction" className="sidebar_link">
                             <span className="icon_holder">
                                 <img src="/img/icon-login.svg" alt=""/>
                             </span>
@@ -56,7 +56,7 @@ const SidebarAggregation = () => {
                         </a>
                     </li>
                     <li className="nav_item">
-                        <a href="/aggregation_employee/incoming_list_transaction" className="sidebar_link">
+                        <a href="/aggregation_employee/incoming_list_from_transaction" className="sidebar_link">
                             <span className="icon_holder">
                                 <img src="/img/icon-login.svg" alt=""/>
                             </span>

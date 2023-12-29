@@ -3,8 +3,21 @@ import {TransactionOfficeContext} from "./TransactionOfficeProvider.jsx";
 import axiosClient from "../../../axios.js";
 
 const IncomingBagListTransaction = () => {
-    const {listIncomingTransaction} = useContext(TransactionOfficeContext);
-    console.log("listIncoming", listIncomingTransaction);
+    const [listIncomingTransaction, setListIncomingTransaction] = useState([])
+    useEffect(() => {
+        axiosClient.get('/list_incoming_transaction')
+            .then(({data}) => {
+                // Kiểm tra xem dữ liệu có tồn tại không trước khi thêm vào state
+                console.log("data", data.shipmentTkGd);
+                if (data && data.shipmentTkGd) {
+                    setListIncomingTransaction(data.shipmentTkGd);
+                }
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
+
     const handleAccept = (e, id) => {
         e.preventDefault();
         // Gửi dữ liệu đến API backend
@@ -25,7 +38,7 @@ const IncomingBagListTransaction = () => {
                 <div id="mainContent">
                     <div className="full_container">
                         <div className="content_title">
-                            DANH SÁCH TÚI HÀNG NHẬN
+                            DANH SÁCH TÚI HÀNG NHẬN TỪ ĐIỂM TẬP KẾT
                         </div>
                         <div className="container_product_list">
                             <table id="product_list_table">

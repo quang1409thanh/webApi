@@ -1,13 +1,29 @@
-import React, { useContext, useState } from "react";
+import React, {useContext, useEffect, useState} from "react";
 import axiosClient from "../../../../axios.js";
-import { useStateContext } from "../../../../contexts/ContextProvider.jsx";
-import { CompanyLeaderContext } from "../CompanyLeaderProvider.jsx";
+import {useStateContext} from "../../../../contexts/ContextProvider.jsx";
+import {CompanyLeaderContext} from "../CompanyLeaderProvider.jsx";
 
 const HeadList = () => {
-    const { headData } = useContext(CompanyLeaderContext);
-    const { userType } = useContext(CompanyLeaderContext);
-    const { setSubmitted } = useContext(CompanyLeaderContext);
-    const { showToast } = useStateContext();
+    const [headData, setHeadData] = useState([]);
+    const {userType} = useContext(CompanyLeaderContext);
+    const {setSubmitted} = useContext(CompanyLeaderContext);
+    const {showToast} = useStateContext();
+
+
+    useEffect(() => {
+        console.log('Calling useEffect in ManageHeadProvider');
+        const apiEndpoint = userType === 'aggregationHead' ? '/aggregationHead' : '/transactionHead';
+        const dataFieldName = userType === 'aggregationHead' ? 'aggregationPointHead' : 'transactionPointHead';
+        axiosClient.get(apiEndpoint)
+            .then(response => {
+                setHeadData(response.data[dataFieldName]);
+                setSubmitted(false)
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }, [userType]);
+
     const getTitleText = () => {
         if (userType === "aggregationHead") {
             return "Danh sách các Trưởng điểm tập kết (AggregationEmployee)";
@@ -44,59 +60,59 @@ const HeadList = () => {
             <h1>{getTitleText()}</h1>
             <table className="min-w-full bg-white border border-gray-300">
                 <thead>
-                    <tr>
-                        <th className="py-2 px-4 border-b">ID</th>
-                        <th className="py-2 px-4 border-b">Name</th>
-                        <th className="py-2 px-4 border-b">Email</th>
-                        <th className="py-2 px-4 border-b">Phone</th>
-                        <th className="py-2 px-4 border-b">Details</th>
-                        <th className="py-2 px-4 border-b">Delete</th>
-                        <th className="py-2 px-4 border-b">View/ Edit</th>
-                    </tr>
+                <tr>
+                    <th className="py-2 px-4 border-b">ID</th>
+                    <th className="py-2 px-4 border-b">Name</th>
+                    <th className="py-2 px-4 border-b">Email</th>
+                    <th className="py-2 px-4 border-b">Phone</th>
+                    <th className="py-2 px-4 border-b">Details</th>
+                    <th className="py-2 px-4 border-b">Delete</th>
+                    <th className="py-2 px-4 border-b">View/ Edit</th>
+                </tr>
                 </thead>
                 <tbody>
-                    {headData.map((item) => (
-                        <tr key={item.id}>
-                            <td className="py-2 px-4 border-b">{item.id}</td>
-                            <td className="py-2 px-4 border-b">
-                                {item.user.name}
-                            </td>
-                            <td className="py-2 px-4 border-b">
-                                {item.user.email}
-                            </td>
-                            <td className="py-2 px-4 border-b">{item.phone}</td>
-                            <td className="py-2 px-4 border-b">
-                                {item.details}
-                            </td>
-                            <td className="py-2 px-4 border-b">
-                                <form
-                                    method="DELETE"
-                                    onSubmit={(event) =>
-                                        handleDelete(event, item.id)
-                                    }
+                {headData.map((item) => (
+                    <tr key={item.id}>
+                        <td className="py-2 px-4 border-b">{item.id}</td>
+                        <td className="py-2 px-4 border-b">
+                            {item.user.name}
+                        </td>
+                        <td className="py-2 px-4 border-b">
+                            {item.user.email}
+                        </td>
+                        <td className="py-2 px-4 border-b">{item.phone}</td>
+                        <td className="py-2 px-4 border-b">
+                            {item.details}
+                        </td>
+                        <td className="py-2 px-4 border-b">
+                            <form
+                                method="DELETE"
+                                onSubmit={(event) =>
+                                    handleDelete(event, item.id)
+                                }
+                            >
+                                <button
+                                    type="submit"
+                                    className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
                                 >
-                                    <button
-                                        type="submit"
-                                        className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-                                    >
-                                        DELETE
-                                    </button>
-                                </form>
-                            </td>
-                            <td className="py-2 px-4 border-b">
-                                <a
-                                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-                                    href={
-                                        userType === "transactionHead"
-                                            ? `transactionHead/${item.id}`
-                                            : `aggregationHead/${item.id}`
-                                    }
-                                >
-                                    DETAIL
-                                </a>
-                            </td>
-                        </tr>
-                    ))}
+                                    DELETE
+                                </button>
+                            </form>
+                        </td>
+                        <td className="py-2 px-4 border-b">
+                            <a
+                                className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                                href={
+                                    userType === "transactionHead"
+                                        ? `transactionHead/${item.id}`
+                                        : `aggregationHead/${item.id}`
+                                }
+                            >
+                                DETAIL
+                            </a>
+                        </td>
+                    </tr>
+                ))}
                 </tbody>
             </table>
         </div>

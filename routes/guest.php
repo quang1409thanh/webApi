@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\GoodController;
 use App\Http\Controllers\TransactionOfficerController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,4 +35,5 @@ Route::post('/email/verification-notification', [EmailVerificationNotificationCo
     ->middleware(['auth', 'throttle:6,1'])
     ->name('verification.send');
 Route::post("/list_office", [TransactionOfficerController::class, 'find_office']);
-//Route::get("/search_good/{id}", [\App\Http\Controllers\GoodController::class, 'search_good_by_code']);
+Route::post("/list_aggregation", [TransactionOfficerController::class, 'list_aggregation']);
+Route::get("/search_good/{id}", [GoodController::class, 'search_good_by_code']);

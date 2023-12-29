@@ -2,19 +2,64 @@ import "../../../css/transation_staff.css"
 
 import React, {useContext, useEffect, useState} from 'react';
 import axiosClient from "../../../axios.js";
-import AddressSelect from "../../Common/FindPost/AddressSelect.jsx";
-import AddressSelectionTransactionOfficer from "../../Common/FindPost/AddressSelectionTransactionOfficer.jsx";
 import {TransactionOfficeContext} from "./TransactionOfficeProvider.jsx";
+import {useStateContext} from "../../../contexts/ContextProvider.jsx";
+import AddressSelectionTransactionOfficer from "../../Common/FindPost/AddressSelectionTransactionOfficer.jsx";
+import AddressSelectionTransactionOfficerDisable
+    from "../../Common/FindPost/AddressSelectionTransactionOfficerDisable.jsx";
 
 const TransactionStaff = () => {
 
-    const {data, transactionList} = useContext(TransactionOfficeContext);
-
+    const {data} = useContext(TransactionOfficeContext)
     const id = data?.transaction_officer?.transaction_point_id;
+
+
+    const [province, setProvince] = useState('');
+    const [district, setDistrict] = useState('');
+    const [ward, setWard] = useState('');
+    const [sendTransaction, setSendTransaction] = useState({
+        address: {
+            province: '',
+            district: '',
+            ward: '',
+        },
+        name: '',
+    });
+
+
+    const [sendTransactionPoint, setSendTransactionPoint] = useState('');
+
+    useEffect(() => {
+        axiosClient
+            .get(`/transactionPoint/${id}`)
+            .then(({data}) => {
+                setSendTransaction(data.transactionPoint);
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, [id]);
+
+
+    useEffect(() => {
+        if (sendTransaction) {
+
+            setProvince(sendTransaction.address.province);
+            setDistrict(sendTransaction.address.district);
+            setWard(sendTransaction.address.ward);
+            setSendTransactionPoint(sendTransaction.name);
+        }
+    }, [sendTransaction]);
+
+    const [receiveTransaction, setReceiveTransaction] = useState({
+        province: '',
+        district: '',
+        ward: '',
+        transactionPointId: '',
+    });
+
+
     const [sendName, setSendName] = useState('');
-    const [sendCity, setSendCity] = useState('');
-    const [sendDistrict, setSendDistrict] = useState('');
-    const [sendCommune, setSendCommune] = useState('');
     const [sendPostalCode, setSendPostalCode] = useState('');
     const [sendPhoneNumber, setSendPhoneNumber] = useState('');
     const [sendEmail, setSendEmail] = useState('');
@@ -57,6 +102,40 @@ const TransactionStaff = () => {
         setTotalRevenue(total);
     };
 
+    const handleAddressChange = (selectedCode, selectedText, type) => {
+        switch (type) {
+            case 'province':
+                setReceiveTransaction((prevAddress) => ({
+                    ...prevAddress,
+                    province: selectedText,
+                    district: "",
+                    ward: "",
+                }));
+                break;
+            case 'district':
+                setReceiveTransaction((prevAddress) => ({
+                    ...prevAddress,
+                    district: selectedText,
+                    ward: "",
+                }));
+                break;
+            case 'ward':
+                setReceiveTransaction((prevAddress) => ({
+                    ...prevAddress,
+                    ward: selectedText,
+                }));
+                break;
+            case 'receive_transaction':
+                setReceiveTransaction((prevAddress) => ({
+                    ...prevAddress,
+                    transactionPointId: selectedCode,
+                }));
+                break;
+            default:
+                break;
+        }
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         axiosClient
@@ -65,7 +144,7 @@ const TransactionStaff = () => {
                 sender_name: sendName,
                 receiver_name: recipientName,
                 sending_transaction_point_id: id,
-                receiving_transaction_point_id: sendPostalCode,
+                receiving_transaction_point_id: receiveTransaction.transactionPointId,
                 shipment_id_gd_tk: '0',
                 goods_information: null,
                 package_type: packageType,
@@ -89,6 +168,7 @@ const TransactionStaff = () => {
 
     };
 
+
     return (
         <div className="page_container">
             <main className="main_content">
@@ -109,42 +189,13 @@ const TransactionStaff = () => {
                                                onChange={(e) => setSendName(e.target.value)} required/>
                                     </div>
 
-                                    <div className="form-group">
-                                        <div>
-                                            <label htmlFor="send_city">Tỉnh/Thành Phố:</label>
-                                            <select id="send_city" name="city" className="citySelect" value={sendCity}
-                                                    onChange={(e) => setSendCity(e.target.value)} required disabled>
-                                                <option>{sendCity}</option>
-                                            </select>
-                                        </div>
-                                        <div>
-                                            <label htmlFor="send_district">Quận/Huyện:</label>
-                                            <select id="send_district" name="district" className="districtSelect"
-                                                    value={sendDistrict}
-                                                    onChange={(e) => setSendDistrict(e.target.value)} required disabled>
-                                                <option>{sendDistrict}</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div className="form-group">
-                                        <div>
-                                            <label htmlFor="send_commune">Phường/Xã:</label>
-                                            <select id="send_commune" name="ward" className="communeSelect"
-                                                    value={sendCommune} onChange={(e) => setSendCommune(e.target.value)}
-                                                    required disabled>
-                                                <option>{sendCommune}</option>
-                                            </select>
-                                        </div>
-                                        <div>
-                                            <label htmlFor="send_postal_code">Mã Bưu Chính:</label>
-                                            <select id="send_postal_code" name="postalCode"
-                                                    className="postal_codeSelect" value={sendPostalCode}
-                                                    onChange={(e) => setSendPostalCode(e.target.value)} required
-                                                    disabled>
-                                                <option>{sendPostalCode}</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                                    <AddressSelectionTransactionOfficerDisable
+                                        selectedProvince={province} // Pass the selected province
+                                        selectedDistrict={district} // Pass the selected district
+                                        selectedWard={ward} // Pass the selected ward
+                                        selectTransactionPoint={sendTransactionPoint} // Pass the selected detailed address
+                                    />
+
                                     <div className="form-group">
                                         <div>
                                             <label htmlFor="send_phone_number">Số Điện Thoại:</label>
@@ -168,39 +219,14 @@ const TransactionStaff = () => {
                                         <input type="text" id="recipient_name" name="senderName" value={recipientName}
                                                onChange={(e) => setRecipientName(e.target.value)} required/>
                                     </div>
-                                    <div style={{paddingTop: '13px'}}>
-                                        <br>
-                                        </br>
-                                    </div>
 
-                                    {/*<AddressSelectionTransactionOfficer*/}
-                                    {/*    onSelectProvince={(code, text) => handleAddressChange(code, text, 'province')}*/}
-                                    {/*    onSelectDistrict={(code, text) => handleAddressChange(code, text, 'district')}*/}
-                                    {/*    onSelectWard={(code, text) => handleAddressChange(code, text, 'ward')}*/}
-                                    {/*    onSelectDetail={(value) => handleAddressChange(null, value, 'detailed_address')}*/}
-                                    {/*/>*/}
-                                    <div className="mb-4">
-                                        <label htmlFor="aggregation_point_id"
-                                               className="block text-sm font-medium text-gray-700">CHọn điểm giao
-                                            dịch</label>
-                                        <select
-                                            id={'transaction_point_id'}
-                                            name={'transaction_point_id'}
-                                            value={sendPostalCode}
-                                            onChange={(e) => setSendPostalCode(e.target.value)}
-                                            style={{width: '100%'}}
-                                            required
-                                        >
-                                            <option disabled value="">
-                                                Chon điểm giao dịch
-                                            </option>
-                                            {renderOptions(transactionList)}
-                                        </select>
-                                    </div>
-                                    <div style={{marginTop: '12px'}}>
-                                        <br>
-                                        </br>
-                                    </div>
+                                    <AddressSelectionTransactionOfficer
+                                        onSelectProvince={(code, text) => handleAddressChange(code, text, 'province')}
+                                        onSelectDistrict={(code, text) => handleAddressChange(code, text, 'district')}
+                                        onSelectWard={(code, text) => handleAddressChange(code, text, 'ward')}
+                                        onSelectTransactionPoint={(code, text) => handleAddressChange(code, text, 'receive_transaction')}
+                                    />
+
                                     <div className="form-group">
                                         <div>
                                             <label htmlFor="recipient_phone_number">Số Điện Thoại:</label>

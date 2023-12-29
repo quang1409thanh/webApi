@@ -17,7 +17,7 @@ const SwitchButton = () => {
                 <h1 className="text-3xl font-bold mb-2">User Type Toggle</h1>
                 <p className={`text-2xl font-semibold text-blue-600 mb-4`}>
                     {userType === "aggregationHead"
-                        ? "Aggregation Employee Head"
+                        ? "Aggregation Head"
                         : "Transaction Head"}
                 </p>
                 <button

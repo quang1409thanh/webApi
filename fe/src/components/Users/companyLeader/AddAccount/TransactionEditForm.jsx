@@ -3,7 +3,18 @@ import axiosClient from "../../../../axios.js";
 import { CompanyLeaderContext } from "../CompanyLeaderProvider.jsx";
 
 const TransactionEditForm = ({ id }) => {
-    const { transactionList } = useContext(CompanyLeaderContext);
+    const [transactionList, setTransactionList] = useState([]);
+
+    useEffect(() => {
+        axiosClient.get('/transactionPoint')
+            .then(({data}) => {
+                setTransactionList(data.transactionPoints);
+                setSubmitted(false);
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({ ...prevData, [name]: value }));

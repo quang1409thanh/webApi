@@ -6,7 +6,19 @@ import { CompanyLeaderContext } from "../CompanyLeaderProvider.jsx";
 const AggregationList = () => {
     // const {list} = useContext(AggregationContext);
     const { setSubmitted } = useContext(CompanyLeaderContext);
-    const { aggregationList } = useContext(CompanyLeaderContext);
+    const [aggregationList, setAggregationList] = useState([]);
+
+    useEffect(() => {
+        axiosClient.get('/aggregationPoint')
+            .then(({data}) => {
+                setAggregationList(data.aggregationPoints);
+                setSubmitted(false);
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
+
     const { showToast } = useStateContext();
 
     if (!aggregationList || !aggregationList.length) return null;

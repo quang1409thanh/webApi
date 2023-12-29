@@ -184,9 +184,134 @@ class GoodController extends Controller
     {
         // Truy vấn CSDL để lấy đơn hàng có mã trường code
         $good = Good::where('code', $code)->first();
-
         return $good;
     }
 
 
+    public function change_status(Request $request)
+    {
+        try {
+            $goodIds = $request->input('good_ids', []);
+            $type = $request->input('type');
+
+            foreach ($goodIds as $goodId) {
+                $good = Good::find($goodId);
+
+                if (!$good) {
+                    return response()->json(['error' => 'Good not found'], 404);
+                }
+
+                // Kiểm tra nếu history là một chuỗi, chuyển đổi thành mảng
+                $history = is_array($good->history) ? $good->history : json_decode($good->history, true) ?? [];
+
+                // Thêm trạng thái mới vào lịch sử
+                $history[] = [
+                    'status' => $good->status,
+                    'updated_at' => now(),
+                ];
+
+                $newStatus = '';
+                switch ($type) {
+                    case 'success':
+                        $newStatus = 'chuyển thành công đến người nhận';
+                        break;
+                    case 'failure':
+                        $newStatus = 'chuyển thất bại đến người nhận';
+                        break;
+                    case 'loss':
+                        $newStatus = 'đơn hàng bị thất lạc';
+                        break;
+                    // Add more cases as needed
+                    case 'custom_case_1':
+                        $newStatus = 'Custom Case 1';
+                        break;
+                    case 'custom_case_2':
+                        $newStatus = 'Custom Case 2';
+                        break;
+                    default:
+                        // Handle default case or leave it empty
+                        return response()->json(['error' => 'Invalid type'], 400);
+                }
+
+                $good->update([
+                    'status' => $newStatus,
+                    'history' => $history,
+                ]);
+            }
+
+            return response()->json(['message' => 'Status updated successfully'], 200);
+
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+    }
+
+    public function list_good_send_success()
+    {
+        $user = Auth::user();
+
+        if ($user->relationLoaded('transactionOfficer')) {
+            $transactionOfficer = $user->transactionOfficer;
+
+            $goods = Good::with(['sendingTransactionPoint', 'receivingTransactionPoint'])
+                ->where("receiving_transaction_point_id", $transactionOfficer->transaction_point_id)
+                ->where('status', 'chuyển thành công đến người nhận')
+                ->get();
+
+            if ($goods->isEmpty()) {
+                return response()->json(['message' => 'Không có hàng hoá nào thỏa mãn điều kiện.'], 404);
+            }
+
+            return response()->json(['goods' => $goods]);
+        }
+
+        // Nếu không có thông tin về transaction officer
+        return response()->json(['error' => 'Không tìm thấy thông tin về người giao dịch.'], 404);
+    }
+
+    public function list_good_send_failure()
+    {
+        $user = Auth::user();
+
+        if ($user->relationLoaded('transactionOfficer')) {
+            $transactionOfficer = $user->transactionOfficer;
+
+            $goods = Good::with(['sendingTransactionPoint', 'receivingTransactionPoint'])
+                ->where("receiving_transaction_point_id", $transactionOfficer->transaction_point_id)
+                ->where('status', 'chuyển thất bại đến người nhận')
+                ->get();
+
+            if ($goods->isEmpty()) {
+                return response()->json(['message' => 'Không có hàng hoá nào thỏa mãn điều kiện.'], 404);
+            }
+
+            return response()->json(['goods' => $goods]);
+        }
+
+        // Nếu không có thông tin về transaction officer
+        return response()->json(['error' => 'Không tìm thấy thông tin về người giao dịch.'], 404);
+    }
+
+    public function list_good_send_loss()
+    {
+        $user = Auth::user();
+
+        if ($user->relationLoaded('transactionOfficer')) {
+            $transactionOfficer = $user->transactionOfficer;
+
+            $goods = Good::with(['sendingTransactionPoint', 'receivingTransactionPoint'])
+                ->where("receiving_transaction_point_id", $transactionOfficer->transaction_point_id)
+                ->where('status', 'đơn hàng bị thất lạc')
+                ->get();
+
+            if ($goods->isEmpty()) {
+                return response()->json(['message' => 'Không có hàng hoá nào thỏa mãn điều kiện.'], 404);
+            }
+
+            return response()->json(['goods' => $goods]);
+        }
+
+        // Nếu không có thông tin về transaction officer
+        return response()->json(['error' => 'Không tìm thấy thông tin về người giao dịch.'], 404);
+    }
 }

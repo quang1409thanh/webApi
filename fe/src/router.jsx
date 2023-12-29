@@ -67,13 +67,18 @@ function AppRouter() {
                                element={<AggregationEmployeeLayout/>}/>
                         <Route path="/aggregation_employee/order_list_to_transaction"
                                element={<AggregationEmployeeLayout/>}/>
-                        <Route path="/aggregation_employee/outgoing_list_to_aggregation" element={<AggregationEmployeeLayout/>}/>
-                        <Route path="/aggregation_employee/incoming_list_transaction"
+                        <Route path="/aggregation_employee/outgoing_list_to_aggregation"
+                               element={<AggregationEmployeeLayout/>}/>
+                        <Route path="/aggregation_employee/outgoing_list_to_transaction"
+                               element={<AggregationEmployeeLayout/>}/>
+                        <Route path="/aggregation_employee/incoming_list_from_transaction"
                                element={<AggregationEmployeeLayout/>}/>
                         <Route path="/aggregation_employee/incoming_list_from_aggregation"
                                element={<AggregationEmployeeLayout/>}/>
-                        <Route path="/aggregation_employee/create-package-tk-tk" element={<AggregationEmployeeLayout/>}/>
-                        <Route path="/aggregation_employee/create-package-tk-gd" element={<AggregationEmployeeLayout/>}/>
+                        <Route path="/aggregation_employee/create-package-tk-tk"
+                               element={<AggregationEmployeeLayout/>}/>
+                        <Route path="/aggregation_employee/create-package-tk-gd"
+                               element={<AggregationEmployeeLayout/>}/>
 
                     </Route>
                 )}
@@ -97,6 +102,7 @@ function AppRouter() {
                         <Route path="/transaction_staff/incoming_bag_list" element={<TransactionOfficeLayout/>}/>
                         <Route path="/transaction_staff/success_order_list" element={<TransactionOfficeLayout/>}/>
                         <Route path="/transaction_staff/failed_order_list" element={<TransactionOfficeLayout/>}/>
+                        <Route path="/transaction_staff/loss_order_list" element={<TransactionOfficeLayout/>}/>
                         <Route path="/transaction_staff/create-package" element={<TransactionOfficeLayout/>}/>
                     </Route>
                 )}

@@ -95,6 +95,10 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
         Route::get('/list_incoming_transaction', [ShipmentTkGdController::class, 'list_incoming_transaction']);
 
         Route::post('/accept-tk-gd/{id}', [ShipmentTkGdController::class, 'accept']);
+        Route::post('/change-status-good', [GoodController::class, 'change_status']);
+        Route::get("/list_good_send_success", [GoodController::class, 'list_good_send_success']);
+        Route::get("/list_good_send_failure", [GoodController::class, 'list_good_send_failure']);
+        Route::get("/list_good_send_loss", [GoodController::class, 'list_good_send_loss']);
 
     });
 
@@ -133,5 +137,4 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::get("/search_good/{id}", [\App\Http\Controllers\GoodController::class, 'search_good_by_code']);
     Route::apiResource('aggregationPoint', App\Http\Controllers\AggregationPointController::class);
     Route::apiResource('transactionPoint', App\Http\Controllers\TransactionPointController::class);
-
 });

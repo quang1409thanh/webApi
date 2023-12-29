@@ -1,11 +1,26 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import {AggregationEmployeeContext} from "./AggregationEmployeeProvider.jsx";
+import axiosClient from "../../../axios.js";
 
 const OrderListAggregationToTransaction = () => {
 
-    const {listGoodToTransaction} = useContext(AggregationEmployeeContext);
-    console.log("listGoodToAggregation", listGoodToTransaction);
+    const [listGoodToTransaction, setListGoodToTransaction] = useState([]);
+
+    useEffect(() => {
+        axiosClient.get('/list_good_from_aggregation')
+            .then(({data}) => {
+                // Kiểm tra xem dữ liệu có tồn tại không trước khi thêm vào state
+                console.log("data", data.goods);
+                if (data && data.goods) {
+                    setListGoodToTransaction(data.goods);
+                }
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
+
     const navigate = useNavigate();
 
     const [data, setData] = useState([]);
@@ -101,8 +116,6 @@ const OrderListAggregationToTransaction = () => {
                                             <th>Tên Người Nhận</th>
                                             <th>Ngày tạo đơn</th>
                                             <th>Trạng thái</th>
-                                            <th>Cập nhật trạng thái</th>
-                                            <th>Chuyến đơn</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -129,28 +142,6 @@ const OrderListAggregationToTransaction = () => {
                                                     <span>{item.created_at}</span>
                                                 </td>
                                                 <td>{item.status}</td>
-                                                <td>
-                                                    <span>
-                                                      <select name="select_trang_thai" className="select_trang_thai">
-                                                        <option>--CN Trạng thái--</option>
-                                                        <option>Chấp nhận gửi</option>
-                                                        <option>Đã giao hàng</option>
-                                                        <option>Giao thất bại</option>
-                                                        <option>Thất lạc</option>
-                                                      </select>
-                                                    </span>
-                                                    <span>
-                                                      <div className="btn_cn_trang_thai">
-                                                        <input
-                                                            type="button"
-                                                            className="cn_trang_thai check_btn"
-                                                            code={item._id}
-                                                            value="OK"
-                                                        />
-                                                      </div>
-                                                    </span>
-                                                </td>
-                                                <td>{item.chuyen_don}</td>
                                             </tr>
                                         ))}
                                         </tbody>
