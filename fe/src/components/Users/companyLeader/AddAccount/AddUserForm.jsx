@@ -1,10 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, {useContext, useEffect, useState} from "react";
 import axiosClient from "../../../../axios.js";
-import { CompanyLeaderContext } from "../CompanyLeaderProvider.jsx";
+import {CompanyLeaderContext} from "../CompanyLeaderProvider.jsx";
+import {useStateContext} from "../../../../contexts/ContextProvider.jsx";
 
 const AddUserForm = () => {
-    const {submitted, setSubmitted } = useContext(CompanyLeaderContext);
-    const { userType } = useContext(CompanyLeaderContext);
+    const {submitted, setSubmitted} = useContext(CompanyLeaderContext);
+    const {userType} = useContext(CompanyLeaderContext);
+    const {showToast} = useStateContext();
 
     const [formData, setFormData] = useState({
         name: "",
@@ -12,8 +14,8 @@ const AddUserForm = () => {
         password: "",
         password_confirmation: "",
         ...(userType === "aggregationHead"
-            ? { aggregation_point_id: "" }
-            : { transaction_point_id: "" }),
+            ? {aggregation_point_id: ""}
+            : {transaction_point_id: ""}),
         phone: "",
         address: "",
         details: "",
@@ -29,8 +31,8 @@ const AddUserForm = () => {
     };
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prevData) => ({ ...prevData, [name]: value }));
+        const {name, value} = e.target;
+        setFormData((prevData) => ({...prevData, [name]: value}));
     };
 
     const handleSubmit = (e) => {
@@ -51,6 +53,7 @@ const AddUserForm = () => {
                 // Xử lý response nếu cần
                 setSubmitted(true);
                 console.log(response.data);
+                showToast("Thêm tài khoản thành công")
             })
             .catch((error) => {
                 // Xử lý lỗi nếu cần
@@ -67,7 +70,7 @@ const AddUserForm = () => {
         } else if (userType === "transactionHead") {
             endpoint = "/transactionPoint";
         }
-        axiosClient.get(endpoint).then(({ data }) => {
+        axiosClient.get(endpoint).then(({data}) => {
             const dataFieldName =
                 userType === "aggregationHead"
                     ? "aggregationPoints"
@@ -116,7 +119,7 @@ const AddUserForm = () => {
                         }
                         onChange={handleChange}
                         className="w-full py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-900"
-                        style={{ width: "100%" }}
+                        style={{width: "100%"}}
                         required
                     >
                         <option disabled value="">

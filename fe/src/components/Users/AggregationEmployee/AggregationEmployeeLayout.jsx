@@ -13,6 +13,7 @@ import CreatePackageComponent from "../TransactionOffice/CreatePackageComponent.
 import IncomingBagListAggregationFromAggregation from "./IncomingBagListAggregationFromAggregation.jsx";
 import CreateShipmentAggregationToAggregation from "./CreateShipmentAggregationToAggregation.jsx";
 import CreateShipmentAggregationToTransaction from "./CreateShipmentAggregationToTransaction.jsx";
+import Toast from "../../Common/Toast.jsx";
 
 
 const AggregationEmployeeLayout = () => {
@@ -47,6 +48,7 @@ const AggregationEmployeeLayout = () => {
 
     return (
         <>
+            <Toast/>
             <AggregationEmployeeProvider>
                 <SidebarAggregation/>
                 {renderComponent(pathname)}

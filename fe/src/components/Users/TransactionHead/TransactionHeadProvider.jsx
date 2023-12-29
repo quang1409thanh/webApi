@@ -19,7 +19,7 @@ export function TransactionHeadProvider({children}) {
             .catch((error) => {
                 console.error('Error fetching data:', error);
             });
-    }, []);
+    }, [submitted]);
 
     const {currentUser} = useStateContext();
 

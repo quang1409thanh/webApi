@@ -6,9 +6,8 @@ import {CompanyLeaderContext} from "../CompanyLeaderProvider.jsx";
 const HeadList = () => {
     const [headData, setHeadData] = useState([]);
     const {userType} = useContext(CompanyLeaderContext);
-    const {setSubmitted} = useContext(CompanyLeaderContext);
+    const {submitted, setSubmitted} = useContext(CompanyLeaderContext);
     const {showToast} = useStateContext();
-
 
     useEffect(() => {
         console.log('Calling useEffect in ManageHeadProvider');
@@ -22,7 +21,7 @@ const HeadList = () => {
             .catch(error => {
                 console.error('Error fetching data:', error);
             });
-    }, [userType]);
+    }, [userType, submitted]);
 
     const getTitleText = () => {
         if (userType === "aggregationHead") {

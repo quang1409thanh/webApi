@@ -5,9 +5,11 @@ import {AggregationEmployeeContext} from "./AggregationEmployeeProvider.jsx";
 import AddressSelectionAggregationEmployeeDisable
     from "../../Common/FindPost/AddressSelectionAggregationEmployeeDisable.jsx";
 import AddressSelectionAggregationEmployee from "../../Common/FindPost/AddressSelectionAggregationEmployee.jsx";
+import {useStateContext} from "../../../contexts/ContextProvider.jsx";
 
 const CreateShipmentAggregationToAggregation = () => {
 
+    const {showToast} = useStateContext();
 
     const [aggregationList, setAggregationList] = useState([]);
 
@@ -124,6 +126,7 @@ const CreateShipmentAggregationToAggregation = () => {
             sending_aggregation_point_id: id,
             receiving_aggregation_point_id: receiveAggregation.aggregationPointId,
         }).then(response => {
+            showToast("Đơn hàng đã gửi đến điểm tập kết nhận")
             // Handle success, you might want to do something with the response
             console.log('Shipment created successfully:', response.data);
         }).catch(error => {

@@ -1,6 +1,7 @@
 import {TransactionHeadProvider} from "./TransactionHeadProvider.jsx";
 import TransactionOfficerList from "./TransactionOfficerList.jsx";
 import TransactionOfficerAdd from "./TransactionOfficerAdd.jsx";
+import Toast from "../../Common/Toast.jsx";
 
 
 const TransactionOfficerLayout = () => {
@@ -8,6 +9,7 @@ const TransactionOfficerLayout = () => {
         <>
             <h1>===
             </h1>
+            <Toast/>
             <div className="container">
                 <TransactionHeadProvider>
                     <TransactionOfficerList/>

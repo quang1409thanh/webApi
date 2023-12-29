@@ -1,14 +1,17 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, {useContext, useEffect, useState} from "react";
 import axiosClient from "../../../axios.js";
-import { AggregationHeadContext } from "./AggregationHeadProvider.jsx";
-import { TransactionHeadContext } from "../TransactionHead/TransactionHeadProvider.jsx";
+import {AggregationHeadContext} from "./AggregationHeadProvider.jsx";
+import {TransactionHeadContext} from "../TransactionHead/TransactionHeadProvider.jsx";
+import {useStateContext} from "../../../contexts/ContextProvider.jsx";
 
 const AggregationEmployeeAdd = () => {
-    const { data } = useContext(AggregationHeadContext);
+    const {data} = useContext(AggregationHeadContext);
     const id = data?.aggregation_point_head?.id || "";
 
-    const { setSubmitted } = useContext(AggregationHeadContext);
-    const { userType } = useContext(AggregationHeadContext);
+    const {showToast} = useStateContext();
+
+    const {setSubmitted} = useContext(AggregationHeadContext);
+    const {userType} = useContext(AggregationHeadContext);
 
     const [formData, setFormData] = useState({
         name: "",
@@ -21,8 +24,8 @@ const AggregationEmployeeAdd = () => {
         details: "",
     });
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prevData) => ({ ...prevData, [name]: value }));
+        const {name, value} = e.target;
+        setFormData((prevData) => ({...prevData, [name]: value}));
     };
 
     const handleSubmit = (e) => {
@@ -36,7 +39,7 @@ const AggregationEmployeeAdd = () => {
             .then((response) => {
                 // Xử lý response nếu cần
                 setSubmitted(true);
-                console.log(response.data);
+                showToast(response.data);
             })
             .catch((error) => {
                 // Xử lý lỗi nếu cần
@@ -44,13 +47,6 @@ const AggregationEmployeeAdd = () => {
             });
     };
 
-    const renderOptions = (array) => {
-        return array.map((element) => (
-            <option key={element.id} value={element.id}>
-                {element.name}
-            </option>
-        ));
-    };
 
     return (
         <div className="flex flex-col items-center justify-center h-screen mt-20">

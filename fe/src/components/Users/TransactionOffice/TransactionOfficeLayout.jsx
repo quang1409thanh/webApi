@@ -16,6 +16,7 @@ import OutgoingBagListTransactionDetails from "./OutgoingBagListTransactionDetai
 import OrderListTransactionReceiving from "./OrderListTransactionReceiving.jsx";
 import Invoice from "./Invoice.jsx";
 import LossDeliveriesList from "./LossDeliveriesList.jsx";
+import Toast from "../../Common/Toast.jsx";
 
 const TransactionOfficeLayout = () => {
     let location = useLocation();
@@ -52,6 +53,7 @@ const TransactionOfficeLayout = () => {
     }
     return (
         <>
+            <Toast/>
             <TransactionOfficeProvider>
                 <SidebarTransaction/>
                 {renderComponent(location.pathname)}

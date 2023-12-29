@@ -7,11 +7,14 @@ import AddressSelectionTransactionOfficerDisable
 import AddressSelectionTransactionOfficer from "../../Common/FindPost/AddressSelectionTransactionOfficer.jsx";
 import AddressSelectionAggregationEmployeeDisable
     from "../../Common/FindPost/AddressSelectionAggregationEmployeeDisable.jsx";
+import {useStateContext} from "../../../contexts/ContextProvider.jsx";
 
 const CreateShipmentForm = () => {
 
     const {data} = useContext(TransactionOfficeContext)
     const id = data?.transaction_officer?.transaction_point_id;
+    const {showToast} = useStateContext();
+
 
     const [province, setProvince] = useState('');
     const [district, setDistrict] = useState('');
@@ -86,6 +89,7 @@ const CreateShipmentForm = () => {
             receiving_aggregation_point_id: sendTransaction.aggregation_point.id,
         }).then(response => {
             // Handle success, you might want to do something with the response
+            showToast("Đơn hàng đang gửi lên điểm tập kết");
             console.log('Shipment created successfully:', response.data);
         }).catch(error => {
             // Handle error, you might want to show an error message to the user
