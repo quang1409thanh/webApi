@@ -1,6 +1,7 @@
 import React from 'react';
 
 class HomeBody extends React.Component {
+
     render() {
         // fix slide.
         const settings = {
@@ -31,11 +32,11 @@ class HomeBody extends React.Component {
                         <div className="row">
                             <div className="postage-tracking">
                                 <div className="form-title">
-                                    <img src="img/icon-tracking.svg" alt="" style={{marginRight: '0.5rem'}}/>
+                                    <img src="img/icon-tracking.svg" alt="" style={{ marginRight: '0.5rem' }} />
                                     Theo dõi bưu gửi
                                 </div>
                                 <form className="form-tracking" method="get" action="/find_postal_items">
-                                    <input type="text" name="code_tracking" className="input-tracking"
+                                    <input type="text" name="code" className="input-tracking"
                                            placeholder="Nhập mã bưu gửi"/>
                                     <button className="button-tracking">Theo dõi</button>
                                 </form>

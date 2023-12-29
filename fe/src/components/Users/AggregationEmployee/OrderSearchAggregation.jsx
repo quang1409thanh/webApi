@@ -14,7 +14,7 @@ const OrderSearchAggregation = ({ trackingCode, data, noiGui, noiNhan, trangThai
                                 <div className="search-code-items" style={{ backgroundColor: 'aliceblue' }}>
                                     <div className="search-items-text">
                                         <img src="/img/order-search.png" alt="" />
-                                        <div>Mã bưu gửi (VD: 655ba7422bef17c718d6489f)</div>
+                                        <div>Mã bưu gửi (VD: JZb1GcicLvDw0rmWIH5TdqwRVuNFhF)</div>
                                     </div>
                                     <div className="search-items-input">
                                         <form id="form_code_tracking" method="get" action="/aggregation_employee">

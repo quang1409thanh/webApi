@@ -183,7 +183,7 @@ class GoodController extends Controller
     public function search_good_by_code($code)
     {
         // Truy vấn CSDL để lấy đơn hàng có mã trường code
-        $good = Good::where('code', $code)->first();
+        $good = Good::with(['sendingTransactionPoint.address', 'receivingTransactionPoint.address', 'currentLocation'])->where('code', $code)->first();
         return $good;
     }
 

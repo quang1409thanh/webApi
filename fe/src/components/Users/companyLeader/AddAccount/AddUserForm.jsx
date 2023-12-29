@@ -3,7 +3,7 @@ import axiosClient from "../../../../axios.js";
 import { CompanyLeaderContext } from "../CompanyLeaderProvider.jsx";
 
 const AddUserForm = () => {
-    const { setSubmitted } = useContext(CompanyLeaderContext);
+    const {submitted, setSubmitted } = useContext(CompanyLeaderContext);
     const { userType } = useContext(CompanyLeaderContext);
 
     const [formData, setFormData] = useState({
@@ -73,8 +73,9 @@ const AddUserForm = () => {
                     ? "aggregationPoints"
                     : "transactionPoints";
             setAggregationList(data[dataFieldName]);
+            setSubmitted(false);
         });
-    }, [userType]);
+    }, [userType, submitted]);
     const renderOptions = (array) => {
         return array.map((element) => (
             <option key={element.id} value={element.id}>
