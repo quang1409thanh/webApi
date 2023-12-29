@@ -145,7 +145,7 @@ function AppRouter() {
                             path="/transaction_staff"
                             element={<TransactionOfficeLayout />}
                         />
-                        <Route path="/new-page" element={<Invoice />} />
+                        {/* <Route path="/new-page" element={<Invoice />} /> */}
                         <Route
                             path="/transaction_staff/order_search"
                             element={<TransactionOfficeLayout />}
@@ -203,6 +203,7 @@ function AppRouter() {
             <Route path="/home" element={<HomeGuess />} />
             <Route path="/gioithieu" element={<GoodsQr />} />
             <Route path="/find_postal_items" element={<OrderSearch />} />
+            <Route path="/new-page" element={<Invoice />} />
         </Routes>
     );
 }
