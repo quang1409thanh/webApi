@@ -31,7 +31,7 @@ const TransactionStaff = () => {
 
     useEffect(() => {
         axiosClient
-            .get(`/transactionPoint/${id}`)
+            .get(/transactionPoint/${id})
             .then(({data}) => {
                 setSendTransaction(data.transactionPoint);
             })
@@ -372,4 +372,3 @@ const TransactionStaff = () => {
 export default TransactionStaff;
 
 ///
-
