@@ -4,8 +4,7 @@ import { useStateContext } from "../../../../contexts/ContextProvider.jsx";
 import { CompanyLeaderContext } from "../CompanyLeaderProvider.jsx";
 
 const AggregationList = () => {
-    // const {list} = useContext(AggregationContext);
-    const { setSubmitted } = useContext(CompanyLeaderContext);
+    const {submitted, setSubmitted } = useContext(CompanyLeaderContext);
     const [aggregationList, setAggregationList] = useState([]);
 
     useEffect(() => {
@@ -17,7 +16,7 @@ const AggregationList = () => {
             .catch((error) => {
                 console.error('Error fetching data:', error);
             });
-    }, []);
+    }, [submitted]);
 
     const { showToast } = useStateContext();
 

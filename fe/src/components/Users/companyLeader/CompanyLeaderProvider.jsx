@@ -10,7 +10,7 @@ export function CompanyLeaderProvider({children}) {
 
     return (
         <CompanyLeaderContext.Provider
-            value={{setSubmitted, userType, setUserType}}>
+            value={{setSubmitted, submitted, userType, setUserType}}>
             {children}
         </CompanyLeaderContext.Provider>
     );

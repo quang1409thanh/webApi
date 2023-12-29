@@ -1,16 +1,11 @@
 import React from 'react';
 import "../../../../css/app.css" ;
 import "../../../../css/home.css" ;
-import Header from "../../Header.jsx";
 import Footer from "../../../Common/Footer.jsx";
 import Toast from "../../../Common/Toast.jsx";
 import {useParams} from "react-router-dom";
 import TransactionEditForm from "./TransactionEditForm.jsx";
 import {CompanyLeaderProvider} from "../CompanyLeaderProvider.jsx";
-
-function Aggregation() {
-    return null;
-}
 
 const ShowTransaction = ({headerType, body}) => {
     const {dynamicValue} = useParams();

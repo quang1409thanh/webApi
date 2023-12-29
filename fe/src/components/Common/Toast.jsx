@@ -12,7 +12,7 @@ export default function Toast() {
                             ? "bg-red-500"
                             : toast.type === "warning"
                             ? "bg-yellow-500"
-                            : "bg-blue-500" // Default to success
+                            : "bg-green-500" // Default to success
                     }`}
                 >
                     {toast.message}

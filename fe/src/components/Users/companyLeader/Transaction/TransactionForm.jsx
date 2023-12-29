@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, {useContext, useEffect, useState} from "react";
 import axiosClient from "../../../../axios.js";
 import AddressSelect from "../../../Common/FindPost/AddressSelect.jsx";
 import "../styleAggregation.css";
-import { useStateContext } from "../../../../contexts/ContextProvider.jsx";
-import { CompanyLeaderContext } from "../CompanyLeaderProvider.jsx";
+import {useStateContext} from "../../../../contexts/ContextProvider.jsx";
+import {CompanyLeaderContext} from "../CompanyLeaderProvider.jsx";
 
-const InputField = ({ label, id, value, onChange, type = "text" }) => (
+const InputField = ({label, id, value, onChange, type = "text"}) => (
     <div className="col-tmp-1">
         <label htmlFor={id}>{label}:</label>
         <input
@@ -14,15 +14,15 @@ const InputField = ({ label, id, value, onChange, type = "text" }) => (
             className="form-control"
             value={value}
             onChange={(e) => onChange(e.target.value)}
-            style={{ width: "94%" }}
+            style={{width: "94%"}}
         />
     </div>
 );
 
 const TransactionForm = () => {
     // const {setSubmitted} = useContext(TransactionContext);
-    const { setSubmitted } = useContext(CompanyLeaderContext);
-    const { showToast } = useStateContext();
+    const {setSubmitted} = useContext(CompanyLeaderContext);
+    const {showToast} = useStateContext();
     const [isExpanded, setExpanded] = useState(false);
 
     const [aggregationList, setAggregationList] = useState([]);
@@ -119,7 +119,7 @@ const TransactionForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         axiosClient
-            .post("/transactionPoint", { ...address, ...formData })
+            .post("/transactionPoint", {...address, ...formData})
             .then(() => {
                 setSubmitted(true);
                 showToast("Thêm thành công");
@@ -150,11 +150,11 @@ const TransactionForm = () => {
             </div>
             {isExpanded && (
                 <div className={`box-title text-uppercase`}>
-                    Thêm Điểm Giao Dich{" "}
+                    Thêm Điểm Giao Dịch{" "}
                 </div>
             )}
 
-            <form style={{ width: "100%" }} onSubmit={handleSubmit}>
+            <form style={{width: "100%"}} onSubmit={handleSubmit}>
                 {isExpanded && (
                     <div className="col-search-box">
                         <h1>Các thông tin cho điểm giao dịch</h1>
@@ -181,19 +181,19 @@ const TransactionForm = () => {
                             </div>
 
                             <InputField
-                                label="Tên công ty"
+                                label="Tên Điểm giao dịch"
                                 id="name"
                                 value={formData.name}
                                 onChange={(value) =>
-                                    setFormData({ ...formData, name: value })
+                                    setFormData({...formData, name: value})
                                 }
                             />
                             <InputField
-                                label="Mã công ty"
+                                label="Mã điểm giao dịch"
                                 id="code"
                                 value={formData.code}
                                 onChange={(value) =>
-                                    setFormData({ ...formData, code: value })
+                                    setFormData({...formData, code: value})
                                 }
                             />
                             <InputField
@@ -201,7 +201,7 @@ const TransactionForm = () => {
                                 id="phone"
                                 value={formData.phone}
                                 onChange={(value) =>
-                                    setFormData({ ...formData, phone: value })
+                                    setFormData({...formData, phone: value})
                                 }
                             />
                             <InputField
@@ -209,7 +209,7 @@ const TransactionForm = () => {
                                 id="email"
                                 value={formData.email}
                                 onChange={(value) =>
-                                    setFormData({ ...formData, email: value })
+                                    setFormData({...formData, email: value})
                                 }
                             />
                             <InputField
@@ -228,7 +228,7 @@ const TransactionForm = () => {
                                 id="status"
                                 value={formData.status}
                                 onChange={(value) =>
-                                    setFormData({ ...formData, status: value })
+                                    setFormData({...formData, status: value})
                                 }
                             />
                             <InputField
@@ -236,7 +236,7 @@ const TransactionForm = () => {
                                 id="notes"
                                 value={formData.notes}
                                 onChange={(value) =>
-                                    setFormData({ ...formData, notes: value })
+                                    setFormData({...formData, notes: value})
                                 }
                             />
                             <InputField

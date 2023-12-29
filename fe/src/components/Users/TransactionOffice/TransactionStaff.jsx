@@ -204,7 +204,7 @@ const TransactionStaff = () => {
                                                    onChange={(e) => setSendPhoneNumber(e.target.value)} required/>
                                         </div>
                                         <div>
-                                            <label htmlFor="send_email">Email:</label>
+                                            <label htmlFor="send_email">Địa chỉ người gửi</label>
                                             <input type="email" id="send_email" name="email" value={sendEmail}
                                                    onChange={(e) => setSendEmail(e.target.value)} required/>
                                         </div>
@@ -235,7 +235,7 @@ const TransactionStaff = () => {
                                                    onChange={(e) => setRecipientPhoneNumber(e.target.value)} required/>
                                         </div>
                                         <div>
-                                            <label htmlFor="recipient_email">Email:</label>
+                                            <label htmlFor="recipient_email">Địa chỉ người nhận</label>
                                             <input type="email" id="recipient_email" name="email" value={recipientEmail}
                                                    onChange={(e) => setRecipientEmail(e.target.value)} required/>
                                         </div>

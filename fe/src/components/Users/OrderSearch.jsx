@@ -1,42 +1,58 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import {useLocation, useParams} from "react-router-dom";
+import axiosClient from "../../axios.js";
 
-const value = {
-    id: 11,
-    code: "k7JM2IWt4DsudEfiTvT6WQXzHWs6sK",
-    sending_transaction_point_id: 4,
-    receiving_transaction_point_id: 1,
-    sender_name: "Le Nam",
-    receiver_name: "le duc",
-    shipment_id_gd_tk: "8",
-    shipment_id_tk_tk: "4",
-    shipment_id_tk_gd: null,
-    goods_information: null,
-    package_type: "Tài liệu",
-    weight: 12,
-    instructions_send: "Chuyển hoàn ngay",
-    instructions_staff: "2",
-    service: "2",
-    main_fee: 34,
-    surcharge: 0,
-    collection_fee: 0,
-    status: "Đã gửi đến điểm tập kết Điểm Tập Kết Hà Nội",
-    history:
-        '[{"status": "Chấp nhận gửi tại địa điểm giao dịch Điểm Giao Dịch Bình Thạnh", "updated_at": "2023-12-28T10:59:36.643162Z"}, {"status": "Đang gửi lên điểm tập kết Điểm Tập Kết Sài Gòn", "updated_at": "2023-12-28T11:00:31.512976Z"}, {"status": "Đã gửi đến điểm tập kết Điểm Tập Kết Sài Gòn", "updated_at": "2023-12-28T11:03:51.121850Z"}, {"status": "Đang gửi đến điểm tập kết nhận: Điểm Tập Kết Hà Nội", "updated_at": "2023-12-28T11:05:03.840201Z"}]',
-    current_location_id: 1,
-    current_location_type: "App\\Models\\AggregationPoint",
-    created_at: "2023-12-28T10:58:36.000000Z",
-    updated_at: "2023-12-28T11:05:03.000000Z",
-};
+const OrderSearch = ({}) => {
 
-const OrderSearch = ({
-    trackingCode,
-    data,
-    noiGui,
-    noiNhan,
-    trangThai,
-    listTrangThai,
-    foundParcel,
-}) => {
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const code = searchParams.get('code');
+    console.log("code", code);
+
+    const [goodInfo, setGoodInfo] = useState({
+        code: '',
+        sending_transaction_point: {
+            name: '',
+            address: {
+                province: '',
+            }
+        },
+        receiving_transaction_point: {
+            name: '',
+            address: {
+                province: '',
+            }
+        },
+        current_location: {
+            name: '',
+        },
+        sender_name: '',
+        receiver_name: '',
+        history: [],
+        status: '',
+    });
+
+
+    useEffect(() => {
+        axiosClient.get(`/search_good/${code}`)
+            .then(({data}) => {
+                setGoodInfo(data);
+                console.log('Good Info:', data);
+                const parsedHistory = JSON.parse(data.history);
+                // Cập nhật state với mảng đã được chuyển đổi
+                setGoodInfo({...data, history: parsedHistory});
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
+    const formatDateTime = (timestamp) => {
+        const date = new Date(timestamp);
+        const formattedDate = date.toLocaleDateString();
+        const formattedTime = date.toLocaleTimeString();
+        return {date: formattedDate, time: formattedTime};
+    };
+
     return (
         <div>
             <main className="search_content">
@@ -49,60 +65,61 @@ const OrderSearch = ({
                             <div className="order-search-info-top row">
                                 <div className="order-search-info-top-text col-lg-5 col-sm-3 col-6">
                                     <div>Code Tracking</div>
-                                    <p>{value.code}</p>
+                                    <p>{goodInfo.code}</p>
                                 </div>
                                 <div className="order-search-info-top-text col-lg-1 col-sm-3 col-6">
                                     <div>Khối lượng (kg)</div>
-                                    <p>{value.weight}</p>
+                                    <p>{goodInfo.weight}</p>
                                 </div>
                                 <div className="order-search-info-top-text col-lg-4 col-sm-3 col-6">
-                                    <div>Nơi gửi</div>
+                                    <div>Điểm giao dịch gửi:{" "}
+                                    </div>
                                     <p>
-                                        ID điểm giao dịch gửi:{" "}
-                                        {value.sending_transaction_point_id}
+                                        {goodInfo.sending_transaction_point.name}
                                     </p>
                                 </div>
                                 <div className="order-search-info-top-text col-lg-4 col-sm-3 col-6">
-                                    <div>Nơi nhận</div>
+                                    <div>
+                                        Đểm giao dịch nhận:{" "}
+                                    </div>
                                     <p>
-                                        ID điểm giao dịch nhận:{" "}
-                                        {value.receiving_transaction_point_id}
+                                        {goodInfo.receiving_transaction_point.name}
                                     </p>
                                 </div>
                             </div>
-                            <div class="order-search-info-middle row">
-                                <div class="col-lg-4-1 col-sm-6 col-12">
+                            <div className="order-search-info-middle row">
+                                <div className="col-lg-4-1 col-sm-6 col-12">
                                     <div>
                                         Tỉnh gửi:
-                                        {/* <span>{{data.send_city}}</span> */}
+                                        <span>{goodInfo.sending_transaction_point.address.province}</span>
                                     </div>
                                 </div>
-                                <div class="col-lg-8 col-sm-6 col-12">
+                                <div className="col-lg-8 col-sm-6 col-12">
                                     <div>
                                         Địa chỉ gửi:
-                                        {/* <span>{{data.send_district}}</span> */}
+                                        <span>{goodInfo.sending_transaction_point.address.district}</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="order-search-info-middle row">
-                                <div class="col-lg-4-1 col-sm-6 col-12">
+                            <div className="order-search-info-middle row">
+                                <div className="col-lg-4-1 col-sm-6 col-12">
                                     <div>
                                         Tỉnh Nhận:
-                                        {/* <span>{{data.recipient_city}}</span> */}
+                                        <span>{goodInfo.receiving_transaction_point.address.province}</span>
                                     </div>
                                 </div>
-                                <div class="col-lg-8 col-sm-6 col-12">
+                                <div className="col-lg-8 col-sm-6 col-12">
                                     <div>
                                         Địa chỉ nhận:
-                                        {/* <span>{{data.recipient_district}}</span> */}
+                                        <span>{goodInfo.receiving_transaction_point.address.district}</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="order-search-info-bottom row">
-                                <div class="col-12">
+                            <div className="order-search-info-bottom row">
+                                <div className="col-12">
                                     <div>
                                         Trạng thái:
-                                        <span>{value.status}</span>
+                                        <span>{goodInfo.status}</span>
                                     </div>
                                 </div>
                             </div>
@@ -115,49 +132,27 @@ const OrderSearch = ({
                                     <div className="table-responsive">
                                         <table className="table">
                                             <thead>
-                                                <tr>
-                                                    <th>STT</th>
-                                                    <th>Người gửi</th>
-                                                    <th>Người nhận</th>
-                                                    <th>Vị trí</th>
-                                                    <th>Loại hàng hóa</th>
-                                                    <th>
-                                                        Chỉ dẫn gửi thất bại
-                                                    </th>
-                                                    <th>Cước chính</th>
-                                                    {/* <th>Phụ phí</th>
-                                                    <th>Thu hộ</th> */}
-                                                </tr>
+                                            <tr>
+                                                <th>STT</th>
+                                                <th>Ngày</th>
+                                                <th>Giờ</th>
+                                                <th>Trạng Thái</th>
+                                                <th>Thời gian cập nhật</th>
+                                                <th>Vị trí hiện tại</th>
+                                            </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>{value.id}</td>
-                                                    <td>{value.sender_name}</td>
-                                                    <td>
-                                                        {value.receiver_name}
-                                                    </td>
-                                                    <td>
-                                                        {
-                                                            value.current_location_type
-                                                        }{" "}
-                                                        {
-                                                            value.current_location_id
-                                                        }
-                                                    </td>
-                                                    <td>
-                                                        {value.package_type}
-                                                    </td>
-                                                    <td>
-                                                        {
-                                                            value.instructions_send
-                                                        }
-                                                    </td>
-                                                    <td>{value.main_fee}</td>
-                                                    {/* <td>{value.surcharge}</td>
-                                                    <td>
-                                                        {value.collection_fee}
-                                                    </td> */}
+                                            {goodInfo.history.map((item, index) => (
+                                                <tr key={index}>
+                                                    <td>{index + 1}</td>
+                                                    {/* Thêm các ô dữ liệu cần hiển thị */}
+                                                    <td>{formatDateTime(item.updated_at).date}</td>
+                                                    <td>{formatDateTime(item.updated_at).time}</td>
+                                                    <td>{item.status}</td>
+                                                    <td>{item.updated_at}</td>
+                                                    <td>{goodInfo.current_location.name}</td>
                                                 </tr>
+                                            ))}
                                             </tbody>
                                         </table>
                                     </div>

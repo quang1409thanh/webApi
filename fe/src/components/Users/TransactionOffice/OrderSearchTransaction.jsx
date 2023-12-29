@@ -14,13 +14,13 @@ const OrderSearchTransaction = ({ trackingCode, data, noiGui, noiNhan, trangThai
                                 <div className="search-code-items" style={{ backgroundColor: 'aliceblue' }}>
                                     <div className="search-items-text">
                                         <img src="/img/order-search.png" alt="" />
-                                        <div>Mã bưu gửi (VD: 655ba7422bef17c718d6489f)</div>
+                                        <div>Mã bưu gửi (VD: JZb1GcicLvDw0rmWIH5TdqwRVuNFhF)</div>
                                     </div>
                                     <div className="search-items-input">
-                                        <form id="form_code_tracking" method="get" action="/transaction_staff/tra_cuu_don">
+                                        <form id="form_code_tracking" method="get" action="/find_postal_items/">
                                             <div className="row">
                                                 <div className="col-sm-9">
-                                                    <input type="text" name="code_tracking" id="input_code_tracking" placeholder="Nhập mã bưu gửi" value={trackingCode} />
+                                                    <input type="text" name="code" id="input_code_tracking" placeholder="Nhập mã bưu gửi" value={trackingCode} />
                                                 </div>
                                                 <div className="col-sm-3">
                                                     <button className="btn-find_item">Tra cứu</button>

@@ -1,11 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, {useContext, useState} from "react";
 import axiosClient from "../../../../axios.js";
 import AddressSelect from "../../../Common/FindPost/AddressSelect.jsx";
 import "../styleAggregation.css";
-import { useStateContext } from "../../../../contexts/ContextProvider.jsx";
-import { CompanyLeaderContext } from "../CompanyLeaderProvider.jsx";
+import {useStateContext} from "../../../../contexts/ContextProvider.jsx";
+import {CompanyLeaderContext} from "../CompanyLeaderProvider.jsx";
 
-const InputField = ({ label, id, value, onChange, type = "text" }) => (
+const InputField = ({label, id, value, onChange, type = "text"}) => (
     <div className="col-tmp-1">
         <label htmlFor={id}>{label}:</label>
         <input
@@ -14,7 +14,7 @@ const InputField = ({ label, id, value, onChange, type = "text" }) => (
             className="form-control"
             value={value}
             onChange={(e) => onChange(e.target.value)}
-            style={{ width: "94%" }}
+            style={{width: "94%"}}
         />
     </div>
 );
@@ -40,9 +40,9 @@ const AggregationForm = () => {
     });
 
     // const {setSubmitted} = useContext(AggregationContext);
-    const { setSubmitted } = useContext(CompanyLeaderContext);
+    const {setSubmitted} = useContext(CompanyLeaderContext);
 
-    const { showToast } = useStateContext();
+    const {showToast} = useStateContext();
     const [isExpanded, setExpanded] = useState(false);
     const handleExpandClick = () => {
         setExpanded(!isExpanded);
@@ -82,10 +82,10 @@ const AggregationForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         axiosClient
-            .post("/aggregationPoint", { ...address, ...formData })
+            .post("/aggregationPoint", {...address, ...formData})
             .then(() => {
                 setSubmitted(true);
-                showToast("Thêm thành công");
+                showToast("Thêm thành công", "success");
             })
             .catch((error) => {
                 console.error("Error fetching data:", error);
@@ -112,7 +112,7 @@ const AggregationForm = () => {
                 )}
             </div>
             {isExpanded && <div className={`box-title`}>Thêm điểm tập kết</div>}
-            <form style={{ width: "100%" }} onSubmit={handleSubmit}>
+            <form style={{width: "100%"}} onSubmit={handleSubmit}>
                 {isExpanded && (
                     <div className="col-search-box">
                         <h1>Các thông tin quan trọng khác .</h1>
@@ -122,7 +122,7 @@ const AggregationForm = () => {
                                 id="name"
                                 value={formData.name}
                                 onChange={(value) =>
-                                    setFormData({ ...formData, name: value })
+                                    setFormData({...formData, name: value})
                                 }
                             />
                             <InputField
@@ -130,7 +130,7 @@ const AggregationForm = () => {
                                 id="code"
                                 value={formData.code}
                                 onChange={(value) =>
-                                    setFormData({ ...formData, code: value })
+                                    setFormData({...formData, code: value})
                                 }
                             />
                             <InputField
@@ -138,7 +138,7 @@ const AggregationForm = () => {
                                 id="phone"
                                 value={formData.phone}
                                 onChange={(value) =>
-                                    setFormData({ ...formData, phone: value })
+                                    setFormData({...formData, phone: value})
                                 }
                             />
                             <InputField
@@ -146,7 +146,7 @@ const AggregationForm = () => {
                                 id="email"
                                 value={formData.email}
                                 onChange={(value) =>
-                                    setFormData({ ...formData, email: value })
+                                    setFormData({...formData, email: value})
                                 }
                             />
                             <InputField
@@ -165,7 +165,7 @@ const AggregationForm = () => {
                                 id="status"
                                 value={formData.status}
                                 onChange={(value) =>
-                                    setFormData({ ...formData, status: value })
+                                    setFormData({...formData, status: value})
                                 }
                             />
                             <InputField
@@ -173,7 +173,7 @@ const AggregationForm = () => {
                                 id="notes"
                                 value={formData.notes}
                                 onChange={(value) =>
-                                    setFormData({ ...formData, notes: value })
+                                    setFormData({...formData, notes: value})
                                 }
                             />
                             <InputField
