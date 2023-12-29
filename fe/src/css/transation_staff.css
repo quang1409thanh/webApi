@@ -92,6 +92,12 @@
     min-height: calc(100vh - 79px);
 }
 
+.search_content {
+    background-color: #eaf1fe !important;
+    padding: 85px 20px 20px;
+    min-height: calc(100vh - 79px);
+}
+
 .full_container {
     left: 200px;
     min-height: calc(100vh - 80px);
@@ -145,10 +151,9 @@ input {
 .customer_info .form-group > div {
     width: calc(45% - 10px);
     margin-right: 15px; /* Thêm margin âm để làm cho các ô nằm sát nhau */
-    margin-left: 15px;  /* Thêm margin âm ở lề trái */
+    margin-left: 15px; /* Thêm margin âm ở lề trái */
     padding-right: 5px; /* Thêm padding để làm cho các ô nằm sát nhau */
-    padding-left: 5px;  /* Thêm padding ở lề trái */
-    
+    padding-left: 5px; /* Thêm padding ở lề trái */
 }
 
 .customer_info {
@@ -658,7 +663,7 @@ td {
 
 .order-search-info-title h3 {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 24px;
     line-height: 24px;
     text-transform: uppercase;
     color: #0072bc;
@@ -674,7 +679,7 @@ td {
     border-right: 1px solid #fff;
 }
 
-.order-search-info .col-lg-2 {
+.order-search-info .col-lg-5 {
     flex: 0 0 16%;
     max-width: 16%;
     position: relative;
@@ -787,7 +792,7 @@ td {
 
 .order-search-info-status-title h3 {
     font-weight: 700;
-    font-size: 10px;
+    font-size: 24px;
     line-height: 24px;
     text-transform: uppercase;
     color: #0072bc;
@@ -810,6 +815,7 @@ td {
     width: 100%;
     margin-bottom: 1rem;
     color: #212529;
+    border: 1px solid #00008b;
 }
 
 .order-search-info-status-content thead {
