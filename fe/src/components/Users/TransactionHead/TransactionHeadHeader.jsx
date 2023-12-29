@@ -115,7 +115,10 @@ export default function TransactionHeadHeader() {
                                     </NavLink>
                                 </li>
 
-                                <li className="menu_item">
+                                <li
+                                    className="menu_item"
+                                    style={{ marginRight: "40px" }}
+                                >
                                     <b>Trang trưởng điểm giao dịch</b>
                                 </li>
                             </ul>

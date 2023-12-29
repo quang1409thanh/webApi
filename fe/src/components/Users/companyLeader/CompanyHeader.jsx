@@ -131,6 +131,21 @@ export default function CompanyHeader() {
                                         Thêm tài khoản
                                     </NavLink>
                                 </li>
+                                <li className="menu_item">
+                                    <NavLink
+                                        to="/statsTransactionHead"
+                                        className={({ isActive }) =>
+                                            classNames(
+                                                isActive
+                                                    ? "bg-blue-300 text-gray-800" // Màu nền và màu chữ khi được chọn
+                                                    : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                                                "px-3 py-2 rounded-md text-sm font-medium"
+                                            )
+                                        }
+                                    >
+                                        Thống kê đơn hàng
+                                    </NavLink>
+                                </li>
                                 <li className="menu_item leader_page">
                                     <b>Trang Lãnh Đạo Công Ty</b>
                                 </li>
