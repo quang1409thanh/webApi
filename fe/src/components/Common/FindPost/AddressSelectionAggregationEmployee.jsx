@@ -4,20 +4,20 @@ import axiosClient from '../../../axios.js';
 
 const host = 'https://provinces.open-api.vn/api/';
 
-const AddressSelectionTransactionOfficer = ({
-                                                onSelectProvince,
-                                                onSelectDistrict,
-                                                onSelectWard,
-                                                onSelectTransactionPoint,
-                                                selectedProvince,
-                                                selectedDistrict,
-                                                selectedWard,
-                                                selectTransactionPoint
-                                            }) => {
+const AddressSelectionAggregationEmployee = ({
+                                                 onSelectProvince,
+                                                 onSelectDistrict,
+                                                 onSelectWard,
+                                                 onSelectAggregationPoint,
+                                                 selectedProvince,
+                                                 selectedDistrict,
+                                                 selectedWard,
+                                                 selectTransactionPoint
+                                             }) => {
     const [provinces, setProvinces] = useState([]);
     const [districts, setDistricts] = useState([]);
     const [wards, setWards] = useState([]);
-    const [transactionList, setTransactionList] = useState([]);
+    const [aggregationList, setTransactionList] = useState([]);
 
     const [province, setProvince] = useState(selectedProvince);
     const [district, setDistrict] = useState(selectedDistrict);
@@ -25,7 +25,7 @@ const AddressSelectionTransactionOfficer = ({
     const [provinceText, setProvinceText] = useState('');
     const [districtText, setDistrictText] = useState('');
     const [wardText, setWardText] = useState('');
-    const [transactionPoint, setTransactionPoint] = useState('');
+    const [aggregationPoint, setTransactionPoint] = useState('');
 
     useEffect(() => {
         // Lấy danh sách tỉnh/thành phố
@@ -54,7 +54,7 @@ const AddressSelectionTransactionOfficer = ({
         // Khi component được mount, gọi API để lấy danh sách điểm giao dịch tương ứng với tỉnh đã chọn
         if (province) {
             axiosClient
-                .post('/list_office', {
+                .post('/list_aggregation', {
                     province: provinceText,
                     district: districtText,
                     ward: wardText,
@@ -80,7 +80,7 @@ const AddressSelectionTransactionOfficer = ({
 
         // Gọi API để lấy danh sách điểm giao dịch tương ứng với tỉnh đã chọn
         axiosClient
-            .post('/list_office', {
+            .post('/list_aggregation', {
                 province: e.target.options[e.target.selectedIndex].text,
                 district: '',
                 ward: '',
@@ -112,10 +112,10 @@ const AddressSelectionTransactionOfficer = ({
         onSelectWard(selectedWardCode, e.target.options[e.target.selectedIndex].text);
     };
 
-    const handleTransactionPointChange = (e) => {
+    const handleAggregationPointChange = (e) => {
         const selectedTransactionPointCode = e.target.value;
         setTransactionPoint(selectedTransactionPointCode);
-        onSelectTransactionPoint(selectedTransactionPointCode, e.target.options[e.target.selectedIndex].text);
+        onSelectAggregationPoint(selectedTransactionPointCode, e.target.options[e.target.selectedIndex].text);
     };
 
     const renderOptions = (array) => {
@@ -175,15 +175,15 @@ const AddressSelectionTransactionOfficer = ({
                     <select
                         id="transaction_point_id"
                         name="transaction_point_id"
-                        value={transactionPoint}
-                        onChange={handleTransactionPointChange}
+                        value={aggregationPoint}
+                        onChange={handleAggregationPointChange}
                         style={{width: '100%'}}
                         required
                     >
                         <option disabled value="">
-                            Chọn điểm giao dịch
+                            Chọn điểm tập kết
                         </option>
-                        {renderOptionsPoint(transactionList)}
+                        {renderOptionsPoint(aggregationList)}
                     </select>
                 </div>
             </div>
@@ -191,4 +191,4 @@ const AddressSelectionTransactionOfficer = ({
     );
 };
 
-export default AddressSelectionTransactionOfficer;
+export default AddressSelectionAggregationEmployee;

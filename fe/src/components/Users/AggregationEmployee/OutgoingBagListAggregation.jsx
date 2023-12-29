@@ -1,10 +1,22 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {AggregationEmployeeContext} from "./AggregationEmployeeProvider.jsx";
 import axiosClient from "../../../axios.js";
 
 const OutgoingBagListAggregation = () => {
 
-    const {listOutgoingToAggregation} = useContext(AggregationEmployeeContext);
+    const [listOutgoingToAggregation, setListOutgoingToAggregation] = useState([]);
+    useEffect(() => {
+        axiosClient.get('/list_outgoing_to_aggregation')
+            .then(({data}) => {
+                console.log("data", data.shipmentTkTk);
+                if (data && data.shipmentTkTk) {
+                    setListOutgoingToAggregation(data.shipmentTkTk);
+                }
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
     console.log("listOutgoingToAggregation", listOutgoingToAggregation);
     return (
         <div className="page_container">

@@ -1,11 +1,23 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {AggregationEmployeeContext} from "./AggregationEmployeeProvider.jsx";
 import axiosClient from "../../../axios.js";
 
 const IncomingBagListAggregationFromAggregation = () => {
     const [buttonClicked, setButtonClicked] = useState(false);
+    const [listIncomingFromAggregation, setListIncomingFromAggregation] = useState([]);
+    useEffect(() => {
+        axiosClient.get('/list_incoming_from_aggregation')
+            .then(({data}) => {
+                console.log("data", data.shipmentTkTk);
+                if (data && data.shipmentTkTk) {
+                    setListIncomingFromAggregation(data.shipmentTkTk);
+                }
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
 
-    const {listIncomingFromAggregation} = useContext(AggregationEmployeeContext);
     console.log("listIncomingFromAggregation", listIncomingFromAggregation);
     const handleAccept = (e, id) => {
         e.preventDefault();

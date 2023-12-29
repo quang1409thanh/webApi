@@ -1,10 +1,25 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {TransactionOfficeContext} from "./TransactionOfficeProvider.jsx";
 import {useNavigate} from "react-router-dom";
+import axiosClient from "../../../axios.js";
 
 const OrderListTransactionReceiving = () => {
-    const {listGoodReceive} = useContext(TransactionOfficeContext);
-    console.log("listGoodReceive", listGoodReceive);
+
+    const [listGoodReceive, setListGoodReceive] = useState([]);
+
+    useEffect(() => {
+        axiosClient.get('/list_good_receive_transaction')
+            .then(({data}) => {
+                // Kiểm tra xem dữ liệu có tồn tại không trước khi thêm vào state
+                console.log("data", data.goods);
+                if (data && data.goods) {
+                    setListGoodReceive(data.goods);
+                }
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
     const navigate = useNavigate();
 
     const [data, setData] = useState([]);
@@ -40,8 +55,6 @@ const OrderListTransactionReceiving = () => {
 
     const handleCreatePackage = () => {
         if (selectedOrderIds.length > 0) {
-            // Kiểm tra giá trị của selectedOrderIds
-            console.log('Selected Order IDs:', selectedOrderIds);
 
             // Chuyển hướng đến trang tạo túi hàng và truyền danh sách ID qua URL
             navigate(`/transaction_staff/create-package?orderIds=${selectedOrderIds.join(',')}`);
@@ -50,31 +63,115 @@ const OrderListTransactionReceiving = () => {
         }
     };
 
+    function handleDeliverySuccess(id) {
+
+    }
+
+    function handleDeliveryFailure(id) {
+
+    }
+
+    function handleLoss(id) {
+
+    }
+
+    function handleDeliverySuccessPackage() {
+
+        axiosClient.post('/change-status-good', {
+            good_ids: selectedOrderIds,
+            type: "success",
+        }).then(response => {
+            // Handle success, you might want to do something with the response
+            console.log('Shipment created successfully:', response.data);
+        }).catch(error => {
+            // Handle error, you might want to show an error message to the user
+            console.error('Error creating shipment:', error);
+        });
+    }
+
+    function handleDeliveryFailurePackage() {
+        axiosClient.post('/change-status-good', {
+            good_ids: selectedOrderIds,
+            type: "failure",
+        }).then(response => {
+            // Handle success, you might want to do something with the response
+            console.log('Shipment created successfully:', response.data);
+        }).catch(error => {
+            // Handle error, you might want to show an error message to the user
+            console.error('Error creating shipment:', error);
+        });
+
+
+    }
+
+    function handleLossPackage() {
+        axiosClient.post('/change-status-good', {
+            good_ids: selectedOrderIds,
+            type: "loss",
+        }).then(response => {
+            // Handle success, you might want to do something with the response
+            console.log('Shipment created successfully:', response.data);
+        }).catch(error => {
+            // Handle error, you might want to show an error message to the user
+            console.error('Error creating shipment:', error);
+        });
+
+
+    }
+
     return (
         <div className="page_container">
             <main className="main_content">
                 <div id="mainContent">
                     <div className="full_container">
                         <div className="content_title">
-                            DANH SÁCH ĐƠN TẠO
+                            DANH SÁCH ĐƠN HÀNG ĐÃ NHẬN TỪ ĐIỂM TẬP KẾT
                         </div>
                         <div className="container_product_list">
                             {listGoodReceive.length > 0 ? (
                                 <div className="nav_bar_service">
-                                    <input type="button" value="Xóa" name="delete"/>
-                                    <input
-                                        type="button"
-                                        value="Tạo túi hàng"
-                                        id="btn_tao_tui"
-                                        className="check_btn"
-                                        onClick={handleCreatePackage}
-                                        // disabled={!selectAll}
-                                    />
-                                    <input
-                                        type="button"
-                                        value="ALL"
-                                        onClick={handleSelectAll}
-                                    />
+                                    <div className="py-2 px-4 border-b">
+                                        <div className="flex">
+                                            <button type="button" value="Xóa" name="delete"
+                                                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+                                            >
+                                                Xóa
+                                            </button>
+
+                                            <button
+                                                type="button"
+                                                value="ALL"
+                                                onClick={handleSelectAll}
+                                                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+
+                                            >
+                                                All
+                                            </button>
+
+
+                                            <button
+                                                type="button"
+                                                className="bg-blue-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2"
+                                                onClick={() => handleDeliverySuccessPackage()}
+                                            >
+                                                Delivery Success
+                                            </button>
+                                            <button
+                                                type="button"
+                                                className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mr-2"
+                                                onClick={() => handleDeliveryFailurePackage()}
+                                            >
+                                                Delivery Failure
+                                            </button>
+                                            <button
+                                                type="button"
+                                                className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded"
+                                                onClick={() => handleLossPackage()}
+                                            >
+                                                Loss
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             ) : (
                                 <div id="error_note" style={{display: ''}}>
@@ -100,9 +197,9 @@ const OrderListTransactionReceiving = () => {
                                             <th>Mã đơn hàng</th>
                                             <th>Tên Người Gửi</th>
                                             <th>Tên Người Nhận</th>
-                                            <th>Ngày tạo đơn</th>
-                                            <th>Trạng thái</th>
-                                            <th>Action</th>
+                                            <th>Ngày Tạo Đơn</th>
+                                            <th>Ngày Cập Nhật</th>
+                                            <th>Status</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -130,16 +227,39 @@ const OrderListTransactionReceiving = () => {
                                                 <td>
                                                     <span>{item.created_at}</span>
                                                 </td>
-                                                <td>{item.status}</td>
+                                                <td>
+                                                    <span>{item.updated_at}</span>
+                                                </td>
+
                                                 <td className="py-2 px-4 border-b">
-                                                    <form
-                                                        method="POST"
-                                                        onSubmit={(event) => handleAccept(event, item.id)}>
-                                                        <button type="submit"
-                                                                className="bg-blue-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-                                                            {item.status === "chuyển thành công" ? 'ACCEPTED' : 'ACCEPT'}
+                                                    {item.status === 'chuyển thành công đến người nhận' ? (
+                                                        <button
+                                                            type="button"
+                                                            className="bg-blue-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                                                            onClick={() => handleDeliverySuccess(item.id)}
+                                                        >
+                                                            Delivery Success
                                                         </button>
-                                                    </form>
+                                                    ) : item.status === 'chuyển thất bại đến người nhận' ? (
+                                                        <button
+                                                            type="button"
+                                                            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                                                            onClick={() => handleDeliveryFailure(item.id)}
+                                                        >
+                                                            Delivery Failure
+                                                        </button>
+                                                    ) : item.status === 'đơn hàng bị thất lạc' ? (
+                                                        <button
+                                                            type="button"
+                                                            className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded"
+                                                            onClick={() => handleLoss(item.id)}
+                                                        >
+                                                            Loss
+                                                        </button>
+                                                    ) : (
+                                                        // You can add a default action or leave it empty
+                                                        <span>No action available</span>
+                                                    )}
                                                 </td>
                                             </tr>
                                         ))}

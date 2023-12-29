@@ -8,10 +8,6 @@ import {useParams} from "react-router-dom";
 import AggregationEditForm from "./AggregationEditForm.jsx";
 import {CompanyLeaderProvider} from "../CompanyLeaderProvider.jsx";
 
-function Aggregation() {
-    return null;
-}
-
 const ShowAggregation = ({headerType, body}) => {
     const {dynamicValue} = useParams();
     return (
@@ -25,11 +21,11 @@ const ShowAggregation = ({headerType, body}) => {
                         <br/>
                         <br/>
                         <br/>
-                        <AggregationEditForm id={dynamicValue} />
+                        <AggregationEditForm id={dynamicValue}/>
                     </CompanyLeaderProvider>
                 </div>
             </section>
-            {headerType !== 'none' && <Footer/>}
+            <Footer/>
         </div>
     );
 };

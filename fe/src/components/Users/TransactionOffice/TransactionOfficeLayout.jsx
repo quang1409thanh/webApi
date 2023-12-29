@@ -15,6 +15,7 @@ import OutgoingBagListTransaction from "./OutgoingBagListTransaction.jsx";
 import OutgoingBagListTransactionDetails from "./OutgoingBagListTransactionDetails.jsx";
 import OrderListTransactionReceiving from "./OrderListTransactionReceiving.jsx";
 import Invoice from "./Invoice.jsx";
+import LossDeliveriesList from "./LossDeliveriesList.jsx";
 
 const TransactionOfficeLayout = () => {
     let location = useLocation();
@@ -37,6 +38,13 @@ const TransactionOfficeLayout = () => {
                 return <IncomingBagListTransaction/>;
             case `/transaction_staff/outgoing_bag_list/${dynamicValue}`:
                 return <OutgoingBagListTransactionDetails/>;
+            case '/transaction_staff/success_order_list':
+                return <SuccessfulDeliveriesList/>;
+            case '/transaction_staff/failed_order_list':
+                return <FailedDeliveriesList/>;
+            case '/transaction_staff/loss_order_list':
+                return <LossDeliveriesList/>;
+
             // Add more cases as needed
             default:
                 return null;

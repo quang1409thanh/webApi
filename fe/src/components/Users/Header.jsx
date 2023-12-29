@@ -1,8 +1,8 @@
-import React, { Fragment } from "react";
-import { Navigate, NavLink, Outlet } from "react-router-dom";
-import { useStateContext } from "../../contexts/ContextProvider.jsx";
+import React, {Fragment} from "react";
+import {Navigate, NavLink, Outlet} from "react-router-dom";
+import {useStateContext} from "../../contexts/ContextProvider.jsx";
 import axiosClient from "../../axios.js";
-import { useEffect } from "react";
+import {useEffect} from "react";
 import Toast from "../Common/Toast.jsx";
 
 function classNames(...classes) {
@@ -10,7 +10,7 @@ function classNames(...classes) {
 }
 
 export default function Header() {
-    const { currentUser, userToken, setCurrentUser, setUserToken } =
+    const {currentUser, userToken, setCurrentUser, setUserToken} =
         useStateContext();
 
     const logout = (ev) => {
@@ -49,13 +49,13 @@ export default function Header() {
                             <ul className="main_nav">
                                 <li>
                                     <a href="/" className="logo_nav">
-                                        <img src="/img/logo.png" alt="" />
+                                        <img src="/img/logo.png" alt=""/>
                                     </a>
                                 </li>
                                 <li className="menu_item">
                                     <NavLink
                                         to="/profile"
-                                        className={({ isActive }) =>
+                                        className={({isActive}) =>
                                             classNames(
                                                 isActive
                                                     ? "bg-blue-300 text-gray-800" // Thay đổi màu nền ở đây
@@ -89,7 +89,7 @@ export default function Header() {
                                 <li className="menu_item">
                                     <NavLink
                                         to="/aggregationPoint"
-                                        className={({ isActive }) =>
+                                        className={({isActive}) =>
                                             classNames(
                                                 isActive
                                                     ? "bg-blue-300 text-gray-800" // Thay đổi màu nền ở đây
@@ -105,7 +105,7 @@ export default function Header() {
                                 <li className="menu_item">
                                     <NavLink
                                         to="/transactionPoint"
-                                        className={({ isActive }) =>
+                                        className={({isActive}) =>
                                             classNames(
                                                 isActive
                                                     ? "bg-blue-300 text-gray-800" // Thay đổi màu nền ở đây
@@ -121,7 +121,7 @@ export default function Header() {
                                 <li className="menu_item">
                                     <NavLink
                                         to="/manageuser"
-                                        className={({ isActive }) =>
+                                        className={({isActive}) =>
                                             classNames(
                                                 isActive
                                                     ? "bg-blue-300 text-gray-800" // Thay đổi màu nền ở đây
@@ -133,27 +133,12 @@ export default function Header() {
                                         Thêm tài khoản
                                     </NavLink>
                                 </li>
-                                <li className="menu_item">
-                                    <NavLink
-                                        to="/gioithieu"
-                                        className={({ isActive }) =>
-                                            classNames(
-                                                isActive
-                                                    ? "bg-blue-300 text-gray-800" // Thay đổi màu nền ở đây
-                                                    : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                                                "px-3 py-2 rounded-md text-sm font-medium"
-                                            )
-                                        }
-                                    >
-                                        Qrcode
-                                    </NavLink>
-                                </li>
                             </ul>
                         </nav>
                     </div>
                 </header>
                 <div className="back_to_top">
-                    <img src="./img/icon-back-to-top.svg" alt="" />
+                    <img src="./img/icon-back-to-top.svg" alt=""/>
                 </div>
             </div>
         </>

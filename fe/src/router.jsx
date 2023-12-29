@@ -87,44 +87,27 @@ function AppRouter() {
                         />
                     </Route>
                 )}
-                {userRole === "aggregation_point_employee" && (
-                    <Route path="/" element={<AggregationEmployee />}>
-                        <Route
-                            path="/aggregation_employee"
-                            element={<AggregationEmployeeLayout />}
-                        />
-                        <Route
-                            path="/aggregation_employee/order_search"
-                            element={<AggregationEmployeeLayout />}
-                        />
-                        <Route
-                            path="/aggregation_employee/order_list_to_aggregation"
-                            element={<AggregationEmployeeLayout />}
-                        />
-                        <Route
-                            path="/aggregation_employee/order_list_to_transaction"
-                            element={<AggregationEmployeeLayout />}
-                        />
-                        <Route
-                            path="/aggregation_employee/outgoing_list_to_aggregation"
-                            element={<AggregationEmployeeLayout />}
-                        />
-                        <Route
-                            path="/aggregation_employee/incoming_list_transaction"
-                            element={<AggregationEmployeeLayout />}
-                        />
-                        <Route
-                            path="/aggregation_employee/incoming_list_from_aggregation"
-                            element={<AggregationEmployeeLayout />}
-                        />
-                        <Route
-                            path="/aggregation_employee/create-package-tk-tk"
-                            element={<AggregationEmployeeLayout />}
-                        />
-                        <Route
-                            path="/aggregation_employee/create-package-tk-gd"
-                            element={<AggregationEmployeeLayout />}
-                        />
+
+                {(userRole === "aggregation_point_employee" &&
+                    <Route path="/" element={<AggregationEmployee/>}>
+                        <Route path="/aggregation_employee" element={<AggregationEmployeeLayout/>}/>
+                        <Route path="/aggregation_employee/order_search" element={<AggregationEmployeeLayout/>}/>
+                        <Route path="/aggregation_employee/order_list_to_aggregation"
+                               element={<AggregationEmployeeLayout/>}/>
+                        <Route path="/aggregation_employee/order_list_to_transaction"
+                               element={<AggregationEmployeeLayout/>}/>
+                        <Route path="/aggregation_employee/outgoing_list_to_aggregation"
+                               element={<AggregationEmployeeLayout/>}/>
+                        <Route path="/aggregation_employee/outgoing_list_to_transaction"
+                               element={<AggregationEmployeeLayout/>}/>
+                        <Route path="/aggregation_employee/incoming_list_from_transaction"
+                               element={<AggregationEmployeeLayout/>}/>
+                        <Route path="/aggregation_employee/incoming_list_from_aggregation"
+                               element={<AggregationEmployeeLayout/>}/>
+                        <Route path="/aggregation_employee/create-package-tk-tk"
+                               element={<AggregationEmployeeLayout/>}/>
+                        <Route path="/aggregation_employee/create-package-tk-gd"
+                               element={<AggregationEmployeeLayout/>}/>
                     </Route>
                 )}
                 {userRole === "transaction_point_head" && (
@@ -139,49 +122,22 @@ function AppRouter() {
                         />
                     </Route>
                 )}
-                {userRole === "transaction_officer" && (
-                    <Route path="/" element={<TransactionOffice />}>
-                        <Route
-                            path="/transaction_staff"
-                            element={<TransactionOfficeLayout />}
-                        />
-                        <Route path="/new-page" element={<Invoice />} />
-                        <Route
-                            path="/transaction_staff/order_search"
-                            element={<TransactionOfficeLayout />}
-                        />
-                        <Route
-                            path="/transaction_staff/order_list"
-                            element={<TransactionOfficeLayout />}
-                        />
-                        <Route
-                            path="/transaction_staff/order_list_receive"
-                            element={<TransactionOfficeLayout />}
-                        />
-                        <Route
-                            path="/transaction_staff/outgoing_bag_list"
-                            element={<TransactionOfficeLayout />}
-                        />
-                        <Route
-                            path="/transaction_staff/outgoing_bag_list/:dynamicValue"
-                            element={<TransactionOfficeLayout />}
-                        />
-                        <Route
-                            path="/transaction_staff/incoming_bag_list"
-                            element={<TransactionOfficeLayout />}
-                        />
-                        <Route
-                            path="/transaction_staff/success_order_list"
-                            element={<TransactionOfficeLayout />}
-                        />
-                        <Route
-                            path="/transaction_staff/failed_order_list"
-                            element={<TransactionOfficeLayout />}
-                        />
-                        <Route
-                            path="/transaction_staff/create-package"
-                            element={<TransactionOfficeLayout />}
-                        />
+
+                {userRole === 'transaction_officer' && (
+                    <Route path="/" element={<TransactionOffice/>}>
+                        <Route path="/transaction_staff" element={<TransactionOfficeLayout/>}/>
+                        <Route path="/new-page" element={<Invoice/>}/>
+                        <Route path="/transaction_staff/order_search" element={<TransactionOfficeLayout/>}/>
+                        <Route path="/transaction_staff/order_list" element={<TransactionOfficeLayout/>}/>
+                        <Route path="/transaction_staff/order_list_receive" element={<TransactionOfficeLayout/>}/>
+                        <Route path="/transaction_staff/outgoing_bag_list" element={<TransactionOfficeLayout/>}/>
+                        <Route path="/transaction_staff/outgoing_bag_list/:dynamicValue"
+                               element={<TransactionOfficeLayout/>}/>
+                        <Route path="/transaction_staff/incoming_bag_list" element={<TransactionOfficeLayout/>}/>
+                        <Route path="/transaction_staff/success_order_list" element={<TransactionOfficeLayout/>}/>
+                        <Route path="/transaction_staff/failed_order_list" element={<TransactionOfficeLayout/>}/>
+                        <Route path="/transaction_staff/loss_order_list" element={<TransactionOfficeLayout/>}/>
+                        <Route path="/transaction_staff/create-package" element={<TransactionOfficeLayout/>}/>
                     </Route>
                 )}
                 {userRole === "guess" && (

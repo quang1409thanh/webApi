@@ -35,7 +35,7 @@ const AggregationEmployeeLayout = () => {
                 return <CreateShipmentAggregationToTransaction/>;
             case '/aggregation_employee/outgoing_list_to_aggregation':
                 return <OutgoingBagListAggregation/>;
-            case '/aggregation_employee/incoming_list_transaction':
+            case '/aggregation_employee/incoming_list_from_transaction':
                 return <IncomingBagListAggregationFromTransaction/>;
             case '/aggregation_employee/incoming_list_from_aggregation':
                 return <IncomingBagListAggregationFromAggregation/>;

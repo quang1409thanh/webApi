@@ -44,7 +44,7 @@ class ShipmentTkGdController extends Controller
 
             // Cập nhật thông tin đơn hàng
             $good->update([
-                'status' => 'Đang gửi về điểm giao dịch nhận: ' . $transactionReceive->name, // Cập nhật theo trạng thái mong muốn
+                'status' => 'Đang gửi về điểm giao dịch nhận ' . $transactionReceive->name, // Cập nhật theo trạng thái mong muốn
                 'shipment_id_tk_gd' => $shipment->id,
                 'history' => $history,
             ]);
@@ -86,7 +86,7 @@ class ShipmentTkGdController extends Controller
         ]);
 
         // Retrieve goods associated with the shipment
-        $goods = Good::where('shipment_id_tk_tk', $id)->get();
+        $goods = Good::where('shipment_id_tk_gd', $id)->get();
 
         // Cập nhật trạng thái và shipment_id_gd_tk cho từng đơn hàng
         foreach ($goods as $good) {
@@ -98,15 +98,12 @@ class ShipmentTkGdController extends Controller
                 'status' => $good->status,
                 'updated_at' => now(),
             ];
-
-            // Cập nhật thông tin của đơn hàng
             $good->update([
-                'status' => 'Đã gửi đến điểm tập kết ' . $transactionReceive->name,
+                'status' => 'Đang gửi về điểm giao dịch nhận ' . $transactionReceive->name,
                 'history' => json_encode($history), // Encode lại thành JSON để lưu vào cơ sở dữ liệu
             ]);
             $good->currentLocation()->associate($transactionReceive);
-            $good -> save();
-
+            $good->save();
         }
 
         return response()->json(['message' => 'Cập nhật đơn hàng thành công']);

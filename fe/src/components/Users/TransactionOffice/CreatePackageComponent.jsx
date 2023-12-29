@@ -2,48 +2,74 @@ import React, {useContext, useState, useEffect} from 'react';
 import {TransactionOfficeContext} from "./TransactionOfficeProvider.jsx";
 import axiosClient from "../../../axios.js";
 import {useLocation, useParams} from "react-router-dom";
+import AddressSelectionTransactionOfficerDisable
+    from "../../Common/FindPost/AddressSelectionTransactionOfficerDisable.jsx";
+import AddressSelectionTransactionOfficer from "../../Common/FindPost/AddressSelectionTransactionOfficer.jsx";
+import AddressSelectionAggregationEmployeeDisable
+    from "../../Common/FindPost/AddressSelectionAggregationEmployeeDisable.jsx";
 
 const CreateShipmentForm = () => {
 
+    const {data} = useContext(TransactionOfficeContext)
+    const id = data?.transaction_officer?.transaction_point_id;
 
-    const {data, transactionList, aggregationList} = useContext(TransactionOfficeContext);
+    const [province, setProvince] = useState('');
+    const [district, setDistrict] = useState('');
+    const [ward, setWard] = useState('');
+    const [sendTransaction, setSendTransaction] = useState({
+        id: '',
+        address: {
+            province: '',
+            district: '',
+            ward: '',
+        },
+        aggregation_point: {
+            id: '',
+            address: {
+                province: '',
+                district: '',
+                ward: '',
+            },
+            name: '',
+        },
+        name: '',
+    });
 
+    const [provinceReceive, setProvinceReceive] = useState('');
+    const [districtReceive, setDistrictReceive] = useState('');
+    const [wardReceive, setWardReceive] = useState('');
+    const [nameReceive, setNameReceive] = useState('');
 
-    const $id = data?.transaction_officer?.transaction_point_id;
+    useEffect(() => {
+        axiosClient
+            .get(`/transactionPoint/${id}`)
+            .then(({data}) => {
+                setSendTransaction(data.transactionPoint);
+                console.log(data);
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, [id]);
 
-    // Kiểm tra xem transactionList có tồn tại không
-    const transactionListExists = transactionList ?? [];
-    // Lấy ra transaction từ transactionList có id là $id
-    const transaction = transactionListExists.find(item => item.id === $id);
+    useEffect(() => {
+        if (sendTransaction) {
+            console.log("sendTransaction: ->", sendTransaction)
+            setProvince(sendTransaction.address.province);
+            setDistrict(sendTransaction.address.district);
+            setWard(sendTransaction.address.ward);
+            setProvinceReceive(sendTransaction.aggregation_point.address.province);
+            setDistrictReceive(sendTransaction.aggregation_point.address.district);
+            setWardReceive(sendTransaction.aggregation_point.address.ward);
+        }
+    }, [sendTransaction]);
 
-
-    const $agg_id = transaction?.aggregation_point_id;
-    const aggregation = aggregationList.find(item => item.id === $agg_id);
-
-    let transactionName;
-    if (transaction) {
-        transactionName = transaction.name;
-        console.log("transaction name: ", transactionName);
-    } else {
-        console.log("transaction not found");
-    }
-
-    let aggregationName;
-    if (aggregation) {
-        aggregationName = aggregation.name;
-        console.log("aggregationName name: ", aggregationName);
-    } else {
-        console.log("aggregationName not found");
-    }
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const orderIds = searchParams.get("orderIds").split(",");
     console.log('orderIds from URL:', orderIds);
 
-
     const [status, setStatus] = useState('đang chờ chuyển '); // Giá trị mặc định
-    const [sendingTransactionPointId, setSendingTransactionPointId] = useState(''); // Set default sendingTransactionPointId as an empty string
-    const [receivingAggregationPointId, setReceivingAggregationPointId] = useState(''); // Set default receivingAggregationPointId as an empty string
 
     const handleSubmit = () => {
         // Check if required fields are filled
@@ -56,8 +82,8 @@ const CreateShipmentForm = () => {
         axiosClient.post('/create-shipment-gd-tk', {
             good_ids: orderIds,
             status: status,
-            sending_transaction_point_id: $id,
-            receiving_aggregation_point_id: $agg_id,
+            sending_transaction_point_id: sendTransaction.id,
+            receiving_aggregation_point_id: sendTransaction.aggregation_point.id,
         }).then(response => {
             // Handle success, you might want to do something with the response
             console.log('Shipment created successfully:', response.data);
@@ -68,68 +94,78 @@ const CreateShipmentForm = () => {
     };
 
 
-    //
-
-    const handleStatusChange = (e) => {
-        setStatus(e.target.value);
-    };
-
-
     return (
         <div className="page_container">
             <main className="main_content">
-                <h2>Create Shipment</h2>
-                <form>
-                    <div>
-                        <label>Status:</label>
-                        <select value={status} onChange={handleStatusChange}>
-                            <option value="đang chờ chuyển ">Đang chờ chuyển</option>
-                            <option value="chuyển thành công">Chuyển thành công</option>
-                            <option value="thất bại">Thất bại</option>
-                        </select>
-                    </div>
-                    <div className="mb-4">
-                        <label htmlFor="aggregation_point_id"
-                               className="block text-sm font-medium text-gray-700">CHọn điểm giao
-                            dịch</label>
-                        <select
-                            id={'transaction_point_id'}
-                            name={'transaction_point_id'}
-                            value={sendingTransactionPointId}
-                            onChange={(e) => setSendingTransactionPointId(e.target.value)} style={{width: '100%'}}
-                            required
-                            disabled
+                <div id="mainContent">
+                    <div className="full_container">
+                        <div className="content_title">
+                            Gửi lên điểm tập kết
+                        </div>
 
-                        >
-                            <option disabled value="">
-                                {transactionName}
-                            </option>
-                        </select>
-                    </div>
+                        <div className="customer_info">
+                            <div className="form sent_info">
+                                <div className="tmp">
+                                    <label htmlFor="send_name">Gửi từ điểm giao dịch
+                                    </label>
+                                </div>
 
-                    <div className="mb-4">
-                        <label htmlFor="aggregation_point_id"
-                               className="block text-sm font-medium text-gray-700">Receiving Aggregation Point
-                            ID:</label>
-                        <select
-                            id={'aggregation_point_id'}
-                            name={'aggregation_point_id'}
-                            value={receivingAggregationPointId}
-                            onChange={(e) => setReceivingAggregationPointId(e.target.value)}
-                            required
-                            disabled
-                        >
-                            <option disabled value="">
-                                {aggregationName}
-                            </option>
-                            {/*{renderOptions(aggregationList)}*/}
-                        </select>
-                    </div>
-                    <div>
-                        <button type="button" onClick={handleSubmit}>Submit</button>
+                                <AddressSelectionTransactionOfficerDisable
+                                    selectedProvince={province} // Pass the selected province
+                                    selectedDistrict={district} // Pass the selected district
+                                    selectedWard={ward} // Pass the selected ward
+                                    selectTransactionPoint={sendTransaction.name} // Pass the selected detailed address
+                                />
+                                <div className="form-group">
+                                    <div>
+                                        <label htmlFor="send_phone_number">Số Điện Thoại:</label>
+                                        <input type="tel" id="send_phone_number" name="phoneNumber"/>
+                                    </div>
+                                    <div>
+                                        <label htmlFor="send_email">Email:</label>
+                                        <input type="email" id="send_email" name="email"/>
+                                    </div>
+                                </div>
 
+                            </div>
+                            <div className="form received_info">
+                                <div className="tmp">
+                                    <label htmlFor="send_name">Gửi lên điểm tập kết
+                                    </label>
+                                </div>
+
+                                <AddressSelectionAggregationEmployeeDisable
+                                    selectedProvince={provinceReceive} // Pass the selected province
+                                    selectedDistrict={districtReceive} // Pass the selected district
+                                    selectedWard={wardReceive} // Pass the selected ward
+                                    selectAggregationPoint={sendTransaction.aggregation_point.name} // Pass the selected detailed address
+                                />
+
+                                <div className="form-group">
+                                    <div>
+                                        <label htmlFor="send_phone_number">Số Điện Thoại:</label>
+                                        <input type="tel" id="send_phone_number" name="phoneNumber"/>
+                                    </div>
+                                    <div>
+                                        <label htmlFor="send_email">Email:</label>
+                                        <input type="email" id="send_email" name="email"/>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div className="flex items-center justify-center mt-6">
+                            <button
+                                type="button"
+                                onClick={handleSubmit}
+                                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            >
+                                Submit
+                            </button>
+                        </div>
                     </div>
-                </form>
+                </div>
             </main>
         </div>
 

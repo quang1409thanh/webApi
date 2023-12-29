@@ -1,14 +1,29 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {TransactionOfficeContext} from "./TransactionOfficeProvider.jsx";
 import {useNavigate} from "react-router-dom";
+import axiosClient from "../../../axios.js";
 
 const OrderListTransaction = () => {
-    const {listGood} = useContext(TransactionOfficeContext);
     const navigate = useNavigate();
 
     const [data, setData] = useState([]);
     const [selectedOrderIds, setSelectedOrderIds] = useState([]);
     const [selectAll, setSelectAll] = useState(false);
+
+    const [listGood, setListGood] = useState([]);
+
+    useEffect(() => {
+        axiosClient.get('/list_good_send_transaction')
+            .then(({data}) => {
+                console.log("data", data.goods);
+                if (data && data.goods) {
+                    setListGood(data.goods);
+                }
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
 
     useEffect(() => {
         setData(listGood);
@@ -55,7 +70,7 @@ const OrderListTransaction = () => {
                 <div id="mainContent">
                     <div className="full_container">
                         <div className="content_title">
-                            DANH SÁCH ĐƠN TẠO
+                            DANH SÁCH ĐƠN TẠO ĐI ĐIỂM TẬP KẾT
                         </div>
                         <div className="container_product_list">
                             {listGood.length > 0 ? (
@@ -103,7 +118,6 @@ const OrderListTransaction = () => {
                                             <th>Trạng thái</th>
                                             <th className="py-2 px-4 border-b">Delete</th>
                                             <th className="py-2 px-4 border-b">View/ Edit</th>
-                                            <th className="py-2 px-4 border-b">Chấp nhận</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -148,17 +162,6 @@ const OrderListTransaction = () => {
                                                         DETAIL
                                                     </a>
                                                 </td>
-                                                <td className="py-2 px-4 border-b">
-                                                    <form
-                                                        method="POST"
-                                                        onSubmit={(event) => handleAccept(event, item.id)}>
-                                                        <button type="submit"
-                                                                className="bg-blue-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-                                                            {item.status === "chuyển thành công" ? 'ACCEPTED' : 'ACCEPT'}
-                                                        </button>
-                                                    </form>
-                                                </td>
-
                                             </tr>
                                         ))}
                                         </tbody>
