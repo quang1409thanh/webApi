@@ -12,6 +12,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 20px;
+    margin-top: 82px;
 }
 
 .logo_qr_container {
@@ -82,7 +83,7 @@ h3 {
 .stamped,
 .info_costs_weight {
     display: grid;
-    grid-template-columns: 5fr 3fr; /* Chia thành 2 cột bằng nhau */
+    grid-template-columns: 5fr 4fr; /* Chia thành 2 cột bằng nhau */
 }
 
 .costs,
@@ -199,4 +200,8 @@ h3 {
 
 .print-btn:hover {
     background-color: #218838; /* Màu xanh lá cây tối hơn khi di chuột qua */
+}
+
+.table4 {
+    width: 440px;
 }

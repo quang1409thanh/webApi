@@ -25,16 +25,16 @@ function Invoice() {
                                 <h3>1. Họ tên địa chỉ người gửi</h3>
                                 <span>Lê Hải Nam</span>
                                 <br />
-                                <span>parcelData.senderAddress</span>
+                                <span>Điểm Giao Dịch Cầu Giấy</span>
                             </div>
                             <div className="other_info">
                                 <div className="phone_cus type_flex">
                                     <h3>Điện thoại:</h3>
-                                    <span>parcelData.senderPhoneNumber</span>
+                                    <span>0944427167</span>
                                 </div>
                                 <div className="postal_code type_flex">
                                     <h3>Mã bưu chính:</h3>
-                                    <span>parcelData.senderPostalCode</span>
+                                    <span>1</span>
                                 </div>
                             </div>
                         </div>
@@ -84,6 +84,24 @@ function Invoice() {
                             <div className="info_table">
                                 <h3>4. Nội dung trị giá bưu gửi:</h3>
                                 <div className="table_content"></div>
+                                <table className="table4">
+                                    <thead>
+                                        <tr>
+                                            <th>Nội dung</th>
+                                            <th>Số lượng</th>
+                                            <th>Trị giá</th>
+                                            <th>Giấy tờ đi kèm</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Tổng</td>
+                                            <td>0</td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
 
@@ -98,7 +116,7 @@ function Invoice() {
                                     }}
                                     className="other_service_content"
                                 >
-                                    parcelData.otherService
+                                    khong
                                 </p>
                             </div>
                         </div>
@@ -110,11 +128,81 @@ function Invoice() {
                                     6. Chỉ dẫn của người gửi khi không phát được
                                     bưu gửi:
                                 </h3>
-                                <div className="box_checkbox">
-                                    {/* Checkboxes go here */}
+                                <div className="box_tailieu label">
+                                    <input
+                                        style={{ width: 20 }}
+                                        type="checkbox"
+                                        name="tai_lieu"
+                                        id="tai_lieu"
+                                        checked
+                                        disabled
+                                    />
+                                    <label
+                                        style={{ width: 400 }}
+                                        htmlFor="tai_lieu"
+                                    >
+                                        Chuyển hoàn ngay
+                                    </label>
                                 </div>
-                                <div className="box_checkbox">
-                                    {/* Additional checkboxes go here */}
+                                <div className="box_hanghoa label">
+                                    <input
+                                        style={{ width: 20 }}
+                                        type="checkbox"
+                                        name="hang_hoa"
+                                        id="hang_hoa"
+                                        disabled
+                                    />
+                                    <label
+                                        style={{ width: 400 }}
+                                        htmlFor="hang_hoa"
+                                    >
+                                        Gọi điện cho người gửi
+                                    </label>
+                                </div>
+                                <div className="box_tailieu label">
+                                    <input
+                                        style={{ width: 20 }}
+                                        type="checkbox"
+                                        name="tai_lieu"
+                                        id="tai_lieu"
+                                        disabled
+                                    />
+                                    <label
+                                        style={{ width: 400 }}
+                                        htmlFor="tai_lieu"
+                                    >
+                                        Chuyển hoàn trước ngày
+                                    </label>
+                                </div>
+                                <div className="box_hanghoa label">
+                                    <input
+                                        style={{ width: 20 }}
+                                        type="checkbox"
+                                        name="hang_hoa"
+                                        id="hang_hoa"
+                                        disabled
+                                    />
+                                    <label
+                                        style={{ width: 400 }}
+                                        htmlFor="hang_hoa"
+                                    >
+                                        Chuyển hoàn khi hết thời gian lưu trữ
+                                    </label>
+                                </div>
+                                <div className="box_tailieu label">
+                                    <input
+                                        style={{ width: 20 }}
+                                        type="checkbox"
+                                        name="tai_lieu"
+                                        id="tai_lieu"
+                                        disabled
+                                    />
+                                    <label
+                                        style={{ width: 400 }}
+                                        htmlFor="tai_lieu"
+                                    >
+                                        Hủy
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -123,18 +211,20 @@ function Invoice() {
                         <div className="commitment">
                             <div className="user_commit">
                                 <h3>7. Cam kết của người gửi:</h3>
-                                <span>parcelData.userCommitment</span>
+                                <span>
+                                    Chấp nhận các điều khoản của công ty
+                                </span>
                             </div>
 
                             {/* 7. Time signature */}
                             <div className="time_signature">
                                 <div className="time">
-                                    <h3>8. Ngày giờ gửi:</h3>
-                                    <span>parcelData.sendingTime</span>
-                                </div>
-                                <div className="signature">
-                                    <h3>Chữ ký người gửi</h3>
-                                    <span></span>
+                                    <h3>
+                                        8. Ngày giờ gửi:
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        Chữ ký người gửi
+                                    </h3>
+                                    <span>4:13 PM 12/29/2023</span>
                                 </div>
                             </div>
                         </div>
@@ -146,19 +236,19 @@ function Invoice() {
                         <div className="info_customer">
                             <div className="name_customer">
                                 <h3>2. Họ tên địa chỉ người nhận</h3>
-                                <span>parcelData.receiverName</span>
+                                <span>Lê Anh Đức</span>
                                 <br />
-                                <span>parcelData.receiverAddress</span>
+                                <span>Điểm Giao Dịch Bình Thạnh</span>
                             </div>
                             {/* Other info */}
                             <div className="other_info">
                                 <div className="phone_cus type_flex">
                                     <h3>Điện thoại:</h3>
-                                    <span>parcelData.receiverPhoneNumber</span>
+                                    <span>0332258398</span>
                                 </div>
                                 <div className="postal_code type_flex">
                                     <h3>Mã bưu chính:</h3>
-                                    <span>parcelData.receiverPostalCode</span>
+                                    <span>2</span>
                                 </div>
                             </div>
                         </div>
@@ -170,19 +260,19 @@ function Invoice() {
                                 {/* 2.1.1 Cost */}
                                 <div className="cost">
                                     <h3 className="cost_header">9. Cước:</h3>
-                                    <div class="cost_item">
+                                    <div className="cost_item">
                                         <span>Cước chính:</span>
                                         <span>0</span>
                                     </div>
-                                    <div class="cost_item">
+                                    <div className="cost_item">
                                         <span>Phụ phí:</span>
                                         <span>0</span>
                                     </div>
-                                    <div class="cost_item">
+                                    <div className="cost_item">
                                         <span>Thu hộ:</span>
                                         <span>0</span>
                                     </div>
-                                    <div class="cost_item">
+                                    <div className="cost_item">
                                         <span>Tổng thu:</span>
                                         <span>0</span>
                                     </div>
@@ -194,15 +284,15 @@ function Invoice() {
                                     <h3 className="cost_header">
                                         11. Thu của người nhận:
                                     </h3>
-                                    <div class="cost_item">
+                                    <div className="cost_item">
                                         <span>COD:</span>
                                         <span>0</span>
                                     </div>
-                                    <div class="cost_item">
+                                    <div className="cost_item">
                                         <span>Thu khác:</span>
                                         <span>0</span>
                                     </div>
-                                    <div class="cost_item">
+                                    <div className="cost_item">
                                         <span>Tổng thu:</span>
                                         <span>0</span>
                                     </div>
@@ -212,20 +302,40 @@ function Invoice() {
                             {/* 2.2 Weight */}
                             <div className="weight_">
                                 {/* 2.2.1 Weight */}
-                                <div className="weight">
-                                    <h3 className="cost_header">
+                                <div
+                                    className="weight"
+                                    style={{
+                                        textAlign: "center",
+                                    }}
+                                >
+                                    <h3
+                                        style={{
+                                            marginLeft: "10px",
+                                            textAlign: "left",
+                                        }}
+                                    >
                                         10. Khối lượng(kg):
                                     </h3>
-                                    <span className="cost_header">1</span>
+                                    <span
+                                        style={{
+                                            marginLeft: "10px",
+                                        }}
+                                    >
+                                        1
+                                    </span>
                                 </div>
 
                                 {/* 2.2.2 Note weight */}
                                 <div
-                                    className="note_weight"
-                                    style={{ marginLeft: "10px" }}
+                                    style={{
+                                        textAlign: "center",
+                                    }}
+                                    className="note_weight cost_header"
                                 >
-                                    <h3>12. Chú dẫn nghiệp vụ:</h3>
-                                    <span>không</span>
+                                    <h3 style={{ textAlign: "left" }}>
+                                        12. Chú dẫn nghiệp vụ:
+                                    </h3>
+                                    <span>khong</span>
                                 </div>
                             </div>
                         </div>
@@ -234,10 +344,10 @@ function Invoice() {
                         <div className="stamped">
                             {/* 3.1 Postal stamped */}
                             <div className="postal_stamped">
-                                <h3 style={{ marginLeft: "45px" }}>
+                                <h3 style={{ marginLeft: "30px" }}>
                                     13. Bưu cục chấp nhận
                                 </h3>
-                                <span style={{ marginLeft: "85px" }}>
+                                <span style={{ marginLeft: "75px" }}>
                                     Chữ ký GDV nhận
                                 </span>
                             </div>
@@ -247,11 +357,15 @@ function Invoice() {
                                 <h3 style={{ marginLeft: "10px" }}>
                                     14. Ngày giờ nhận:
                                 </h3>
-                                <span>__h__/__/__/20__</span>
+                                <span style={{ marginLeft: "100px" }}>...</span>
                                 <br />
-                                <span>Người nhận</span>
+                                <span style={{ marginLeft: "65px" }}>
+                                    Người nhận
+                                </span>
                                 <br />
-                                <span>(Ký, ghi rõ họ tên)</span>
+                                <span style={{ marginLeft: "42px" }}>
+                                    (Ký, ghi rõ họ tên)
+                                </span>
                             </div>
                         </div>
                     </div>
