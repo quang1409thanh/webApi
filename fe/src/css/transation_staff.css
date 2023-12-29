@@ -679,7 +679,7 @@ td {
     border-right: 1px solid #fff;
 }
 
-.order-search-info .col-lg-2 {
+.order-search-info .col-lg-5 {
     flex: 0 0 16%;
     max-width: 16%;
     position: relative;

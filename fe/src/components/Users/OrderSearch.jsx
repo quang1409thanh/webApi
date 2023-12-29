@@ -47,11 +47,11 @@ const OrderSearch = ({
                                 <h3>THÔNG TIN BƯU GỬI</h3>
                             </div>
                             <div className="order-search-info-top row">
-                                <div className="order-search-info-top-text col-lg-2 col-sm-3 col-6">
+                                <div className="order-search-info-top-text col-lg-5 col-sm-3 col-6">
                                     <div>Code Tracking</div>
                                     <p>{value.code}</p>
                                 </div>
-                                <div className="order-search-info-top-text col-lg-2 col-sm-3 col-6">
+                                <div className="order-search-info-top-text col-lg-1 col-sm-3 col-6">
                                     <div>Khối lượng (kg)</div>
                                     <p>{value.weight}</p>
                                 </div>
@@ -109,7 +109,7 @@ const OrderSearch = ({
                             {/* ... (Các phần thông tin khác) */}
                             <div className="order-search-info-status">
                                 <div className="order-search-info-status-title">
-                                    <h3>THÔNG TIN TRẠNG THÁI</h3>
+                                    <h3>THÔNG TIN CỤ THỂ</h3>
                                 </div>
                                 <div className="order-search-info-status-content">
                                     <div className="table-responsive">
@@ -119,8 +119,14 @@ const OrderSearch = ({
                                                     <th>STT</th>
                                                     <th>Người gửi</th>
                                                     <th>Người nhận</th>
-                                                    <th>Trạng thái</th>
                                                     <th>Vị trí</th>
+                                                    <th>Loại hàng hóa</th>
+                                                    <th>
+                                                        Chỉ dẫn gửi thất bại
+                                                    </th>
+                                                    <th>Cước chính</th>
+                                                    {/* <th>Phụ phí</th>
+                                                    <th>Thu hộ</th> */}
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -130,8 +136,27 @@ const OrderSearch = ({
                                                     <td>
                                                         {value.receiver_name}
                                                     </td>
-                                                    <td>trang_thai</td>
-                                                    <td>vi_tri</td>
+                                                    <td>
+                                                        {
+                                                            value.current_location_type
+                                                        }{" "}
+                                                        {
+                                                            value.current_location_id
+                                                        }
+                                                    </td>
+                                                    <td>
+                                                        {value.package_type}
+                                                    </td>
+                                                    <td>
+                                                        {
+                                                            value.instructions_send
+                                                        }
+                                                    </td>
+                                                    <td>{value.main_fee}</td>
+                                                    {/* <td>{value.surcharge}</td>
+                                                    <td>
+                                                        {value.collection_fee}
+                                                    </td> */}
                                                 </tr>
                                             </tbody>
                                         </table>
