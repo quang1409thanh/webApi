@@ -1,0 +1,8 @@
+[2023-12-29 00:00:38] local.INFO: 2023-12-29 00:00:38 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 246.98305130005ms  
+[2023-12-29 00:00:39] local.INFO: 2023-12-29 00:00:39 GET:"http://127.0.0.1:8000/api/me" - Execution Time: 8.0740451812744ms  
+[2023-12-29 00:11:58] local.INFO: 2023-12-29 00:11:58 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 34.929990768433ms  
+[2023-12-29 00:11:58] local.INFO: 2023-12-29 00:11:58 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 12.113809585571ms  
+[2023-12-29 00:11:58] local.INFO: 2023-12-29 00:11:58 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 23.063182830811ms  
+[2023-12-29 00:11:58] local.INFO: 2023-12-29 00:11:58 GET:"http://127.0.0.1:8000/api/aggregationPoint" - Execution Time: 10.844945907593ms  
+[2023-12-29 00:11:58] local.INFO: 2023-12-29 00:11:58 GET:"http://127.0.0.1:8000/api/transactionPoint" - Execution Time: 10.056018829346ms  
+[2023-12-29 00:11:58] local.INFO: 2023-12-29 00:11:58 GET:"http://127.0.0.1:8000/api/aggregationHead" - Execution Time: 9.3100070953369ms  
