@@ -7,8 +7,10 @@ import {useStateContext} from "../../../contexts/ContextProvider.jsx";
 import AddressSelectionTransactionOfficer from "../../Common/FindPost/AddressSelectionTransactionOfficer.jsx";
 import AddressSelectionTransactionOfficerDisable
     from "../../Common/FindPost/AddressSelectionTransactionOfficerDisable.jsx";
+import {useNavigate} from "react-router-dom";
 
 const TransactionStaff = () => {
+    const navigate = useNavigate();
 
     const {data} = useContext(TransactionOfficeContext)
     const id = data?.transaction_officer?.transaction_point_id;
@@ -160,9 +162,15 @@ const TransactionStaff = () => {
                 history: null,
             })
             .then(() => {
+                const userConfirmed = window.confirm('Đơn hàng đã được tạo. Bạn có muốn xem hóa đơn không?');
+
+                if (userConfirmed) {
+                    // If the user clicks "Xem hóa đơn," navigate to "/new-page"
+                    navigate(`/new-page`);
+                } else {
+                    // If the user clicks "Đóng," you can handle it here (optional)
+                }
                 showToast("Tạo đơn hàng thành công")
-                history.push('/transaction_staff/invoice-page'); // Replace '/new-page' with the desired URL
-                // showToast('Thêm thành công');
             })
             .catch((error) => {
                 console.error('Error fetching data:', error);
