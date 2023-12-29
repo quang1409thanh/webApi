@@ -117,8 +117,6 @@ const OrderListAggregationToAggregation = () => {
                                             <th>Tên Người Nhận</th>
                                             <th>Ngày tạo đơn</th>
                                             <th>Trạng thái</th>
-                                            <th>Cập nhật trạng thái</th>
-                                            <th>Chuyến đơn</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -145,28 +143,6 @@ const OrderListAggregationToAggregation = () => {
                                                     <span>{item.created_at}</span>
                                                 </td>
                                                 <td>{item.status}</td>
-                                                <td>
-                                                    <span>
-                                                      <select name="select_trang_thai" className="select_trang_thai">
-                                                        <option>--CN Trạng thái--</option>
-                                                        <option>Chấp nhận gửi</option>
-                                                        <option>Đã giao hàng</option>
-                                                        <option>Giao thất bại</option>
-                                                        <option>Thất lạc</option>
-                                                      </select>
-                                                    </span>
-                                                    <span>
-                                                      <div className="btn_cn_trang_thai">
-                                                        <input
-                                                            type="button"
-                                                            className="cn_trang_thai check_btn"
-                                                            code={item._id}
-                                                            value="OK"
-                                                        />
-                                                      </div>
-                                                    </span>
-                                                </td>
-                                                <td>{item.chuyen_don}</td>
                                             </tr>
                                         ))}
                                         </tbody>

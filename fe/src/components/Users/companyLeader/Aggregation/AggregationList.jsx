@@ -39,6 +39,7 @@ const AggregationList = () => {
                             <th className="py-2 px-4 border-b">Thuộc về</th>
                             <th className="py-2 px-4 border-b">DELETE</th>
                             <th className="py-2 px-4 border-b">DETAIL</th>
+                            <th className="py-2 px-4 border-b">Thống kê</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -100,6 +101,14 @@ const AggregationList = () => {
                                         href={`aggregationPoint/${element.id}`}
                                     >
                                         DETAIL
+                                    </a>
+                                </td>
+                                <td className="py-2 px-4 border-b">
+                                    <a
+                                        className="bg-blue-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                                        href={`aggregationPoint/${element.id}`}
+                                    >
+                                        STATS
                                     </a>
                                 </td>
                             </tr>

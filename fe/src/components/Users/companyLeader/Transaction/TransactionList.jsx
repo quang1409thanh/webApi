@@ -112,7 +112,7 @@ const TransactionList = () => {
                                     className="bg-blue-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
                                     href={`/transaction_staff/success_order_list`}
                                 >
-                                    Stats
+                                    STATS
                                 </a>
                             </td>
                         </tr>

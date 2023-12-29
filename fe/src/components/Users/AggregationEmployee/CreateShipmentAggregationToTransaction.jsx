@@ -8,9 +8,11 @@ import AddressSelectionAggregationEmployee from "../../Common/FindPost/AddressSe
 import AddressSelectionTransactionOfficer from "../../Common/FindPost/AddressSelectionTransactionOfficer.jsx";
 import AddressSelectionTransactionOfficerDefault
     from "../../Common/FindPost/AddressSelectionTransactionOfficerDefault.jsx";
+import {useStateContext} from "../../../contexts/ContextProvider.jsx";
 
 const CreateShipmentAggregationToAggregation = () => {
     const {data} = useContext(AggregationEmployeeContext);
+    const {showToast} = useStateContext();
 
     const id = data?.aggregation_point_employee?.aggregation_point_id || '';
     const [province, setProvince] = useState('');
@@ -130,6 +132,7 @@ const CreateShipmentAggregationToAggregation = () => {
             receiving_transaction_point_id: receiveTransaction.transactionPointId,
         }).then(response => {
             // Handle success, you might want to do something with the response
+            showToast("Đã gửi về điểm giao dịch nhận")
             console.log('Shipment created successfully:', response.data);
         }).catch(error => {
             // Handle error, you might want to show an error message to the user

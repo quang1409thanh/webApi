@@ -13,6 +13,7 @@ const TransactionStaff = () => {
     const {data} = useContext(TransactionOfficeContext)
     const id = data?.transaction_officer?.transaction_point_id;
 
+    const {showToast} = useStateContext();
 
     const [province, setProvince] = useState('');
     const [district, setDistrict] = useState('');
@@ -159,6 +160,7 @@ const TransactionStaff = () => {
                 history: null,
             })
             .then(() => {
+                showToast("Tạo đơn hàng thành công")
                 history.push('/transaction_staff/invoice-page'); // Replace '/new-page' with the desired URL
                 // showToast('Thêm thành công');
             })

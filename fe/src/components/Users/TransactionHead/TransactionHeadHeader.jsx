@@ -99,6 +99,21 @@ export default function TransactionHeadHeader() {
                                         Quản lý nhân viên điểm giao dịch
                                     </NavLink>
                                 </li>
+                                <li className="menu_item">
+                                    <NavLink
+                                        to="/statsTransactionHead"
+                                        className={({ isActive }) =>
+                                            classNames(
+                                                isActive
+                                                    ? "bg-blue-300 text-gray-800" // Thay đổi màu nền ở đây
+                                                    : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                                                "px-3 py-2 rounded-md text-sm font-medium"
+                                            )
+                                        }
+                                    >
+                                        Thống kê đơn hàng
+                                    </NavLink>
+                                </li>
 
                                 <li className="menu_item">
                                     <b>Trang trưởng điểm giao dịch</b>

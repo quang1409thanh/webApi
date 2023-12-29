@@ -1,12 +1,15 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, {useContext, useEffect, useState} from "react";
 import axiosClient from "../../../axios.js";
-import { TransactionHeadContext } from "./TransactionHeadProvider.jsx";
+import {TransactionHeadContext} from "./TransactionHeadProvider.jsx";
+import {useStateContext} from "../../../contexts/ContextProvider.jsx";
 
 const AggregationEmployeeAdd = () => {
-    const { data } = useContext(TransactionHeadContext);
+    const {showToast} = useStateContext();
+
+    const {data} = useContext(TransactionHeadContext);
     const id = data?.transaction_point_head?.transaction_point_id || "";
     console.log("id ne:" + id); // In giá trị để kiểm tra
-    const { setSubmitted } = useContext(TransactionHeadContext);
+    const {setSubmitted} = useContext(TransactionHeadContext);
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -19,8 +22,8 @@ const AggregationEmployeeAdd = () => {
     });
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prevData) => ({ ...prevData, [name]: value }));
+        const {name, value} = e.target;
+        setFormData((prevData) => ({...prevData, [name]: value}));
     };
 
     const handleSubmit = (e) => {
@@ -31,7 +34,7 @@ const AggregationEmployeeAdd = () => {
                 transaction_point_id: id,
             })
             .then((response) => {
-                // Xử lý response nếu cần
+                showToast("Đã thêm tài khoản thành công!")
                 setSubmitted(true);
                 console.log(response.data);
             })

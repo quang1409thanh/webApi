@@ -7,19 +7,21 @@ const OrderListTransactionReceiving = () => {
 
     const [listGoodReceive, setListGoodReceive] = useState([]);
 
+    const [submitted, setSubmitted] = useState(false);
     useEffect(() => {
         axiosClient.get('/list_good_receive_transaction')
             .then(({data}) => {
                 // Kiểm tra xem dữ liệu có tồn tại không trước khi thêm vào state
                 console.log("data", data.goods);
                 if (data && data.goods) {
+                    setSubmitted(false);
                     setListGoodReceive(data.goods);
                 }
             })
             .catch((error) => {
                 console.error('Error fetching data:', error);
             });
-    }, []);
+    }, [submitted]);
     const navigate = useNavigate();
 
     const [data, setData] = useState([]);
@@ -81,6 +83,7 @@ const OrderListTransactionReceiving = () => {
             good_ids: selectedOrderIds,
             type: "success",
         }).then(response => {
+            setSubmitted(true);
             // Handle success, you might want to do something with the response
             console.log('Shipment created successfully:', response.data);
         }).catch(error => {
@@ -94,6 +97,7 @@ const OrderListTransactionReceiving = () => {
             good_ids: selectedOrderIds,
             type: "failure",
         }).then(response => {
+            setSubmitted(true);
             // Handle success, you might want to do something with the response
             console.log('Shipment created successfully:', response.data);
         }).catch(error => {
@@ -109,6 +113,8 @@ const OrderListTransactionReceiving = () => {
             good_ids: selectedOrderIds,
             type: "loss",
         }).then(response => {
+            setSubmitted(true);
+
             // Handle success, you might want to do something with the response
             console.log('Shipment created successfully:', response.data);
         }).catch(error => {

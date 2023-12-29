@@ -1,8 +1,12 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {AggregationEmployeeContext} from "./AggregationEmployeeProvider.jsx";
 import axiosClient from "../../../axios.js";
+import {useStateContext} from "../../../contexts/ContextProvider.jsx";
 
 const IncomingBagListAggregationFromAggregation = () => {
+    const {showToast} = useStateContext();
+    const [submitted, setSubmitted] = useState(false);
+
     const [buttonClicked, setButtonClicked] = useState(false);
     const [listIncomingFromAggregation, setListIncomingFromAggregation] = useState([]);
     useEffect(() => {
@@ -16,11 +20,13 @@ const IncomingBagListAggregationFromAggregation = () => {
             .catch((error) => {
                 console.error('Error fetching data:', error);
             });
-    }, []);
+    }, [submitted]);
 
     console.log("listIncomingFromAggregation", listIncomingFromAggregation);
     const handleAccept = (e, id) => {
         e.preventDefault();
+        setSubmitted(true);
+        showToast("Đã chấp nhận đơn gửi từ điểm tập kết")
         // Gửi dữ liệu đến API backend
         axiosClient.post(`/accept-tk-tk/${id}`,
             {})
@@ -123,14 +129,14 @@ const IncomingBagListAggregationFromAggregation = () => {
                                             <form
                                                 method="POST"
                                                 onSubmit={(event) => handleAccept(event, item.id)}>
-                                                <button type="submit"
-                                                        className="bg-blue-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-                                                    {item.status === "chuyển thành công " ? 'ACCEPTED' : 'ACCEPT'}
+                                                <button
+                                                    type="submit"
+                                                    className={`bg-${item.status === "chuyển thành công" ? 'green' : 'blue'}-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded`}
+                                                >
+                                                    {item.status === "chuyển thành công" ? 'ACCEPTED' : 'ACCEPT'}
                                                 </button>
                                             </form>
                                         </td>
-
-                                        {/* Thêm các cột khác tùy ý */}
                                     </tr>
                                 ))}
                                 </tbody>

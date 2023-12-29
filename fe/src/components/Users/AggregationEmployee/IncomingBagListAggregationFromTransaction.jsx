@@ -1,28 +1,34 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {AggregationEmployeeContext} from "./AggregationEmployeeProvider.jsx";
 import axiosClient from "../../../axios.js";
+import {useStateContext} from "../../../contexts/ContextProvider.jsx";
 
 const IncomingBagListAggregationFromTransaction = () => {
 
     const [listIncomingFromTransaction, setListIncomingFromTransaction] = useState([]);
+    const {showToast} = useStateContext();
+    const [submitted, setSubmitted] = useState(false);
     useEffect(() => {
         axiosClient.get('/list_incoming_from_transaction')
             .then(({data}) => {
                 console.log("data", data.shipmentGdTk);
                 if (data && data.shipmentGdTk) {
                     setListIncomingFromTransaction(data.shipmentGdTk);
+                    setSubmitted(false);
                 }
             })
             .catch((error) => {
                 console.error('Error fetching data:', error);
             });
-    }, []);
+    }, [submitted]);
     const handleAccept = (e, id) => {
         e.preventDefault();
+        setSubmitted(true);
         // Gửi dữ liệu đến API backend
         axiosClient.post(`/accept-gd-tk/${id}`,
             {})
             .then(response => {
+                showToast("Đã Chấp nhận lấy từ điểm giao dịch");
                 console.log(response);
             })
             .catch(error => {
