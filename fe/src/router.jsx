@@ -35,6 +35,7 @@ import CreatePackageComponent from "./components/Users/TransactionOffice/CreateP
 import Invoice from "./components/Users/TransactionOffice/Invoice.jsx";
 import OrderSearch from "./components/Users/OrderSearch.jsx";
 import OrderSearchAggregation from "./components/Users/AggregationEmployee/OrderSearchAggregation.jsx";
+import ManageTransactionPoint from "./components/Users/AggregationHead/ManageTransactionPoint.jsx";
 
 function AppRouter() {
     const {userRole} = useStateContext();
@@ -83,8 +84,18 @@ function AppRouter() {
                         />
                         <Route
                             path="/manage_transaction_point"
+                            element={<ManageTransactionPoint/>}
+                        />
+                        <Route
+                            path="/manage_transaction_point"
                             element={<AggregationHeadLayout/>}
                         />
+                        <Route
+                            path="/transactionPoint/:dynamicValue"
+                            element={<ShowTransaction/>}
+                        />
+
+
                     </Route>
                 )}
 
@@ -120,6 +131,7 @@ function AppRouter() {
                             path="/transactionOfficer/:dynamicValue"
                             element={<TransactionOfficerEdit/>}
                         />
+
                     </Route>
                 )}
                 {userRole === 'transaction_officer' && (
