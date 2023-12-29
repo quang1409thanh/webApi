@@ -27,14 +27,40 @@ const OutgoingBagListTransaction = () => {
                             DANH SÁCH TÚI HÀNG ĐI LÊN ĐIỂM TẬP KẾT
                         </div>
                         <div className="container_product_list">
+                            <div>
+
+                            </div>
+                            <div className="centered-container nav_bar_service">
+                                <input type="button" value="Xóa" name="delete"/>
+                                <input
+                                    type="button"
+                                    value="Tạo túi hàng"
+                                    id="btn_tao_tui"
+                                    className="check_btn"
+                                />
+                                <input
+                                    type="button"
+                                    value="Sắp xếp tăng dần"
+                                />
+                                <input
+                                    type="button"
+                                    value="Sắp xếp giảm dần"
+                                />
+                                <input
+                                    type="button"
+                                    value="ALL"
+                                />
+                            </div>
+
                             <table id="product_list_table">
                                 <thead>
                                 <tr>
                                     <th>ID</th>
+
                                     <th>Status</th>
                                     <th>Created At</th>
-                                    <th>Được Gửi Từ</th>
-                                    <th>Gửi Đến</th>
+                                    <th>Điểm giao dịch gửi</th>
+                                    <th>Điểm giao dịch nhận</th>
                                     <th className="py-2 px-4 border-b">Delete</th>
                                     <th className="py-2 px-4 border-b">View/ Edit</th>
 

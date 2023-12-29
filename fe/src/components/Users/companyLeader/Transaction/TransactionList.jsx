@@ -28,6 +28,20 @@ const TransactionList = () => {
                 {/* Hiển thị thông báo nếu có */}
 
                 <h3 className="font_size">All Transaction Point</h3>
+                <div className="nav_bar_service centered-container">
+                    <input
+                        type="button"
+                        value="Sắp xếp tăng dần"
+                        // onClick={handleSortAscending}
+                    />
+                    <input
+                        type="button"
+                        value="Sắp xếp giảm dần"
+                        // onClick={handleSortDescending}
+                    />
+
+                </div>
+
                 <table className="min-w-full bg-white border border-gray-300">
                     <thead>
                     <tr className="bg-gray-100">

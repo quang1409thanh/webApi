@@ -63,6 +63,18 @@ const OrderListTransaction = () => {
             console.log('Vui lòng chọn ít nhất một đơn hàng để tạo túi hàng.');
         }
     };
+    const handleSortAscending = () => {
+        // Sắp xếp listGood tăng dần và cập nhật state
+        const sortedList = [...listGood].sort((a, b) => a.receiving_transaction_point_id - b.receiving_transaction_point_id);
+        setListGood(sortedList);
+    };
+
+    const handleSortDescending = () => {
+        // Sắp xếp listGood giảm dần và cập nhật state
+        const sortedList = [...listGood].sort((a, b) => b.receiving_transaction_point_id - a.receiving_transaction_point_id);
+        setListGood(sortedList);
+    };
+
 
     return (
         <div className="page_container">
@@ -84,6 +96,17 @@ const OrderListTransaction = () => {
                                         onClick={handleCreatePackage}
                                         // disabled={!selectAll}
                                     />
+                                    <input
+                                        type="button"
+                                        value="Sắp xếp tăng dần"
+                                        onClick={handleSortAscending}
+                                    />
+                                    <input
+                                        type="button"
+                                        value="Sắp xếp giảm dần"
+                                        onClick={handleSortDescending}
+                                    />
+
                                     <input
                                         type="button"
                                         value="ALL"

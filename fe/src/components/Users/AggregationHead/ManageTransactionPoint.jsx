@@ -6,7 +6,7 @@ import {AggregationHeadProvider} from "./AggregationHeadProvider.jsx";
 import TransactionListInAggregationHead from "./TransactionListInAggregationHead.jsx";
 
 
-const TransactionLayout = ({}) => {
+const ManageTransactionPoint = ({}) => {
     return (
         <>
             <section className="block-search-post-office">
@@ -20,4 +20,4 @@ const TransactionLayout = ({}) => {
     );
 };
 
-export default TransactionLayout;
+export default ManageTransactionPoint;
